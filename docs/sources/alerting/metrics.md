@@ -1,7 +1,7 @@
 +++
 title = "Alerting Metrics"
 description = "Alerting Metrics Guide"
-keywords = ["Grafana", "alerting", "guide", "metrics"]
+keywords = ["ThingSPIN", "alerting", "guide", "metrics"]
 type = "docs"
 [menu.docs]
 name = "Metrics"
@@ -11,7 +11,7 @@ weight = 2
 
 # Metrics from the alert engine
 
-The alert engine publishes some internal metrics about itself. You can read more about how Grafana publishes [internal metrics]({{< relref "../administration/metrics/" >}}).
+The alert engine publishes some internal metrics about itself. You can read more about how ThingSPIN publishes [internal metrics]({{< relref "../administration/metrics/" >}}).
 
 Description | Type | Metric name
 ---------- | ----------- | ----------

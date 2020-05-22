@@ -1,6 +1,6 @@
 +++
-title = "Using Stackdriver in Grafana"
-description = "Guide for using Stackdriver in Grafana"
+title = "Using Stackdriver in ThingSPIN"
+description = "Guide for using Stackdriver in ThingSPIN"
 keywords = ["grafana", "stackdriver", "google", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/stackdriver"]
@@ -10,16 +10,16 @@ parent = "datasources"
 weight = 4
 +++
 
-# Using Google Stackdriver in Grafana
+# Using Google Stackdriver in ThingSPIN
 
-> Available as a beta feature in Grafana v5.3.x and v5.4.x.
-> Officially released in Grafana v6.0.0
+> Available as a beta feature in ThingSPIN v5.3.x and v5.4.x.
+> Officially released in ThingSPIN v6.0.0
 
-Grafana ships with built-in support for Google Stackdriver. Just add it as a data source and you are ready to build dashboards for your Stackdriver metrics.
+ThingSPIN ships with built-in support for Google Stackdriver. Just add it as a data source and you are ready to build dashboards for your Stackdriver metrics.
 
 ## Adding the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the ThingSPIN icon in the top header.
 2. In the side menu under the `Dashboards` link you should find a link named `Data Sources`.
 3. Click the `+ Add data source` button in the top header.
 4. Select `Stackdriver` from the _Type_ dropdown.
@@ -35,11 +35,11 @@ Grafana ships with built-in support for Google Stackdriver. Just add it as a dat
 
 ## Authentication
 
-There are two ways to authenticate the Stackdriver plugin - either by uploading a Google JWT file, or by automatically retrieving credentials from Google metadata server. The latter option is only available when running Grafana on GCE virtual machine.
+There are two ways to authenticate the Stackdriver plugin - either by uploading a Google JWT file, or by automatically retrieving credentials from Google metadata server. The latter option is only available when running ThingSPIN on GCE virtual machine.
 
 ### Using a Google Service Account Key File
 
-To authenticate with the Stackdriver API, you need to create a Google Cloud Platform (GCP) Service Account for the Project you want to show data for. A Grafana data source integrates with one GCP Project. If you want to visualize data from multiple GCP Projects then you need to create one data source per GCP Project.
+To authenticate with the Stackdriver API, you need to create a Google Cloud Platform (GCP) Service Account for the Project you want to show data for. A ThingSPIN data source integrates with one GCP Project. If you want to visualize data from multiple GCP Projects then you need to create one data source per GCP Project.
 
 #### Enable APIs
 
@@ -68,17 +68,17 @@ Click on the links above and click the `Enable` button:
    {{< docs-imagebox img="/img/docs/v53/stackdriver_service_account_choose_role.png" class="docs-image--no-shadow" caption="Choose role" >}}
 
 5. Click the Create button. A JSON key file will be created and downloaded to your computer. Store this file in a secure place as it allows access to your Stackdriver data.
-6. Upload it to Grafana on the data source Configuration page. You can either upload the file or paste in the contents of the file.
+6. Upload it to ThingSPIN on the data source Configuration page. You can either upload the file or paste in the contents of the file.
 
-   {{< docs-imagebox img="/img/docs/v53/stackdriver_grafana_upload_key.png" class="docs-image--no-shadow" caption="Upload service key file to Grafana" >}}
+   {{< docs-imagebox img="/img/docs/v53/stackdriver_grafana_upload_key.png" class="docs-image--no-shadow" caption="Upload service key file to ThingSPIN" >}}
 
-7. The file contents will be encrypted and saved in the Grafana database. Don't forget to save after uploading the file!
+7. The file contents will be encrypted and saved in the ThingSPIN database. Don't forget to save after uploading the file!
 
-   {{< docs-imagebox img="/img/docs/v53/stackdriver_grafana_key_uploaded.png" class="docs-image--no-shadow" caption="Service key file is uploaded to Grafana" >}}
+   {{< docs-imagebox img="/img/docs/v53/stackdriver_grafana_key_uploaded.png" class="docs-image--no-shadow" caption="Service key file is uploaded to ThingSPIN" >}}
 
 ### Using GCE Default Service Account
 
-If Grafana is running on a Google Compute Engine (GCE) virtual machine, it is possible for Grafana to automatically retrieve default credentials from the metadata server. This has the advantage of not needing to generate a private key file for the service account and also not having to upload the file to Grafana. However for this to work, there are a few preconditions that need to be met.
+If ThingSPIN is running on a Google Compute Engine (GCE) virtual machine, it is possible for ThingSPIN to automatically retrieve default credentials from the metadata server. This has the advantage of not needing to generate a private key file for the service account and also not having to upload the file to ThingSPIN. However for this to work, there are a few preconditions that need to be met.
 
 1. First of all, you need to create a Service Account that can be used by the GCE virtual machine. See detailed instructions on how to do that [here](https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#createanewserviceaccount).
 2. Make sure the GCE virtual machine instance is being run as the service account that you just created. See instructions [here](https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#using).
@@ -104,7 +104,7 @@ To create a metric query, follow these steps:
 4. Choose a metric from the **Metric** dropdown.
 5. Use the plus and minus icons in the filter and group by sections to add/remove filters or group by clauses. This step is optional.
 
-Stackdriver metrics can be of different kinds (GAUGE, DELTA, CUMULATIVE) and these kinds have support for different aggregation options (reducers and aligners). The Grafana query editor shows the list of available aggregation methods for a selected metric and sets a default reducer and aligner when you select the metric. Units for the Y-axis are also automatically selected by the query editor.
+Stackdriver metrics can be of different kinds (GAUGE, DELTA, CUMULATIVE) and these kinds have support for different aggregation options (reducers and aligners). The ThingSPIN query editor shows the list of available aggregation methods for a selected metric and sets a default reducer and aligner when you select the metric. Units for the Y-axis are also automatically selected by the query editor.
 
 #### Filter
 
@@ -126,14 +126,14 @@ The `Aligner` field allows you to align multiple time series after the same grou
 
 ##### Alignment Period/Group by Time
 
-The `Alignment Period` groups a metric by time if an aggregation is chosen. The default is to use the GCP Stackdriver default groupings (which allows you to compare graphs in Grafana with graphs in the Stackdriver UI).
+The `Alignment Period` groups a metric by time if an aggregation is chosen. The default is to use the GCP Stackdriver default groupings (which allows you to compare graphs in ThingSPIN with graphs in the Stackdriver UI).
 The option is called `Stackdriver auto` and the defaults are:
 
 - 1m for time ranges < 23 hours
 - 5m for time ranges >= 23 hours and < 6 days
 - 1h for time ranges >= 6 days
 
-The other automatic option is `Grafana auto`. This will automatically set the group by time depending on the time range chosen and the width of the graph panel. Read more about the details [here](http://docs.grafana.org/variables/templates-and-variables/#the-interval-variable).
+The other automatic option is `ThingSPIN auto`. This will automatically set the group by time depending on the time range chosen and the width of the graph panel. Read more about the details [here](http://docs.grafana.org/variables/templates-and-variables/#the-interval-variable).
 
 It is also possible to choose fixed time intervals to group by, like `1h` or `1d`.
 
@@ -186,7 +186,7 @@ Example Result: `gce_instance - compute.googleapis.com/instance/cpu/usage_time`
 
 ### SLO (Service Level Objective) queries
 
-> Only available in Grafana v7.0+
+> Only available in ThingSPIN v7.0+
 
 {{< docs-imagebox img="/img/docs/v70/slo-query-builder.png" max-width= "400px" class="docs-image--right" >}}
 
@@ -202,7 +202,7 @@ To create an SLO query, follow these steps:
 4. Choose an [SLO](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/services.serviceLevelObjectives) from the **SLO** dropdown.
 5. Choose a [time series selector](https://cloud.google.com/monitoring/service-monitoring/timeseries-selectors#ts-selector-list) from the **Selector** dropdown.
 
-The friendly names for the time series selectors are shown in Grafana. Here is the mapping from the friendly name to the system name that is used in the Service Monitoring documentation:
+The friendly names for the time series selectors are shown in ThingSPIN. Here is the mapping from the friendly name to the system name that is used in the Service Monitoring documentation:
 
 | Selector dropdown value    | Corresponding time series selector used |
 | -------------------------- | --------------------------------------- |
@@ -246,7 +246,7 @@ Variable of the type _Query_ allows you to query Stackdriver for various types o
 | _Resource Types_                 | Returns a list of resource types for the the specified metric.                                    |
 | _Aggregations_                   | Returns a list of aggregations (cross series reducers) for the the specified metric.              |
 | _Aligners_                       | Returns a list of aligners (per series aligners) for the the specified metric.                    |
-| _Alignment periods_              | Returns a list of all alignment periods that are available in Stackdriver query editor in Grafana |
+| _Alignment periods_              | Returns a list of all alignment periods that are available in Stackdriver query editor in ThingSPIN |
 | _Selectors_                      | Returns a list of selectors that can be used in SLO (Service Level Objectives) queries            |
 | _SLO Services_                   | Returns a list of Service Monitoring services that can be used in SLO queries                     |
 | _Service Level Objectives (SLO)_ | Returns a list of SLO's for the specified SLO service                                             |
@@ -258,7 +258,7 @@ There are two syntaxes:
 - `$<varname>` Example: `metric.label.$metric_label`
 - `[[varname]]` Example: `metric.label.[[metric_label]]`
 
-Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the _Multi-value_ or _Include all value_ options are enabled, Grafana converts the labels from plain text to a regex compatible string, which means you have to use `=~` instead of `=`.
+Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the _Multi-value_ or _Include all value_ options are enabled, ThingSPIN converts the labels from plain text to a regex compatible string, which means you have to use `=~` instead of `=`.
 
 ## Annotations
 
@@ -286,7 +286,7 @@ Example Result: `monitoring.googleapis.com/uptime_check/http_status has this val
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here is a provisioning example using the JWT (Service Account key file) authentication type.
 

@@ -1,9 +1,9 @@
 {
-  "author": "Grafana Labs",
+  "author": "ThingSPIN Labs",
   "license": "Apache-2.0",
   "name": "@grafana/ui",
   "version": "7.1.0-pre.0",
-  "description": "Grafana Components Library",
+  "description": "ThingSPIN Components Library",
   "keywords": [
     "grafana",
     "react",

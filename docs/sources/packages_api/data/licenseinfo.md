@@ -9,7 +9,7 @@ type = "docs"
 
 ## LicenseInfo interface
 
-Describes the license information about the current running instance of Grafana.
+Describes the license information about the current running instance of ThingSPIN.
 
 <b>Signature</b>
 

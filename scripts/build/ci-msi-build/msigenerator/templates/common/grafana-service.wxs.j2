@@ -10,24 +10,24 @@
         <ServiceInstall Id="ServiceInstall"
           Account="LocalSystem"
           ErrorControl="normal"
-          Name="Grafana"
+          Name="ThingSPIN"
           Start="auto"
           Type="ownProcess"
           Vital="yes"
-          Description="Grafana by Grafana Labs"
-          DisplayName="Grafana">
+          Description="ThingSPIN by ThingSPIN Labs"
+          DisplayName="ThingSPIN">
           <ServiceConfig OnInstall="yes" OnReinstall="yes" DelayedAutoStart="no" />
         </ServiceInstall>
 
         <ServiceControl Id="ControlService"
-          Name="Grafana"
+          Name="ThingSPIN"
           Wait="yes"
           Start="install"
           Stop="both"
           Remove="uninstall"
         />
 
-        <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\Grafana">
+        <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\ThingSPIN">
           <RegistryKey Key="Parameters">
             <RegistryValue Name="AppDirectory" Value="[INSTALLDIR]grafana" Type="expandable" />
             <RegistryValue Name="Application" Value="[INSTALLDIR]grafana\bin\grafana-server.exe" Type="expandable" />

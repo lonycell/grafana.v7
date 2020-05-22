@@ -50,7 +50,7 @@ const preparePackage = async (pkg: any) => {
   const name: string = pkg.name;
   const deps: any = pkg.dependencies;
 
-  // Below we are adding cross-dependencies to Grafana's packages
+  // Below we are adding cross-dependencies to ThingSPIN's packages
   // with the version being published
   if (name.endsWith('/ui')) {
     deps['@grafana/data'] = version;

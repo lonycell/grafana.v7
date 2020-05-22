@@ -1,6 +1,6 @@
 +++
 title = "AWS CloudWatch"
-description = "Guide for using CloudWatch in Grafana"
+description = "Guide for using CloudWatch in ThingSPIN"
 keywords = ["grafana", "cloudwatch", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/cloudwatch"]
@@ -11,9 +11,9 @@ parent = "datasources"
 weight = 5
 +++
 
-# Using AWS CloudWatch in Grafana
+# Using AWS CloudWatch in ThingSPIN
 
-Grafana ships with built in support for CloudWatch. You just have to add it as a data source and you will be ready to build dashboards for your CloudWatch metrics.
+ThingSPIN ships with built in support for CloudWatch. You just have to add it as a data source and you will be ready to build dashboards for your CloudWatch metrics.
 
 ## Adding the data source
 
@@ -21,7 +21,7 @@ Grafana ships with built in support for CloudWatch. You just have to add it as a
 2. Click the `Add data source` button.
 3. Select `Cloudwatch` in the `Cloud` section.
 
-> NOTE: If at any moment you have issues with getting this data source to work and Grafana is giving you undescriptive errors then don't
+> NOTE: If at any moment you have issues with getting this data source to work and ThingSPIN is giving you undescriptive errors then don't
 > forget to check your log file (try looking in /var/log/grafana/grafana.log).
 
 | Name                       | Description                                                                                             |
@@ -38,7 +38,7 @@ Grafana ships with built in support for CloudWatch. You just have to add it as a
 
 ### IAM Roles
 
-Currently all access to CloudWatch is done server side by the Grafana backend using the official AWS SDK. If your Grafana
+Currently all access to CloudWatch is done server side by the ThingSPIN backend using the official AWS SDK. If your ThingSPIN
 server is running on AWS you can use IAM Roles and authentication will be handled automatically.
 
 See the AWS documentation on [IAM Roles](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
@@ -47,9 +47,9 @@ See the AWS documentation on [IAM Roles](http://docs.aws.amazon.com/AWSEC2/lates
 
 ## IAM Policies
 
-Grafana needs permissions granted via IAM to be able to read CloudWatch metrics
+ThingSPIN needs permissions granted via IAM to be able to read CloudWatch metrics
 and EC2 tags/instances/regions. You can attach these permissions to IAM roles and
-utilize Grafana's built-in support for assuming roles.
+utilize ThingSPIN's built-in support for assuming roles.
 
 Here is a minimal policy example:
 
@@ -88,7 +88,7 @@ Here is a minimal policy example:
 
 ### AWS credentials
 
-If Auth Provider is `Credentials file`, Grafana tries to get credentials in the following order.
+If Auth Provider is `Credentials file`, ThingSPIN tries to get credentials in the following order.
 
 - Environment variables. (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`)
 - Hard-code credentials.
@@ -118,9 +118,9 @@ To create a valid query, you need to specify the namespace, metric name and at l
 
 ### Dynamic queries using dimension wildcards
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
-In Grafana 6.5 or higher, you’re able to monitor a dynamic list of metrics by using the asterisk (\*) wildcard for one or more dimension values.
+In ThingSPIN 6.5 or higher, you’re able to monitor a dynamic list of metrics by using the asterisk (\*) wildcard for one or more dimension values.
 
 {{< docs-imagebox img="/img/docs/v65/cloudwatch-dimension-wildcard.png" max-width="800px" class="docs-image--right" caption="CloudWatch dimension wildcard" >}}
 
@@ -132,7 +132,7 @@ You can untoggle `Match Exact` to include metrics that have other dimensions def
 
 ### Multi-value template variables
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
 When defining dimension values based on multi-valued template variables, a search expression is used to query for the matching metrics. This enables the use of multiple template variables in one query and also allows you to use template variables for queries that have the `Match Exact` option disabled.
 
@@ -152,21 +152,21 @@ Please note that in the case you use the expression field to reference another q
 
 A period is the length of time associated with a specific Amazon CloudWatch statistic. Periods are defined in numbers of seconds, and valid values for period are 1, 5, 10, 30, or any multiple of 60.
 
-If the period field is left blank or set to `auto`, then it calculates automatically based on the time range. The formula used is `time range in seconds / 2000`, and then it snaps to the next higher value in an array of predefined periods `[60, 300, 900, 3600, 21600, 86400]`. By clicking `Show Query Preview` in the query editor, you can see what period Grafana used.
+If the period field is left blank or set to `auto`, then it calculates automatically based on the time range. The formula used is `time range in seconds / 2000`, and then it snaps to the next higher value in an array of predefined periods `[60, 300, 900, 3600, 21600, 86400]`. By clicking `Show Query Preview` in the query editor, you can see what period ThingSPIN used.
 
-### Deep linking from Grafana panels to the CloudWatch console
+### Deep linking from ThingSPIN panels to the CloudWatch console
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
 {{< docs-imagebox img="/img/docs/v65/cloudwatch-deep-linking.png" max-width="500px" class="docs-image--right" caption="CloudWatch deep linking" >}}
 
-Left clicking a time series in the panel shows a context menu with a link to `View in CloudWatch console`. Clicking that link will open a new tab that will take you to the CloudWatch console and display all the metrics for that query. If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Grafana.
+Left clicking a time series in the panel shows a context menu with a link to `View in CloudWatch console`. Clicking that link will open a new tab that will take you to the CloudWatch console and display all the metrics for that query. If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in ThingSPIN.
 
 This feature is not available for metrics that are based on metric math expressions.
 
 ## Curated Dashboards
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
 The updated CloudWatch data source ships with pre-configured dashboards for five of the most popular AWS services:
 
@@ -230,7 +230,7 @@ Example dimension queries which will return list of resources for individual AWS
 
 The `ec2_instance_attribute` query takes `filters` in JSON format.
 You can specify [pre-defined filters of ec2:DescribeInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html).
-Note that the actual filtering takes place on Amazon's servers, not in Grafana.
+Note that the actual filtering takes place on Amazon's servers, not in ThingSPIN.
 
 Filters syntax:
 
@@ -287,7 +287,7 @@ ec2_instance_attribute(us - east - 1, Tags.Name, { 'tag:Team': ['sysops'] });
 
 ## Using json format template variables
 
-Some queries accept filters in JSON format and Grafana supports the conversion of template variables to JSON.
+Some queries accept filters in JSON format and ThingSPIN supports the conversion of template variables to JSON.
 
 If `env = 'production', 'staging'`, following query will return ARNs of EC2 instances which `Environment` tag is `production` or `staging`.
 
@@ -297,12 +297,12 @@ resource_arns(us-east-1, ec2:instance, {"Environment":${env:json}})
 
 ## Pricing
 
-The Amazon CloudWatch data source for Grafana uses the `ListMetrics` and `GetMetricData` CloudWatch API calls to list and retrieve metrics. Please see the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/) for pricing information about these API calls.
+The Amazon CloudWatch data source for ThingSPIN uses the `ListMetrics` and `GetMetricData` CloudWatch API calls to list and retrieve metrics. Please see the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/) for pricing information about these API calls.
 
-Every time you pick a dimension in the query editor Grafana will issue a ListMetrics request.
+Every time you pick a dimension in the query editor ThingSPIN will issue a ListMetrics request.
 Whenever you make a change to the queries in the query editor, one new request to GetMetricData will be issued.
 
-Please note that for Grafana version 6.5 or higher, all API requests to GetMetricStatistics have been replaced with calls to GetMetricData. This change enables better support for CloudWatch metric math and enables the automatic generation of search expressions when using wildcards or disabling the `Match Exact` option. While GetMetricStatistics qualified for the CloudWatch API free tier, this is not the case for GetMetricData calls. For more information, please refer to the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/).
+Please note that for ThingSPIN version 6.5 or higher, all API requests to GetMetricStatistics have been replaced with calls to GetMetricData. This change enables better support for CloudWatch metric math and enables the automatic generation of search expressions when using wildcards or disabling the `Match Exact` option. While GetMetricStatistics qualified for the CloudWatch API free tier, this is not the case for GetMetricData calls. For more information, please refer to the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/).
 
 ## Service Quotas
 
@@ -314,7 +314,7 @@ Please see the AWS documentation for [Service Quotas](https://docs.aws.amazon.co
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

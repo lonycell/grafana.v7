@@ -14,15 +14,15 @@ weight = 1
 
 You can use links to navigate between commonly-used dashboards or to connect others to your visualizations. Links let you create shortcuts to other dashboards, panels, and even external websites.
 
-Grafana supports three types of links: Dashboard Links, Panel Links, and Data Links. They are all available from your dashboard.
+ThingSPIN supports three types of links: Dashboard Links, Panel Links, and Data Links. They are all available from your dashboard.
 
-{{< docs-imagebox img="/assets/img/blog/dashboard_links.png" max-width="800px" caption="Links Supported in Grafana" >}}
+{{< docs-imagebox img="/assets/img/blog/dashboard_links.png" max-width="800px" caption="Links Supported in ThingSPIN" >}}
 
 ## Which link should you use?
 
 Start by figuring out how you're currently navigating between dashboards. If you're often jumping between a set of dashboards and struggling to find the same context in each, links can help optimize your workflow.
 
-The next step is to figure out which link type is right for your workflow. Even though all the link types in Grafana are used to create shortcuts to other dashboards or external websites, they work in different contexts.
+The next step is to figure out which link type is right for your workflow. Even though all the link types in ThingSPIN are used to create shortcuts to other dashboards or external websites, they work in different contexts.
 
 - If the link relates to most if not all of the panels in the dashboard, use a _dashboard link_.
 - If you want to drill down into specific panels, use a _panel link_.
@@ -46,8 +46,8 @@ Add links to other dashboards at the top of your current dashboard.
 1. Click **Links** and then click **Add Dashboard Link** or **New**.
 1. In **Type**, select **dashboards**.
 1. Select link options:
-   - **With tags** – Enter tags to limit the linked dashboards to only the ones with the tags you enter. Otherwise, Grafana includes links to all other dashboards.
-   - **As dropdown** – If you are linking to lots of dashboards, then you probably want to select this option and add an optional title to the dropdown. Otherwise, Grafana displays the dashboard links side by side across the top of your dashboard.
+   - **With tags** – Enter tags to limit the linked dashboards to only the ones with the tags you enter. Otherwise, ThingSPIN includes links to all other dashboards.
+   - **As dropdown** – If you are linking to lots of dashboards, then you probably want to select this option and add an optional title to the dropdown. Otherwise, ThingSPIN displays the dashboard links side by side across the top of your dashboard.
    - **Time range** – Select this option to include the dashboard time range in the link. When the user clicks the link, the linked dashboard opens with the indicated time range already set. **Example:** https://play.grafana.org/d/000000010/annotations?orgId=1&from=now-3h&to=now
    - **Variable values** – Select this option to include template variables currently used as query parameters in the link. When the user clicks the link, any matching templates in the linked dashboard are set to the values from the link. **Example:** https://play.grafana.org/d/000000074/alerting?var-app=backend&var-server=backend_01&var-server=backend_03&var-interval=1h
    - **Open in new tab** – Select this option if you want the dashboard link to open in a new tab or window.
@@ -55,7 +55,7 @@ Add links to other dashboards at the top of your current dashboard.
 
 ### Add a link to a URL
 
-Add a link to a URL at the top of your current dashboard. You can link to any available URL, including dashboards, panels, or external sites. You can even [control the time range](https://grafana.com/docs/grafana/latest/reference/timerange/#controlling-time-range-using-url) to ensure the user is zoomed in on the right data in Grafana.
+Add a link to a URL at the top of your current dashboard. You can link to any available URL, including dashboards, panels, or external sites. You can even [control the time range](https://grafana.com/docs/grafana/latest/reference/timerange/#controlling-time-range-using-url) to ensure the user is zoomed in on the right data in ThingSPIN.
 
 1. While viewing the dashboard you want to link, click the gear at the top of the screen to open **Dashboard settings**.
 1. Click **Links** and then click **Add Dashboard Link** or **New**.
@@ -83,7 +83,7 @@ To delete an existing dashboard link, click the red **X** next to the existing l
 
 ## Panel links
 
-Each panel can have its own set of links that are shown in the upper left corner of the panel. You can link to any available URL, including dashboards, panels, or external sites. You can even [control the time range](https://grafana.com/docs/grafana/latest/reference/timerange/#controlling-time-range-using-url) to ensure the user is zoomed in on the right data in Grafana.
+Each panel can have its own set of links that are shown in the upper left corner of the panel. You can link to any available URL, including dashboards, panels, or external sites. You can even [control the time range](https://grafana.com/docs/grafana/latest/reference/timerange/#controlling-time-range-using-url) to ensure the user is zoomed in on the right data in ThingSPIN.
 
 Click the icon on the top left corner of a panel to see available panel links. To see an example of panel links in action, check out [this demo](https://play.grafana.org/d/000000156/dashboard-with-panel-link?orgId=1).
 

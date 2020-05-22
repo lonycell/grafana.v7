@@ -1,9 +1,9 @@
 {
-  "author": "Grafana Labs",
+  "author": "ThingSPIN Labs",
   "license": "Apache-2.0",
   "name": "@grafana/e2e",
   "version": "7.1.0-pre.0",
-  "description": "Grafana End-to-End Test Library",
+  "description": "ThingSPIN End-to-End Test Library",
   "keywords": [
     "cli",
     "grafana",

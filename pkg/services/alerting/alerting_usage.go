@@ -13,19 +13,19 @@ import (
 type DatasourceAlertUsage map[string]int
 
 // UsageStats contains stats about alert rules configured in
-// Grafana.
+// ThingSPIN.
 type UsageStats struct {
 	DatasourceUsage DatasourceAlertUsage
 }
 
 // UsageStatsQuerier returns usage stats about alert rules
-// configured in Grafana.
+// configured in ThingSPIN.
 type UsageStatsQuerier interface {
 	QueryUsageStats() (*UsageStats, error)
 }
 
 // QueryUsageStats returns usage stats about alert rules
-// configured in Grafana.
+// configured in ThingSPIN.
 func (ae *AlertEngine) QueryUsageStats() (*UsageStats, error) {
 	cmd := &models.GetAllAlertsQuery{}
 	err := ae.Bus.Dispatch(cmd)

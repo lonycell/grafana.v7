@@ -6,15 +6,15 @@ aliases = ["/docs/grafana/latest/plugins/developing/code-styleguide/"]
 
 # Legacy code style guide
 
-This guide has two parts. The first part describes the metadata and the second part is a styleguide for HTML/CSS and JavaScript in Grafana plugins and applies if you are using ES6 in your plugin. If using TypeScript then the [Angular TypeScript styleguide](https://angular.io/styleguide) is recommended.
+This guide has two parts. The first part describes the metadata and the second part is a styleguide for HTML/CSS and JavaScript in ThingSPIN plugins and applies if you are using ES6 in your plugin. If using TypeScript then the [Angular TypeScript styleguide](https://angular.io/styleguide) is recommended.
 
 ## Metadata
 
-The plugin metadata consists of a plugin.json file and the README.md file. These two files are used by Grafana and Grafana.com.
+The plugin metadata consists of a plugin.json file and the README.md file. These two files are used by ThingSPIN and ThingSPIN.com.
 
 ### Plugin.json (mandatory)
 
-The plugin.json file is the same concept as the package.json file for an npm package. When Grafana starts it will scan the plugin folders and mount every folder that contains a plugin.json file unless the folder contains a subfolder named `dist`. In that case grafana will mount the `dist` folder instead.
+The plugin.json file is the same concept as the package.json file for an npm package. When ThingSPIN starts it will scan the plugin folders and mount every folder that contains a plugin.json file unless the folder contains a subfolder named `dist`. In that case grafana will mount the `dist` folder instead.
 
 The most important fields are the first three, especially the id. The convention for the plugin id is **[github username/org]-[plugin name]-[datasource|app|panel]** and it has to be unique.
 
@@ -40,7 +40,7 @@ Minimal plugin.json:
   "info": {
     "description": "Clock panel for grafana",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "keywords": ["clock", "panel"],
@@ -57,7 +57,7 @@ Minimal plugin.json:
 
 ### README.md
 
-The README.md file is rendered both in the grafana.com plugins page, and within the Grafana application. The only difference from how GitHub renders markdown is that html is not allowed.
+The README.md file is rendered both in the grafana.com plugins page, and within the ThingSPIN application. The only difference from how GitHub renders markdown is that html is not allowed.
 
 ## File and Directory Structure Conventions
 
@@ -87,7 +87,7 @@ johnnyb-awesome-datasource
 |-- README.md
 ```
 
-Most JavaScript projects have a build step and most Grafana plugins are built using Babel and ES6. The generated JavaScript should be placed in the `dist` directory and the source code in the `src` directory. We recommend that the plugin.json file be placed in the src directory and then copied over to the dist directory when building. The `README.md` can be placed in the root or in the dist directory.
+Most JavaScript projects have a build step and most ThingSPIN plugins are built using Babel and ES6. The generated JavaScript should be placed in the `dist` directory and the source code in the `src` directory. We recommend that the plugin.json file be placed in the src directory and then copied over to the dist directory when building. The `README.md` can be placed in the root or in the dist directory.
 
 Directories:
 
@@ -99,7 +99,7 @@ Directories:
 
 ## HTML and CSS
 
-For the HTML on editor tabs, we recommend using the inbuilt Grafana styles rather than defining your own. This makes plugins feel like a more natural part of Grafana. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
+For the HTML on editor tabs, we recommend using the inbuilt ThingSPIN styles rather than defining your own. This makes plugins feel like a more natural part of ThingSPIN. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
 
 Below is a minimal example of an editor row with one form group and two fields, a dropdown and a text input:
 
@@ -125,7 +125,7 @@ Use the `width-x` and `max-width-x` classes to control the width of your labels 
 
 ## Build Scripts
 
-Our recommendation is to use whatever you usually use - Grunt, Gulp or npm scripts. Most plugins seems to use Grunt so that is probably the easiest to get started with if you do not have a preferred build system. The only requirement is that it supports systemjs which is required by Grafana to load plugins.
+Our recommendation is to use whatever you usually use - Grunt, Gulp or npm scripts. Most plugins seems to use Grunt so that is probably the easiest to get started with if you do not have a preferred build system. The only requirement is that it supports systemjs which is required by ThingSPIN to load plugins.
 
 ## Linting
 

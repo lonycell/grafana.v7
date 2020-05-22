@@ -26,8 +26,8 @@ Add links to other dashboards at the top of your current dashboard.
 1. Click **Links** and then click **Add Dashboard Link** or **New**.
 1. In **Type**, select **dashboards**.
 1. Select link options:
-   - **With tags** – Enter tags to limit the linked dashboards to only the ones with the tags you enter. Otherwise, Grafana includes links to all other dashboards.
-   - **As dropdown** – If you are linking to lots of dashboards, then you probably want to select this option and add an optional title to the dropdown. Otherwise, Grafana displays the dashboard links side by side across the top of your dashboard.
+   - **With tags** – Enter tags to limit the linked dashboards to only the ones with the tags you enter. Otherwise, ThingSPIN includes links to all other dashboards.
+   - **As dropdown** – If you are linking to lots of dashboards, then you probably want to select this option and add an optional title to the dropdown. Otherwise, ThingSPIN displays the dashboard links side by side across the top of your dashboard.
    - **Time range** – Select this option to include the dashboard time range in the link. When the user clicks the link, the linked dashboard opens with the indicated time range already set. **Example:** https://play.grafana.org/d/000000010/annotations?orgId=1&from=now-3h&to=now
    - **Variable values** – Select this option to include template variables currently used as query parameters in the link. When the user clicks the link, any matching templates in the linked dashboard are set to the values from the link. **Example:** https://play.grafana.org/d/000000074/alerting?var-app=backend&var-server=backend_01&var-server=backend_03&var-interval=1h
    - **Open in new tab** – Select this option if you want the dashboard link to open in a new tab or window.
@@ -35,7 +35,7 @@ Add links to other dashboards at the top of your current dashboard.
 
 ## Add a URL link to a dashboard
 
-Add a link to a URL at the top of your current dashboard. You can link to any available URL, including dashboards, panels, or external sites. You can even control the time range to ensure the user is zoomed in on the right data in Grafana.
+Add a link to a URL at the top of your current dashboard. You can link to any available URL, including dashboards, panels, or external sites. You can even control the time range to ensure the user is zoomed in on the right data in ThingSPIN.
 
 1. While viewing the dashboard you want to link, click the gear at the top of the screen to open **Dashboard settings**.
 2. Click **Links** and then click **Add Dashboard Link** or **New**.

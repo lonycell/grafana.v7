@@ -101,7 +101,7 @@ const changelogTaskRunner: TaskRunner<ChangelogOptions> = useSpinner<ChangelogOp
 
     let markdown = '';
 
-    markdown += getPackageChangelog('Grafana', issues);
+    markdown += getPackageChangelog('ThingSPIN', issues);
     markdown += getPackageChangelog('grafana-toolkit', toolkitIssues);
     markdown += getPackageChangelog('grafana-ui', grafanaUiIssues);
 

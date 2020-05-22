@@ -1,6 +1,6 @@
 +++
-title = "Using InfluxDB in Grafana"
-description = "Guide for using InfluxDB in Grafana"
+title = "Using InfluxDB in ThingSPIN"
+description = "Guide for using InfluxDB in ThingSPIN"
 keywords = ["grafana", "influxdb", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/influxdb"]
@@ -10,13 +10,13 @@ parent = "datasources"
 weight = 2
 +++
 
-# Using InfluxDB in Grafana
+# Using InfluxDB in ThingSPIN
 
-Grafana ships with a feature-rich data source plugin for InfluxDB. The plugin includes a custom query editor and supports annotations and query templates.
+ThingSPIN ships with a feature-rich data source plugin for InfluxDB. The plugin includes a custom query editor and supports annotations and query templates.
 
 ## Add the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the ThingSPIN icon in the top header.
 2. In the side menu under the `Dashboards` link you should find a link named `Data Sources`.
 3. Click the `+ Add data source` button in the top header.
 4. Select *InfluxDB* from the *Type* dropdown.
@@ -28,7 +28,7 @@ Name | Description
 *Name* | The data source name. This is how you refer to the data source in panels and queries.
 *Default* | Default data source means that it will be pre-selected for new panels.
 *Url* | The HTTP protocol, IP address and port of your InfluxDB API (InfluxDB API port is by default 8086)
-*Access* | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.
+*Access* | Server (default) = URL needs to be accessible from the ThingSPIN backend/server, Browser = URL needs to be accessible from the browser.
 *Database* | Name of your InfluxDB database
 *User* | Name of your database user
 *Password* | Database user's password
@@ -38,7 +38,7 @@ Access mode controls how requests to the data source will be handled. Server sho
 
 ### Server access mode (Default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
+All requests will be made from the browser to ThingSPIN backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
 
 ### Browser access mode
 
@@ -73,7 +73,7 @@ the tag key and then selecting `--remove tag filter--`.
 
 **Regex matching**
 
-You can type in regex patterns for metric names or tag filter values. Be sure to wrap the regex pattern in forward slashes (`/`). Grafana automatically adjusts the filter tag condition to use the InfluxDB regex match condition operator (`=~`).
+You can type in regex patterns for metric names or tag filter values. Be sure to wrap the regex pattern in forward slashes (`/`). ThingSPIN automatically adjusts the filter tag condition to use the InfluxDB regex match condition operator (`=~`).
 
 ### Field and Aggregation functions
 In the `SELECT` row you can specify what fields and functions you want to use. If you have a
@@ -119,7 +119,7 @@ change the option `Format As` to `Table` if you want to show raw data in the `Ta
 
 ## Querying Logs (BETA)
 
-> Only available in Grafana v6.3+.
+> Only available in ThingSPIN v6.3+.
 
 Querying and displaying log data from InfluxDB is available via [Explore]({{< relref "../explore" >}}).
 
@@ -191,7 +191,7 @@ SELECT mean("value") FROM "logins" WHERE "hostname" =~ /^[[host]]$/ AND $timeFil
 ```
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the *Multi-value* or *Include all value*
-options are enabled, Grafana converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
+options are enabled, ThingSPIN converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
 
 Example Dashboard:
 [InfluxDB Templated Dashboard](https://play.grafana.org/dashboard/db/influxdb-templated)
@@ -215,7 +215,7 @@ For InfluxDB, you need to enter a query like the one in the example above. The `
 
 ## Configure the data source with provisioning
 
-You can now configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}}).
+You can now configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}}).
 
 Here are some provisioning examples for this data source.
 

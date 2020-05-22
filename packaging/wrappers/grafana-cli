@@ -2,7 +2,7 @@
 
 # Wrapper for the grafana-cli binary
 # This file serves as a wrapper for the grafana-cli binary. It ensures we set
-# the system-wide Grafana configuration that was bundled with the package as we
+# the system-wide ThingSPIN configuration that was bundled with the package as we
 # use the binary.
 
 DEFAULT=/etc/default/grafana

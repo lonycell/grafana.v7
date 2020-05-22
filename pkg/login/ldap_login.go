@@ -64,9 +64,9 @@ var loginUsingLDAP = func(query *models.LoginUserQuery) (bool, error) {
 	return true, nil
 }
 
-// DisableExternalUser marks external user as disabled in Grafana db
+// DisableExternalUser marks external user as disabled in ThingSPIN db
 func DisableExternalUser(username string) error {
-	// Check if external user exist in Grafana
+	// Check if external user exist in ThingSPIN
 	userQuery := &models.GetExternalUserInfoByLoginQuery{
 		LoginOrEmail: username,
 	}

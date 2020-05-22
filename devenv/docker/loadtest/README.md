@@ -1,4 +1,4 @@
-# Grafana load test
+# ThingSPIN load test
 
 Runs load tests and checks using [k6](https://k6.io/).
 
@@ -7,7 +7,7 @@ Runs load tests and checks using [k6](https://k6.io/).
 Docker
 
 To run the auth proxy test you'll need to setup nginx proxy from docker block and
-enable auth proxy together with configuring Grafana for auth proxy.
+enable auth proxy together with configuring ThingSPIN for auth proxy.
 
 ## Run
 

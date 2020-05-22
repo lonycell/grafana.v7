@@ -329,7 +329,7 @@ func TestAppInsightsPluginRoutes(t *testing.T) {
 				URL:    "https://api.applicationinsights.io",
 				Headers: []plugins.AppPluginRouteHeader{
 					{Name: "X-API-Key", Content: "{{.SecureJsonData.appInsightsApiKey}}"},
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "ThingSPIN"},
 				},
 			},
 			{
@@ -338,7 +338,7 @@ func TestAppInsightsPluginRoutes(t *testing.T) {
 				URL:    "https://api.applicationinsights.azure.cn",
 				Headers: []plugins.AppPluginRouteHeader{
 					{Name: "X-API-Key", Content: "{{.SecureJsonData.appInsightsApiKey}}"},
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "ThingSPIN"},
 				},
 			},
 		},

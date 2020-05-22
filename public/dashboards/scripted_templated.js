@@ -2,7 +2,7 @@
 
 /*
  * Complex scripted dashboard
- * This script generates a dashboard object that Grafana can load. It also takes a number of user
+ * This script generates a dashboard object that ThingSPIN can load. It also takes a number of user
  * supplied URL parameters (int ARGS variable)
  *
  * Return a dashboard object, or a function

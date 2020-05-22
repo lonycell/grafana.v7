@@ -67,7 +67,7 @@ export const dateTimeFormatTimeAgo: DateTimeFormatter = (dateInUtc, options?) =>
   toTz(dateInUtc, getTimeZone(options)).fromNow();
 
 /**
- * Helper function to format date and time according to the Grafana default formatting, but it
+ * Helper function to format date and time according to the ThingSPIN default formatting, but it
  * also appends the time zone abbreviation at the end e.g. 2020-05-20 13:37:00 CET. If no options
  * are supplied, then default values are used. For more details please see {@link DateTimeOptions}.
  *

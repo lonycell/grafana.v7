@@ -151,7 +151,7 @@ func (server *HTTPServer) GetLDAPStatus(c *models.ReqContext) Response {
 	return JSON(http.StatusOK, serverDTOs)
 }
 
-// PostSyncUserWithLDAP enables a single Grafana user to be synchronized against LDAP
+// PostSyncUserWithLDAP enables a single ThingSPIN user to be synchronized against LDAP
 func (server *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) Response {
 	if !ldap.IsEnabled() {
 		return Error(http.StatusBadRequest, "LDAP is not enabled", nil)
@@ -190,7 +190,7 @@ func (server *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) Response {
 
 	if err != nil {
 		if err == multildap.ErrDidNotFindUser { // User was not in the LDAP server - we need to take action:
-			if setting.AdminUser == query.Result.Login { // User is *the* Grafana Admin. We cannot disable it.
+			if setting.AdminUser == query.Result.Login { // User is *the* ThingSPIN Admin. We cannot disable it.
 				errMsg := fmt.Sprintf(`Refusing to sync grafana super admin "%s" - it would be disabled`, query.Result.Login)
 				logger.Error(errMsg)
 				return Error(http.StatusBadRequest, errMsg, err)
@@ -230,7 +230,7 @@ func (server *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) Response {
 	return Success("User synced successfully")
 }
 
-// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in Grafana when synced.
+// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in ThingSPIN when synced.
 func (server *HTTPServer) GetUserFromLDAP(c *models.ReqContext) Response {
 	if !ldap.IsEnabled() {
 		return Error(http.StatusBadRequest, "LDAP is not enabled", nil)

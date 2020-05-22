@@ -9,7 +9,7 @@ type = "docs"
 
 ## BackendSrv interface
 
-Used to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc. The BackendSrv is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) under the hood to handle all the communication.
+Used to communicate via http(s) to a remote backend such as the ThingSPIN backend, a datasource etc. The BackendSrv is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) under the hood to handle all the communication.
 
 The request function can be used to perform a remote call by specifying a [BackendSrvRequest](./runtime/backendsrvrequest.md)<!-- -->. To make the BackendSrv a bit easier to use we have added a couple of shorthand functions that will use default values executing the request.
 
@@ -26,13 +26,13 @@ import { BackendSrv } from '@grafana/runtime';
 
 ## Remarks
 
-By default Grafana will display an error message alert if the remote call fails. If you want to prevent this from happending you need to catch the error thrown by the BackendSrv and set the `isHandled = true` on the incoming error.
+By default ThingSPIN will display an error message alert if the remote call fails. If you want to prevent this from happending you need to catch the error thrown by the BackendSrv and set the `isHandled = true` on the incoming error.
 
 <b>Methods</b>
 
 |  Method | Description |
 |  --- | --- |
-|  [datasourceRequest(options)](#datasourcerequest-method) | Special function used to communicate with datasources that will emit core events that the Grafana QueryInspector and QueryEditor is listening for to be able to display datasource query information. Can be skipped by adding <code>option.silent</code> when initializing the request. |
+|  [datasourceRequest(options)](#datasourcerequest-method) | Special function used to communicate with datasources that will emit core events that the ThingSPIN QueryInspector and QueryEditor is listening for to be able to display datasource query information. Can be skipped by adding <code>option.silent</code> when initializing the request. |
 |  [delete(url)](#delete-method) |  |
 |  [get(url, params, requestId)](#get-method) |  |
 |  [patch(url, data)](#patch-method) |  |
@@ -42,7 +42,7 @@ By default Grafana will display an error message alert if the remote call fails.
 
 ### datasourceRequest method
 
-Special function used to communicate with datasources that will emit core events that the Grafana QueryInspector and QueryEditor is listening for to be able to display datasource query information. Can be skipped by adding `option.silent` when initializing the request.
+Special function used to communicate with datasources that will emit core events that the ThingSPIN QueryInspector and QueryEditor is listening for to be able to display datasource query information. Can be skipped by adding `option.silent` when initializing the request.
 
 <b>Signature</b>
 

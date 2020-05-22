@@ -22,7 +22,7 @@ interface State {
   newGroupId?: string;
 }
 
-const headerTooltip = `Sync LDAP or OAuth groups with your Grafana teams.`;
+const headerTooltip = `Sync LDAP or OAuth groups with your ThingSPIN teams.`;
 
 export class TeamGroupSync extends PureComponent<Props, State> {
   constructor(props: Props) {

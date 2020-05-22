@@ -9,19 +9,19 @@ weight = 300
 
 # Transformations
 
-> **Note:** This documentation refers to a Grafana 7.0 beta feature. This documentation will be frequently updated to reflect updates to the feature, and it will probably be broken into smaller sections when the feature moves out of beta.
+> **Note:** This documentation refers to a ThingSPIN 7.0 beta feature. This documentation will be frequently updated to reflect updates to the feature, and it will probably be broken into smaller sections when the feature moves out of beta.
 
-This page explains what transformations in Grafana are and how to use them.
+This page explains what transformations in ThingSPIN are and how to use them.
 
-Transformations process the result set before it’s passed to the visualization. You access transformations in the Transform tab of the Grafana panel editor.
+Transformations process the result set before it’s passed to the visualization. You access transformations in the Transform tab of the ThingSPIN panel editor.
 
 Transformations allow you to rename fields, join separate time series together, do math across queries, and more. For users, with large dashboards or with heavy queries, being able to reuse the query result from one panel in another panel can be a huge performance gain.
 
-> **Note:** Transformations sometimes result in data that cannot be graphed. When that happens, Grafana displays a suggestion on the visualization that you can click to switch to table visualization. This often helps you better understand what the transformation is doing to your data.
+> **Note:** Transformations sometimes result in data that cannot be graphed. When that happens, ThingSPIN displays a suggestion on the visualization that you can click to switch to table visualization. This often helps you better understand what the transformation is doing to your data.
 
 ## Transformation execution order
 
-Grafana applies transformations in the sequence that they are listed on the screen. Every transformation creates a new result set that is passed to the next transformation in the pipeline.
+ThingSPIN applies transformations in the sequence that they are listed on the screen. Every transformation creates a new result set that is passed to the next transformation in the pipeline.
 
 The order can make a huge difference in how your results look. For example, if you use a Reduce transformation to condense all the results of one column to a single value, then you can only apply transformations to that single value.
 
@@ -59,7 +59,7 @@ Transformations are available from the Transform tab in the bottom pane of the p
 
 ## Transformation types and options
 
-Grafana comes with the following transformations:
+ThingSPIN comes with the following transformations:
 
 - [Reduce](#reduce) - Reduce all rows or data points to a single value using a function like max, min, mean, or last.
 - Filter by name - Filter a result set’s fields by name. This might be useful when you want to show only part of your result set.
@@ -77,7 +77,7 @@ Apply a _Reduce_ transformation when you want to simplify your results down to o
 
 In the **Calculations** field, enter one or more calculation types. Click to see a list of calculation choices. For information about available calculations, refer to the [Calculation list]({{< relref "calculations-list.md" >}}).
 
-Once you select at least one calculation, Grafana reduces the results down to one value using the calculation you select. If you select more than one calculation, then more than one value is displayed.
+Once you select at least one calculation, ThingSPIN reduces the results down to one value using the calculation you select. If you select more than one calculation, then more than one value is displayed.
 
 Here's an example of a table with time series data. Before I apply the transformation, you can see all the data organized by time.
 
@@ -91,7 +91,7 @@ After I apply the transformation, there is no time value and each column has bee
 
 Use this transformation to remove portions of the query results.
 
-Grafana displays the **Identifier** field, followed by the fields returned by your query.
+ThingSPIN displays the **Identifier** field, followed by the fields returned by your query.
 
 You can apply filters in one of two ways:
 
@@ -116,7 +116,7 @@ Here is the same query using a Stat visualization.
 
 Use this transformation in panels that have multiple queries if you want to hide one or more of the queries.
 
-Grafana displays the query identification letters in dark gray text. Click a query identifier to toggle filtering. If the query letter is white, then the results are displayed. If the query letter is dark, then the results are hidden.
+ThingSPIN displays the query identification letters in dark gray text. Click a query identifier to toggle filtering. If the query letter is white, then the results are displayed. If the query letter is dark, then the results are hidden.
 
 In the example below, the panel has three queries (A, B, C). I removed the B query from the visualization.
 
@@ -128,7 +128,7 @@ Use this transformation to rename, reorder, or hide fields returned by the query
 
 > **Note:** This transformation only works in panels with a single query. If your panel has multiple queries, then you must either apply an Outer join transformation or remove the extra queries.
 
-Grafana displays a list of fields returned by the query. You can:
+ThingSPIN displays a list of fields returned by the query. You can:
 
 - Change field order by hovering your cursor over a field. The cursor turns into a hand and then you can drag the field to its new place.
 - Hide or show a field by clicking the eye icon next to the field name. 
@@ -160,7 +160,7 @@ Use this transformation to add a new field calculated from two other fields. Eac
   - **Reduce row -** Apply selected calculation on each row of selected fields independently.
   - **Binary option -** Apply basic math operation(sum, multiply, etc) on values in a single row from two selected fields.
 - **Field name -** Select the names of fields you want to use in the calculation for the new field.
-- **Calculation -** Select a calculation to use when Grafana creates the new field. Click in the field to see a list of calculation choices. For information about available calculations, refer to the [Calculation list]({{< relref "calculations-list.md" >}}).
+- **Calculation -** Select a calculation to use when ThingSPIN creates the new field. Click in the field to see a list of calculation choices. For information about available calculations, refer to the [Calculation list]({{< relref "calculations-list.md" >}}).
 - **Alias -** (Optional) Enter the name of your new field. If you leave this blank, then the field will be named to match the calculation.
 - **Replace all fields -** (Optional) Select this option if you want to hide all other fields and display only your calculated field in the visualization.
 
@@ -174,7 +174,7 @@ Use this transformation to group series by time and return labels or tags as fie
 
 > **Note:** In order to apply this transformation, you must have a query to a data source that returns labeled fields.
 
-When you select this transformation, Grafana automatically transforms all labeled data into fields.
+When you select this transformation, ThingSPIN automatically transforms all labeled data into fields.
 
 For this example, I manually defined labels in the Random Walk visualization of TestData DB.
 
@@ -188,6 +188,6 @@ After I apply the transformation, my labels appear in the table as fields.
 
 To see the input and the output result sets of the transformation, click the bug icon on the right side of the transformation row.
 
-Grafana displays the transformation debug view below the transformation row.
+ThingSPIN displays the transformation debug view below the transformation row.
 
 {{< docs-imagebox img="/img/docs/transformations/debug-transformations-7-0.png" class="docs-image--no-shadow" max-width= "1100px" >}}

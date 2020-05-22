@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v6.4"
-description = "Feature and improvement highlights for Grafana v6.4"
+title = "What's new in ThingSPIN v6.4"
+description = "Feature and improvement highlights for ThingSPIN v6.4"
 keywords = ["grafana", "new", "documentation", "6.4", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,13 +10,13 @@ parent = "whatsnew"
 weight = -15
 +++
 
-# What's new in Grafana v6.4
+# What's new in ThingSPIN v6.4
 
 For all details please read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md).
 
 ## Highlights
 
-Grafana 6.4 comes with a lot of new features and enhancements backed with tons of work around the data models and query execution that is going to enable powerful future capabilities.
+ThingSPIN 6.4 comes with a lot of new features and enhancements backed with tons of work around the data models and query execution that is going to enable powerful future capabilities.
 Some of those new capabilities can already be seen in this release, like sharing query results between panels.
 
 - [**Explore:** Go back to dashboard (with query changes)]({{< relref "#go-back-to-dashboard-from-explore" >}})
@@ -70,8 +70,8 @@ Limitations: Even though Live tailing can be enabled on logs panels in dashboard
 
 ## Data Links improvements
 
-With Grafana 6.3 we introduced a new way of creating [Data Links](https://grafana.com/blog/2019/08/27/new-in-grafana-6.3-easy-to-use-data-links/).
-Grafana 6.4 improves Data Links and adds them to the Gauge and Bar Gauge and panels.
+With ThingSPIN 6.3 we introduced a new way of creating [Data Links](https://grafana.com/blog/2019/08/27/new-in-grafana-6.3-easy-to-use-data-links/).
+ThingSPIN 6.4 improves Data Links and adds them to the Gauge and Bar Gauge and panels.
 
 With Data Links you can define dynamic links to other dashboards and systems. The link can now reference template variables and query results like series name and labels, field name, value and time.
 
@@ -86,7 +86,7 @@ To show a horizontal line through the Y-value of the datapoint across the whole 
 
 ## Share query results between panels
 
-Grafana 6.4 continues the work started in 6.3 of creating a data model and query execution lifecycle that can support robust analytics and streaming.  These changes are mostly structural and lay the foundation for powerful features in future releases.
+ThingSPIN 6.4 continues the work started in 6.3 of creating a data model and query execution lifecycle that can support robust analytics and streaming.  These changes are mostly structural and lay the foundation for powerful features in future releases.
 
 The first new feature all these changes have enabled is the ability to share query results between panels. So for example if you have an expensive query you can visualize the same results in a graph, table and singlestat panel. To reuse another panel’s query result select the data source named `-- Dashboard --` and then select the panel.
 
@@ -105,13 +105,13 @@ You can read more about the grafana-toolkit [in the Readme](https://github.com/g
 
 ## PhantomJS deprecation
 
-[PhantomJS](https://phantomjs.org/), which is used for rendering images of dashboards and panels, have been deprecated and will be removed in a future Grafana release. A deprecation warning will from now on be logged when Grafana starts up if PhantomJS is in use.
+[PhantomJS](https://phantomjs.org/), which is used for rendering images of dashboards and panels, have been deprecated and will be removed in a future ThingSPIN release. A deprecation warning will from now on be logged when ThingSPIN starts up if PhantomJS is in use.
 
-Please consider migrating from PhantomJS to the [Grafana Image Renderer plugin](https://grafana.com/grafana/plugins/grafana-image-renderer).
+Please consider migrating from PhantomJS to the [ThingSPIN Image Renderer plugin](https://grafana.com/grafana/plugins/grafana-image-renderer).
 
 ## Alpine-based Docker image
 
-Grafana’s Docker image is now based on Alpine 3.10 and should from now on report zero vulnerabilities when scanning the image for security vulnerabilities.
+ThingSPIN’s Docker image is now based on Alpine 3.10 and should from now on report zero vulnerabilities when scanning the image for security vulnerabilities.
 
 ## LDAP Debug UI
 
@@ -119,15 +119,15 @@ After listening to customer feedback, we have been working at improving the expe
 
 You'll be able to see how a user authenticating with LDAP would be mapped and whether your LDAP integration is working correctly. Furthermore, it provides a simpler method to test your integration with LDAP server(s) and have a clear view of how attributes are mapped between both systems.
 
-The feature is currently limited to Grafana Server Admins.
+The feature is currently limited to ThingSPIN Server Admins.
 
 For more information on how to use this new feature, follow the [guide]({{< relref "../auth/ldap.md#ldap-debug-view" >}}).
 
-## Grafana Enterprise
+## ThingSPIN Enterprise
 
 ### Reporting
 
-A common request from Enterprise users have been to be able to set up reporting for Grafana, and now it’s here. A report is simply a PDF of a Grafana dashboard, outside of just generating a PDF you can set up a schedule so that you can get the report emailed to yourself (or whoever is interested) whenever it suits you.
+A common request from Enterprise users have been to be able to set up reporting for ThingSPIN, and now it’s here. A report is simply a PDF of a ThingSPIN dashboard, outside of just generating a PDF you can set up a schedule so that you can get the report emailed to yourself (or whoever is interested) whenever it suits you.
 
 This feature is currently limited to Organization Admins.
 
@@ -135,7 +135,7 @@ This feature is currently limited to Organization Admins.
 
 ### GitLab OAuth Team Sync support
 
-GitLab OAuth gets support for Team Sync, making it possible to synchronize your GitLab Groups with Teams in Grafana.
+GitLab OAuth gets support for Team Sync, making it possible to synchronize your GitLab Groups with Teams in ThingSPIN.
 
 [Read more about Team Sync](https://grafana.com/docs/auth/team-sync/).
 

@@ -197,7 +197,7 @@ describe('given dashboard with repeated panels', () => {
   });
 
   it('should add grafana version', () => {
-    const require: any = _.find(exported.__requires, { name: 'Grafana' });
+    const require: any = _.find(exported.__requires, { name: 'ThingSPIN' });
     expect(require.type).toBe('grafana');
     expect(require.id).toBe('grafana');
     expect(require.version).toBe('3.0.2');
@@ -252,8 +252,8 @@ stubs['-- Mixed --'] = {
   },
 };
 
-stubs['-- Grafana --'] = {
-  name: '-- Grafana --',
+stubs['-- ThingSPIN --'] = {
+  name: '-- ThingSPIN --',
   meta: {
     id: 'grafana',
     info: { version: '1.2.1' },

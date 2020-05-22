@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.3"
-description = "Feature and improvement highlights for Grafana v4.3"
+title = "What's new in ThingSPIN v4.3"
+description = "Feature and improvement highlights for ThingSPIN v4.3"
 keywords = ["grafana", "new", "documentation", "4.3.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,9 +10,9 @@ parent = "whatsnew"
 weight = -2
 +++
 
-## What's new in Grafana v4.3
+## What's new in ThingSPIN v4.3
 
-Grafana v4.3 Beta is now [available for download](https://grafana.com/grafana/download/4.3.0-beta1).
+ThingSPIN v4.3 Beta is now [available for download](https://grafana.com/grafana/download/4.3.0-beta1).
 
 ## Release Highlights
 
@@ -23,7 +23,7 @@ Grafana v4.3 Beta is now [available for download](https://grafana.com/grafana/do
 - New [MySQL Data Source](http://docs.grafana.org/features/datasources/mysql/) (alpha version to get some early feedback)
 - 60+ small fixes and improvements, most of them contributed by our fantastic community!
 
-Check out the [New Features in v4.3 Dashboard](https://play.grafana.org/dashboard/db/new-features-in-v4-3?orgId=1) on the Grafana Play site for a showcase of these new features.
+Check out the [New Features in v4.3 Dashboard](https://play.grafana.org/dashboard/db/new-features-in-v4-3?orgId=1) on the ThingSPIN Play site for a showcase of these new features.
 
 ## Histogram Support
 
@@ -66,11 +66,11 @@ labeling the state of the data source as Alpha. Instead of holding up the releas
 
 ## Health Check Endpoint
 
-Now you can monitor the monitoring with the Health Check Endpoint! The new `/api/health` endpoint returns HTTP 200 OK if everything is up and HTTP 503 Error if the Grafana database cannot be pinged.
+Now you can monitor the monitoring with the Health Check Endpoint! The new `/api/health` endpoint returns HTTP 200 OK if everything is up and HTTP 503 Error if the ThingSPIN database cannot be pinged.
 
 ## Lazy Load Panels
 
-Grafana now delays loading panels until they become visible (scrolled into view). This means panels out of view are not sending requests thereby reducing the load on your time series database.
+ThingSPIN now delays loading panels until they become visible (scrolled into view). This means panels out of view are not sending requests thereby reducing the load on your time series database.
 
 ## Prometheus - Table Data (column per label)
 
@@ -101,4 +101,4 @@ Head to the [v4.3 download page](https://grafana.com/grafana/download) for downl
 
 ## Thanks
 
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!
+A big thanks to all the ThingSPIN users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!

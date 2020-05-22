@@ -9,7 +9,7 @@ type = "docs"
 
 ## @grafana/e2e-selectors package
 
-A library containing the different design components of the Grafana ecosystem.
+A library containing the different design components of the ThingSPIN ecosystem.
 
 ## Interfaces
 

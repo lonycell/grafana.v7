@@ -28,7 +28,7 @@ export const commonColorsPalette = {
 const SPACING_BASE = 8;
 
 const theme: GrafanaThemeCommons = {
-  name: 'Grafana Default',
+  name: 'ThingSPIN Default',
   typography: {
     fontFamily: {
       sansSerif: "'Roboto', 'Helvetica Neue', Arial, sans-serif",

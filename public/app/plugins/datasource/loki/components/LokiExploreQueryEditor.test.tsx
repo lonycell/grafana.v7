@@ -34,7 +34,7 @@ const setup = (renderMethod: any, propOverrides?: object) => {
       scopedVars: {},
       targets: [],
       timezone: 'GMT',
-      app: 'Grafana',
+      app: 'ThingSPIN',
       startTime: 0,
     },
     timeRange: {

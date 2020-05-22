@@ -11,7 +11,7 @@ weight = 7
 
 # Time Range Controls
 
-Grafana provides numerous ways to manage the time ranges of the data being visualized, both at the Dashboard-level and the Panel-level.
+ThingSPIN provides numerous ways to manage the time ranges of the data being visualized, both at the Dashboard-level and the Panel-level.
 
 <img class="no-shadow" src="/img/docs/v50/timepicker.png" width="700px">
 
@@ -52,7 +52,7 @@ From Dashboard settings, click the Timepicker tab. From here you can specify the
 
 ### Defining Now
 
-Grafana offers the ability to override the `now` value on a per dashboard basis. Most commonly, this feature is used to accommodate known delays in data aggregation to avoid null values.
+ThingSPIN offers the ability to override the `now` value on a per dashboard basis. Most commonly, this feature is used to accommodate known delays in data aggregation to avoid null values.
 
 ### Time zone options
 Starting in version 7.0, you can override the time zone used to display date and time values in a dashboard. 

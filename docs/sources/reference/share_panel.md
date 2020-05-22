@@ -27,7 +27,7 @@ https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=156871968017
 - **height**: height in pixels. Default is 400.
 - **tz**: timezone in the format `UTC%2BHH%3AMM` where HH and MM are offset in hours and minutes after UTC
 - **timeout**: number of seconds. The timeout can be increased if the query for the panel needs more than the default 30 seconds.
-- **scale**: numeric value to configure device scale factor. Default is 1. Use a higher value to produce more detailed images (higher DPI). Supported in Grafana v7.0+.
+- **scale**: numeric value to configure device scale factor. Default is 1. Use a higher value to produce more detailed images (higher DPI). Supported in ThingSPIN v7.0+.
 
 ## Embed Panel
 
@@ -41,7 +41,7 @@ Example:
 <iframe src="https://snapshot.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from=1493369923321&to=1493377123321&panelId=4" width="650" height="300" frameborder="0"></iframe>
 ```
 
-Below there should be an interactive Grafana graph embedded in an iframe:
+Below there should be an interactive ThingSPIN graph embedded in an iframe:
 
 <iframe src="https://snapshot.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from=1493369923321&to=1493377123321&panelId=4" width="650" height="300" frameborder="0"></iframe>
 

@@ -20,7 +20,7 @@ The home directory will be `/home/circleci`
 
 All of the above directories are in the path, so there is no need to specify fully qualified paths.
 
-## Grafana
+## ThingSPIN
 - Installed in `/home/circleci/src/grafana`
 - `yarn install` has been run
 
@@ -34,7 +34,7 @@ There are 4 previous versions pre-downloaded to /usr/local/grafana. These versio
 To test, your CircleCI config will need a run section with something similar to the following
 ```
 - run:
-        name: Setup Grafana (local install)
+        name: Setup ThingSPIN (local install)
         command: |
           sudo dpkg -i /usr/local/grafana/deb/grafana_6.6.2_amd64.deb
           sudo cp ci/grafana-test-env/custom.ini /usr/share/grafana/conf/custom.ini

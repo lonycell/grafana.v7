@@ -15,7 +15,7 @@ exports[`PromExploreQueryEditor should render component 1`] = `
   data={
     Object {
       "request": Object {
-        "app": "Grafana",
+        "app": "ThingSPIN",
         "dashboardId": 1,
         "interval": "1s",
         "panelId": 1,

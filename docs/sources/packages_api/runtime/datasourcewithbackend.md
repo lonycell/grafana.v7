@@ -9,7 +9,7 @@ type = "docs"
 
 ## DataSourceWithBackend class
 
-Extend this class to implement a data source plugin that is depending on the Grafana backend API.
+Extend this class to implement a data source plugin that is depending on the ThingSPIN backend API.
 
 <b>Signature</b>
 

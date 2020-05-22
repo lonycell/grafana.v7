@@ -1,14 +1,14 @@
 # Database
 
-Grafana uses a database to persist settings between restarts. In fact, if you don't specify one, Grafana creates a [SQLite3](https://www.sqlite.org/) database file on your local disk. This guide explains how to store and retrieve data from the database.
+ThingSPIN uses a database to persist settings between restarts. In fact, if you don't specify one, ThingSPIN creates a [SQLite3](https://www.sqlite.org/) database file on your local disk. This guide explains how to store and retrieve data from the database.
 
-Grafana supports the [following databases](https://grafana.com/docs/installation/requirements/#database):
+ThingSPIN supports the [following databases](https://grafana.com/docs/installation/requirements/#database):
 
 - [MySQL](https://www.mysql.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [SQLite3](https://www.sqlite.org/)
 
-Grafana uses the [XORM](https://xorm.io) framework for persisting objects to the database. For more information on how to use XORM, refer to the [documentation](http://gobook.io/read/github.com/go-xorm/manual-en-US/).
+ThingSPIN uses the [XORM](https://xorm.io) framework for persisting objects to the database. For more information on how to use XORM, refer to the [documentation](http://gobook.io/read/github.com/go-xorm/manual-en-US/).
 
 [Services](services.md) don't use XORM directly. Instead, services use the _SQL store_, a special type of service that provides an abstraction for the database layer. There are two ways of using the `sqlstore`: using `sqlstore` handlers, and using the `SqlStore` instance.
 
@@ -73,7 +73,7 @@ For transactions, use the `WithTransactionalDbSession` method instead.
 
 ## Migrations
 
-As Grafana evolves, it becomes necessary to create _schema migrations_ for one or more database tables.
+As ThingSPIN evolves, it becomes necessary to create _schema migrations_ for one or more database tables.
 
 To see all the types of migrations you can add, refer to [migrations.go](/pkg/services/sqlstore/migrator/migrations.go).
 

@@ -1,15 +1,15 @@
 +++
-title = "What's new in Grafana v2.5"
-description = "Feature and improvement highlights for Grafana v2.5"
+title = "What's new in ThingSPIN v2.5"
+description = "Feature and improvement highlights for ThingSPIN v2.5"
 keywords = ["grafana", "new", "documentation", "2.5", "release notes"]
 type = "docs"
 +++
 
-# What's new in Grafana v2.5
+# What's new in ThingSPIN v2.5
 
 ## Release highlights
 This is an exciting release, and we want to share some of the highlights. The release includes many
-fixes and enhancements to all areas of Grafana, like new Data Sources, a new and improved timepicker, user invites, panel
+fixes and enhancements to all areas of ThingSPIN, like new Data Sources, a new and improved timepicker, user invites, panel
 resize handles and improved InfluxDB and OpenTSDB support.
 
 ### New time range controls
@@ -43,8 +43,8 @@ Try the new Elasticsearch query editor on the [play.grafana.org](https://play.gr
 
 <img src="/img/docs/whatsnew_2_5/cloudwatch.png" alt="Cloudwatch editor">
 
-Grafana 2.5 ships with a new CloudWatch data source that will allow you to query and visualize CloudWatch
-metrics directly from Grafana.
+ThingSPIN 2.5 ships with a new CloudWatch data source that will allow you to query and visualize CloudWatch
+metrics directly from ThingSPIN.
 
 - Rich editor with auto completion for metric names, namespaces and dimensions
 - Templating queries for generic dashboards
@@ -54,7 +54,7 @@ metrics directly from Grafana.
 
 <img src="/img/docs/whatsnew_2_5/prometheus_editor.png" alt="Prometheus editor">
 
-Grafana 2.5 ships with a new Prometheus data source that will allow you to query and visualize data
+ThingSPIN 2.5 ships with a new Prometheus data source that will allow you to query and visualize data
 stored in Prometheus.
 
 
@@ -102,4 +102,4 @@ view the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG
 
 - - -
 
-### <a href="https://grafana.com/get">Download Grafana 2.5 now</a>
+### <a href="https://grafana.com/get">Download ThingSPIN 2.5 now</a>

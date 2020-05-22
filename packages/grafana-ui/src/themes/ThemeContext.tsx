@@ -14,7 +14,7 @@ type Subtract<T, K> = Omit<T, keyof K>;
  */
 let ThemeContextMock: React.Context<GrafanaTheme> | null = null;
 
-// Use Grafana Dark theme by default
+// Use ThingSPIN Dark theme by default
 export const ThemeContext = React.createContext(getTheme(GrafanaThemeType.Dark));
 ThemeContext.displayName = 'ThemeContext';
 

@@ -3,7 +3,7 @@ import { auto } from 'angular';
 let singleton: auto.IInjectorService;
 
 /**
- * Used during startup by Grafana to temporarily expose the angular injector to
+ * Used during startup by ThingSPIN to temporarily expose the angular injector to
  * pure javascript plugins using {@link getLegacyAngularInjector}.
  *
  * @internal

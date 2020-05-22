@@ -91,7 +91,7 @@ const darkTheme: GrafanaTheme = {
   type: GrafanaThemeType.Dark,
   isDark: true,
   isLight: false,
-  name: 'Grafana Dark',
+  name: 'ThingSPIN Dark',
   palette: {
     ...basicColors,
     brandPrimary: basicColors.orange,

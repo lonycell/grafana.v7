@@ -94,7 +94,7 @@ func TestParsingAzureLogAnalyticsResponses(t *testing.T) {
 		Err      require.ErrorAssertionFunc
 	}{
 		{
-			name:     "Response with single series should be parsed into the Grafana time series format",
+			name:     "Response with single series should be parsed into the ThingSPIN time series format",
 			testFile: "loganalytics/1-log-analytics-response-metrics-single-series.json",
 			query:    "test query",
 			series: tsdb.TimeSeriesSlice{
@@ -111,7 +111,7 @@ func TestParsingAzureLogAnalyticsResponses(t *testing.T) {
 			Err:  require.NoError,
 		},
 		{
-			name:     "Response with multiple series should be parsed into the Grafana time series format",
+			name:     "Response with multiple series should be parsed into the ThingSPIN time series format",
 			testFile: "loganalytics/2-log-analytics-response-metrics-multiple-series.json",
 			query:    "test query",
 			series: tsdb.TimeSeriesSlice{
@@ -321,7 +321,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.io/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "ThingSPIN"},
 				},
 			},
 			{
@@ -329,7 +329,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.azure.cn/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "ThingSPIN"},
 				},
 			},
 			{
@@ -337,7 +337,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.us/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "ThingSPIN"},
 				},
 			},
 		},

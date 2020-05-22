@@ -39,7 +39,7 @@ describe('buildCategories', () => {
     expect(categories[1].plugins[0].id).toBe('loki');
   });
 
-  it('should add phantom plugin for Grafana cloud', () => {
+  it('should add phantom plugin for ThingSPIN cloud', () => {
     expect(categories[4].title).toBe('Cloud');
     expect(categories[4].plugins.length).toBe(2);
     expect(categories[4].plugins[1].id).toBe('gcloud');

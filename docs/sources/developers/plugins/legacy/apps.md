@@ -7,7 +7,7 @@ aliases = ["/docs/grafana/latest/plugins/developing/apps/"]
 
 # Legacy app plugins
 
-App plugins are Grafana plugins that can bundle data source and panel plugins within one package. They also enable the plugin author to create custom pages within Grafana. The custom pages enable the plugin author to include things like documentation, sign-up forms, or to control other services with HTTP requests.
+App plugins are ThingSPIN plugins that can bundle data source and panel plugins within one package. They also enable the plugin author to create custom pages within ThingSPIN. The custom pages enable the plugin author to include things like documentation, sign-up forms, or to control other services with HTTP requests.
 
 Data source and panel plugins will show up like normal plugins. The app pages will be available in the main menu.
 
@@ -21,7 +21,7 @@ After installing an app, it has to be enabled before it shows up as a data sourc
 
 An App is a bundle of panels, dashboards and/or data source(s). There is nothing different about developing panels and data sources for an app.
 
-Apps have to be enabled in Grafana and should import any included dashboards when the user enables it. A ConfigCtrl class should be created and the dashboards imported in the postUpdate hook. See example below:
+Apps have to be enabled in ThingSPIN and should import any included dashboards when the user enables it. A ConfigCtrl class should be created and the dashboards imported in the postUpdate hook. See example below:
 
 ```javascript
 export class ConfigCtrl {

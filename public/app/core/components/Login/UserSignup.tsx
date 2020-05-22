@@ -7,7 +7,7 @@ export const UserSignup: FC<{}> = () => {
       <LinkButton href="signup" variant="secondary">
         Sign Up
       </LinkButton>
-      <span>New to Grafana?</span>
+      <span>New to ThingSPIN?</span>
     </HorizontalGroup>
   );
 };

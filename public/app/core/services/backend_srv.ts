@@ -379,7 +379,7 @@ export class BackendSrv implements BackendService {
     if (requestIsLocal) {
       if (orgId) {
         options.headers = options.headers ?? {};
-        options.headers['X-Grafana-Org-Id'] = orgId;
+        options.headers['X-ThingSPIN-Org-Id'] = orgId;
       }
 
       if (options.url.startsWith('/')) {
@@ -405,7 +405,7 @@ export class BackendSrv implements BackendService {
     if (requestIsLocal) {
       if (orgId) {
         options.headers = options.headers || {};
-        options.headers['X-Grafana-Org-Id'] = orgId;
+        options.headers['X-ThingSPIN-Org-Id'] = orgId;
       }
 
       if (options.url.startsWith('/')) {
@@ -418,7 +418,7 @@ export class BackendSrv implements BackendService {
       }
 
       if (noBackendCache) {
-        options.headers['X-Grafana-NoCache'] = 'true';
+        options.headers['X-ThingSPIN-NoCache'] = 'true';
       }
     }
 

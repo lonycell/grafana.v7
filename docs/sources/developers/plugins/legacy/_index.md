@@ -6,15 +6,15 @@ aliases = ["/docs/grafana/latest/plugins/development/", "/docs/grafana/latest/pl
 
 # Legacy plugins
 
-> **Note**: Since Grafana 7.0, writing plugins using Angular is no longer recommended. If you're looking to build a new plugin, refer to [Plugins]({{< relref "../_index.md" >}}).
+> **Note**: Since ThingSPIN 7.0, writing plugins using Angular is no longer recommended. If you're looking to build a new plugin, refer to [Plugins]({{< relref "../_index.md" >}}).
 
-You can extend Grafana by writing your own plugins and then share them with other users in [our plugin repository](https://grafana.com/plugins).
+You can extend ThingSPIN by writing your own plugins and then share them with other users in [our plugin repository](https://grafana.com/plugins).
 
-Grafana already has a strong community of contributors and plugin developers. By making it easier to develop and install plugins with resources such as this guide, we hope that the community can grow even stronger and develop new plugins that we would never think about.
+ThingSPIN already has a strong community of contributors and plugin developers. By making it easier to develop and install plugins with resources such as this guide, we hope that the community can grow even stronger and develop new plugins that we would never think about.
 
 ## Short version
 
-1. [Set up Grafana](https://github.com/grafana/grafana/blob/master/contribute/developer-guide.md)
+1. [Set up ThingSPIN](https://github.com/grafana/grafana/blob/master/contribute/developer-guide.md)
 2. Clone an example plugin into ```/var/lib/grafana/plugins```  or `data/plugins` (relative to grafana git repo if you're running development version from source dir)
 3. Use one of our example plugins as a starting point
 
@@ -28,11 +28,11 @@ Example plugins
 
 You might also be interested in the available tutorials around authoring a plugin.
 
-- [Grafana Tutorials](https://grafana.com/tutorials/)
+- [ThingSPIN Tutorials](https://grafana.com/tutorials/)
 
 ## What languages?
 
-Since everything turns into JavaScript, it's up to you to choose which language you want. That said, it's probably a good idea to choose es6 or TypeScript, because we use es6 classes in Grafana. So it's easier to get inspiration from the Grafana repo if you choose one of those languages.
+Since everything turns into JavaScript, it's up to you to choose which language you want. That said, it's probably a good idea to choose es6 or TypeScript, because we use es6 classes in ThingSPIN. So it's easier to get inspiration from the ThingSPIN repo if you choose one of those languages.
 
 ## Buildscript
 
@@ -40,8 +40,8 @@ You can use any build system that supports systemjs. All the built content shoul
 
 ## Keep your plugin up to date
 
-New versions of Grafana can sometimes cause plugins to break. Check out our [PLUGIN_DEV.md](https://github.com/grafana/grafana/blob/master/PLUGIN_DEV.md) doc for changes in
-Grafana that can impact your plugin.
+New versions of ThingSPIN can sometimes cause plugins to break. Check out our [PLUGIN_DEV.md](https://github.com/grafana/grafana/blob/master/PLUGIN_DEV.md) doc for changes in
+ThingSPIN that can impact your plugin.
 
 ## Metadata
 
@@ -54,9 +54,9 @@ your plugin implementation. Depending on what kind of plugin you are developing 
 will be expected to export different things. You can find what's expected for [datasource]({{< relref "data-sources.md" >}}), [panels]({{< relref "panels.md" >}})
 and [apps]({{< relref "apps.md" >}}) plugins in the documentation.
 
-The Grafana SDK is quite small so far and can be found here:
+The ThingSPIN SDK is quite small so far and can be found here:
 
-- [SDK file in Grafana](https://github.com/grafana/grafana/blob/master/public/app/plugins/sdk.ts)
+- [SDK file in ThingSPIN](https://github.com/grafana/grafana/blob/master/public/app/plugins/sdk.ts)
 
 The SDK contains three different plugin classes: PanelCtrl, MetricsPanelCtrl and QueryCtrl. For plugins of the panel type, the module.js file should export one of these. There are some extra classes for [data sources]({{< relref "data-sources.md" >}}).
 
@@ -88,21 +88,21 @@ export {
 
 ## Start developing your plugin
 
-There are three ways that you can start developing a Grafana plugin.
+There are three ways that you can start developing a ThingSPIN plugin.
 
-1. Set up a Grafana development environment. [(described here)](https://github.com/grafana/grafana/blob/master/contribute/developer-guide.md) and place your plugin in the ```data/plugins``` folder.
-2. Install Grafana and place your plugin in the plugins directory which is set in your [config file](/installation/configuration). By default this is `/var/lib/grafana/plugins` on Linux systems.
+1. Set up a ThingSPIN development environment. [(described here)](https://github.com/grafana/grafana/blob/master/contribute/developer-guide.md) and place your plugin in the ```data/plugins``` folder.
+2. Install ThingSPIN and place your plugin in the plugins directory which is set in your [config file](/installation/configuration). By default this is `/var/lib/grafana/plugins` on Linux systems.
 3. Place your plugin directory anywhere you like and specify it grafana.ini.
 
-We encourage people to set up the full Grafana environment so that you can get inspiration from the rest of the Grafana code base.
+We encourage people to set up the full ThingSPIN environment so that you can get inspiration from the rest of the ThingSPIN code base.
 
-When Grafana starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless
-the folder contains a subfolder named dist. In that case, Grafana mounts the dist folder instead.
+When ThingSPIN starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless
+the folder contains a subfolder named dist. In that case, ThingSPIN mounts the dist folder instead.
 This makes it possible to have both built and src content in the same plugin Git repo.
 
-## Grafana Events
+## ThingSPIN Events
 
-There are a number of Grafana events that a plugin can hook into:
+There are a number of ThingSPIN events that a plugin can hook into:
 
 - `init-edit-mode` can be used to add tabs when editing a panel
 - `panel-teardown` can be used for clean up
@@ -114,7 +114,7 @@ If a panel receives data and hooks into the `data-received` event then it should
 
 ## Examples
 
-We have three different examples that you can fork/download to get started developing your Grafana plugin.
+We have three different examples that you can fork/download to get started developing your ThingSPIN plugin.
 
  - [simple-json-datasource](https://github.com/grafana/simple-json-datasource) (small data source plugin for querying json data from backends)
  - [simple-app-plugin](https://github.com/grafana/simple-app-plugin)
@@ -126,7 +126,7 @@ We have three different examples that you can fork/download to get started devel
 
 - [Getting Plugins to work in Snapshot Mode]({{< relref "snapshot-mode.md" >}})
 - [Plugin Defaults and Editor Mode]({{< relref "defaults-and-editor-mode.md" >}})
-- [Grafana Plugin Code Styleguide]({{< relref "style-guide.md" >}})
-- [Grafana Apps]({{< relref "apps.md" >}})
-- [Grafana Data Sources]({{< relref "data-sources.md" >}})
+- [ThingSPIN Plugin Code Styleguide]({{< relref "style-guide.md" >}})
+- [ThingSPIN Apps]({{< relref "apps.md" >}})
+- [ThingSPIN Data Sources]({{< relref "data-sources.md" >}})
 - [plugin.json Schema]({{< relref "metadata.md" >}})

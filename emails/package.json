@@ -1,7 +1,7 @@
 {
-  "name": "Grafana-Email-Campaign",
+  "name": "ThingSPIN-Email-Campaign",
   "version": "1.0.0",
-  "description": "Grafana Email templates based on Zurb Ink",
+  "description": "ThingSPIN Email templates based on Zurb Ink",
   "repository": "dnnsldr/",
   "author": {
     "name": "dnnsldr",

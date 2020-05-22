@@ -11,7 +11,7 @@ exports[`Render should render component 1`] = `
       External group sync
     </h3>
     <Component
-      content="Sync LDAP or OAuth groups with your Grafana teams."
+      content="Sync LDAP or OAuth groups with your ThingSPIN teams."
       placement="auto"
     >
       <Icon
@@ -73,7 +73,7 @@ exports[`Render should render component 1`] = `
     buttonIcon="users-alt"
     buttonTitle="Add Group"
     onClick={[Function]}
-    proTip="Sync LDAP or OAuth groups with your Grafana teams."
+    proTip="Sync LDAP or OAuth groups with your ThingSPIN teams."
     proTipLink="http://docs.grafana.org/auth/enhanced_ldap/"
     proTipLinkTitle="Learn more"
     proTipTarget="_blank"
@@ -93,7 +93,7 @@ exports[`Render should render groups table 1`] = `
       External group sync
     </h3>
     <Component
-      content="Sync LDAP or OAuth groups with your Grafana teams."
+      content="Sync LDAP or OAuth groups with your ThingSPIN teams."
       placement="auto"
     >
       <Icon

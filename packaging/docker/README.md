@@ -1,10 +1,10 @@
-# Grafana Docker image
+# ThingSPIN Docker image
 
-This topic contains instructions for installing Grafana using the Docker image.
+This topic contains instructions for installing ThingSPIN using the Docker image.
 
-## Run the Grafana Docker container
+## Run the ThingSPIN Docker container
 
-Start the Docker container by binding Grafana to external port `3000`.
+Start the Docker container by binding ThingSPIN to external port `3000`.
 
 ```bash
 docker run -d --name=grafana -p 3000:3000 grafana/grafana
@@ -47,7 +47,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 * Fixed file permissions incompatibility with previous versions.
   * user id changed from 104 to 472.
   * group id changed from 107 to 472.
-* Runs as the Grafana user by default (instead of root).
+* Runs as the ThingSPIN user by default (instead of root).
 * Removed all default volumes.
 
 ### v4.2.0

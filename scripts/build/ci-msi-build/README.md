@@ -1,6 +1,6 @@
-# Grafana MSI Generator
+# ThingSPIN MSI Generator
 
-Creates a docker image that can be included within CircleCI or run locally to generate an MSI for Grafana.
+Creates a docker image that can be included within CircleCI or run locally to generate an MSI for ThingSPIN.
 
 ## Docker Image
 

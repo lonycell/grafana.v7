@@ -19,7 +19,7 @@ The Gauge is a single value panel that can repeat a gauge for every series, colu
   * `Calculation` - Show a calculated value like min or max based on all rows.
   * `All values` - Show a separate stat for every row.
 * Calc
-  * Specify calculation / reducer function. Since this panel is designed to only show a single value Grafana needs to
+  * Specify calculation / reducer function. Since this panel is designed to only show a single value ThingSPIN needs to
     know how to reduce a fields many values to a single value.
 * Labels - Controls if thresholds values are shown.
 * Markers - Controls if a thresholds band is shown outside the inner gauge value band.
@@ -31,7 +31,7 @@ The Gauge is a single value panel that can repeat a gauge for every series, colu
  name in title or `${__cell_2}` to refer to other fields (2 being field/column with index 2).
 * `Min` - The minimum value, leave blank for auto calculation based on all series & fields. Used by Graph to set y-axis min.
 * `Max` - The maximum value, leave blank for auto calculation based on all series & fields. Used by Graph to set y-axis max.
-* `Decimals` - Number of decimals to render value with. Leave empty for Grafana to automatically figure out the best
+* `Decimals` - Number of decimals to render value with. Leave empty for ThingSPIN to automatically figure out the best
  number of decimals to use.
 
 ### Thresholds

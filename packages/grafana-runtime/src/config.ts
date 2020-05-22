@@ -62,7 +62,7 @@ export class GrafanaBootConfig implements GrafanaConfig {
 
     const defaults = {
       datasources: {},
-      windowTitlePrefix: 'Grafana - ',
+      windowTitlePrefix: 'ThingSPIN - ',
       panels: {},
       newPanelTitle: 'Panel Title',
       playlist_timespan: '1m',
@@ -93,7 +93,7 @@ const options = bootData.settings;
 options.bootData = bootData;
 
 /**
- * Use this to access the {@link GrafanaBootConfig} for the current running Grafana instance.
+ * Use this to access the {@link GrafanaBootConfig} for the current running ThingSPIN instance.
  *
  * @public
  */

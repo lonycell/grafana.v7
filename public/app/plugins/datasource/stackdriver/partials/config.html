@@ -4,17 +4,17 @@
     <p>
       There are two ways to authenticate the Stackdriver plugin - either by uploading a Service Account key file, or by
       automatically retrieving credentials from the Google metadata server. The latter option is only available when
-      running Grafana on a GCE virtual machine.
+      running ThingSPIN on a GCE virtual machine.
     </p>
 
     <h5>Uploading a Service Account Key File</h5>
     <p>
       First you need to create a Google Cloud Platform (GCP) Service Account for the Project you want to show data for.
-      A Grafana datasource integrates with one GCP Project. If you want to visualize data from multiple GCP Projects
+      A ThingSPIN datasource integrates with one GCP Project. If you want to visualize data from multiple GCP Projects
       then you need to create one datasource per GCP Project.
     </p>
     <p>
-      The <strong>Monitoring Viewer</strong> role provides all the permissions that Grafana needs. The following API
+      The <strong>Monitoring Viewer</strong> role provides all the permissions that ThingSPIN needs. The following API
       needs to be enabled on GCP for the datasource to work:
       <a
         class="external-link"
@@ -26,7 +26,7 @@
 
     <h5>GCE Default Service Account</h5>
     <p>
-      If Grafana is running on a Google Compute Engine (GCE) virtual machine, it is possible for Grafana to
+      If ThingSPIN is running on a Google Compute Engine (GCE) virtual machine, it is possible for ThingSPIN to
       automatically retrieve the default project id and authentication token from the metadata server. In order for this
       to work, you need to make sure that you have a service account that is setup as the default account for the
       virtual machine and that the service account has been given read access to the Stackdriver Monitoring API.
@@ -46,7 +46,7 @@
     <h3>Authentication</h3>
     <info-popover mode="header"
       >Upload your Service Account key file or paste in the contents of the file. The file contents will be encrypted
-      and saved in the Grafana database.</info-popover
+      and saved in the ThingSPIN database.</info-popover
     >
   </div>
 

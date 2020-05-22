@@ -1,14 +1,14 @@
-# Grafana frontend packages
+# ThingSPIN frontend packages
 
-This document contains information about Grafana frontend package versioning and releases.
+This document contains information about ThingSPIN frontend package versioning and releases.
 
 ## Versioning
 We use [Lerna](https://github.com/lerna/lerna) for packages versioning and releases.
 
-All packages are versioned according to the current Grafana version:
-- Grafana v6.3.0-alpha1 -> @grafana/* packages @ 6.3.0-alpha.1
-- Grafana v6.2.5 -> @grafana/* packages @ 6.2.5
-- Grafana - master branch version (based on package.json, i.e. 6.4.0-pre) -> @grafana/* packages @ 6.4.0-pre-<COMMIT-SHA> (see details below about packages publishing channels)
+All packages are versioned according to the current ThingSPIN version:
+- ThingSPIN v6.3.0-alpha1 -> @grafana/* packages @ 6.3.0-alpha.1
+- ThingSPIN v6.2.5 -> @grafana/* packages @ 6.2.5
+- ThingSPIN - master branch version (based on package.json, i.e. 6.4.0-pre) -> @grafana/* packages @ 6.4.0-pre-<COMMIT-SHA> (see details below about packages publishing channels)
 
 > Please note that @grafana/toolkit, @grafana/ui, @grafana/data, and @grafana/runtime packages are considered ALPHA even though they are not released as alpha versions.
 
@@ -31,9 +31,9 @@ Automatic prereleases are published under the `canary` dist tag.
 
 ### Manual release
 
-> All of the steps below must be performed on a release branch, according to Grafana Release Guide.
+> All of the steps below must be performed on a release branch, according to ThingSPIN Release Guide.
 
-> Make sure you are logged in to npm in your terminal and that you are a part of Grafana org on npm.
+> Make sure you are logged in to npm in your terminal and that you are a part of ThingSPIN org on npm.
 
 1. Run `yarn packages:prepare` script from the root directory. This performs tests on the packages and prompts for the version of the packages. The version should be the same as the one being released.
    - Make sure you use semver convention. So, *place a dot between prerelease id and prerelease number*, i.e. 6.3.0-alpha.1

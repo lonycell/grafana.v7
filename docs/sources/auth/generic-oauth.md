@@ -1,6 +1,6 @@
 +++
 title = "OAuth authentication"
-description = "Grafana OAuthentication Guide "
+description = "ThingSPIN OAuthentication Guide "
 keywords = ["grafana", "configuration", "documentation", "oauth"]
 type = "docs"
 [menu.docs]
@@ -12,13 +12,13 @@ weight = 3
 
 # Generic OAuth Authentication
 
-You can configure many different oauth2 authentication services with Grafana using the generic oauth2 feature. Below you
+You can configure many different oauth2 authentication services with ThingSPIN using the generic oauth2 feature. Below you
 can find examples using Okta, BitBucket, OneLogin and Azure.
 
-This callback URL must match the full HTTP address that you use in your browser to access Grafana, but with the prefix path of `/login/generic_oauth`.
+This callback URL must match the full HTTP address that you use in your browser to access ThingSPIN, but with the prefix path of `/login/generic_oauth`.
 
 You may have to set the `root_url` option of `[server]` for the callback URL to be
-correct. For example in case you are serving Grafana behind a proxy.
+correct. For example in case you are serving ThingSPIN behind a proxy.
 
 Example config:
 
@@ -37,20 +37,20 @@ allow_sign_up = true
 
 Set `api_url` to the resource that returns [OpenID UserInfo](https://connect2id.com/products/server/docs/api/userinfo) compatible information.
 
-Grafana will attempt to determine the user's e-mail address by querying the OAuth provider as described below in the following order until an e-mail address is found:
+ThingSPIN will attempt to determine the user's e-mail address by querying the OAuth provider as described below in the following order until an e-mail address is found:
 
 1. Check for the presence of an e-mail address via the `email` field encoded in the OAuth `id_token` parameter.
 2. Check for the presence of an e-mail address using the [JMESPath](http://jmespath.org/examples.html) specified via the `email_attribute_path` configuration option. The JSON used for the path lookup is the HTTP response obtained from querying the UserInfo endpoint specified via the `api_url` configuration option.
-**Note**: Only available in Grafana v6.4+.
-3. Check for the presence of an e-mail address in the `attributes` map encoded in the OAuth `id_token` parameter. By default Grafana will perform a lookup into the attributes map using the `email:primary` key, however, this is configurable and can be adjusted by using the `email_attribute_name` configuration option.
+**Note**: Only available in ThingSPIN v6.4+.
+3. Check for the presence of an e-mail address in the `attributes` map encoded in the OAuth `id_token` parameter. By default ThingSPIN will perform a lookup into the attributes map using the `email:primary` key, however, this is configurable and can be adjusted by using the `email_attribute_name` configuration option.
 4. Query the `/emails` endpoint of the OAuth provider's API (configured with `api_url`) and check for the presence of an e-mail address marked as a primary address.
 5. If no e-mail address is found in steps (1-4), then the e-mail address of the user is set to the empty string.
 
-Grafana will also attempt to do role mapping through OAuth as described below.
+ThingSPIN will also attempt to do role mapping through OAuth as described below.
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
-Check for the presence of a role using the [JMESPath](http://jmespath.org/examples.html) specified via the `role_attribute_path` configuration option. The JSON used for the path lookup is the HTTP response obtained from querying the UserInfo endpoint specified via the `api_url` configuration option. The result after evaluating the `role_attribute_path` JMESPath expression needs to be a valid Grafana role, i.e. `Viewer`, `Editor` or `Admin`.
+Check for the presence of a role using the [JMESPath](http://jmespath.org/examples.html) specified via the `role_attribute_path` configuration option. The JSON used for the path lookup is the HTTP response obtained from querying the UserInfo endpoint specified via the `api_url` configuration option. The result after evaluating the `role_attribute_path` JMESPath expression needs to be a valid ThingSPIN role, i.e. `Viewer`, `Editor` or `Admin`.
 
 See [JMESPath examples](#jmespath-examples) for more information.
 
@@ -74,22 +74,22 @@ allowed_organizations =
 ## Set up OAuth2 with OneLogin
 
 1.  Create a new Custom Connector with the following settings:
-    - Name: Grafana
+    - Name: ThingSPIN
     - Sign On Method: OpenID Connect
     - Redirect URI: `https://<grafana domain>/login/generic_oauth`
     - Signing Algorithm: RS256
     - Login URL: `https://<grafana domain>/login/generic_oauth`
 
     then:
-2.  Add an App to the Grafana Connector:
-    - Display Name: Grafana
+2.  Add an App to the ThingSPIN Connector:
+    - Display Name: ThingSPIN
 
     then:
-3.  Under the SSO tab on the Grafana App details page you'll find the Client ID and Client Secret.
+3.  Under the SSO tab on the ThingSPIN App details page you'll find the Client ID and Client Secret.
 
     Your OneLogin Domain will match the URL you use to access OneLogin.
 
-    Configure Grafana as follows:
+    Configure ThingSPIN as follows:
 
     ```bash
     [auth.generic_oauth]
@@ -109,13 +109,13 @@ allowed_organizations =
 ## Set up OAuth2 with Auth0
 
 1.  Create a new Client in Auth0
-    - Name: Grafana
+    - Name: ThingSPIN
     - Type: Regular Web Application
 
 2.  Go to the Settings tab and set:
     - Allowed Callback URLs: `https://<grafana domain>/login/generic_oauth`
 
-3. Click Save Changes, then use the values at the top of the page to configure Grafana:
+3. Click Save Changes, then use the values at the top of the page to configure ThingSPIN:
 
     ```bash
     [auth.generic_oauth]
@@ -142,13 +142,13 @@ allowed_organizations =
 
 4.  On the Trust tab, generate a long password and put it into the OpenID Connect Client Secret field.
 
-5.  Put the URL to the front page of your Grafana instance into the "Resource Application URL" field.
+5.  Put the URL to the front page of your ThingSPIN instance into the "Resource Application URL" field.
 
 6.  Add an authorized Redirect URI like https://your-grafana-server/login/generic_oauth
 
 7.  Set up permissions, policies, etc. just like any other Centrify app
 
-8.  Configure Grafana as follows:
+8.  Configure ThingSPIN as follows:
 
     ```bash
     [auth.generic_oauth]
@@ -171,7 +171,7 @@ To ease configuration of a proper JMESPath expression, you can test/evaluate exp
 
 **Basic example:**
 
-In the following example user will get `Editor` as role when authenticating. The value of the property `role` will be the resulting role if the role is a proper Grafana role, i.e. `Viewer`, `Editor` or `Admin`.
+In the following example user will get `Editor` as role when authenticating. The value of the property `role` will be the resulting role if the role is a proper ThingSPIN role, i.e. `Viewer`, `Editor` or `Admin`.
 
 Payload:
 ```json

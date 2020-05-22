@@ -161,7 +161,7 @@ export class DashboardExporter {
     requires['grafana'] = {
       type: 'grafana',
       id: 'grafana',
-      name: 'Grafana',
+      name: 'ThingSPIN',
       version: config.buildInfo.version,
     };
 

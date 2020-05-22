@@ -87,10 +87,10 @@ class DashboardImportUnConnected extends PureComponent<Props> {
               <Field invalid={!!errors.gcomDashboard} error={errors.gcomDashboard && errors.gcomDashboard.message}>
                 <Input
                   name="gcomDashboard"
-                  placeholder="Grafana.com dashboard url or id"
+                  placeholder="ThingSPIN.com dashboard url or id"
                   type="text"
                   ref={register({
-                    required: 'A Grafana dashboard url or id is required',
+                    required: 'A ThingSPIN dashboard url or id is required',
                     validate: validateGcomDashboard,
                   })}
                   addonAfter={<Button type="submit">Load</Button>}

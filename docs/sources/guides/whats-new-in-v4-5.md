@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.5"
-description = "Feature and improvement highlights for Grafana v4.5"
+title = "What's new in ThingSPIN v4.5"
+description = "Feature and improvement highlights for ThingSPIN v4.5"
 keywords = ["grafana", "new", "documentation", "4.5", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,7 +10,7 @@ parent = "whatsnew"
 weight = -4
 +++
 
-# What's new in Grafana v4.5
+# What's new in ThingSPIN v4.5
 
 ## Highlights
 

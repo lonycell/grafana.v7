@@ -135,7 +135,7 @@ func (e *InfluxDBExecutor) createRequest(dsInfo *models.DataSource, query string
 		return nil, err
 	}
 
-	req.Header.Set("User-Agent", "Grafana")
+	req.Header.Set("User-Agent", "ThingSPIN")
 
 	params := req.URL.Query()
 	params.Set("db", dsInfo.Database)

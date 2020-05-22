@@ -1,34 +1,34 @@
 # Backend
 
-This directory contains the code for the Grafana backend. This document gives an overview of the directory structure, and ongoing refactorings.
+This directory contains the code for the ThingSPIN backend. This document gives an overview of the directory structure, and ongoing refactorings.
 
 For more information on developing for the backend:
 
 - [Backend style guide](/contribute/style-guides/backend.md)
 - [Architecture](/contribute/architecture)
 
-## Central folders of Grafana's backend
+## Central folders of ThingSPIN's backend
 
 | folder | description |
 | ------- | ----------- |
 | /pkg/api | HTTP handlers and routing. Almost all handler funcs are global which is something we would like to improve in the future. Handlers should be associated with a struct that refers to all dependencies. |
 | /pkg/cmd | The binaries that we build: grafana-server and grafana-cli. |
 | /pkg/components | A mix of third-party packages and packages we have implemented ourselves. Includes our packages that have out-grown the util package and don't naturally belong somewhere else. |
-| /pkg/infra | Packages in infra should be packages that are used in multiple places in Grafana without knowing anything about the Grafana domain. |
-| /pkg/services | Packages in services are responsible for peristing domain objects and manage the relationship between domain objects. Services should communicate with each other using DI when possible. Most of Grafana's codebase still relies on global state for this. Any new features going forward should use DI. |
-| /pkg/tsdb | All backend implementations of the data sources in Grafana. Used by both Grafana's frontend and alerting. |
+| /pkg/infra | Packages in infra should be packages that are used in multiple places in ThingSPIN without knowing anything about the ThingSPIN domain. |
+| /pkg/services | Packages in services are responsible for peristing domain objects and manage the relationship between domain objects. Services should communicate with each other using DI when possible. Most of ThingSPIN's codebase still relies on global state for this. Any new features going forward should use DI. |
+| /pkg/tsdb | All backend implementations of the data sources in ThingSPIN. Used by both ThingSPIN's frontend and alerting. |
 | /pkg/util | Small helper functions that are used in multiple parts of the codebase. Many functions are placed directly in the util folders which is something we want to avoid. Its better to give the util function a more descriptive package name. Ex `errutil`. |
 
-## Central components of Grafana's backend
+## Central components of ThingSPIN's backend
 
 | package | description |
 | ------- | ----------- |
 | /pkg/bus | The bus is described in more details under [Communication](/contribute/architecture/communication.md) |
-| /pkg/models | This is where we keep our domain model. This package should not depend on any package outside standard library. It does contain some references within Grafana but that is something we should avoid going forward. |
+| /pkg/models | This is where we keep our domain model. This package should not depend on any package outside standard library. It does contain some references within ThingSPIN but that is something we should avoid going forward. |
 | /pkg/registry | Package for managing services. |
-| /pkg/services/alerting | Grafana's alerting services. The alerting engine runs in a separate goroutine and shouldn't depend on anything else within Grafana. |
+| /pkg/services/alerting | ThingSPIN's alerting services. The alerting engine runs in a separate goroutine and shouldn't depend on anything else within ThingSPIN. |
 | /pkg/services/sqlstore | Currently where the database logic resides. |
-| /pkg/setting | Anything related to Grafana global configuration should be dealt with in this package. |
+| /pkg/setting | Anything related to ThingSPIN global configuration should be dealt with in this package. |
 
 ## Dependency management
 
@@ -36,11 +36,11 @@ Refer to [UPGRADING_DEPENDENCIES.md](https://github.com/grafana/grafana/blob/mas
 
 ## Ongoing refactoring
 
-These issues are not something we want to address all at once but something we will improve incrementally. Since Grafana is released at a regular schedule the preferred approach is to do this in batches. Not only is it easier to review, but it also reduces the risk of conflicts when cherry-picking fixes from master to release branches. Please try to submit changes that span multiple locations at the end of the release cycle. We prefer to wait until the end because we make fewer patch releases at the end of the release cycle, so there are fewer opportunities for complications.
+These issues are not something we want to address all at once but something we will improve incrementally. Since ThingSPIN is released at a regular schedule the preferred approach is to do this in batches. Not only is it easier to review, but it also reduces the risk of conflicts when cherry-picking fixes from master to release branches. Please try to submit changes that span multiple locations at the end of the release cycle. We prefer to wait until the end because we make fewer patch releases at the end of the release cycle, so there are fewer opportunities for complications.
 
 ### Global state
 
-Global state makes testing and debugging software harder and it's something we want to avoid when possible. Unfortunately, there is quite a lot of global state in Grafana. 
+Global state makes testing and debugging software harder and it's something we want to avoid when possible. Unfortunately, there is quite a lot of global state in ThingSPIN. 
 
 We want to migrate away from this by using the `inject` package to wire up all dependencies either in `pkg/cmd/grafana-server/main.go` or self-registering using `registry.RegisterService` ex https://github.com/grafana/grafana/blob/master/pkg/services/cleanup/cleanup.go#L25.
 
@@ -79,4 +79,4 @@ All new features that require state should be possible to configure using config
 - [Alert notifiers](https://github.com/grafana/grafana/tree/master/pkg/services/provisioning/notifiers)
 - [Dashboards](https://github.com/grafana/grafana/tree/master/pkg/services/provisioning/dashboards)
 
-Today its only possible to provision data sources and dashboards but this is something we want to support all over Grafana.
+Today its only possible to provision data sources and dashboards but this is something we want to support all over ThingSPIN.

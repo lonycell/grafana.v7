@@ -21,7 +21,7 @@ into
 SELECT * FROM services WHERE id = "auth-api"
 ```
 
-Grafana provides a couple of helper functions to interpolate variables in a string template. Let's see how you can use them in your plugin.
+ThingSPIN provides a couple of helper functions to interpolate variables in a string template. Let's see how you can use them in your plugin.
 
 ## Interpolate variables in panel plugins
 

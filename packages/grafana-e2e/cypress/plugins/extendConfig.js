@@ -55,7 +55,7 @@ module.exports = async baseConfig => {
 
     return { ...baseConfig, ...projectConfig, ...customProjectConfig };
   } else {
-    // Temporary legacy support for Grafana core (using `yarn start`)
+    // Temporary legacy support for ThingSPIN core (using `yarn start`)
     return baseConfig;
   }
 };

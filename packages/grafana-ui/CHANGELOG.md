@@ -17,7 +17,7 @@
 
 ### @grafana/ui forms migration notice
 
-In Grafana 7 we have migrated from our old form components to `LegacyForms` namespace. The new components were previously available under the `Forms` namespace.
+In ThingSPIN 7 we have migrated from our old form components to `LegacyForms` namespace. The new components were previously available under the `Forms` namespace.
 
 All the following components were moved to the LegacyForms namespace, and some replaced with the new form components:
 
@@ -134,7 +134,7 @@ onCreateOption={(customValue) => {
 
 # 6.0.0-alpha.0 (2019-02-22)
 
-Version update to 6.0.0 to keep @grafana/ui version in sync with [Grafana](https://github.com/grafana/grafana)
+Version update to 6.0.0 to keep @grafana/ui version in sync with [ThingSPIN](https://github.com/grafana/grafana)
 
 # 1.0.0-alpha.0 (2019-02-21)
 

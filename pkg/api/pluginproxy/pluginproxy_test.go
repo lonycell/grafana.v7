@@ -58,7 +58,7 @@ func TestPluginProxy(t *testing.T) {
 
 		Convey("Should add header with username", func() {
 			// Get will return empty string even if header is not set
-			So(req.Header.Get("X-Grafana-User"), ShouldEqual, "test_user")
+			So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "test_user")
 		})
 	})
 
@@ -74,7 +74,7 @@ func TestPluginProxy(t *testing.T) {
 		)
 		Convey("Should not add header with username", func() {
 			// Get will return empty string even if header is not set
-			So(req.Header.Get("X-Grafana-User"), ShouldEqual, "")
+			So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "")
 		})
 	})
 
@@ -89,7 +89,7 @@ func TestPluginProxy(t *testing.T) {
 
 		Convey("Should not add header with username", func() {
 			// Get will return empty string even if header is not set
-			So(req.Header.Get("X-Grafana-User"), ShouldEqual, "")
+			So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "")
 		})
 	})
 
@@ -120,7 +120,7 @@ func TestPluginProxy(t *testing.T) {
 		Convey("Headers should be updated", func() {
 			header, err := getHeaders(route, 1, "my-app")
 			So(err, ShouldBeNil)
-			So(header.Get("X-Grafana-User"), ShouldEqual, "")
+			So(header.Get("X-ThingSPIN-User"), ShouldEqual, "")
 		})
 		Convey("Should set req.URL to be interpolated value from jsonData", func() {
 			So(req.URL.String(), ShouldEqual, "https://dynamic.grafana.com")

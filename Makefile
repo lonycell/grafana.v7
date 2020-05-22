@@ -31,11 +31,11 @@ build-go: ## Build all Go binaries.
 	@echo "build go files"
 	$(GO) run build.go build
 
-build-server: ## Build Grafana server.
+build-server: ## Build ThingSPIN server.
 	@echo "build server"
 	$(GO) run build.go build-server
 
-build-cli: ## Build Grafana CLI application.
+build-cli: ## Build ThingSPIN CLI application.
 	@echo "build in CI environment"
 	$(GO) run build.go build-cli
 
@@ -162,7 +162,7 @@ devenv-down: ## Stop optional services.
 ##@ Helpers
 
 # We separate the protobuf generation because most development tasks on
-# Grafana do not involve changing protobuf files and protoc is not a
+# ThingSPIN do not involve changing protobuf files and protoc is not a
 # go-gettable dependency and so getting it installed can be inconvenient.
 #
 # If you are working on changes to protobuf interfaces you may either use

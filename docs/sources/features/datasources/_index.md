@@ -11,7 +11,7 @@ weight = 5
 
 # Data Source Overview
 
-Grafana supports many different storage backends for your time series data (data source). Each data source has a specific Query Editor that is customized for the features and capabilities that the particular data source exposes.
+ThingSPIN supports many different storage backends for your time series data (data source). Each data source has a specific Query Editor that is customized for the features and capabilities that the particular data source exposes.
 
 ## Querying
 
@@ -37,4 +37,4 @@ The following data sources are officially supported:
 
 ## Data source plugins
 
-Since Grafana 3.0 you can install data sources as plugins. Check out [Grafana.com/plugins](https://grafana.com/plugins) for more data sources.
+Since ThingSPIN 3.0 you can install data sources as plugins. Check out [ThingSPIN.com/plugins](https://grafana.com/plugins) for more data sources.

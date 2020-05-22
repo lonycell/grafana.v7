@@ -1,6 +1,6 @@
 +++
-title = "Internal Grafana metrics"
-description = "Internal metrics exposed by Grafana"
+title = "Internal ThingSPIN metrics"
+description = "Internal metrics exposed by ThingSPIN"
 keywords = ["grafana", "metrics", "internal metrics"]
 type = "docs"
 [menu.docs]
@@ -8,28 +8,28 @@ parent = "admin"
 weight = 8
 +++
 
-# Internal Grafana metrics
+# Internal ThingSPIN metrics
 
-Grafana collects some metrics about itself internally. Grafana supports pushing metrics to Graphite or exposing them to be scraped by Prometheus.
+ThingSPIN collects some metrics about itself internally. ThingSPIN supports pushing metrics to Graphite or exposing them to be scraped by Prometheus.
 
-For more information about configuration options related to Grafana metrics, refer to [metrics]({{< relref "../installation/configuration/#metrics" >}}) and [metrics.graphite]({{< relref "../installation/configuration/#metrics-graphite" >}}) in [Configuration]({{< relref "../installation/configuration.md" >}}).
+For more information about configuration options related to ThingSPIN metrics, refer to [metrics]({{< relref "../installation/configuration/#metrics" >}}) and [metrics.graphite]({{< relref "../installation/configuration/#metrics-graphite" >}}) in [Configuration]({{< relref "../installation/configuration.md" >}}).
 
 ## Available metrics
 
-When enabled, Grafana exposes a number of metrics, including:
+When enabled, ThingSPIN exposes a number of metrics, including:
 
-* Active Grafana instances
+* Active ThingSPIN instances
 * Number of dashboards, users, and playlists
 * HTTP status codes
 * Requests by routing group
-* Grafana active alerts
-* Grafana performance
+* ThingSPIN active alerts
+* ThingSPIN performance
 
-## Pull metrics from Grafana into Prometheus
+## Pull metrics from ThingSPIN into Prometheus
 
-These instructions assume you have already added Prometheus as a data source in Grafana.
+These instructions assume you have already added Prometheus as a data source in ThingSPIN.
 
-1. Enable Prometheus to scrape metrics from Grafana. In your configuration file (`grafana.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options: 
+1. Enable Prometheus to scrape metrics from ThingSPIN. In your configuration file (`grafana.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options: 
 
    ```
    # Metrics available at HTTP API Url /metrics
@@ -48,7 +48,7 @@ These instructions assume you have already added Prometheus as a data source in 
    basic_auth_password =
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics.
+1. Restart ThingSPIN. ThingSPIN now exposes metrics at http://localhost:3000/metrics.
 1. Add the job to your prometheus.yml file.
    Example:
 
@@ -62,13 +62,13 @@ These instructions assume you have already added Prometheus as a data source in 
         - targets: ['localhost:3000']
    ```
 1. Restart Prometheus. Your new job should appear on the Targets tab.
-1. In Grafana, hover your mouse over the **Configuration** (gear) icon on the left sidebar and then click **Data Sources**.
+1. In ThingSPIN, hover your mouse over the **Configuration** (gear) icon on the left sidebar and then click **Data Sources**.
 1. Select the **Prometheus** data source.
-1. On the Dashboards tab, **Import** the Grafana metrics dashboard. All scraped Grafana metrics are available in the dashboard.
+1. On the Dashboards tab, **Import** the ThingSPIN metrics dashboard. All scraped ThingSPIN metrics are available in the dashboard.
 
-## View Grafana metrics in Graphite
+## View ThingSPIN metrics in Graphite
 
-These instructions assume you have already added Graphite as a data source in Grafana.
+These instructions assume you have already added Graphite as a data source in ThingSPIN.
 
 1. Enable sending metrics to Graphite. In your configuration file (`grafana.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options: 
 
@@ -91,4 +91,4 @@ These instructions assume you have already added Graphite as a data source in Gr
    prefix = prod.grafana.%(instance_name)s.
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics and sends them to the Graphite location you specified.
+1. Restart ThingSPIN. ThingSPIN now exposes metrics at http://localhost:3000/metrics and sends them to the Graphite location you specified.

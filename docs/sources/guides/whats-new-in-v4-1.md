@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.1"
-description = "Feature and improvement highlights for Grafana v4.1"
+title = "What's new in ThingSPIN v4.1"
+description = "Feature and improvement highlights for ThingSPIN v4.1"
 keywords = ["grafana", "new", "documentation", "4.1.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,7 +10,7 @@ parent = "whatsnew"
 weight = 3
 +++
 
-## What's new in Grafana v4.1
+## What's new in ThingSPIN v4.1
 - **Graph**: Support for shared tooltip on all graphs as you hover over one graph. [#1578](https://github.com/grafana/grafana/pull/1578), [#6274](https://github.com/grafana/grafana/pull/6274)
 - **Victorops**: Add VictorOps notification integration [#6411](https://github.com/grafana/grafana/issues/6411), thx [@ichekrygin](https://github.com/ichekrygin)
 - **Opsgenie**: Add OpsGenie notification integratiion [#6687](https://github.com/grafana/grafana/issues/6687), thx [@kylemcc](https://github.com/kylemcc)
@@ -23,7 +23,7 @@ weight = 3
 
 {{< imgbox max-width="60%" img="/img/docs/v41/shared_tooltip.gif" caption="Shared tooltip" >}}
 
-Showing the tooltip on all panels at the same time has been a long standing request in Grafana and we are really happy to finally be able to release it.
+Showing the tooltip on all panels at the same time has been a long standing request in ThingSPIN and we are really happy to finally be able to release it.
 You can enable/disable the shared tooltip from the dashboard settings menu or cycle between default, shared tooltip and shared crosshair by pressing Ctrl/Cmd+O.
 
 <div class="clearfix"></div>
@@ -45,15 +45,15 @@ Panels with a help text available have a little indicator in the top left corner
 
 {{< imgbox max-width="60%" img="/img/docs/v41/cloudwatch_settings.png" caption="Cloudwatch configuration" >}}
 
-In Grafana 4.1.0 you can configure your Cloudwatch data source with `access key` and `secret key` directly in the data source configuration page.
-This enables people to use the Cloudwatch data source without having access to the filesystem where Grafana is running.
+In ThingSPIN 4.1.0 you can configure your Cloudwatch data source with `access key` and `secret key` directly in the data source configuration page.
+This enables people to use the Cloudwatch data source without having access to the filesystem where ThingSPIN is running.
 
 Once the `access key` and `secret key` have been saved the user will no longer be able to view them.
 <div class="clearfix"></div>
 
 ## Upgrade and Breaking changes
 
-Elasticsearch 1.x is no longer supported. Please upgrade to Elasticsearch 2.x or 5.x. Otherwise Grafana 4.1.0 contains no breaking changes.
+Elasticsearch 1.x is no longer supported. Please upgrade to Elasticsearch 2.x or 5.x. Otherwise ThingSPIN 4.1.0 contains no breaking changes.
 
 ## Changelog
 
@@ -65,4 +65,4 @@ of new features, changes, and bug fixes.
 Head to [v4.1 download page](/download/4_1_0/) for download links and instructions.
 
 ## Thanks
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports and feedback!
+A big thanks to all the ThingSPIN users who contribute by submitting PRs, bug reports and feedback!

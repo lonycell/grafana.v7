@@ -5,7 +5,7 @@ import (
 	macaron "gopkg.in/macaron.v1"
 )
 
-const HeaderNameNoBackendCache = "X-Grafana-NoCache"
+const HeaderNameNoBackendCache = "X-ThingSPIN-NoCache"
 
 func HandleNoCacheHeader() macaron.Handler {
 	return func(ctx *models.ReqContext) {

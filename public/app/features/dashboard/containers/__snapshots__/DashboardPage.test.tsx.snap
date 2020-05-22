@@ -10,7 +10,7 @@ exports[`DashboardPage Dashboard init completed  Should render dashboard grid 1`
           "list": Array [
             Object {
               "builtIn": 1,
-              "datasource": "-- Grafana --",
+              "datasource": "-- ThingSPIN --",
               "enable": true,
               "hide": true,
               "iconColor": "rgba(0, 211, 255, 1)",
@@ -123,7 +123,7 @@ exports[`DashboardPage Dashboard init completed  Should render dashboard grid 1`
                 "list": Array [
                   Object {
                     "builtIn": 1,
-                    "datasource": "-- Grafana --",
+                    "datasource": "-- ThingSPIN --",
                     "enable": true,
                     "hide": true,
                     "iconColor": "rgba(0, 211, 255, 1)",
@@ -217,7 +217,7 @@ exports[`DashboardPage Dashboard init completed  Should render dashboard grid 1`
                 "list": Array [
                   Object {
                     "builtIn": 1,
-                    "datasource": "-- Grafana --",
+                    "datasource": "-- ThingSPIN --",
                     "enable": true,
                     "hide": true,
                     "iconColor": "rgba(0, 211, 255, 1)",
@@ -342,7 +342,7 @@ exports[`DashboardPage When dashboard has editview url state should render setti
           "list": Array [
             Object {
               "builtIn": 1,
-              "datasource": "-- Grafana --",
+              "datasource": "-- ThingSPIN --",
               "enable": true,
               "hide": true,
               "iconColor": "rgba(0, 211, 255, 1)",
@@ -455,7 +455,7 @@ exports[`DashboardPage When dashboard has editview url state should render setti
                 "list": Array [
                   Object {
                     "builtIn": 1,
-                    "datasource": "-- Grafana --",
+                    "datasource": "-- ThingSPIN --",
                     "enable": true,
                     "hide": true,
                     "iconColor": "rgba(0, 211, 255, 1)",
@@ -549,7 +549,7 @@ exports[`DashboardPage When dashboard has editview url state should render setti
                 "list": Array [
                   Object {
                     "builtIn": 1,
-                    "datasource": "-- Grafana --",
+                    "datasource": "-- ThingSPIN --",
                     "enable": true,
                     "hide": true,
                     "iconColor": "rgba(0, 211, 255, 1)",
@@ -649,7 +649,7 @@ exports[`DashboardPage When dashboard has editview url state should render setti
           "list": Array [
             Object {
               "builtIn": 1,
-              "datasource": "-- Grafana --",
+              "datasource": "-- ThingSPIN --",
               "enable": true,
               "hide": true,
               "iconColor": "rgba(0, 211, 255, 1)",

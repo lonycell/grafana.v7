@@ -15,9 +15,9 @@
   },
 
   "info": {
-    "description": "Like Prometheus but for logs. OSS logging solution from Grafana Labs",
+    "description": "Like Prometheus but for logs. OSS logging solution from ThingSPIN Labs",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "logos": {

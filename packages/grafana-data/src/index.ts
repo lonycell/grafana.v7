@@ -1,5 +1,5 @@
 /**
- * A library containing most of the core functionality and data types used in Grafana.
+ * A library containing most of the core functionality and data types used in ThingSPIN.
  *
  * @packageDocumentation
  */

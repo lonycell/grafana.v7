@@ -6,15 +6,15 @@ aliases = ["/docs/grafana/latest/plugins/developing/plugin-review-guidelines/"]
 
 # Legacy review guidelines
 
-The Grafana team reviews all plugins that are published on Grafana.com. There are two areas we review, the metadata for the plugin and the plugin functionality.
+The ThingSPIN team reviews all plugins that are published on ThingSPIN.com. There are two areas we review, the metadata for the plugin and the plugin functionality.
 
 ## Metadata
 
-The plugin metadata consists of a `plugin.json` file and the README.md file. The `plugin.json` file is used by Grafana to load the plugin, and the README.md file is shown in the plugins section of Grafana and the plugins section of https://grafana.com.
+The plugin metadata consists of a `plugin.json` file and the README.md file. The `plugin.json` file is used by ThingSPIN to load the plugin, and the README.md file is shown in the plugins section of ThingSPIN and the plugins section of https://grafana.com.
 
 ### README.md
 
-The README.md file is shown on the plugins page in Grafana and the plugin page on Grafana.com. There are some differences between the GitHub markdown and the markdown allowed in Grafana/Grafana.com:
+The README.md file is shown on the plugins page in ThingSPIN and the plugin page on ThingSPIN.com. There are some differences between the GitHub markdown and the markdown allowed in ThingSPIN/ThingSPIN.com:
 
 - Cannot contain inline HTML.
 - Any image links should be absolute links. For example: https://raw.githubusercontent.com/grafana/azure-monitor-datasource/master/dist/img/grafana_cloud_install.png
@@ -26,7 +26,7 @@ The README should:
 
 ### Plugin.json
 
-The `plugin.json` file is the same concept as the `package.json` file for an npm package. When the Grafana server starts it will scan the plugin folders (all folders in the data/plugins subfolder) and load every folder that contains a `plugin.json` file unless the folder contains a subfolder named `dist`. In that case, the Grafana server will load the `dist` folder instead.
+The `plugin.json` file is the same concept as the `package.json` file for an npm package. When the ThingSPIN server starts it will scan the plugin folders (all folders in the data/plugins subfolder) and load every folder that contains a `plugin.json` file unless the folder contains a subfolder named `dist`. In that case, the ThingSPIN server will load the `dist` folder instead.
 
 A minimal `plugin.json` file:
 
@@ -54,7 +54,7 @@ A minimal `plugin.json` file:
 }
 ```
 
-- The convention for the plugin id is **[grafana.com username/org]-[plugin name]-[datasource|app|panel]** and it has to be unique. The org **cannot** be `grafana` unless it is a plugin created by the Grafana core team.
+- The convention for the plugin id is **[grafana.com username/org]-[plugin name]-[datasource|app|panel]** and it has to be unique. The org **cannot** be `grafana` unless it is a plugin created by the ThingSPIN core team.
 
     Examples:
 
@@ -108,7 +108,7 @@ Directories:
 
 ## HTML and CSS
 
-For the HTML on editor tabs, we recommend using the inbuilt Grafana styles rather than defining your own. This makes plugins feel like a more natural part of Grafana. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
+For the HTML on editor tabs, we recommend using the inbuilt ThingSPIN styles rather than defining your own. This makes plugins feel like a more natural part of ThingSPIN. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
 
 Below is a minimal example of an editor row with one form group and two fields, a dropdown and a text input:
 
@@ -152,7 +152,7 @@ A basic guide for data sources can be found [here](http://docs.grafana.org/plugi
 
 #### Password Security
 
-If possible, any passwords or secrets should be be saved in the `secureJsonData` blob. To encrypt sensitive data, the Grafana server's proxy feature must be used. The Grafana server has support for token authentication (OAuth) and HTTP Header authentication. If the calls have to be sent directly from the browser to a third-party API, this will not be possible and sensitive data will not be encrypted.
+If possible, any passwords or secrets should be be saved in the `secureJsonData` blob. To encrypt sensitive data, the ThingSPIN server's proxy feature must be used. The ThingSPIN server has support for token authentication (OAuth) and HTTP Header authentication. If the calls have to be sent directly from the browser to a third-party API, this will not be possible and sensitive data will not be encrypted.
 
 Read more here about how [authentication for data sources]({{< relref "../authentication.md" >}}) works.
 
@@ -166,10 +166,10 @@ If using the proxy feature, the Config page should use the `secureJsonData` blob
 
 Each query editor is unique and can have a unique style. It should be adapted to what the users of the data source are used to.
 
-- Should use the Grafana CSS `gf-form` classes.
+- Should use the ThingSPIN CSS `gf-form` classes.
 - Should be neat and tidy. Labels and fields in columns should be aligned and should be the same width if possible.
 - The data source should be able to handle when a user toggles a query (by clicking on the eye icon) and not execute the query. This is done by checking the `hide` property - an [example](https://github.com/grafana/grafana/blob/e75840737e81f70b6d169df21eca86a624d4bdc4/public/app/plugins/datasource/postgres/datasource.ts#L73).
 - Should not execute queries if fields in the Query Editor are empty and the query will throw an exception (defensive programming).
 - Should handle errors. There are two main ways to do this:
-  - use the notification system in Grafana to show a toaster popup with the error message. Example [here](https://github.com/alexanderzobnin/grafana-zabbix/blob/fdbbba2fb03f5f2a4b3b0715415e09d5a4cf6cde/src/panel-triggers/triggers_panel_ctrl.js#L467-L471).
+  - use the notification system in ThingSPIN to show a toaster popup with the error message. Example [here](https://github.com/alexanderzobnin/grafana-zabbix/blob/fdbbba2fb03f5f2a4b3b0715415e09d5a4cf6cde/src/panel-triggers/triggers_panel_ctrl.js#L467-L471).
   - provide an error notification in the query editor like the MySQL/Postgres data sources do. Example code in the `query_ctrl`  [here](https://github.com/grafana/azure-monitor-datasource/blob/b184d077f082a69f962120ef0d1f8296a0d46f03/src/query_ctrl.ts#L36-L51) and in the [html](https://github.com/grafana/azure-monitor-datasource/blob/b184d077f082a69f962120ef0d1f8296a0d46f03/src/partials/query.editor.html#L190-L193).

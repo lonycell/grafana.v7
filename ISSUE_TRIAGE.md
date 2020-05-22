@@ -1,10 +1,10 @@
 # Triage issues
 
-The main goal of issue triage is to categorize all incoming Grafana issues and make sure each issue has all basic information needed for anyone else to understand and be able to start working on it.
+The main goal of issue triage is to categorize all incoming ThingSPIN issues and make sure each issue has all basic information needed for anyone else to understand and be able to start working on it.
 
-**Note:** This information is for Grafana project Maintainers, Owners, and Admins. If you are a Contributor, then you will not be able to perform most of the tasks in this topic.
+**Note:** This information is for ThingSPIN project Maintainers, Owners, and Admins. If you are a Contributor, then you will not be able to perform most of the tasks in this topic.
 
-The core maintainers of the Grafana project are responsible for categorizing all incoming issues and delegating any critical or important issue to other maintainers. Currently one maintainer each week is responsible. Besides that part, triage provides an important way to contribute to an open source project. 
+The core maintainers of the ThingSPIN project are responsible for categorizing all incoming issues and delegating any critical or important issue to other maintainers. Currently one maintainer each week is responsible. Besides that part, triage provides an important way to contribute to an open source project. 
 
 Triage helps ensure issues resolve quickly by:
 
@@ -76,7 +76,7 @@ Instructions for setting up filters in Gmail can be found [here](#setting-up-gma
 
 ## 2. Ensure the issue contains basic information
 
-Before triaging an issue very far, make sure that the issue's author provided the standard issue information. This will help you make an educated recommendation on how to categorize the issue. The Grafana project utilizes [GitHub issue templates](https://help.github.com/en/articles/creating-issue-templates-for-your-repository) to guide  contributors to provide standard information that must be included for each type of template or type of issue.
+Before triaging an issue very far, make sure that the issue's author provided the standard issue information. This will help you make an educated recommendation on how to categorize the issue. The ThingSPIN project utilizes [GitHub issue templates](https://help.github.com/en/articles/creating-issue-templates-for-your-repository) to guide  contributors to provide standard information that must be included for each type of template or type of issue.
 
 ### Standard issue information that must be included
 
@@ -85,14 +85,14 @@ Given a certain [issue template]([template](https://github.com/grafana/grafana/i
 #### Bug report?
 
 Should explain what happened, what was expected and how to reproduce it together with any additional information that may help giving a complete picture of what happened such as screenshots, [query inspector](https://community.grafana.com/t/using-grafanas-query-inspector-to-troubleshoot-issues/2630) output and any environment related information that's applicable and/or maybe related to the reported problem:
-- Grafana version
+- ThingSPIN version
 - Data source type & version
-- Platform & OS Grafana is installed on
+- Platform & OS ThingSPIN is installed on
 - User OS & Browser + versions
 - Using docker + what environment
 - Which plugins
 - Configuration database in use (sqlite, mysql, postgres)
-- Reverse proxy in front of Grafana, what version and configuration
+- Reverse proxy in front of ThingSPIN, what version and configuration
 - Non-default configuration settings
 - Development environment like Go and Node versions, if applicable
 
@@ -102,7 +102,7 @@ Should explain what enhancement or feature that the author wants to be added and
 
 #### Accessibility issue?
 
-This is a mix between a bug report and enhancement request but focused on accessibility issues to help make Grafana improve keyboard navigation, screen-reader support and being accessible to everyone. The report should include relevant WCAG criteria, if applicable.
+This is a mix between a bug report and enhancement request but focused on accessibility issues to help make ThingSPIN improve keyboard navigation, screen-reader support and being accessible to everyone. The report should include relevant WCAG criteria, if applicable.
 
 #### Support request?
 
@@ -116,7 +116,7 @@ To make it easier for everyone to understand and find issues they're searching f
 * Make sure that issue descriptions doesn't include irrelevant information, information from template that haven't been filled out and/or sensitive information.
 * Do your best effort to change title and description or request suggested changes by adding a comment.
 
-Note: Above rules is applicable to both new and existing issues of the Grafana project.
+Note: Above rules is applicable to both new and existing issues of the ThingSPIN project.
 
 ### Do you have all the information needed to categorize an issue?
 
@@ -185,10 +185,10 @@ If it's not perfectly clear that it's an actual bug, quickly try to reproduce it
 
 ### Documentation issue?
 
-First, evaluate if the documentation makes sense to be included in the Grafana project:
+First, evaluate if the documentation makes sense to be included in the ThingSPIN project:
 
 - Is this something we want/can maintain as a project?
-- Is this referring to usage of some specific integration/tool and in that case are those a popular use case in combination with Grafana?
+- Is this referring to usage of some specific integration/tool and in that case are those a popular use case in combination with ThingSPIN?
 - If unsure, kindly and politely add a comment explaining that we would need [upvotes](https://help.github.com/en/articles/about-conversations-on-github#reacting-to-ideas-in-comments) to identify that lots of other users wants/needs this.
 
 Second, label the issue `type/docs` and at least one `area/*` or `datasource/*` label.
@@ -226,7 +226,7 @@ In any case there are uncertainty around the priorization of an issue, please as
 Label | Description
 ------- | --------
 `priority/critical` | Highest priority. Must be actively worked on as someone's top priority right now.
-`priority/support-subscription` | This is important for one or several customers having a paid Grafana support subscription.
+`priority/support-subscription` | This is important for one or several customers having a paid ThingSPIN support subscription.
 `priority/important-soon` | Must be staffed and worked on either currently, or very soon, ideally in time for the next release.
 `priority/important-longterm` | Important over the long term, but may not be staffed and/or may need multiple releases to complete.
 `priority/nice-to-have` | It's a good idea, but not scheduled for any release.
@@ -294,7 +294,7 @@ In many cases the issue author or community as a whole is more suitable to contr
 
 When an issue has all basic information provided, but the triage responsible haven't been able to reproduce the reported problem at a first glance, the issue is labeled [Needs investigation](https://github.com/grafana/grafana/labels/needs%20investigation). Depending of the perceived severity and/or number of [upvotes](https://help.github.com/en/articles/about-conversations-on-github#reacting-to-ideas-in-comments), the investigation will either be delegated to another maintainer for further investigation or either put on hold until someone else (maintainer or contributor) picks it up and eventually start investigating it.
 
-Investigating issues can be a very time consuming task, especially for the maintainers given the huge number of combinations of plugins, data sources, platforms, databases, browsers, tools, hardware, integrations, versions and cloud services etc that are being used with Grafana. There are a certain amount of combinations that are more common than others and these are in general easier for maintainers to investigate.
+Investigating issues can be a very time consuming task, especially for the maintainers given the huge number of combinations of plugins, data sources, platforms, databases, browsers, tools, hardware, integrations, versions and cloud services etc that are being used with ThingSPIN. There are a certain amount of combinations that are more common than others and these are in general easier for maintainers to investigate.
 
 For some other combinations there may not be possible at all for a maintainer to setup a proper test environment for being able to investigate. In these cases we really appreciate any help we can get from the community. Otherwise the issue is highly likely to be closed.
 
@@ -332,9 +332,9 @@ This will give you a structure of labels in the sidebar similar to the following
    - assigned
    - mentions
  - Github (other)
-  - Grafana
+  - ThingSPIN
 ```
 
 * All notifications you’ll need to read/take action on shows up as unread in Github (mine) and its sub-labels.
 * All other notifications you don’t need to take action on shows up as unread in Github (other) and its sub-labels
-  * This is convenient for issue triage and to follow the activity in the Grafana project.
+  * This is convenient for issue triage and to follow the activity in the ThingSPIN project.

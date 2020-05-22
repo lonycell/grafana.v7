@@ -1,14 +1,14 @@
 ---
-page_title: Graphite + Grafana + StatsD - Stack Setup Guide
-page_description: Installation and configuration guide and how to for Grafana, Graphite and StatsD
+page_title: Graphite + ThingSPIN + StatsD - Stack Setup Guide
+page_description: Installation and configuration guide and how to for ThingSPIN, Graphite and StatsD
 page_keywords: grafana, tutorials, graphite, statsd, setup, configuration, howto, installation
 author: Torkel Ödegaard
 ---
 
-# Stack Setup and Config Guide: Graphite + Grafana + StatsD
+# Stack Setup and Config Guide: Graphite + ThingSPIN + StatsD
 
 This lengthy article will guide you through installation, configuration and getting started with the amazing metric
-stack that is composed of Graphite, Grafana and StatsD.
+stack that is composed of Graphite, ThingSPIN and StatsD.
 
 Graphite is still king when it comes to time series databases due to its simple data model, ingestion
 with integrated aggregation and rollups, amazing query features and speed. No other time series
@@ -31,7 +31,7 @@ install StatsD, but that is optional.
 receiving metrics and storing them.
 - Graphite-api is light weight version of graphite-web with only the HTTP api and is
 responsible for executing metric queries.
-- Grafana as the frontend to visualize metrics and the tool to help you build metric
+- ThingSPIN as the frontend to visualize metrics and the tool to help you build metric
 queries that will make the most out of your collected metrics.
 
 ### Carbon
@@ -210,16 +210,16 @@ A carbon-cache daemon and graphite-api should now be running. Type `supervisorct
 also open `http://your_server_ip:8888/metrics/find?query?*` in your browser. You should see a json snippet.
 
 
-### Install Grafana
+### Install ThingSPIN
 
     cd /tmp/
     wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.1.1_amd64.deb
     sudo dpkg -i grafana_2.1.1_amd64.deb
     sudo service grafana-server start
 
-Grafana should now be running with default config on port 3000.
+ThingSPIN should now be running with default config on port 3000.
 
-## Grafana - first steps
+## ThingSPIN - first steps
 
 ### Add data source
 

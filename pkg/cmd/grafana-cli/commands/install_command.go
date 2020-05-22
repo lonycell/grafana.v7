@@ -62,7 +62,7 @@ func (cmd Command) installCommand(c utils.CommandLine) error {
 	return InstallPlugin(pluginToInstall, version, c, cmd.Client)
 }
 
-// InstallPlugin downloads the plugin code as a zip file from the Grafana.com API
+// InstallPlugin downloads the plugin code as a zip file from the ThingSPIN.com API
 // and then extracts the zip into the plugins directory.
 func InstallPlugin(pluginName, version string, c utils.CommandLine, client utils.ApiClient) error {
 	pluginFolder := c.PluginDirectory()
@@ -289,7 +289,7 @@ func extractFile(file *zip.File, filePath string) (err error) {
 
 		unwrappedError := xerrors.Unwrap(err)
 		if unwrappedError != nil && strings.EqualFold(unwrappedError.Error(), "text file busy") {
-			return fmt.Errorf("file %s is in use. Please stop Grafana, install the plugin and restart Grafana", filePath)
+			return fmt.Errorf("file %s is in use. Please stop ThingSPIN, install the plugin and restart ThingSPIN", filePath)
 		}
 
 		return errutil.Wrap("failed to open file", err)

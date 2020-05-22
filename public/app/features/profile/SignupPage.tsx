@@ -10,7 +10,7 @@ const navModel = {
   main: {
     icon: 'grafana',
     text: 'Sign Up',
-    subTitle: 'Register your Grafana account',
+    subTitle: 'Register your ThingSPIN account',
     breadcrumbs: [{ title: 'Login', url: 'login' }],
   },
   node: {

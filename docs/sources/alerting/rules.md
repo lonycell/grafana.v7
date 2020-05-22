@@ -11,8 +11,8 @@ weight = 1
 
 # Alerting Engine and Rules Guide
 
-Alerting in Grafana allows you to attach rules to your dashboard panels. When you save the dashboard,
-Grafana will extract the alert rules into a separate alert rule storage and schedule them for evaluation.
+Alerting in ThingSPIN allows you to attach rules to your dashboard panels. When you save the dashboard,
+ThingSPIN will extract the alert rules into a separate alert rule storage and schedule them for evaluation.
 
 {{< imgbox max-width="40%" img="/img/docs/v4/drag_handles_gif.gif" caption="Alerting overview" >}}
 
@@ -22,13 +22,13 @@ and the conditions that need to be met for the alert to change state and trigger
 
 ## Execution
 
-The alert rules are evaluated in the Grafana backend in a scheduler and query execution engine that is part
-of core Grafana. Only some data sources are supported right now. They include `Graphite`, `Prometheus`, `InfluxDB`, `Elasticsearch`,
+The alert rules are evaluated in the ThingSPIN backend in a scheduler and query execution engine that is part
+of core ThingSPIN. Only some data sources are supported right now. They include `Graphite`, `Prometheus`, `InfluxDB`, `Elasticsearch`,
 `Stackdriver`, `Cloudwatch`, `Azure Monitor`, `MySQL`, `PostgreSQL`, `MSSQL`, `OpenTSDB`, `Oracle`, and `Azure Data Explorer`.
 
 ## Clustering
 
-Currently alerting supports a limited form of high availability. Since v4.2.0 of Grafana, alert notifications are deduped when running multiple servers. This means all alerts are executed on every server but no duplicate alert notifications are sent due to the deduping logic. Proper load balancing of alerts will be introduced in the future.
+Currently alerting supports a limited form of high availability. Since v4.2.0 of ThingSPIN, alert notifications are deduped when running multiple servers. This means all alerts are executed on every server but no duplicate alert notifications are sent due to the deduping logic. Proper load balancing of alerts will be introduced in the future.
 
 <div class="clearfix"></div>
 
@@ -47,7 +47,7 @@ Here you can specify the name of the alert rule and how often the scheduler shou
 >
 > Do not use `For` with the `If no data or all values are null` setting set to `No Data`. The triggering of `No Data` will trigger instantly and not take `For` into consideration. This may also result in that an OK notification not being sent if alert transitions from `No Data -> Pending -> OK`.
 
-If an alert rule has a configured `For` and the query violates the configured threshold it will first go from `OK` to `Pending`. Going from `OK` to `Pending` Grafana will not send any notifications. Once the alert rule has been firing for more than `For` duration, it will change to `Alerting` and send alert notifications.
+If an alert rule has a configured `For` and the query violates the configured threshold it will first go from `OK` to `Pending`. Going from `OK` to `Pending` ThingSPIN will not send any notifications. Once the alert rule has been firing for more than `For` duration, it will change to `Alerting` and send alert notifications.
 
 Typically, it's always a good idea to use this setting since it's often worse to get false positive than wait a few minutes before the alert notification triggers. Looking at the `Alert list` or `Alert list panels` you will be able to see alerts in pending state.
 
@@ -82,7 +82,7 @@ of another alert in your conditions, and `Time Of Day`.
 #### Multiple Series
 
 If a query returns multiple series then the aggregation function and threshold check will be evaluated for each series.
-What Grafana does not do currently is track alert rule state **per series**. This has implications that are detailed
+What ThingSPIN does not do currently is track alert rule state **per series**. This has implications that are detailed
 in the scenario below.
 
 - Alert condition with query that returns 2 series: **server1** and **server2**
@@ -91,11 +91,11 @@ in the scenario below.
 - In a subsequence evaluation of the same alert rule the **server2** series also cause the alert rule to fire
 - No new notifications are sent as the alert rule is already in state `Alerting`.
 
-So as you can see from the above scenario Grafana will not send out notifications when other series cause the alert
+So as you can see from the above scenario ThingSPIN will not send out notifications when other series cause the alert
 to fire if the rule already is in state `Alerting`. To improve support for queries that return multiple series
 we plan to track state **per series** in a future release.
 
-> Starting with Grafana v5.3 you can configure reminders to be sent for triggered alerts. This will send additional notifications
+> Starting with ThingSPIN v5.3 you can configure reminders to be sent for triggered alerts. This will send additional notifications
 > when an alert continues to fire. If other series (like server2 in the example above) also cause the alert rule to fire they will
 > be included in the reminder notification. Depending on what notification channel you're using you may be able to take advantage
 > of this feature for identifying new/existing series causing alert to fire. [Read more about notification reminders here]({{< relref "notifications/#send-reminders" >}}).
@@ -132,7 +132,7 @@ The actual notifications are configured and shared between multiple alerts. Read
 
 ## Alert State History and Annotations
 
-Alert state changes are recorded in the internal annotation table in Grafana's database. The state changes
+Alert state changes are recorded in the internal annotation table in ThingSPIN's database. The state changes
 are visualized as annotations in the alert rule's graph panel. You can also go into the `State history`
 submenu in the alert tab to view and clear state history.
 
@@ -145,7 +145,7 @@ to the point where you can see the raw data that was returned from your query.
 
 Further troubleshooting can also be done by inspecting the grafana-server log. If it's not an error or for some reason
 the log does not say anything you can enable debug logging for some relevant components. This is done
-in Grafana's ini config file.
+in ThingSPIN's ini config file.
 
 Example showing loggers that could be relevant when troubleshooting alerting.
 

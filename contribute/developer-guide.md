@@ -1,8 +1,8 @@
 # Developer guide
 
-This guide helps you get started developing Grafana.
+This guide helps you get started developing ThingSPIN.
 
-Before you begin, you might want to read [How to contribute to Grafana as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
+Before you begin, you might want to read [How to contribute to ThingSPIN as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
 
 ## Dependencies
 
@@ -25,17 +25,17 @@ brew install node@12
 npm install -g yarn
 ```
 
-## Download Grafana
+## Download ThingSPIN
 
-We recommend using Go to download the source code for the Grafana project:
+We recommend using Go to download the source code for the ThingSPIN project:
 
 1. Add `export GOPATH=$HOME/go/` to the bottom of your `$HOME/.bash_profile`.
-1. Open a terminal and run `go get github.com/grafana/grafana` in your terminal. This command downloads, and installs Grafana to your `$GOPATH`.
+1. Open a terminal and run `go get github.com/grafana/grafana` in your terminal. This command downloads, and installs ThingSPIN to your `$GOPATH`.
 1. Open `$GOPATH/src/github.com/grafana/grafana` in your favorite code editor.
 
-## Build Grafana
+## Build ThingSPIN
 
-Grafana consists of two components; the _frontend_, and the _backend_.
+ThingSPIN consists of two components; the _frontend_, and the _backend_.
 
 ### Frontend
 
@@ -69,13 +69,13 @@ Log in using the default credentials:
 | -------- | -------- |
 | `admin`  | `admin`  |
 
-When you log in for the first time, Grafana asks you to change your password.
+When you log in for the first time, ThingSPIN asks you to change your password.
 
 #### Building on Windows
 
-The Grafana backend includes Sqlite3 which requires GCC to compile. So in order to compile Grafana on Windows you need to install GCC. We recommend [TDM-GCC](http://tdm-gcc.tdragon.net/download).
+The ThingSPIN backend includes Sqlite3 which requires GCC to compile. So in order to compile ThingSPIN on Windows you need to install GCC. We recommend [TDM-GCC](http://tdm-gcc.tdragon.net/download).
 
-## Test Grafana
+## Test ThingSPIN
 
 The test suite consists of three types of tests: _Frontend tests_, _backend tests_, and _end-to-end tests_.
 
@@ -97,7 +97,7 @@ go test -v ./pkg/...
 
 ### Run end-to-end tests
 
-The end to end tests in Grafana use [Cypress](https://www.cypress.io/) to run automated scripts in a headless Chromium browser. Read more about our [e2e framework](/contribute/style-guides/e2e.md).
+The end to end tests in ThingSPIN use [Cypress](https://www.cypress.io/) to run automated scripts in a headless Chromium browser. Read more about our [e2e framework](/contribute/style-guides/e2e.md).
 
 To run the tests:
 
@@ -105,7 +105,7 @@ To run the tests:
 yarn e2e
 ```
 
-By default, the end-to-end tests starts a Grafana instance listening on `localhost:3001`. To use a specific URL, set the `BASE_URL` environment variable:
+By default, the end-to-end tests starts a ThingSPIN instance listening on `localhost:3001`. To use a specific URL, set the `BASE_URL` environment variable:
 
 ```
 BASE_URL=http://localhost:3333 yarn e2e
@@ -123,7 +123,7 @@ If you want to pick a test first, use the `yarn e2e:dev`, to pick a test and fol
 yarn e2e:dev
 ```
 
-## Configure Grafana for development
+## Configure ThingSPIN for development
 
 The default configuration, `grafana.ini`, is located in the `conf` directory.
 
@@ -137,21 +137,21 @@ app_mode = development
 
 ### Add data sources
 
-By now, you should be able to build and test a change you've made to the Grafana source code. In most cases, you need to add at least one data source to verify the change.
+By now, you should be able to build and test a change you've made to the ThingSPIN source code. In most cases, you need to add at least one data source to verify the change.
 
-To set up data sources for your development environment, go to the [devenv](/devenv) directory in the Grafana repository:
+To set up data sources for your development environment, go to the [devenv](/devenv) directory in the ThingSPIN repository:
 
 ```
 cd devenv
 ```
 
-Run the `setup.sh` script to set up a set of data sources and dashboards in your local Grafana instance. The script creates a set of data sources called **gdev-\<type\>**, and a set of dashboards located in a folder called **gdev dashboards**.
+Run the `setup.sh` script to set up a set of data sources and dashboards in your local ThingSPIN instance. The script creates a set of data sources called **gdev-\<type\>**, and a set of dashboards located in a folder called **gdev dashboards**.
 
 Some of the data sources require databases to run in the background.
 
-Installing and configuring databases can be a tricky business. Grafana uses [Docker](https://docker.com) to make the task of setting up databases a little easier. Make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
+Installing and configuring databases can be a tricky business. ThingSPIN uses [Docker](https://docker.com) to make the task of setting up databases a little easier. Make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
 
-In the root directory of your Grafana repository, run the following command:
+In the root directory of your ThingSPIN repository, run the following command:
 
 ```
 make devenv sources=influxdb,loki
@@ -231,5 +231,5 @@ If that happens to you, chances are you've already set a lower limit and your sh
 
 - Read our [style guides](/contribute/style-guides).
 - Learn how to [Create a pull request](/contribute/create-pull-request.md).
-- Read [How to contribute to Grafana as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
+- Read [How to contribute to ThingSPIN as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
 - Read about the [architecture](architecture).

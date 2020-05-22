@@ -11,11 +11,11 @@ weight = 5
 
 # Explore
 
-Grafana's dashboard UI is all about building dashboards for visualization. Explore strips away all the dashboard and panel options so that you can focus on the query. Iterate until you have a working query and then think about building a dashboard.
+ThingSPIN's dashboard UI is all about building dashboards for visualization. Explore strips away all the dashboard and panel options so that you can focus on the query. Iterate until you have a working query and then think about building a dashboard.
 
-> Explore is only available in Grafana 6.0 and above.
+> Explore is only available in ThingSPIN 6.0 and above.
 
-For infrastructure monitoring and incident response, you no longer need to switch to other tools to debug what went wrong. Explore allows you to dig deeper into your metrics and logs to find the cause. Grafana's new logging data source, [Loki](https://github.com/grafana/loki) is tightly integrated into Explore and allows you to correlate metrics and logs by viewing them side-by-side. This creates a new debugging workflow where you can:
+For infrastructure monitoring and incident response, you no longer need to switch to other tools to debug what went wrong. Explore allows you to dig deeper into your metrics and logs to find the cause. ThingSPIN's new logging data source, [Loki](https://github.com/grafana/loki) is tightly integrated into Explore and allows you to correlate metrics and logs by viewing them side-by-side. This creates a new debugging workflow where you can:
 
 1. Receive an alert
 1. Drill down and examine metrics
@@ -101,7 +101,7 @@ You can customize the query history in the Settings tab. Options are described i
 
 | Setting                                                       | Default value                           |
 | ------------------------------------------------------------- | --------------------------------------- |
-| Period of time for which Grafana will save your query history | 1 week                                  |
+| Period of time for which ThingSPIN will save your query history | 1 week                                  |
 | Change the default active tab                                 | Query history tab                       |
 | Only show queries for datasource currently active in Explore  | False                                   |
 | Clear query history                                           | Permanently deletes all stored queries. |
@@ -172,7 +172,7 @@ Each log row has an extendable area with its labels and parsed fields, for more 
 
 ### Loki-specific features
 
-As mentioned, one of the log integrations is for the new open source log aggregation system from Grafana Labs - [Loki](https://github.com/grafana/loki). Loki is designed to be very cost effective, as it does not index the contents of the logs, but rather a set of labels for each log stream. The logs from Loki are queried in a similar way to querying with label selectors in Prometheus. It uses labels to group log streams which can be made to match up with your Prometheus labels. Read more about Grafana Loki [here](https://github.com/grafana/loki) or the Grafana Labs hosted variant: [Grafana Cloud Logs](https://grafana.com/loki).
+As mentioned, one of the log integrations is for the new open source log aggregation system from ThingSPIN Labs - [Loki](https://github.com/grafana/loki). Loki is designed to be very cost effective, as it does not index the contents of the logs, but rather a set of labels for each log stream. The logs from Loki are queried in a similar way to querying with label selectors in Prometheus. It uses labels to group log streams which can be made to match up with your Prometheus labels. Read more about ThingSPIN Loki [here](https://github.com/grafana/loki) or the ThingSPIN Labs hosted variant: [ThingSPIN Cloud Logs](https://grafana.com/loki).
 
 See [Loki's data source documentation](../datasources/loki) on how to query for log data.
 

@@ -20,7 +20,7 @@ export interface PluginCssOptions {
 export const SystemJS = System;
 
 /**
- * Use this to load css for a Grafana plugin by specifying a {@link PluginCssOptions}
+ * Use this to load css for a ThingSPIN plugin by specifying a {@link PluginCssOptions}
  * containing styling for the dark and the light theme.
  *
  * @param options - plugin styling for light and dark theme.

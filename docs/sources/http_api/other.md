@@ -1,6 +1,6 @@
 +++
 title = "Other HTTP API "
-description = "Grafana Other HTTP API"
+description = "ThingSPIN Other HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "other"]
 aliases = ["/docs/grafana/latest/http_api/other/"]
 type = "docs"
@@ -45,18 +45,18 @@ Content-Type: application/json
       "meta":{
         "annotations":true,
         "module":"plugins/datasource/grafana/datasource",
-        "name":"Grafana",
+        "name":"ThingSPIN",
         "partials":{
           "annotations":"app/plugins/datasource/grafana/partials/annotations.editor.html",
           "config":"app/plugins/datasource/grafana/partials/config.html"
         },
         "pluginType":"datasource",
-        "serviceName":"Grafana",
+        "serviceName":"ThingSPIN",
         "type":"grafanasearch"
       }
     }
   },
-  "defaultDatasource": "Grafana"
+  "defaultDatasource": "ThingSPIN"
 }
 ```
 
@@ -86,7 +86,7 @@ Content-Type: application/json
 
 # Health API
 
-## Returns health information about Grafana
+## Returns health information about ThingSPIN
 
 `GET /api/health`
 

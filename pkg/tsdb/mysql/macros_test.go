@@ -185,7 +185,7 @@ func TestMacroEngine(t *testing.T) {
 
 			for _, tc := range tcs {
 				_, err := engine.Interpolate(nil, nil, tc)
-				So(err.Error(), ShouldEqual, "Invalid query. Inspect Grafana server log for details")
+				So(err.Error(), ShouldEqual, "Invalid query. Inspect ThingSPIN server log for details")
 			}
 		})
 	})

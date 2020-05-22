@@ -78,7 +78,7 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	bodyJSON := simplejson.New()
-	bodyJSON.Set("username", "Grafana")
+	bodyJSON.Set("username", "ThingSPIN")
 
 	if dn.Content != "" {
 		bodyJSON.Set("content", dn.Content)
@@ -96,7 +96,7 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	footer := map[string]interface{}{
-		"text":     "Grafana v" + setting.BuildVersion,
+		"text":     "ThingSPIN v" + setting.BuildVersion,
 		"icon_url": "https://grafana.com/assets/img/fav32.png",
 	}
 

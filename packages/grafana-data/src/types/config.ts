@@ -3,7 +3,7 @@ import { PanelPluginMeta } from './panel';
 import { GrafanaTheme } from './theme';
 
 /**
- * Describes the build information that will be available via the Grafana configuration.
+ * Describes the build information that will be available via the ThingSPIN configuration.
  *
  * @public
  */
@@ -11,7 +11,7 @@ export interface BuildInfo {
   version: string;
   commit: string;
   /**
-   * Is set to true when running Grafana Enterprise edition.
+   * Is set to true when running ThingSPIN Enterprise edition.
    *
    * @deprecated use `licenseInfo.hasLicense` instead
    */
@@ -23,7 +23,7 @@ export interface BuildInfo {
 }
 
 /**
- * Describes available feature toggles in Grafana. These can be configured via the
+ * Describes available feature toggles in ThingSPIN. These can be configured via the
  * `conf/custom.ini` to enable features under development or not yet available in
  * stable version.
  *
@@ -35,14 +35,14 @@ export interface FeatureToggles {
   newEdit: boolean;
   /**
    * @remarks
-   * Available only in Grafana Enterprise
+   * Available only in ThingSPIN Enterprise
    */
   meta: boolean;
   newVariables: boolean;
 }
 
 /**
- * Describes the license information about the current running instance of Grafana.
+ * Describes the license information about the current running instance of ThingSPIN.
  *
  * @public
  */
@@ -54,7 +54,7 @@ export interface LicenseInfo {
 }
 
 /**
- * Describes all the different Grafana configuration values available for an instance.
+ * Describes all the different ThingSPIN configuration values available for an instance.
  *
  * @public
  */

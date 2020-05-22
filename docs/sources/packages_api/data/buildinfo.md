@@ -9,7 +9,7 @@ type = "docs"
 
 ## BuildInfo interface
 
-Describes the build information that will be available via the Grafana configuration.
+Describes the build information that will be available via the ThingSPIN configuration.
 
 <b>Signature</b>
 
@@ -29,7 +29,7 @@ import { BuildInfo } from '@grafana/data';
 |  [edition](#edition-property) | <code>string</code> |  |
 |  [env](#env-property) | <code>string</code> |  |
 |  [hasUpdate](#hasupdate-property) | <code>boolean</code> |  |
-|  [isEnterprise](#isenterprise-property) | <code>boolean</code> | Is set to true when running Grafana Enterprise edition. |
+|  [isEnterprise](#isenterprise-property) | <code>boolean</code> | Is set to true when running ThingSPIN Enterprise edition. |
 |  [latestVersion](#latestversion-property) | <code>string</code> |  |
 |  [version](#version-property) | <code>string</code> |  |
 
@@ -67,7 +67,7 @@ hasUpdate: boolean;
 
 ### isEnterprise property
 
-Is set to true when running Grafana Enterprise edition.
+Is set to true when running ThingSPIN Enterprise edition.
 
 <b>Signature</b>
 

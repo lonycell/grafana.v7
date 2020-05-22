@@ -24,7 +24,7 @@ export interface DataSourceSrv {
 let singletonInstance: DataSourceSrv;
 
 /**
- * Used during startup by Grafana to set the DataSourceSrv so it is available
+ * Used during startup by ThingSPIN to set the DataSourceSrv so it is available
  * via the the {@link getDataSourceSrv} to the rest of the application.
  *
  * @internal

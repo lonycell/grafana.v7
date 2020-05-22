@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v5.0"
-description = "Feature and improvement highlights for Grafana v5.0"
+title = "What's new in ThingSPIN v5.0"
+description = "Feature and improvement highlights for ThingSPIN v5.0"
 keywords = ["grafana", "new", "documentation", "5.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,15 +10,15 @@ parent = "whatsnew"
 weight = -6
 +++
 
-# What's new in Grafana v5.0
+# What's new in ThingSPIN v5.0
 
-This is the most substantial update that Grafana has ever seen. This article will detail the major new features and enhancements.
+This is the most substantial update that ThingSPIN has ever seen. This article will detail the major new features and enhancements.
 
 - [New Dashboard Layout Engine]({{< relref "#new-dashboard-layout-engine" >}}) enables a much easier drag, drop and resize experience and new types of layouts.
 - [New UX]({{< relref "#new-ux-layout-engine" >}}). The UI has big improvements in both look and function.
 - [New Light Theme]({{< relref "#new-light-theme" >}}) is now looking really nice.
 - [Dashboard Folders]({{< relref "#dashboard-folders" >}}) helps you keep your dashboards organized.
-- [Permissions]({{< relref "#dashboard-folders" >}}) on folders and dashboards helps manage larger Grafana installations.
+- [Permissions]({{< relref "#dashboard-folders" >}}) on folders and dashboards helps manage larger ThingSPIN installations.
 - [Group users into teams]({{< relref "#teams" >}}) and use them in the new permission system.
 - [Data source provisioning]({{< relref "#data-sources" >}}) makes it possible to setup data sources via config files.
 - [Dashboard provisioning]({{< relref "#dashboards" >}}) makes it possible to setup dashboards via config files.
@@ -39,7 +39,7 @@ a very intuitive way. Panels are sized independently, so rows are no longer nece
 up many new types of layouts where panels of different heights can be aligned easily. Check out the new grid in the video
 above or on the [play site](https://play.grafana.org). All your existing dashboards will automatically migrate to the
 new position system and look close to identical. The new panel position makes dashboards saved in v5.0 incompatible
-with older versions of Grafana.
+with older versions of ThingSPIN.
 
 <div class="clearfix"></div>
 
@@ -47,7 +47,7 @@ with older versions of Grafana.
 
 {{< docs-imagebox img="/img/docs/v50/new_ux_nav.png" max-width="1000px" class="docs-image--right" >}}
 
-Almost every page has seen significant UX improvements. All pages (except dashboard pages) have a new tab-based layout that improves navigation between pages. The side menu has also changed quite a bit. You can still hide the side menu completely if you click on the Grafana logo.
+Almost every page has seen significant UX improvements. All pages (except dashboard pages) have a new tab-based layout that improves navigation between pages. The side menu has also changed quite a bit. You can still hide the side menu completely if you click on the ThingSPIN logo.
 
 <div class="clearfix"></div>
 
@@ -71,7 +71,7 @@ This theme has not seen a lot of love in recent years and we felt it was time to
 
 {{< docs-imagebox img="/img/docs/v50/new_search.png" max-width="1000px" class="docs-image--right" >}}
 
-The big new feature that comes with Grafana v5.0 is dashboard folders. Now you can organize your dashboards in folders,
+The big new feature that comes with ThingSPIN v5.0 is dashboard folders. Now you can organize your dashboards in folders,
 which is very useful if you have a lot of dashboards or multiple teams.
 
 - New search design adds expandable sections for each folder, starred and recently viewed dashboards.
@@ -80,7 +80,7 @@ which is very useful if you have a lot of dashboards or multiple teams.
 
 ## Teams
 
-A team is a new concept in Grafana v5. They are simply a group of users that can be used in the new permission system for dashboards and folders. Only an admin can create teams.
+A team is a new concept in ThingSPIN v5. They are simply a group of users that can be used in the new permission system for dashboards and folders. Only an admin can create teams.
 We hope to do more with teams in future releases like integration with LDAP and a team landing page.
 
 ## Permissions
@@ -97,7 +97,7 @@ data sources a user can access nor what queries a user can issue.
 
 ## Provisioning from configuration
 
-In previous versions of Grafana, you could only use the API for provisioning data sources and dashboards.
+In previous versions of ThingSPIN, you could only use the API for provisioning data sources and dashboards.
 But that required the service to be running before you started creating dashboards and you also needed to
 set up credentials for the HTTP API. In v5.0 we decided to improve this experience by adding a new active
 provisioning system that uses config files. This will make GitOps more natural as data sources and dashboards can
@@ -106,15 +106,15 @@ and alerts as well.
 
 ### Data sources
 
-Data sources can now be setup using config files. These data sources are by default not editable from the Grafana GUI.
+Data sources can now be setup using config files. These data sources are by default not editable from the ThingSPIN GUI.
 It's also possible to update and delete data sources from the config file. More info in the [data source provisioning docs](/administration/provisioning/#datasources).
 
 ### Dashboards
 
 We also deprecated the `[dashboard.json]` in favor of our new dashboard provisioner that keeps dashboards on disk
-in sync with dashboards in Grafana's database. The dashboard provisioner has multiple advantages over the old
+in sync with dashboards in ThingSPIN's database. The dashboard provisioner has multiple advantages over the old
 `[dashboard.json]` feature. Instead of storing the dashboard in memory we now insert the dashboard into the database,
-which makes it possible to star them, use one as the home dashboard, set permissions and other features in Grafana that
+which makes it possible to star them, use one as the home dashboard, set permissions and other features in ThingSPIN that
 expects the dashboards to exist in the database. More info in the [dashboard provisioning docs]({{< relref "../administration/provisioning.md" >}})
 
 

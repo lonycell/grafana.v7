@@ -64,7 +64,7 @@ export const changeVariableName = (identifier: VariableIdentifier, newName: stri
 
     let errorText = null;
     if (!newName.match(/^(?!__).*$/)) {
-      errorText = "Template names cannot begin with '__', that's reserved for Grafana's global variables";
+      errorText = "Template names cannot begin with '__', that's reserved for ThingSPIN's global variables";
     }
 
     if (!newName.match(/^\w+$/)) {

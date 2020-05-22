@@ -212,7 +212,7 @@ func (e *CloudWatchExecutor) getClient(region string) (*cloudwatch.CloudWatch, e
 	client := cloudwatch.New(sess, cfg)
 
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("ThingSPIN/%s", setting.BuildVersion))
 	})
 
 	return client, nil
@@ -232,7 +232,7 @@ func retrieveLogsClient(datasourceInfo *DatasourceInfo) (*cloudwatchlogs.CloudWa
 	client := cloudwatchlogs.New(sess, cfg)
 
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("ThingSPIN/%s", setting.BuildVersion))
 	})
 
 	return client, nil

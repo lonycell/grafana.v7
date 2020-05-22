@@ -35,9 +35,9 @@ from utils import *
 # Constants - DO NOT CHANGE #
 #############################
 OSS_UPGRADE_VERSION = '35c7d2a9-6e23-4645-b975-e8693a1cef10'
-OSS_PRODUCT_NAME = 'Grafana OSS'
+OSS_PRODUCT_NAME = 'ThingSPIN OSS'
 ENTERPRISE_UPGRADE_VERSION = 'd534ec50-476b-4edc-a25e-fe854c949f4f'
-ENTERPRISE_PRODUCT_NAME = 'Grafana Enterprise'
+ENTERPRISE_PRODUCT_NAME = 'ThingSPIN Enterprise'
 
 #############################
 # CONSTANTS
@@ -74,7 +74,7 @@ grafana_oss = {
 
 
 #
-# Grafana 6 includes new datasources with long paths
+# ThingSPIN 6 includes new datasources with long paths
 #
 def remove_long_paths():
     print('Removing long pathed files - these are not needed to run grafana')
@@ -271,7 +271,7 @@ def main(file_loader, env, grafana_version, grafana_hash, zip_file, extracted_na
         'grafana_version': PRODUCT_VERSION,
         'upgrade_code': UPGRADE_VERSION,
         'product_name': PRODUCT_NAME,
-        'manufacturer': 'Grafana Labs',
+        'manufacturer': 'ThingSPIN Labs',
         'license': LICENSE
     }
     features = [
@@ -287,7 +287,7 @@ def main(file_loader, env, grafana_version, grafana_hash, zip_file, extracted_na
         },
         {
             'name': 'GrafanaService',
-            'title': 'Run Grafana as a Service',
+            'title': 'Run ThingSPIN as a Service',
             'component_groups': [
                 {
                     'ref_id': 'GrafanaServiceX64',
@@ -303,7 +303,7 @@ if __name__ == '__main__':
     print('MSI Generator Version: {}'.format(MSI_GENERATOR_VERSION))
 
     parser = argparse.ArgumentParser(
-        description='Grafana MSI Generator',
+        description='ThingSPIN MSI Generator',
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=90, width=110), add_help=True)
     parser.add_argument(
         '-p',

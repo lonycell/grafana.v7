@@ -1,8 +1,8 @@
-# Theming Grafana
+# Theming ThingSPIN
 
 ## Overview
 
-**Themes are implemented in Typescript.** That's because our goal is to share variables between Grafana TypeScript and [Sass](https://sass-lang.com/) code. Theme definitions are located in the following files:
+**Themes are implemented in Typescript.** That's because our goal is to share variables between ThingSPIN TypeScript and [Sass](https://sass-lang.com/) code. Theme definitions are located in the following files:
 
 - [packages/grafana-ui/src/themes/dark.ts](../../packages/grafana-ui/src/themes/dark.ts)
 - [packages/grafana-ui/src/themes/default.ts](../../packages/grafana-ui/src/themes/default.ts)
@@ -16,7 +16,7 @@ This section provides usage guidelines.
 
 ### Using themes in React components
 
-Here's how to use Grafana themes in React components.
+Here's how to use ThingSPIN themes in React components.
 
 #### Using `ThemeContext` directly
 
@@ -141,7 +141,7 @@ This section provides insight into frequently-asked questions.
 
 ## Limitations
 
-This section describes limitations with Grafana's theming system.
+This section describes limitations with ThingSPIN's theming system.
 
 ### You must ensure `ThemeContext` provider is available in a React tree
 

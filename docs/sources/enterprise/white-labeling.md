@@ -12,11 +12,11 @@ weight = 700
 
 # White labeling
 
-White labeling allows you to replace the Grafana brand and logo with your own corporate brand and logo.
+White labeling allows you to replace the ThingSPIN brand and logo with your own corporate brand and logo.
 
-> Only available in Grafana Enterprise v6.6+.
+> Only available in ThingSPIN Enterprise v6.6+.
 
-Grafana Enterprise has white labeling options in the `grafana.ini` file. As with all configuration options, you can also set them with environment variables.
+ThingSPIN Enterprise has white labeling options in the `grafana.ini` file. As with all configuration options, you can also set them with environment variables.
 
 You can change the following elements:
 
@@ -26,15 +26,15 @@ You can change the following elements:
 - Side menu top logo
 - Footer and help menu links
 - Fav icon (shown in browser tab)
-- Login title (will not appear if a login logo is set, Grafana v7.0+)
-- Login subtitle (will not appear if a login logo is set, Grafana v7.0+)
-- Login box background (Grafana v7.0+)
+- Login title (will not appear if a login logo is set, ThingSPIN v7.0+)
+- Login subtitle (will not appear if a login logo is set, ThingSPIN v7.0+)
+- Login box background (ThingSPIN v7.0+)
 
-> You will have to host your logo and other images used by the white labeling feature separately. Make sure Grafana can access the URL where the assets are stored.
+> You will have to host your logo and other images used by the white labeling feature separately. Make sure ThingSPIN can access the URL where the assets are stored.
 
 {{< docs-imagebox img="/img/docs/v66/whitelabeling_1.png" max-width="800px" caption="White labeling example" >}}
 
-The configuration file in Grafana Enterprise contains the following options. Each option is defined in the file. For more information about configuring Grafana, refer to [Configuration]({{< relref "../installation/configuration.md">}}).
+The configuration file in ThingSPIN Enterprise contains the following options. Each option is defined in the file. For more information about configuring ThingSPIN, refer to [Configuration]({{< relref "../installation/configuration.md">}}).
 
 ```ini
 # Enterprise only

@@ -3,12 +3,12 @@
   "name": "Table (old)",
   "id": "table-old",
 
-  "state": "deprecated",
+  "state": "alpha",
 
   "info": {
-    "description": "Table Panel for Grafana",
+    "description": "Table Panel for ThingSPIN",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "logos": {

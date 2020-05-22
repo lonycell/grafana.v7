@@ -1,9 +1,9 @@
 {
-  "author": "Grafana Labs",
+  "author": "ThingSPIN Labs",
   "license": "Apache-2.0",
   "name": "@grafana/runtime",
   "version": "7.1.0-pre.0",
-  "description": "Grafana Runtime Library",
+  "description": "ThingSPIN Runtime Library",
   "keywords": [
     "grafana",
     "typescript"

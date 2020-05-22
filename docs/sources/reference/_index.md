@@ -1,6 +1,6 @@
 ---
 title: Reference Index
-description: Grafana docs reference
+description: ThingSPIN docs reference
 type: docs
 ---
 

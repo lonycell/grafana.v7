@@ -11,7 +11,7 @@ weight = 10
 
 # Add or remove a user from a team
 
-This page explains how to add or remove users from teams in Grafana.
+This page explains how to add or remove users from teams in ThingSPIN.
 
 ## Add a user to a team
 

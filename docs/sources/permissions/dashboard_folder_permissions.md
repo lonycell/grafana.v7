@@ -1,6 +1,6 @@
 +++
 title = "Dashboard and Folder Permissions"
-description = "Grafana Dashboard and Folder Permissions Guide "
+description = "ThingSPIN Dashboard and Folder Permissions Guide "
 keywords = ["grafana", "configuration", "documentation", "dashboard", "folder", "permissions", "teams"]
 type = "docs"
 [menu.docs]
@@ -32,7 +32,7 @@ The highest permission always wins so if you for example want to hide a folder o
 - You cannot override permissions for users with the **Org Admin Role**. Admins always have access to everything.
 - A more specific permission with a lower permission level will not have any effect if a more general rule exists with higher permission level. You need to remove or lower the permission level of the more general rule.
 
-### How Grafana Resolves Multiple Permissions - Examples
+### How ThingSPIN Resolves Multiple Permissions - Examples
 
 #### Example 1 (`user1` has the Editor Role)
 

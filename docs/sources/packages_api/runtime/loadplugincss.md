@@ -11,7 +11,7 @@ type = "docs"
 
 ### loadPluginCss() function
 
-Use this to load css for a Grafana plugin by specifying a [PluginCssOptions](./runtime/plugincssoptions.md) containing styling for the dark and the light theme.
+Use this to load css for a ThingSPIN plugin by specifying a [PluginCssOptions](./runtime/plugincssoptions.md) containing styling for the dark and the light theme.
 
 <b>Signature</b>
 

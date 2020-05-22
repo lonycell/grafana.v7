@@ -91,7 +91,7 @@ func (sn *SensuNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 	// Finally, sensu expects an output
 	// We set it to a default output
-	bodyJSON.Set("output", "Grafana Metric Condition Met")
+	bodyJSON.Set("output", "ThingSPIN Metric Condition Met")
 	bodyJSON.Set("evalMatches", evalContext.EvalMatches)
 
 	if evalContext.Rule.State == "alerting" {

@@ -1,6 +1,6 @@
 +++
 title = "Reporting API"
-description = "Grafana Enterprise APIs"
+description = "ThingSPIN Enterprise APIs"
 keywords = ["grafana", "enterprise", "api", "reporting"]
 aliases = ["/docs/grafana/latest/http_api/reporting/"]
 type = "docs"
@@ -13,14 +13,14 @@ parent = "http_api"
 
 This API allows you to interact programmatically with the [Reporting]({{< relref "../enterprise/reporting.md" >}}) feature.
 
-> Reporting is only available in Grafana Enterprise. Read more about [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> Reporting is only available in ThingSPIN Enterprise. Read more about [ThingSPIN Enterprise]({{< relref "../enterprise" >}}).
 
 
 ## Send a report
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in ThingSPIN Enterprise v7.0+.
 
-> This API endpoint is experimental and may be deprecated in a future release. On deprecation, a migration strategy will be provided and the endpoint will remain functional until the next major release of Grafana.
+> This API endpoint is experimental and may be deprecated in a future release. On deprecation, a migration strategy will be provided and the endpoint will remain functional until the next major release of ThingSPIN.
 
 `POST /api/reports/email`
 

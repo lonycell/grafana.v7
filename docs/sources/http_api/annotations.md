@@ -1,6 +1,6 @@
 +++
 title = "Annotations HTTP API "
-description = "Grafana Annotations HTTP API"
+description = "ThingSPIN Annotations HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "annotation", "annotations", "comment"]
 aliases = ["/docs/grafana/latest/http_api/annotations/"]
 type = "docs"
@@ -12,7 +12,7 @@ parent = "http_api"
 
 # Annotations resources / actions
 
-This is the API documentation for the new Grafana Annotations feature released in Grafana 4.6. Annotations are saved in the Grafana database (sqlite, mysql or postgres). Annotations can be global annotations that can be shown on any dashboard by configuring an annotation data source - they are filtered by tags. Or they can be tied to a panel on a dashboard and are then only shown on that panel.
+This is the API documentation for the new ThingSPIN Annotations feature released in ThingSPIN 4.6. Annotations are saved in the ThingSPIN database (sqlite, mysql or postgres). Annotations can be global annotations that can be shown on any dashboard by configuring an annotation data source - they are filtered by tags. Or they can be tied to a panel on a dashboard and are then only shown on that panel.
 
 ## Find Annotations
 
@@ -87,13 +87,13 @@ Content-Type: application/json
 ]
 ```
 
-> Starting in Grafana v6.4 regions annotations are now returned in one entity that now includes the timeEnd property.
+> Starting in ThingSPIN v6.4 regions annotations are now returned in one entity that now includes the timeEnd property.
 
 ## Create Annotation
 
-Creates an annotation in the Grafana database. The `dashboardId` and `panelId` fields are optional.
+Creates an annotation in the ThingSPIN database. The `dashboardId` and `panelId` fields are optional.
 If they are not specified then a global annotation is created and can be queried in any dashboard that adds
-the Grafana annotations data source. When creating a region annotation include the timeEnd property.
+the ThingSPIN annotations data source. When creating a region annotation include the timeEnd property.
 
 `POST /api/annotations`
 
@@ -198,7 +198,7 @@ Content-Type: application/json
 ```
 
 ## Patch Annotation
-> This is available in Grafana 6.0.0-beta2 and above.
+> This is available in ThingSPIN 6.0.0-beta2 and above.
 
 `PATCH /api/annotations/:id`
 

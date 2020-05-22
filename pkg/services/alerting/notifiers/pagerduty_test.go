@@ -145,7 +145,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "ThingSPIN",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -155,7 +155,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 						},
 					},
 					"payload": map[string]interface{}{
-						"component":      "Grafana",
+						"component":      "ThingSPIN",
 						"source":         "<<PRESENCE>>",
 						"custom_details": map[string]interface{}{},
 						"severity":       "critical",
@@ -209,7 +209,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "ThingSPIN",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -286,7 +286,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "ThingSPIN",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -364,7 +364,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "ThingSPIN",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",

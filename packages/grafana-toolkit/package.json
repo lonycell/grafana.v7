@@ -1,9 +1,9 @@
 {
-  "author": "Grafana Labs",
+  "author": "ThingSPIN Labs",
   "license": "Apache-2.0",
   "name": "@grafana/toolkit",
   "version": "7.1.0-pre.0",
-  "description": "Grafana Toolkit",
+  "description": "ThingSPIN Toolkit",
   "keywords": [
     "grafana",
     "cli",

@@ -136,14 +136,14 @@ function getEnterprisePhantomPlugins(): DataSourcePluginMeta[] {
 function getGrafanaCloudPhantomPlugin(): DataSourcePluginMeta {
   return {
     id: 'gcloud',
-    name: 'Grafana Cloud',
+    name: 'ThingSPIN Cloud',
     type: PluginType.datasource,
     module: 'phantom',
     baseUrl: '',
     info: {
       description: 'Hosted Graphite, Prometheus and Loki',
       logos: { small: 'public/img/grafana_icon.svg', large: 'asd' },
-      author: { name: 'Grafana Labs' },
+      author: { name: 'ThingSPIN Labs' },
       links: [
         {
           url: 'https://grafana.com/products/cloud/',
@@ -174,7 +174,7 @@ function getPhantomPlugin(options: GetPhantomPluginOptions): DataSourcePluginMet
     info: {
       description: options.description,
       logos: { small: options.imgUrl, large: options.imgUrl },
-      author: { name: 'Grafana Labs' },
+      author: { name: 'ThingSPIN Labs' },
       links: [
         {
           url: 'https://grafana.com/grafana/plugins/' + options.id,

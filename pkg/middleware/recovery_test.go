@@ -24,7 +24,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 			sc.req.Header.Add("content-type", "application/json")
 
 			So(sc.resp.Code, ShouldEqual, 500)
-			So(sc.respJson["message"], ShouldStartWith, "Internal Server Error - Check the Grafana server logs for the detailed error message.")
+			So(sc.respJson["message"], ShouldStartWith, "Internal Server Error - Check the ThingSPIN server logs for the detailed error message.")
 			So(sc.respJson["error"], ShouldStartWith, "Server Error")
 		})
 	})
@@ -37,7 +37,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 
 			So(sc.resp.Code, ShouldEqual, 500)
 			So(sc.resp.Header().Get("content-type"), ShouldEqual, "text/html; charset=UTF-8")
-			So(sc.resp.Body.String(), ShouldContainSubstring, "<title>Grafana - Error</title>")
+			So(sc.resp.Body.String(), ShouldContainSubstring, "<title>ThingSPIN - Error</title>")
 		})
 	})
 }

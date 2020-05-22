@@ -1,6 +1,6 @@
 +++
 title = "HTTP API"
-description = "Grafana HTTP API"
+description = "ThingSPIN HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "overview"]
 aliases = ["/docs/grafana/latest/overview"]
 type = "docs"
@@ -13,7 +13,7 @@ weight = 9
 
 # HTTP API Reference
 
-The Grafana backend exposes an HTTP API, the same API is used by the frontend to do everything from saving
+The ThingSPIN backend exposes an HTTP API, the same API is used by the frontend to do everything from saving
 dashboards, creating users and updating data sources.
 
 ## Supported HTTP APIs:
@@ -39,7 +39,7 @@ dashboards, creating users and updating data sources.
 * [Preferences API]({{< relref "preferences.md" >}})
 * [Other API]({{< relref "other.md" >}})
 
-### Grafana Enterprise HTTP APIs
+### ThingSPIN Enterprise HTTP APIs
 
 * [Data Source Permissions API]({{< relref "datasource_permissions.md" >}})
 * [External Group Sync API]({{< relref "external_group_sync.md" >}})

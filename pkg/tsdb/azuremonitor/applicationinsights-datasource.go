@@ -257,7 +257,7 @@ func (e *ApplicationInsightsDatasource) createRequest(ctx context.Context, dsInf
 		return nil, errutil.Wrap("Failed to create request", err)
 	}
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("ThingSPIN/%s", setting.BuildVersion))
 
 	pluginproxy.ApplyRoute(ctx, req, proxyPass, appInsightsRoute, dsInfo)
 

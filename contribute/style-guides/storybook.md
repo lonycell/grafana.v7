@@ -143,7 +143,7 @@ interface MyProps {
 
 ### Knobs
 
-Knobs is an [addon to Storybook](https://github.com/storybookjs/storybook/tree/master/addons/knobs) which can be used to easily switch values in the UI. A good use case for it is to try different props for the component. Using knobs is easy. Grafana is set up so knobs can be used straight out of the box. Here is an example of how you might use it.
+Knobs is an [addon to Storybook](https://github.com/storybookjs/storybook/tree/master/addons/knobs) which can be used to easily switch values in the UI. A good use case for it is to try different props for the component. Using knobs is easy. ThingSPIN is set up so knobs can be used straight out of the box. Here is an example of how you might use it.
 
 ```jsx
 // In MyComponent.story.tsx

@@ -399,7 +399,7 @@ describe('shared actions', () => {
           .thenDispatchedActionsShouldEqual(
             changeVariableNameFailed({
               newName: '__newName',
-              errorText: "Template names cannot begin with '__', that's reserved for Grafana's global variables",
+              errorText: "Template names cannot begin with '__', that's reserved for ThingSPIN's global variables",
             })
           );
       });

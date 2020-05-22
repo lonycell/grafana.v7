@@ -10,7 +10,7 @@ weight = 200
 # Docs Archive
 
 Here you can find links to older versions of the documentation that might be better suited for your version
-of Grafana.
+of ThingSPIN.
 
 - [Latest](/docs/grafana/latest/)
 - [Version 4.5](/docs/grafana/v4.5)

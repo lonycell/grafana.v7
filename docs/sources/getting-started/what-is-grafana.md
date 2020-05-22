@@ -1,27 +1,27 @@
 +++
-title = "What is Grafana?"
-description = "Overview of Grafana and features"
+title = "What is ThingSPIN?"
+description = "Overview of ThingSPIN and features"
 keywords = ["grafana", "intro", "guide", "started"]
 type = "docs"
 [menu.docs]
 aliases = ["/docs/grafana/latest/guides/what-is-grafana"]
-name = "What is Grafana?"
+name = "What is ThingSPIN?"
 identifier = "what_is_grafana"
 parent = "guides"
 weight = 200
 +++
 
-# What is Grafana?
+# What is ThingSPIN?
 
-This topic provides a high-level look at Grafana, the Grafana process, and Grafana features. It's a good place to start if you want to learn more about Grafana software. To jump right in, refer to [Getting started]({{< relref "getting-started.md" >}}).
+This topic provides a high-level look at ThingSPIN, the ThingSPIN process, and ThingSPIN features. It's a good place to start if you want to learn more about ThingSPIN software. To jump right in, refer to [Getting started]({{< relref "getting-started.md" >}}).
 
-Grafana is open source visualization and analytics software. It allows you to query, visualize, alert on, and explore your metrics no matter where they are stored. In plain English, it provides you with tools to turn your time-series database (TSDB) data into beautiful graphs and visualizations.
+ThingSPIN is open source visualization and analytics software. It allows you to query, visualize, alert on, and explore your metrics no matter where they are stored. In plain English, it provides you with tools to turn your time-series database (TSDB) data into beautiful graphs and visualizations.
 
 After creating a dashboard like you do in [Getting started]({{< relref "getting-started.md" >}}), there are many possible things you might do next. It all depends on your needs and your use case. 
 
-For example, if you want to view weather data and statistics about your smart home, then you might create a playlist. If you are the administrator for a corporation and are managing Grafana for multiple teams, then you might need to set up provisioning and authentication.
+For example, if you want to view weather data and statistics about your smart home, then you might create a playlist. If you are the administrator for a corporation and are managing ThingSPIN for multiple teams, then you might need to set up provisioning and authentication.
 
-The following sections provide an overview of things you might want to do with your Grafana database and links so you can learn more. For more guidance and ideas, check out the [Grafana Community forums](https://community.grafana.com/).
+The following sections provide an overview of things you might want to do with your ThingSPIN database and links so you can learn more. For more guidance and ideas, check out the [ThingSPIN Community forums](https://community.grafana.com/).
 
 ## Explore metrics and logs
 
@@ -31,7 +31,7 @@ Refer to [Explore]({{< relref "../features/explore/index.md" >}}) for more infor
 
 ## Alerts
 
-If you're using Grafana alerting, then you can have alerts sent through a number of different [alert notifiers]({{< relref "../alerting/notifications.md" >}}), including PagerDuty, SMS, email, VictorOps, OpsGenie, or Slack. 
+If you're using ThingSPIN alerting, then you can have alerts sent through a number of different [alert notifiers]({{< relref "../alerting/notifications.md" >}}), including PagerDuty, SMS, email, VictorOps, OpsGenie, or Slack. 
 
 Alert hooks allow you to create different notifiers with a bit of code if you prefer some other channels of communication. Visually define [alert rules]({{< relref "../alerting/rules.md" >}}) for your most important metrics.
 
@@ -39,7 +39,7 @@ Alert hooks allow you to create different notifiers with a bit of code if you pr
 
 Annotate graphs with rich events from different data sources. Hover over events to see the full event metadata and tags.
 
-This feature, which shows up as a graph marker in Grafana, is useful for correlating data in case something goes wrong. You can create the annotations manually—just control-click on a graph and input some text—or you can fetch data from any data source.
+This feature, which shows up as a graph marker in ThingSPIN, is useful for correlating data in case something goes wrong. You can create the annotations manually—just control-click on a graph and input some text—or you can fetch data from any data source.
 
 Refer to [Annotations]({{< relref "../reference/annotations.md" >}}) for more information.
 
@@ -49,9 +49,9 @@ Refer to [Annotations]({{< relref "../reference/annotations.md" >}}) for more in
 
 Templating allows you to drill down into your data, say, from all data to North America data, down to Texas data, and beyond. You can also share these dashboards across teams within your organization—or if you create a great dashboard template for a popular data source, you can contribute it to the whole community to customize and use.
 
-## Configure Grafana
+## Configure ThingSPIN
 
-If you're a Grafana administrator, then you'll want to thoroughly familiarize yourself with [Grafana configuration options]({{< relref "../installation/configuration.md" >}}) and the [Grafana CLI]({{< relref "../administration/cli.md" >}}).
+If you're a ThingSPIN administrator, then you'll want to thoroughly familiarize yourself with [ThingSPIN configuration options]({{< relref "../installation/configuration.md" >}}) and the [ThingSPIN CLI]({{< relref "../administration/cli.md" >}}).
 
 Configuration covers both config files and environment variables. You can set up default ports, logging levels, email IP addresses, security, and more.
 
@@ -61,34 +61,34 @@ Discover hundreds of [dashboards](https://grafana.com/grafana/dashboards) and [p
 
 ## Authentication
 
-Grafana supports different authentication methods, such as LDAP and OAuth, and allows you to map users to organizations. Refer to the [User authentication overview]({{< relref "../auth/overview.md" >}}) for more information.
+ThingSPIN supports different authentication methods, such as LDAP and OAuth, and allows you to map users to organizations. Refer to the [User authentication overview]({{< relref "../auth/overview.md" >}}) for more information.
 
-In Grafana Enterprise, you can also map users to teams: If your company has its own authentication system, Grafana allows you to map the teams in your internal systems to teams in Grafana. That way, you can automatically give people access to the dashboards designated for their teams.
+In ThingSPIN Enterprise, you can also map users to teams: If your company has its own authentication system, ThingSPIN allows you to map the teams in your internal systems to teams in ThingSPIN. That way, you can automatically give people access to the dashboards designated for their teams.
 
-Refer to [Grafana Enterprise]({{< relref "../enterprise/_index.md" >}}) for more information.
+Refer to [ThingSPIN Enterprise]({{< relref "../enterprise/_index.md" >}}) for more information.
 
 ## Provisioning
 
-While it's easy to click, drag, and drop to create a single dashboard, power users in need of many dashboards will want to automate the setup with a script. You can script anything in Grafana. 
+While it's easy to click, drag, and drop to create a single dashboard, power users in need of many dashboards will want to automate the setup with a script. You can script anything in ThingSPIN. 
 
-For example, if you're spinning up a new Kubernetes cluster, you can also spin up a Grafana automatically with a script that would have the right server, IP address, and data sources preset and locked in so users cannot change them. It's also a way of getting control over a lot of dashboards.
+For example, if you're spinning up a new Kubernetes cluster, you can also spin up a ThingSPIN automatically with a script that would have the right server, IP address, and data sources preset and locked in so users cannot change them. It's also a way of getting control over a lot of dashboards.
 
 Refer to [Provisioning]({{< relref "../administration/provisioning.md" >}}) for more information.
 
 ## Permissions
 
-When organizations have one Grafana and multiple teams, they often want the ability to both keep things separate and share dashboards. You can create a team of users and then set [permissions]({{< relref "../permissions/overview.md" >}}) on folders, dashboards, and down to the [data source level]({{< relref "../enterprise/datasource_permissions.md" >}}) if you're using [Grafana Enterprise]({{< relref "../enterprise/_index.md" >}}).
+When organizations have one ThingSPIN and multiple teams, they often want the ability to both keep things separate and share dashboards. You can create a team of users and then set [permissions]({{< relref "../permissions/overview.md" >}}) on folders, dashboards, and down to the [data source level]({{< relref "../enterprise/datasource_permissions.md" >}}) if you're using [ThingSPIN Enterprise]({{< relref "../enterprise/_index.md" >}}).
 
-## Grafana Cloud
+## ThingSPIN Cloud
 
-Grafana Cloud is a highly available, fast, fully managed OpenSaaS logging and metrics platform. Everything you love about Grafana, but Grafana Labs hosts it for you and handles all the headaches.
+ThingSPIN Cloud is a highly available, fast, fully managed OpenSaaS logging and metrics platform. Everything you love about ThingSPIN, but ThingSPIN Labs hosts it for you and handles all the headaches.
 
-[Learn more about Grafana Cloud.](https://grafana.com/cloud/)
+[Learn more about ThingSPIN Cloud.](https://grafana.com/cloud/)
 
-## Grafana Enterprise
+## ThingSPIN Enterprise
 
-[Grafana Enterprise]({{< relref "../enterprise/_index.md" >}}) is a commercial edition of Grafana that includes additional features not found in the open source version.
+[ThingSPIN Enterprise]({{< relref "../enterprise/_index.md" >}}) is a commercial edition of ThingSPIN that includes additional features not found in the open source version.
 
-Building on everything you already know and love about Grafana, Grafana Enterprise adds enterprise data sources, advanced authentication options, more permission controls, 24x7x365 support, and training from the core Grafana team.
+Building on everything you already know and love about ThingSPIN, ThingSPIN Enterprise adds enterprise data sources, advanced authentication options, more permission controls, 24x7x365 support, and training from the core ThingSPIN team.
 
-[Learn more about Grafana Enterprise](https://grafana.com/enterprise). To purchase Enterprise or obtain a trial license, contact the Grafana Labs [Sales Team](https://grafana.com/contact?about=support&topic=Grafana%20Enterprise).
+[Learn more about ThingSPIN Enterprise](https://grafana.com/enterprise). To purchase Enterprise or obtain a trial license, contact the ThingSPIN Labs [Sales Team](https://grafana.com/contact?about=support&topic=ThingSPIN%20Enterprise).

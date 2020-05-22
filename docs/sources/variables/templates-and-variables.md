@@ -20,7 +20,7 @@ the dashboard. These dropdowns make it easy to change the data being displayed i
 
 {{< docs-imagebox img="/img/docs/v50/variables_dashboard.png" >}}
 
-These can be especially useful for administrators who want to allow Grafana viewers to quickly adjust visualizations but do not want to give them full editing permissions. Grafana Viewers can use variables.
+These can be especially useful for administrators who want to allow ThingSPIN viewers to quickly adjust visualizations but do not want to give them full editing permissions. ThingSPIN Viewers can use variables.
 
 Variables and templates also allow you to single-source dashboards. If you have multiple identical data sources or servers, you can make one dashboard and use variables to change what you are viewing. This simplifies maintenance and upkeep enormously.
 
@@ -70,9 +70,9 @@ Variables can be used in titles, descriptions, text panels, and queries. Queries
 
 ## Variable types
 
-Grafana also has global built-in variables that can be used in expressions in the query editor. Refer to [Global variables]({{< relref "global-variables" >}}) for more information.
+ThingSPIN also has global built-in variables that can be used in expressions in the query editor. Refer to [Global variables]({{< relref "global-variables" >}}) for more information.
 
-You can also define the following types of variables in Grafana. 
+You can also define the following types of variables in ThingSPIN. 
 
 Type | Description
 ------- | --------
@@ -190,7 +190,7 @@ The query expressions are different for each data source.
 - [AzureMonitor templating queries]({{< relref "../features/datasources/azuremonitor.md#templating-with-variables-for-the-azure-monitor-service" >}})
 
 One thing to note is that query expressions can contain references to other variables and in effect create linked variables.
-Grafana will detect this and automatically refresh a variable when one of it's containing variables change.
+ThingSPIN will detect this and automatically refresh a variable when one of it's containing variables change.
 
 ## Selection options
 
@@ -203,10 +203,10 @@ Option | Description
 ### Formatting multiple values
 
 Interpolating a variable with multiple values selected is tricky as it is not straight forward how to format the multiple values into a string that
-is valid in the given context where the variable is used. Grafana tries to solve this by allowing each data source plugin to
+is valid in the given context where the variable is used. ThingSPIN tries to solve this by allowing each data source plugin to
 inform the templating interpolation engine what format to use for multiple values.
 
-Note that the *Custom all value* option on the variable will have to be left blank for Grafana to format all values into a single string.
+Note that the *Custom all value* option on the variable will have to be left blank for ThingSPIN to format all values into a single string.
 
 **Graphite**, for example, uses glob expressions. A variable with multiple values would, in this case, be interpolated as `{host1,host2,host3}` if
 the current variable value was *host1*, *host2* and *host3*.
@@ -222,7 +222,7 @@ needs to be escaped so that the value can contain lucene control words and quota
 
 Automatic escaping and formatting can cause problems and it can be tricky to grasp the logic is behind it.
 Especially for InfluxDB and Prometheus where the use of regex syntax requires that the variable is used in regex operator context.
-If you do not want Grafana to do this automatic regex escaping and formatting your only option is to disable the *Multi-value* or *Include All option*
+If you do not want ThingSPIN to do this automatic regex escaping and formatting your only option is to disable the *Multi-value* or *Include All option*
 options.
 
 ### Value groups/tags

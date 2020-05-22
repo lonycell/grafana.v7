@@ -1,6 +1,6 @@
 +++
 title = "Troubleshooting"
-description = "Guide to troubleshooting Grafana problems"
+description = "Guide to troubleshooting ThingSPIN problems"
 keywords = ["grafana", "troubleshooting", "documentation", "guide"]
 type = "docs"
 [menu.docs]
@@ -11,25 +11,25 @@ weight = 8
 
 # Troubleshooting
 
-This page lists some useful tools to help troubleshoot common Grafana issues.
+This page lists some useful tools to help troubleshoot common ThingSPIN issues.
 
 ## Visualization and query issues
 
 {{< imgbox max-width="40%" img="/img/docs/v45/query_inspector.png" caption="Query Inspector" >}}
 
 The most common problems are related to the query and response from your data source. Even if it looks
-like a bug or visualization issue in Grafana, it is almost always a problem with the data source query or
+like a bug or visualization issue in ThingSPIN, it is almost always a problem with the data source query or
 the data source response.
 
-To check this you should use query inspector, which was added in Grafana 4.5. The query inspector shows query requests and responses. Refer to the data source page for more information.
+To check this you should use query inspector, which was added in ThingSPIN 4.5. The query inspector shows query requests and responses. Refer to the data source page for more information.
 
-For more on the query inspector read the Grafana Community article [Using Grafana’s Query Inspector to troubleshoot issues](https://community.grafana.com/t/using-grafanas-query-inspector-to-troubleshoot-issues/2630). For older versions of Grafana, refer to the [How troubleshoot metric query issue](https://community.grafana.com/t/how-to-troubleshoot-metric-query-issues/50/2) article.
+For more on the query inspector read the ThingSPIN Community article [Using ThingSPIN’s Query Inspector to troubleshoot issues](https://community.grafana.com/t/using-grafanas-query-inspector-to-troubleshoot-issues/2630). For older versions of ThingSPIN, refer to the [How troubleshoot metric query issue](https://community.grafana.com/t/how-to-troubleshoot-metric-query-issues/50/2) article.
 
 ## Logging
 
-If you encounter an error or problem, then you can check the Grafana server log. Usually located at `/var/log/grafana/grafana.log` on Unix systems or in `<grafana_install_dir>/data/log` on other platforms and manual installations.
+If you encounter an error or problem, then you can check the ThingSPIN server log. Usually located at `/var/log/grafana/grafana.log` on Unix systems or in `<grafana_install_dir>/data/log` on other platforms and manual installations.
 
-You can enable more logging by changing log level in the Grafana configuration file.
+You can enable more logging by changing log level in the ThingSPIN configuration file.
 
 ## Diagnostics
 
@@ -45,7 +45,7 @@ the default HTTP port (`6060`) where the pprof debugging endpoints will be avail
 ./grafana-server -profile -profile-port=8080
 ```
 
-Note that `pprof` debugging endpoints are served on a different port than the Grafana HTTP server.
+Note that `pprof` debugging endpoints are served on a different port than the ThingSPIN HTTP server.
 
 You can configure or override profiling settings using environment variables:
 
@@ -96,5 +96,5 @@ See [Go command trace](https://golang.org/cmd/trace/) for more information about
 
 ## FAQs
 
-Check out the [FAQ section](https://community.grafana.com/c/howto/faq) on the Grafana Community page for answers to frequently
+Check out the [FAQ section](https://community.grafana.com/c/howto/faq) on the ThingSPIN Community page for answers to frequently
 asked questions.

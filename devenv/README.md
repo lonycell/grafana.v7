@@ -2,13 +2,13 @@
 
 This folder contains useful scripts and configuration so you can:
 
-* Configure data sources in Grafana for development.
+* Configure data sources in ThingSPIN for development.
 * Configure dashboards for development and test scenarios.
 * Create docker-compose file with databases and fake data.
 
 ## Install Docker
 
-Grafana uses [Docker](https://docker.com) to make the task of setting up databases a little easier. If you do not have it already, make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
+ThingSPIN uses [Docker](https://docker.com) to make the task of setting up databases a little easier. If you do not have it already, make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
 
 ## Developer dashboards and data sources
 
@@ -16,7 +16,7 @@ Grafana uses [Docker](https://docker.com) to make the task of setting up databas
 ./setup.sh
 ```
 
-After restarting the Grafana server, there should be a number of data sources named `gdev-<type>` provisioned as well as
+After restarting the ThingSPIN server, there should be a number of data sources named `gdev-<type>` provisioned as well as
 a dashboard folder named `gdev dashboards`. This folder contains dashboard and panel features tests dashboards. 
 
 Please update these dashboards or make new ones as new panels and dashboards features are developed or new bugs are
@@ -42,7 +42,7 @@ make devenv sources=postgres,openldap,grafana postgres_version=9.2 grafana_versi
 
 ### Notes per block
 
-#### Grafana
+#### ThingSPIN
 The grafana block is pre-configured with the dev-datasources and dashboards.
 
 #### Jaeger

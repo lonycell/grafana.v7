@@ -11,7 +11,7 @@ type = "docs"
 
 ### config variable
 
-Use this to access the [GrafanaBootConfig](./runtime/grafanabootconfig.md) for the current running Grafana instance.
+Use this to access the [GrafanaBootConfig](./runtime/grafanabootconfig.md) for the current running ThingSPIN instance.
 
 <b>Signature</b>
 

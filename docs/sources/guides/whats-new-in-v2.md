@@ -1,23 +1,23 @@
 +++
-title = "What's new in Grafana v2.0"
-description = "Feature and improvement highlights for Grafana v2.0"
+title = "What's new in ThingSPIN v2.0"
+description = "Feature and improvement highlights for ThingSPIN v2.0"
 keywords = ["grafana", "new", "documentation", "2.0", "release notes"]
 type = "docs"
 +++
 
-# What's new in Grafana v2.0
+# What's new in ThingSPIN v2.0
 
-Grafana 2.0 represents months of work by the Grafana team and the community. We are pleased to be able to
-release the Grafana 2.0 beta. This is a guide that describes some of changes and new features that can
-be found in Grafana V2.0.
+ThingSPIN 2.0 represents months of work by the ThingSPIN team and the community. We are pleased to be able to
+release the ThingSPIN 2.0 beta. This is a guide that describes some of changes and new features that can
+be found in ThingSPIN V2.0.
 
-If you are interested in how to migrate from Grafana V1.x to V2.0, please read our [Migration Guide](../installation/migrating_to2.md)
+If you are interested in how to migrate from ThingSPIN V1.x to V2.0, please read our [Migration Guide](../installation/migrating_to2.md)
 
 ## New backend server
 
-Grafana now ships with its own required backend server. Also completely open-source, it's written in Go and has a full HTTP API.
+ThingSPIN now ships with its own required backend server. Also completely open-source, it's written in Go and has a full HTTP API.
 
-In addition to new features, the backend server makes it much easier to set up and enjoy Grafana. Grafana 2.0 now ships as cross platform binaries with no dependencies. Authentication is built in, and Grafana is now capable of proxying connections to Data Sources.  There are no longer any CORS (Cross Origin Resource Sharing) issues requiring messy workarounds. Elasticsearch is no longer required just to store dashboards.
+In addition to new features, the backend server makes it much easier to set up and enjoy ThingSPIN. ThingSPIN 2.0 now ships as cross platform binaries with no dependencies. Authentication is built in, and ThingSPIN is now capable of proxying connections to Data Sources.  There are no longer any CORS (Cross Origin Resource Sharing) issues requiring messy workarounds. Elasticsearch is no longer required just to store dashboards.
 
 ## User and Organization permissions
 
@@ -34,12 +34,12 @@ Organizations via a role. That role can be:
 
 There are currently no permissions on individual dashboards.
 
-Read more about Grafana's new user model on the [Admin section](../reference/admin/)
+Read more about ThingSPIN's new user model on the [Admin section](../reference/admin/)
 
 ## Dashboard Snapshot sharing
 
 A Dashboard Snapshot is an easy way to create and share a URL for a stripped down, point-in-time version of any Dashboard.
-You can give this URL to anyone or everyone, and they can view the Snapshot even if they're not a User of your Grafana instance.
+You can give this URL to anyone or everyone, and they can view the Snapshot even if they're not a User of your ThingSPIN instance.
 
 You can set an expiration time for any Snapshots you create. When you create a Snapshot, we strip sensitive data, like
 panel metric queries, annotation and template queries and panel links. The data points displayed on
@@ -48,19 +48,19 @@ screen for that specific time period in your Dashboard is saved in the JSON of t
 Sharing a Snapshot is similar to sharing a link to a screenshot of your dashboard, only way better (they'll look great at any screen resolution, you can hover over series,
 even zoom in). Also they are fast to load as they aren't actually connected to any live Data Sources in any way.
 
-They're a great way to communicate about a particular incident with specific people who aren't Users of your Grafana instance. You can also use them to show off your dashboards over the Internet.
+They're a great way to communicate about a particular incident with specific people who aren't Users of your ThingSPIN instance. You can also use them to show off your dashboards over the Internet.
 
 ![](/img/docs/v2/dashboard_snapshot_dialog.png)
 
 ### Publish snapshots
 
-You can publish snapshots locally or to [snapshot.raintank.io](http://snapshot.raintank.io). snapshot.raintank is a free service provided by [raintank](http://raintank.io) for hosting external Grafana snapshots.
+You can publish snapshots locally or to [snapshot.raintank.io](http://snapshot.raintank.io). snapshot.raintank is a free service provided by [raintank](http://raintank.io) for hosting external ThingSPIN snapshots.
 
-Either way, anyone with the link (and access to your Grafana instance for local snapshots) can view it.
+Either way, anyone with the link (and access to your ThingSPIN instance for local snapshots) can view it.
 
 ## Panel time overrides and timeshift
 
-In Grafana v2.x you can now override the relative time range for individual panels, causing them to be different than what is selected in the Dashboard time picker in the upper right. You can also add a time shift to individual panels. This allows you to show metrics from different time periods or days at the same time.
+In ThingSPIN v2.x you can now override the relative time range for individual panels, causing them to be different than what is selected in the Dashboard time picker in the upper right. You can also add a time shift to individual panels. This allows you to show metrics from different time periods or days at the same time.
 
 ![](/img/docs/v2/panel_time_override.jpg)
 
@@ -85,11 +85,11 @@ Try hovering or zooming on the panel below!
 
 <iframe src="https://snapshot.raintank.io/dashboard-solo/snapshot/4IKyWYNEQll1B9FXcN3RIgx4M2VGgU8d?panelId=4&fullscreen" width="650" height="300" frameborder="0"></iframe>
 
-This feature makes it easy to include interactive visualizations from your Grafana instance anywhere you want.
+This feature makes it easy to include interactive visualizations from your ThingSPIN instance anywhere you want.
 
 ## New dashboard top header
 
-The top header has gotten a major streamlining in Grafana V2.0.
+The top header has gotten a major streamlining in ThingSPIN V2.0.
 
 <img class="no-shadow" src="/img/docs/v2/v2_top_nav_annotated.png">
 
@@ -100,7 +100,7 @@ The top header has gotten a major streamlining in Grafana V2.0.
 5. `Save dashboard`: Save the current Dashboard with the current name.
 6. `Settings`: Manage Dashboard settings and features such as Templating, Annotations and the name.
 
-> **Note** In Grafana v2.0 when you change the title of a dashboard and then save it it will no
+> **Note** In ThingSPIN v2.0 when you change the title of a dashboard and then save it it will no
 > longer create a new Dashboard. It will just change the name for the current Dashboard.
 > To change name and create a new Dashboard use the `Save As...` menu option
 
@@ -110,9 +110,9 @@ The new side menubar provides access to features such as User Preferences, Organ
 
 If you have multiple Organizations, you can easily switch between them here.
 
-The side menubar will become more useful as we build out additional functionality in Grafana 2.x
+The side menubar will become more useful as we build out additional functionality in ThingSPIN 2.x
 
-You can easily collapse or re-open the side menubar at any time by clicking the Grafana icon in the top left. We never want to get in the way of the data.
+You can easily collapse or re-open the side menubar at any time by clicking the ThingSPIN icon in the top left. We never want to get in the way of the data.
 
 ## New search view and starring dashboards
 
@@ -131,15 +131,15 @@ latency, network traffic, and storage)
 
 ![](/img/docs/v2/dashlist_starred.png)
 
-The dashlist is a new panel in Grafana v2.0. It allows you to show your personal starred dashboards, as well as do custom searches based on search strings or tags.
+The dashlist is a new panel in ThingSPIN v2.0. It allows you to show your personal starred dashboards, as well as do custom searches based on search strings or tags.
 
-dashlist is used on the new Grafana Home screen. It is included as a reference Panel and is useful to provide basic linking between Dashboards.
+dashlist is used on the new ThingSPIN Home screen. It is included as a reference Panel and is useful to provide basic linking between Dashboards.
 
 ## Data Source proxy and admin views
 
-Data sources in Grafana v2.0 are no longer defined in a config file. Instead, they are added through the UI or the HTTP API.
+Data sources in ThingSPIN v2.0 are no longer defined in a config file. Instead, they are added through the UI or the HTTP API.
 
-The backend can now proxy data from Data Sources, which means that it is a lot easier to get started using Grafana with Graphite or OpenTSDB without having to spend time with CORS (Cross origin resource sharing) work-arounds.
+The backend can now proxy data from Data Sources, which means that it is a lot easier to get started using ThingSPIN with Graphite or OpenTSDB without having to spend time with CORS (Cross origin resource sharing) work-arounds.
 
 In addition, connections to Data Sources can be better controlled and secured, and authentication information no longer needs to be exposed to the browser.
 
@@ -147,29 +147,29 @@ In addition, connections to Data Sources can be better controlled and secured, a
 
 A commonly reported problem has been graphs dipping to zero at the the end, because metric data for the last interval has yet to be written to the Data Source. These graphs then "self correct" once the data comes in, but can look deceiving or alarming at times.
 
-You can avoid this problem by adding a `now delay` in `Dashboard Settings` > `Time Picker` tab. This new feature will cause Grafana to ignore the most recent data up to the set delay.
+You can avoid this problem by adding a `now delay` in `Dashboard Settings` > `Time Picker` tab. This new feature will cause ThingSPIN to ignore the most recent data up to the set delay.
 ![](/img/docs/v2/timepicker_now_delay.jpg)
 
 The delay that may be necessary depends on how much latency you have in your collection pipeline.
 
 ## Dashboard overwrite protection
 
-Grafana v2.0 protects Users from accidentally overwriting each others Dashboard changes. Similar protections are in place if you try to create a new Dashboard with the same name as an existing one.
+ThingSPIN v2.0 protects Users from accidentally overwriting each others Dashboard changes. Similar protections are in place if you try to create a new Dashboard with the same name as an existing one.
 
 ![](/img/docs/v2/overwrite_protection.jpg)
 
-These protections are only the first step; we will be building out additional capabilities around dashboard versioning and management in future versions of Grafana.
+These protections are only the first step; we will be building out additional capabilities around dashboard versioning and management in future versions of ThingSPIN.
 
 ## User preferences
 
-If you open side menu (by clicking on the Grafana icon in the top header) you can access your Profile Page.
+If you open side menu (by clicking on the ThingSPIN icon in the top header) you can access your Profile Page.
 
 Here you can update your user details, UI Theme, and change your password.
 
 ## Server-side Panel rendering
 
-Grafana now supports server-side PNG rendering. From the Panel share dialog you now have access to a link that will render a particular Panel to a PNG image.
+ThingSPIN now supports server-side PNG rendering. From the Panel share dialog you now have access to a link that will render a particular Panel to a PNG image.
 
-> **Note** This requires that your Data Source is accessible from your Grafana instance.
+> **Note** This requires that your Data Source is accessible from your ThingSPIN instance.
 
 ![](/img/docs/v2/share_dialog_image_highlight.jpg)

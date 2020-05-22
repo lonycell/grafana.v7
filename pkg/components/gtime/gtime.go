@@ -9,7 +9,7 @@ import (
 
 var dateUnitPattern = regexp.MustCompile(`^(\d+)([dwMy])$`)
 
-// ParseInterval parses an interval with support for all units that Grafana uses.
+// ParseInterval parses an interval with support for all units that ThingSPIN uses.
 func ParseInterval(interval string) (time.Duration, error) {
 	result := dateUnitPattern.FindSubmatch([]byte(interval))
 

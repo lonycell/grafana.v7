@@ -29,7 +29,7 @@ export const run = (includeInternalScripts = false) => {
       .option('-h, --hot', 'Run front-end with HRM enabled')
       .option('-T, --noTsCheck', 'Run bundler without TS type checking')
       .option('-t, --watchTheme', 'Watch for theme changes and regenerate variables.scss files')
-      .description('Starts Grafana front-end in development mode with watch enabled')
+      .description('Starts ThingSPIN front-end in development mode with watch enabled')
       .action(async cmd => {
         await execTask(startTask)({
           watchThemes: cmd.watchTheme,

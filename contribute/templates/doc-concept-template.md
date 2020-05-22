@@ -23,13 +23,13 @@ Concepts are topic types for any information that doesn't involve task lists or 
 
 ## Idea
 
-Concept topics or sections explain *what* and *why*. They do not explain *how*. If you are a new user, you might look for concept information to learn about what Grafana is, why it might be useful to you, and what the general workflow is. 
+Concept topics or sections explain *what* and *why*. They do not explain *how*. If you are a new user, you might look for concept information to learn about what ThingSPIN is, why it might be useful to you, and what the general workflow is. 
 
 ## Workflow
 
-Continuing the example in the previous section, here is a sample Grafana workflow. 
+Continuing the example in the previous section, here is a sample ThingSPIN workflow. 
 
-1. Install Grafana. <link to task for installing Grafana>
+1. Install ThingSPIN. <link to task for installing ThingSPIN>
 2. Set up data sources. <link to data sources concept topic, which links to data source task topics>
 3. Create panels. <link to panel concept topic, which links to tasks>
 4. Create dashboards.  <link to panel concept topic, which links to tasks>

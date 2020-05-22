@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.0"
-description = "Feature and improvement highlights for Grafana v4.0"
+title = "What's new in ThingSPIN v4.0"
+description = "Feature and improvement highlights for ThingSPIN v4.0"
 keywords = ["grafana", "new", "documentation", "4.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,7 +10,7 @@ parent = "whatsnew"
 weight = 4
 +++
 
-# What's new in Grafana v4.0
+# What's new in ThingSPIN v4.0
 
 As usual this release contains a ton of minor new features, fixes and improved UX. But on top of the usual new goodies
 is a core new feature: Alerting! Read on below for a detailed description of what's new in v4.0.
@@ -19,7 +19,7 @@ is a core new feature: Alerting! Read on below for a detailed description of wha
 
 {{< imgbox max-width="40%" img="/img/docs/v4/drag_handles_gif.gif" caption="Alerting overview" >}}
 
-Alerting is a really revolutionary feature for Grafana. It transforms Grafana from a
+Alerting is a really revolutionary feature for ThingSPIN. It transforms ThingSPIN from a
 visualization tool into a truly mission critical monitoring tool. The alert rules are very easy to
 configure using your existing graph panels and threshold levels can be set simply by dragging handles to
 the right side of the graph. The rules will continually be evaluated by grafana-server and
@@ -61,10 +61,10 @@ values all included in the notification.
 
 ### Annotations
 
-Alert state changes are recorded in a new annotation store that is built into Grafana. This store
-currently only supports storing annotations in Grafana's own internal database (mysql, postgres or sqlite).
-The Grafana annotation storage is currently only used for alert state changes but we hope to add the ability for users
-to add graph comments in the form of annotations directly from within Grafana in a future release.
+Alert state changes are recorded in a new annotation store that is built into ThingSPIN. This store
+currently only supports storing annotations in ThingSPIN's own internal database (mysql, postgres or sqlite).
+The ThingSPIN annotation storage is currently only used for alert state changes but we hope to add the ability for users
+to add graph comments in the form of annotations directly from within ThingSPIN in a future release.
 
 ### Alert List Panel
 
@@ -96,7 +96,7 @@ We always try to bring some UX/UI refinements and polish in every release.
 <div class="row">
   <div class="medium-6 columns">
     <p>
-      Grafana is so often used on wall mounted TVs that we figured a clean TV mode would be
+      ThingSPIN is so often used on wall mounted TVs that we figured a clean TV mode would be
       really nice. In TV mode the top navbar, row and panel controls will all fade to transparent.
     </p>
 
@@ -134,7 +134,7 @@ The new row menu automatically slides out when you mouse over the edge of the ro
 to hover over the small green icon and then click it to expand the row menu.
 
 There are some minor improvements to drag and drop behavior. Now when dragging a panel from one row
-to another you will insert the panel and Grafana will automatically make room for it.
+to another you will insert the panel and ThingSPIN will automatically make room for it.
 When you drag a panel within a row you will simply reorder the panels.
 
 If you look at the animation to the right you can see that you can drag and drop a new panel. This is not
@@ -148,7 +148,7 @@ We plan to further improve dashboard building in the future with a more rich gri
 
 {{< imgbox max-width="40%" img="/img/docs/v4/shortcuts.png" caption="Shortcuts" >}}
 
-Grafana v4 introduces a number of really powerful keyboard shortcuts. You can now focus a panel
+ThingSPIN v4 introduces a number of really powerful keyboard shortcuts. You can now focus a panel
 by hovering over it with your mouse. With a panel focused you can simply hit `e` to toggle panel
 edit mode, or `v` to toggle fullscreen mode. `p r` removes the panel. `p s` opens share
 modal.
@@ -163,8 +163,8 @@ Some nice navigation shortcuts are:
 
 ## Upgrade and Breaking changes
 
-There are no breaking changes. Old dashboards and features should work the same. Grafana-server will automatically upgrade its db
-schema on restart. It's advisable to do a backup of Grafana's database before updating.
+There are no breaking changes. Old dashboards and features should work the same. ThingSPIN-server will automatically upgrade its db
+schema on restart. It's advisable to do a backup of ThingSPIN's database before updating.
 
 If you are using plugins make sure to update your plugins as some might not work perfectly v4.
 

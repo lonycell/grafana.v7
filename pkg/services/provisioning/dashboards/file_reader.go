@@ -26,7 +26,7 @@ var (
 )
 
 // FileReader is responsible for reading dashboards from disc and
-// insert/update dashboards to the Grafana database using
+// insert/update dashboards to the ThingSPIN database using
 // `dashboards.DashboardProvisioningService`
 type FileReader struct {
 	Cfg                          *config

@@ -10,7 +10,7 @@ import (
 )
 
 func TestGrafanaLogin(t *testing.T) {
-	Convey("Login using Grafana DB", t, func() {
+	Convey("Login using ThingSPIN DB", t, func() {
 		grafanaLoginScenario("When login with non-existing user", func(sc *grafanaLoginScenarioContext) {
 			sc.withNonExistingUser()
 			err := loginUsingGrafanaDB(sc.loginUserQuery)

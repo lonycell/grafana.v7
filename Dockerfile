@@ -34,7 +34,7 @@ RUN go run build.go build
 # Final stage
 FROM alpine:3.11
 
-LABEL maintainer="Grafana team <hello@grafana.com>"
+LABEL maintainer="ThingSPIN team <hello@grafana.com>"
 
 ARG GF_UID="472"
 ARG GF_GID="472"

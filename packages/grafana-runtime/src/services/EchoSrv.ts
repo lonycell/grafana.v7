@@ -23,7 +23,7 @@ export interface EchoMeta {
    */
   sessionId: string;
   /**
-   * The current users username used to login into Grafana e.g. email.
+   * The current users username used to login into ThingSPIN e.g. email.
    */
   userLogin: string;
   /**
@@ -31,7 +31,7 @@ export interface EchoMeta {
    */
   userId: number;
   /**
-   * True when user is logged in into Grafana.
+   * True when user is logged in into ThingSPIN.
    */
   userSignedIn: boolean;
   /**
@@ -109,7 +109,7 @@ export interface EchoSrv {
 let singletonInstance: EchoSrv;
 
 /**
- * Used during startup by Grafana to set the EchoSrv so it is available
+ * Used during startup by ThingSPIN to set the EchoSrv so it is available
  * via the the {@link getEchoSrv} to the rest of the application.
  *
  * @internal
@@ -129,7 +129,7 @@ export function getEchoSrv(): EchoSrv {
 }
 
 /**
- * Used to register echo backends that will receive Grafana echo events during application
+ * Used to register echo backends that will receive ThingSPIN echo events during application
  * runtime.
  *
  * @public

@@ -32,7 +32,7 @@ const loginServices: () => LoginServices = () => {
     },
     grafanacom: {
       enabled: oauthEnabled && config.oauth.grafana_com,
-      name: 'Grafana.com',
+      name: 'ThingSPIN.com',
       hrefName: 'grafana_com',
       icon: 'grafana_com',
     },

@@ -19,10 +19,10 @@ func main() {
 	setupLogging()
 
 	app := &cli.App{
-		Name: "Grafana CLI",
+		Name: "ThingSPIN CLI",
 		Authors: []*cli.Author{
 			{
-				Name:  "Grafana Project",
+				Name:  "ThingSPIN Project",
 				Email: "hello@grafana.com",
 			},
 		},
@@ -30,7 +30,7 @@ func main() {
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "pluginsDir",
-				Usage:   "Path to the Grafana plugin directory",
+				Usage:   "Path to the ThingSPIN plugin directory",
 				Value:   utils.GetGrafanaPluginDir(runtime.GOOS),
 				EnvVars: []string{"GF_PLUGIN_DIR"},
 			},
@@ -60,7 +60,7 @@ func main() {
 			},
 			&cli.StringFlag{
 				Name:  "homepath",
-				Usage: "Path to Grafana install/home path, defaults to working directory",
+				Usage: "Path to ThingSPIN install/home path, defaults to working directory",
 			},
 			&cli.StringFlag{
 				Name:  "config",

@@ -1,6 +1,6 @@
 +++
-title = "Using Azure Monitor in Grafana"
-description = "Guide for using Azure Monitor in Grafana"
+title = "Using Azure Monitor in ThingSPIN"
+description = "Guide for using Azure Monitor in ThingSPIN"
 keywords = ["grafana", "microsoft", "azure", "monitor", "application", "insights", "log", "analytics", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/azuremonitor"]
@@ -10,11 +10,11 @@ parent = "datasources"
 weight = 5
 +++
 
-# Using Azure Monitor in Grafana
+# Using Azure Monitor in ThingSPIN
 
-> Officially released in Grafana v6.0.0
+> Officially released in ThingSPIN v6.0.0
 
-As of Grafana 6.0, the Azure Monitor plugin has been moved into Grafana so it now ships with built-in support for Azure Monitor.
+As of ThingSPIN 6.0, the Azure Monitor plugin has been moved into ThingSPIN so it now ships with built-in support for Azure Monitor.
 
 The Azure Monitor data source supports multiple services in the Azure cloud:
 
@@ -31,9 +31,9 @@ The data source can access metrics from four different services. You can configu
 - [Guide to setting up an Azure Active Directory Application for Azure Log Analytics.](https://dev.loganalytics.io/documentation/Authorization/AAD-Setup)
 - [Quickstart Guide for Application Insights.](https://dev.applicationinsights.io/quickstart/)
 
-1. Accessed from the Grafana main menu, newly installed data sources can be added immediately within the Data Sources section. Next, click the "Add data source" button in the upper right. The Azure Monitor data source will be available for selection in the Cloud section in the list of data sources.
+1. Accessed from the ThingSPIN main menu, newly installed data sources can be added immediately within the Data Sources section. Next, click the "Add data source" button in the upper right. The Azure Monitor data source will be available for selection in the Cloud section in the list of data sources.
 
-2. In the name field, Grafana will automatically fill in a name for the data source - `Azure Monitor` or something like `Azure Monitor - 3`. If you are going to configure multiple data sources then change the name to something more informative.
+2. In the name field, ThingSPIN will automatically fill in a name for the data source - `Azure Monitor` or something like `Azure Monitor - 3`. If you are going to configure multiple data sources then change the name to something more informative.
 
 3. If you are using Azure Monitor, you need 4 pieces of information from the Azure portal (see link above for detailed instructions):
 
@@ -151,11 +151,11 @@ types of template variables.
 
 ### Azure Monitor metrics whitelist
 
-Not all metrics returned by the Azure Monitor API have values. The Grafana data source has a whitelist to only return metric names if it is possible they might have values. This whitelist is updated regularly as new services and metrics are added to the Azure cloud. You can find the current whitelist [here](https://github.com/grafana/grafana/blob/master/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/supported_namespaces.ts).
+Not all metrics returned by the Azure Monitor API have values. The ThingSPIN data source has a whitelist to only return metric names if it is possible they might have values. This whitelist is updated regularly as new services and metrics are added to the Azure cloud. You can find the current whitelist [here](https://github.com/grafana/grafana/blob/master/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/supported_namespaces.ts).
 
 ### Azure Monitor alerting
 
-Grafana alerting is supported for the Azure Monitor service. This is not Azure Alerts support. Read more about how alerting in Grafana works [here]({{< relref "../../alerting/rules.md" >}}).
+ThingSPIN alerting is supported for the Azure Monitor service. This is not Azure Alerts support. Read more about how alerting in ThingSPIN works [here]({{< relref "../../alerting/rules.md" >}}).
 
 {{< docs-imagebox img="/img/docs/v60/azuremonitor-alerting.png" class="docs-image--no-shadow" caption="Azure Monitor Alerting" >}}
 
@@ -216,7 +216,7 @@ Examples:
 
 ### Application Insights alerting
 
-Grafana alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in Grafana works [here]({{< relref "../../alerting/rules.md" >}}).
+ThingSPIN alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in ThingSPIN works [here]({{< relref "../../alerting/rules.md" >}}).
 
 {{< docs-imagebox img="/img/docs/v60/azuremonitor-alerting.png" class="docs-image--no-shadow" caption="Azure Monitor Alerting" >}}
 
@@ -248,19 +248,19 @@ If your credentials give you access to multiple subscriptions then choose the ap
 
 ### Azure Log Analytics macros
 
-To make writing queries easier there are several Grafana macros that can be used in the where clause of a query:
+To make writing queries easier there are several ThingSPIN macros that can be used in the where clause of a query:
 
 - `$__timeFilter()` - Expands to
   `TimeGenerated ≥ datetime(2018-06-05T18:09:58.907Z) and`
-  `TimeGenerated ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Grafana time picker.
+  `TimeGenerated ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the ThingSPIN time picker.
 
 - `$__timeFilter(datetimeColumn)` - Expands to
   `datetimeColumn ≥ datetime(2018-06-05T18:09:58.907Z) and`
-  `datetimeColumn ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Grafana time picker.
+  `datetimeColumn ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the ThingSPIN time picker.
 
-- `$__timeFrom()` - Returns the From datetime from the Grafana picker. Example: `datetime(2018-06-05T18:09:58.907Z)`.
+- `$__timeFrom()` - Returns the From datetime from the ThingSPIN picker. Example: `datetime(2018-06-05T18:09:58.907Z)`.
 
-- `$__timeTo()` - Returns the From datetime from the Grafana picker. Example: `datetime(2018-06-05T20:09:58.907Z)`.
+- `$__timeTo()` - Returns the From datetime from the ThingSPIN picker. Example: `datetime(2018-06-05T20:09:58.907Z)`.
 
 - `$__escapeMulti($myVar)` - is to be used with multi-value template variables that contain illegal characters. If `$myVar` has the following two values as a string `'\\grafana-vm\Network(eth0)\Total','\\hello!'`, then it expands to: `@'\\grafana-vm\Network(eth0)\Total', @'\\hello!'`. If using single value variables there is no need for this macro, simply escape the variable inline instead - `@'\$myVar'`.
 
@@ -270,13 +270,13 @@ To make writing queries easier there are several Grafana macros that can be used
 
 ### Azure Log Analytics builtin variables
 
-There are also some Grafana variables that can be used in Azure Log Analytics queries:
+There are also some ThingSPIN variables that can be used in Azure Log Analytics queries:
 
-- `$__interval` - Grafana calculates the minimum time grain that can be used to group by time in queries. More details on how it works [here]({{< relref "../../variables/templates-and-variables.md#interval-variables" >}}). It returns a time grain like `5m` or `1h` that can be used in the bin function. E.g. `summarize count() by bin(TimeGenerated, $__interval)`
+- `$__interval` - ThingSPIN calculates the minimum time grain that can be used to group by time in queries. More details on how it works [here]({{< relref "../../variables/templates-and-variables.md#interval-variables" >}}). It returns a time grain like `5m` or `1h` that can be used in the bin function. E.g. `summarize count() by bin(TimeGenerated, $__interval)`
 
 ### Templating with variables for Azure Log Analytics
 
-Any Log Analytics query that returns a list of values can be used in the `Query` field in the Variable edit view. There is also one Grafana function for Log Analytics that returns a list of workspaces.
+Any Log Analytics query that returns a list of values can be used in the `Query` field in the Variable edit view. There is also one ThingSPIN function for Log Analytics that returns a list of workspaces.
 
 Refer to the [Variables]({{< relref "../../variables/templates-and-variables.md" >}}) documentation for an introduction to the templating feature and the different
 types of template variables.
@@ -313,13 +313,13 @@ Perf
 | order by TimeGenerated asc
 ```
 
-### Deep linking from Grafana panels to the Log Analytics query editor in Azure Portal
+### Deep linking from ThingSPIN panels to the Log Analytics query editor in Azure Portal
 
-> Only available in Grafana v7.0+.
+> Only available in ThingSPIN v7.0+.
 
 {{< docs-imagebox img="/img/docs/v70/azure-log-analytics-deep-linking.png" max-width="500px" class="docs-image--right" caption="Azure Log Analytics deep linking" >}}
 
-Click on a time series in the panel to see a context menu with a link to `View in Azure Portal`. Clicking that link opens the Azure Log Analytics query editor in the Azure Portal and runs the query from the Grafana panel there.
+Click on a time series in the panel to see a context menu with a link to `View in Azure Portal`. Clicking that link opens the Azure Log Analytics query editor in the Azure Portal and runs the query from the ThingSPIN panel there.
 
 If you're not currently logged in to the Azure Portal, then the link opens the login page. The provided link is valid for any account, but it only displays the query if your account has access to the Azure Log Analytics workspace specified in the query.
 
@@ -327,9 +327,9 @@ If you're not currently logged in to the Azure Portal, then the link opens the l
 
 ### Azure Log Analytics alerting
 
-> Only available in Grafana v7.0+.
+> Only available in ThingSPIN v7.0+.
 
-Grafana alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in Grafana works in [Alerting rules]({{< relref "../../alerting/rules.md" >}}).
+ThingSPIN alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in ThingSPIN works in [Alerting rules]({{< relref "../../alerting/rules.md" >}}).
 
 ### Writing analytics queries For the Application Insights service
 
@@ -349,7 +349,7 @@ There are some important caveats to remember:
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

@@ -187,7 +187,7 @@ const packagePluginRunner: TaskRunner<PluginCIOptions> = async () => {
     plugin: await getPackageDetails(zipFile, distDir),
   };
 
-  console.log('Setup Grafana Environment');
+  console.log('Setup ThingSPIN Environment');
   let p = path.resolve(grafanaEnvDir, 'plugins', pluginInfo.id);
   fs.mkdirSync(p, { recursive: true });
   await execa('unzip', [zipFile, '-d', p]);

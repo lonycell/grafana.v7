@@ -14,8 +14,8 @@ depends:
 - libfontconfig1
 maintainer: "<contact@grafana.com>"
 description: |
-  Grafana
-vendor: "Grafana"
+  ThingSPIN
+vendor: "ThingSPIN"
 homepage: "https://grafana.com"
 license: "Apache 2"
 bindir: "/usr/sbin"

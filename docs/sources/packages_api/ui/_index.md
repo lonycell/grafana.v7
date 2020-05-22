@@ -9,7 +9,7 @@ type = "docs"
 
 ## @grafana/ui package
 
-A library containing the different design components of the Grafana ecosystem.
+A library containing the different design components of the ThingSPIN ecosystem.
 
 ## Classes
 

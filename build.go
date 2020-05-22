@@ -69,12 +69,12 @@ func main() {
 	flag.StringVar(&pkgArch, "pkg-arch", "", "PKG ARCH")
 	flag.BoolVar(&race, "race", race, "Use race detector")
 	flag.BoolVar(&includeBuildId, "includeBuildId", includeBuildId, "IncludeBuildId in package name")
-	flag.BoolVar(&enterprise, "enterprise", enterprise, "Build enterprise version of Grafana")
+	flag.BoolVar(&enterprise, "enterprise", enterprise, "Build enterprise version of ThingSPIN")
 	flag.StringVar(&buildIdRaw, "buildId", "0", "Build ID from CI system")
 	flag.BoolVar(&isDev, "dev", isDev, "optimal for development, skips certain steps")
 	flag.BoolVar(&skipRpmGen, "skipRpm", skipRpmGen, "skip rpm package generation (default: false)")
 	flag.BoolVar(&skipDebGen, "skipDeb", skipDebGen, "skip deb package generation (default: false)")
-	flag.BoolVar(&printGenVersion, "gen-version", printGenVersion, "generate Grafana version and output (default: false)")
+	flag.BoolVar(&printGenVersion, "gen-version", printGenVersion, "generate ThingSPIN version and output (default: false)")
 	flag.Parse()
 
 	buildId = shortenBuildId(buildIdRaw)
@@ -356,7 +356,7 @@ func createPackage(options linuxPackageOptions) {
 
 	args := []string{
 		"-s", "dir",
-		"--description", "Grafana",
+		"--description", "ThingSPIN",
 		"-C", packageRoot,
 		"--url", "https://grafana.com",
 		"--maintainer", "contact@grafana.com",
@@ -381,7 +381,7 @@ func createPackage(options linuxPackageOptions) {
 	}
 	args = append(args, "--name", name)
 
-	description := "Grafana"
+	description := "ThingSPIN"
 	if enterprise {
 		description += " Enterprise"
 	}

@@ -11,10 +11,10 @@ weight = 1
 
 # User Authentication Overview
 
-Grafana provides many ways to authenticate users. Some authentication integrations also enable syncing user
+ThingSPIN provides many ways to authenticate users. Some authentication integrations also enable syncing user
 permissions and org memberships.
 
-Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in Grafana Enterprise.
+Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in ThingSPIN Enterprise.
 
 Provider | Support | Role mapping | Team sync<br> *(Enterprise only)* | Active sync<br> *(Enterprise only)*
 -------- | :-----: | :----------: | :-------: | :---------: 
@@ -29,27 +29,27 @@ Provider | Support | Role mapping | Team sync<br> *(Enterprise only)* | Active s
 [SAML]({{< relref "../enterprise/saml.md" >}}) (Enterprise only)    | v6.3+ | v7.0+ | v7.0+ | - 
 
 
-## Grafana Auth
+## ThingSPIN Auth
 
-Grafana of course has a built in user authentication system with password authentication enabled by default. You can
+ThingSPIN of course has a built in user authentication system with password authentication enabled by default. You can
 disable authentication by enabling anonymous access. You can also hide login form and only allow login through an auth
 provider (listed above). There is also options for allowing self sign up.
 
 ### Login and short-lived tokens
 
-> The following applies when using Grafana's built in user authentication, LDAP (without Auth proxy) or OAuth integration.
+> The following applies when using ThingSPIN's built in user authentication, LDAP (without Auth proxy) or OAuth integration.
 
-Grafana are using short-lived tokens as a mechanism for verifying authenticated users.
+ThingSPIN are using short-lived tokens as a mechanism for verifying authenticated users.
 These short-lived tokens are rotated each `token_rotation_interval_minutes` for an active authenticated user.
 
-An active authenticated user that gets it token rotated will extend the `login_maximum_inactive_lifetime_days` time from "now" that Grafana will remember the user.
+An active authenticated user that gets it token rotated will extend the `login_maximum_inactive_lifetime_days` time from "now" that ThingSPIN will remember the user.
 This means that a user can close its browser and come back before `now + login_maximum_inactive_lifetime_days` and still being authenticated.
  This is true as long as the time since user login is less than `login_maximum_lifetime_days`.
 
 #### Remote logout
 
 You can logout from other devices by removing login sessions from the bottom of your profile page. If you are
-a Grafana admin user you can also do the same for any user from the Server Admin / Edit User view.
+a ThingSPIN admin user you can also do the same for any user from the Server Admin / Edit User view.
 
 ## Settings
 
@@ -76,7 +76,7 @@ api_key_max_seconds_to_live = -1
 
 ### Anonymous authentication
 
-You can make Grafana accessible without any login required by enabling anonymous access in the configuration file.
+You can make ThingSPIN accessible without any login required by enabling anonymous access in the configuration file.
 
 Example:
 
@@ -91,11 +91,11 @@ org_name = Main Org.
 org_role = Viewer
 ```
 
-If you change your organization name in the Grafana UI this setting needs to be updated to match the new name.
+If you change your organization name in the ThingSPIN UI this setting needs to be updated to match the new name.
 
 ### Basic authentication
 
-Basic auth is enabled by default and works with the built in Grafana user password authentication system and LDAP
+Basic auth is enabled by default and works with the built in ThingSPIN user password authentication system and LDAP
 authentication integration.
 
 To disable basic auth:
@@ -107,7 +107,7 @@ enabled = false
 
 ### Disable login form
 
-You can hide the Grafana login form using the below configuration settings.
+You can hide the ThingSPIN login form using the below configuration settings.
 
 ```bash
 [auth]
@@ -136,7 +136,7 @@ disable_signout_menu = true
 
 ### URL redirect after signing out
 
-URL to redirect the user to after signing out from Grafana. This can for example be used to enable signout from oauth provider.
+URL to redirect the user to after signing out from ThingSPIN. This can for example be used to enable signout from oauth provider.
 
 ```bash
 [auth]

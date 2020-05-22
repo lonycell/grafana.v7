@@ -1,6 +1,6 @@
 +++
-title = "Using Loki in Grafana"
-description = "Guide for using Loki in Grafana"
+title = "Using Loki in ThingSPIN"
+description = "Guide for using Loki in ThingSPIN"
 keywords = ["grafana", "loki", "logging", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/loki"]
@@ -10,19 +10,19 @@ parent = "datasources"
 weight = 6
 +++
 
-# Using Loki in Grafana
+# Using Loki in ThingSPIN
 
-> BETA: Querying Loki data requires Grafana's Explore section.
-> Grafana v6.x comes with Explore enabled by default.
-> In Grafana v5.3.x and v5.4.x. you need to enable Explore manually.
-> Viewing Loki data in dashboard panels is supported in Grafana v6.4+.
+> BETA: Querying Loki data requires ThingSPIN's Explore section.
+> ThingSPIN v6.x comes with Explore enabled by default.
+> In ThingSPIN v5.3.x and v5.4.x. you need to enable Explore manually.
+> Viewing Loki data in dashboard panels is supported in ThingSPIN v6.4+.
 
-Grafana ships with built-in support for Loki, Grafana's log aggregation system.
+ThingSPIN ships with built-in support for Loki, ThingSPIN's log aggregation system.
 Just add it as a data source and you are ready to query your log data in [Explore]({{< relref "../explore" >}}).
 
 ## Adding the data source
 
-1. Open Grafana and make sure you are logged in.
+1. Open ThingSPIN and make sure you are logged in.
 2. In the side menu under the `Configuration` link you should find a link named `Data Sources`.
 3. Click the `Add data source` button at the top.
 4. Select `Loki` from the list of data sources.
@@ -129,10 +129,10 @@ The following filter types are currently supported:
 
 Loki supports Live tailing which displays logs in real-time. This feature is supported in [Explore]({{< relref "../explore/#loki-specific-features" >}}).
 
-Note that Live Tailing relies on two Websocket connections: one between the browser and the Grafana server, and another between the Grafana server and the Loki server. If you run any reverse proxies, please configure them accordingly.
+Note that Live Tailing relies on two Websocket connections: one between the browser and the ThingSPIN server, and another between the ThingSPIN server and the Loki server. If you run any reverse proxies, please configure them accordingly.
 
 
-> Note: This feature is only available in Grafana v6.3+
+> Note: This feature is only available in ThingSPIN v6.3+
 
 ## Log Context
 
@@ -140,7 +140,7 @@ When using a search expression as detailed above, you now have the ability to re
 By clicking the `Show Context` link on the filtered rows, you'll be able to investigate the log messages that came before and after the
 log message you're interested in.
 
-> Note: This feature is only available in Grafana v6.3+
+> Note: This feature is only available in ThingSPIN v6.3+
 
 ## Templating
 
@@ -152,11 +152,11 @@ Check out the [Templating]({{< relref "../../variables/templates-and-variables" 
 
 You can use any non-metric Loki query as a source for annotations. Log content will be used as annotation text and your log stream labels as tags, so there is no need for additional mapping.
 
-> Note: Annotations for Loki are only available in Grafana v6.4+
+> Note: Annotations for Loki are only available in ThingSPIN v6.4+
 
 ## Configure the data source with provisioning
 
-You can set up the data source via config files with Grafana's provisioning system.
+You can set up the data source via config files with ThingSPIN's provisioning system.
 You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here is an example:
@@ -189,8 +189,8 @@ datasources:
     jsonData:
       maxLines: 1000
       derivedFields:
-        # Field with internal link pointing to data source in Grafana.
-        # Right now, Grafana supports only Jaeger and Zipkin data sources as link targets.
+        # Field with internal link pointing to data source in ThingSPIN.
+        # Right now, ThingSPIN supports only Jaeger and Zipkin data sources as link targets.
         - datasourceUid: my_jaeger_uid
           matcherRegex: "traceID=(\\w+)"
           name: TraceID

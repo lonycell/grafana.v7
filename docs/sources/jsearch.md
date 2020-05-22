@@ -1,5 +1,5 @@
-page_title: Search the Grafana documentation
-page_keywords: Grafana, search documentation
+page_title: Search the ThingSPIN documentation
+page_keywords: ThingSPIN, search documentation
 no_toc: true
 no_version_dropdown: true
 

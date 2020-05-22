@@ -1,6 +1,6 @@
 +++
 title = "HTTP Preferences API "
-description = "Grafana HTTP API"
+description = "ThingSPIN HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "preferences"]
 aliases = ["/docs/grafana/latest/http_api/preferences/"]
 type = "docs"

@@ -13,7 +13,7 @@ weight = 4
 
 {{< docs-imagebox img="/img/docs/v45/graph_overview.png" class="docs-image--no-shadow" max-width="850px" >}}
 
-The main panel in Grafana is simply named Graph. It provides a very rich set of graphing options.
+The main panel in ThingSPIN is simply named Graph. It provides a very rich set of graphing options.
 
 1. Clicking the title for a panel exposes a menu.  The `edit` option opens additional configuration
 options for the panel.
@@ -104,11 +104,11 @@ Additional values can be shown along-side the legend names:
 - **Total** - Sum of all values returned from the metric query
 - **Decimals** - Controls how many decimals are displayed for legend values (and graph hover tooltips)
 
-The legend values are calculated client side by Grafana and depend on what type of
+The legend values are calculated client side by ThingSPIN and depend on what type of
 aggregation or point consolidation your metric query is using. All the above legend values cannot
 be correct at the same time. For example if you plot a rate like requests/second, this is probably
 using average as aggregator, then the Total in the legend will not represent the total number of requests.
-It is just the sum of all data points received by Grafana.
+It is just the sum of all data points received by ThingSPIN.
 
 ### Hide series
 
@@ -175,7 +175,7 @@ the graph crosses a particular threshold.
 
 ### Time Regions
 
-> Only available in Grafana v5.4 and above.
+> Only available in ThingSPIN v5.4 and above.
 
 {{< docs-imagebox img="/img/docs/v54/graph_time_regions.png" max-width= "800px" >}}
 

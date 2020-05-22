@@ -53,7 +53,7 @@ func GetContextHandler(
 		}
 
 		orgId := int64(0)
-		orgIdHeader := ctx.Req.Header.Get("X-Grafana-Org-Id")
+		orgIdHeader := ctx.Req.Header.Get("X-ThingSPIN-Org-Id")
 		if orgIdHeader != "" {
 			orgId, _ = strconv.ParseInt(orgIdHeader, 10, 64)
 		}

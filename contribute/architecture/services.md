@@ -1,12 +1,12 @@
 # Services
 
-A Grafana _service_ encapsulates and exposes application logic to the rest of the application, through a set of related operations. 
+A ThingSPIN _service_ encapsulates and exposes application logic to the rest of the application, through a set of related operations. 
 
-Before a service can start communicating with the rest of Grafana, it needs to be registered in the _service registry_.
+Before a service can start communicating with the rest of ThingSPIN, it needs to be registered in the _service registry_.
 
-The service registry keeps track of all available services during runtime. On start-up, Grafana uses the registry to build a dependency graph of services, a _service graph_.
+The service registry keeps track of all available services during runtime. On start-up, ThingSPIN uses the registry to build a dependency graph of services, a _service graph_.
 
-Even though the services in Grafana do different things, they share a number of patterns. To better understand how a service works, let's build one from scratch!
+Even though the services in ThingSPIN do different things, they share a number of patterns. To better understand how a service works, let's build one from scratch!
 
 ## Create a service
 
@@ -26,7 +26,7 @@ func (s *MyService) Init() error {
 }
 ```
 
-The `Init` method is used to initialize and configure the service to make it ready to use. Services that return an error halt Grafana's startup process and cause the error to be logged as it exits.
+The `Init` method is used to initialize and configure the service to make it ready to use. Services that return an error halt ThingSPIN's startup process and cause the error to be logged as it exits.
 
 ## Register a service
 
@@ -48,7 +48,7 @@ import _ "github.com/grafana/grafana/pkg/services/mysvc"
 
 ## Dependencies
 
-Grafana uses the [inject](https://github.com/facebookgo/inject) package to inject dependencies during runtime. 
+ThingSPIN uses the [inject](https://github.com/facebookgo/inject) package to inject dependencies during runtime. 
 
 For example, to access the [bus](communication.md), add it to the `MyService` struct:
 

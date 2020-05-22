@@ -1,6 +1,6 @@
 +++
 title = "Auth Proxy"
-description = "Grafana Auth Proxy Guide "
+description = "ThingSPIN Auth Proxy Guide "
 keywords = ["grafana", "configuration", "documentation", "proxy"]
 type = "docs"
 aliases = ["/docs/grafana/latest/tutorials/authproxy/"]
@@ -13,7 +13,7 @@ weight = 2
 
 # Auth Proxy Authentication
 
-You can configure Grafana to let a HTTP reverse proxy handling authentication. Popular web servers have a very
+You can configure ThingSPIN to let a HTTP reverse proxy handling authentication. Popular web servers have a very
 extensive list of pluggable authentication modules, and any of them can be used with the AuthProxy feature.
 Below we detail the configuration options for auth proxy.
 
@@ -25,10 +25,10 @@ enabled = true
 header_name = X-WEBAUTH-USER
 # HTTP Header property, defaults to `username` but can also be `email`
 header_property = username
-# Set to `true` to enable auto sign up of users who do not exist in Grafana DB. Defaults to `true`.
+# Set to `true` to enable auto sign up of users who do not exist in ThingSPIN DB. Defaults to `true`.
 auto_sign_up = true
 # Define cache time to live in minutes
-# If combined with Grafana LDAP integration it is also the sync interval
+# If combined with ThingSPIN LDAP integration it is also the sync interval
 sync_ttl = 60
 # Limit where auth proxy requests come from by configuring a list of IP addresses.
 # This can be used to prevent users spoofing the X-WEBAUTH-USER header.
@@ -41,7 +41,7 @@ headers =
 enable_login_token = false
 ```
 
-## Interacting with Grafana’s AuthProxy via curl
+## Interacting with ThingSPIN’s AuthProxy via curl
 
 ```bash
 curl -H "X-WEBAUTH-USER: admin"  http://localhost:3000/api/users
@@ -56,7 +56,7 @@ curl -H "X-WEBAUTH-USER: admin"  http://localhost:3000/api/users
 ]
 ```
 
-We can then send a second request to the `/api/user` method which will return the details of the logged in user. We will use this request to show how Grafana automatically adds the new user we specify to the system. Here we create a new user called “anthony”.
+We can then send a second request to the `/api/user` method which will return the details of the logged in user. We will use this request to show how ThingSPIN automatically adds the new user we specify to the system. Here we create a new user called “anthony”.
 
 ```bash
 curl -H "X-WEBAUTH-USER: anthony" http://localhost:3000/api/user
@@ -70,13 +70,13 @@ curl -H "X-WEBAUTH-USER: anthony" http://localhost:3000/api/user
 }
 ```
 
-## Making Apache’s auth work together with Grafana’s AuthProxy
+## Making Apache’s auth work together with ThingSPIN’s AuthProxy
 
 I’ll demonstrate how to use Apache for authenticating users. In this example we use BasicAuth with Apache’s text file based authentication handler, i.e. htpasswd files. However, any available Apache authentication capabilities could be used.
 
 ### Apache BasicAuth
 
-In this example we use Apache as a reverse proxy in front of Grafana. Apache handles the Authentication of users before forwarding requests to the Grafana backend service.
+In this example we use Apache as a reverse proxy in front of ThingSPIN. Apache handles the Authentication of users before forwarding requests to the ThingSPIN backend service.
 
 
 #### Apache configuration
@@ -116,15 +116,15 @@ In this example we use Apache as a reverse proxy in front of Grafana. Apache han
 
         * **RewriteRule .* - [E=PROXY_USER:%{LA-U:REMOTE_USER}, NS]**: This line is a little bit of magic. What it does, is for every request use the rewriteEngines look-ahead (LA-U) feature to determine what the REMOTE_USER variable would be set to after processing the request. Then assign the result to the variable PROXY_USER. This is necessary as the REMOTE_USER variable is not available to the RequestHeader function.
 
-        * **RequestHeader set X-WEBAUTH-USER “%{PROXY_USER}e”**: With the authenticated username now stored in the PROXY_USER variable, we create a new HTTP request header that will be sent to our backend Grafana containing the username.
+        * **RequestHeader set X-WEBAUTH-USER “%{PROXY_USER}e”**: With the authenticated username now stored in the PROXY_USER variable, we create a new HTTP request header that will be sent to our backend ThingSPIN containing the username.
 
-* The **RequestHeader unset Authorization** removes the Authorization header from the HTTP request before it is forwarded to Grafana. This ensures that Grafana does not try to authenticate the user using these credentials (BasicAuth is a supported authentication handler in Grafana).
+* The **RequestHeader unset Authorization** removes the Authorization header from the HTTP request before it is forwarded to ThingSPIN. This ensures that ThingSPIN does not try to authenticate the user using these credentials (BasicAuth is a supported authentication handler in ThingSPIN).
 
-* The last 3 lines are then just standard reverse proxy configuration to direct all authenticated requests to our Grafana server running on port 3000.
+* The last 3 lines are then just standard reverse proxy configuration to direct all authenticated requests to our ThingSPIN server running on port 3000.
 
 ## Full walk through using Docker.
 
-For this example, we use the official Grafana docker image available at [Docker Hub](https://hub.docker.com/r/grafana/grafana/)
+For this example, we use the official ThingSPIN docker image available at [Docker Hub](https://hub.docker.com/r/grafana/grafana/)
 
 * Create a file `grafana.ini` with the following contents
 
@@ -141,7 +141,7 @@ header_property = username
 auto_sign_up = true
 ```
 
-Launch the Grafana container, using our custom grafana.ini to replace `/etc/grafana/grafana.ini`. We don't expose
+Launch the ThingSPIN container, using our custom grafana.ini to replace `/etc/grafana/grafana.ini`. We don't expose
 any ports for this container as it will only be connected to by our Apache container.
 
 ```bash
@@ -221,13 +221,13 @@ ProxyPassReverse / http://grafana:3000/
 
 ### Use grafana.
 
-With our Grafana and Apache containers running, you can now connect to http://localhost/ and log in using the username/password we created in the htpasswd file.
+With our ThingSPIN and Apache containers running, you can now connect to http://localhost/ and log in using the username/password we created in the htpasswd file.
 
 ### Team Sync (Enterprise only)
 
-> Only available in Grafana Enterprise v6.3+
+> Only available in ThingSPIN Enterprise v6.3+
 
-With Team Sync, it's possible to set up synchronization between teams in your authentication provider and Grafana. You can send Grafana values as part of an HTTP header and have Grafana map them to your team structure. This allows you to put users into specific teams automatically.
+With Team Sync, it's possible to set up synchronization between teams in your authentication provider and ThingSPIN. You can send ThingSPIN values as part of an HTTP header and have ThingSPIN map them to your team structure. This allows you to put users into specific teams automatically.
 
 To support the feature, auth proxy allows optional headers to map additional user attributes. The specific attribute to support team sync  is `Groups`.
 
@@ -236,9 +236,9 @@ To support the feature, auth proxy allows optional headers to map additional use
 headers = "Groups:X-WEBAUTH-GROUPS"
 ```
 
-You use the `X-WEBAUTH-GROUPS` header to send the team information for each user. Specifically, the set of Grafana's group IDs that the user belongs to.
+You use the `X-WEBAUTH-GROUPS` header to send the team information for each user. Specifically, the set of ThingSPIN's group IDs that the user belongs to.
 
-First, we need to set up the mapping between your authentication provider and Grafana. Follow [these instructions]({{< relref "team-sync.md#enable-synchronization-for-a-team" >}}) to add groups to a team within Grafana.
+First, we need to set up the mapping between your authentication provider and ThingSPIN. Follow [these instructions]({{< relref "team-sync.md#enable-synchronization-for-a-team" >}}) to add groups to a team within ThingSPIN.
 
 Once that's done. You can verify your mappings by querying the API.
 
@@ -282,7 +282,7 @@ curl -H "X-WEBAUTH-USER: admin" http://localhost:3000/api/teams/2/groups
 ]
 ```
 
-Finally, whenever Grafana receives a request with a header of `X-WEBAUTH-GROUPS: lokiTeamOnExternalSystem`, the user under authentication will be placed into the specified team. Placement in multiple teams is supported by using comma-separated values e.g. `lokiTeamOnExternalSystem,CoreTeamOnExternalSystem`.
+Finally, whenever ThingSPIN receives a request with a header of `X-WEBAUTH-GROUPS: lokiTeamOnExternalSystem`, the user under authentication will be placed into the specified team. Placement in multiple teams is supported by using comma-separated values e.g. `lokiTeamOnExternalSystem,CoreTeamOnExternalSystem`.
 
 ```bash
 curl -H "X-WEBAUTH-USER: leonard" -H "X-WEBAUTH-GROUPS: lokiteamOnExternalSystem" http://localhost:3000/dashboards/home
@@ -294,14 +294,14 @@ curl -H "X-WEBAUTH-USER: leonard" -H "X-WEBAUTH-GROUPS: lokiteamOnExternalSystem
 }
 ```
 
-With this, the user `leonard` will be automatically placed into the Loki team as part of Grafana authentication.
+With this, the user `leonard` will be automatically placed into the Loki team as part of ThingSPIN authentication.
 
 [Learn more about Team Sync]({{< relref "team-sync.md" >}})
 
 
 ## Login token and session cookie
 
-With `enable_login_token` set to `true` Grafana will, after successful auth proxy header validation, assign the user
+With `enable_login_token` set to `true` ThingSPIN will, after successful auth proxy header validation, assign the user
 a login token and cookie. You only have to configure your auth proxy to provide headers for the /login route.
 Requests via other routes will be authenticated using the cookie.
 

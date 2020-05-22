@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug you found when using Grafana
+about: Report a bug you found when using ThingSPIN
 labels: 'type: bug'
 ---
 
@@ -19,9 +19,9 @@ Use query inspector to troubleshoot issues: https://community.grafana.com/t/usin
 **Anything else we need to know?**:
 
 **Environment**:
-- Grafana version:
+- ThingSPIN version:
 - Data source type & version:
-- OS Grafana is installed on:
+- OS ThingSPIN is installed on:
 - User OS & Browser:
-- Grafana plugins:
+- ThingSPIN plugins:
 - Others:

@@ -22,7 +22,7 @@ export interface TemplateSrv {
 let singletonInstance: TemplateSrv;
 
 /**
- * Used during startup by Grafana to set the TemplateSrv so it is available
+ * Used during startup by ThingSPIN to set the TemplateSrv so it is available
  * via the the {@link getTemplateSrv} to the rest of the application.
  *
  * @internal

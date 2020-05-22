@@ -9,7 +9,7 @@ type = "docs"
 
 ## FeatureToggles interface
 
-Describes available feature toggles in Grafana. These can be configured via the `conf/custom.ini` to enable features under development or not yet available in stable version.
+Describes available feature toggles in ThingSPIN. These can be configured via the `conf/custom.ini` to enable features under development or not yet available in stable version.
 
 <b>Signature</b>
 
@@ -49,7 +49,7 @@ meta: boolean;
 
 ## Remarks
 
-Available only in Grafana Enterprise
+Available only in ThingSPIN Enterprise
 
 ### newEdit property
 

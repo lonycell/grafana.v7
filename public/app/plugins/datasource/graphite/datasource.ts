@@ -123,7 +123,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
     for (let i = 0; i < series.length; i++) {
       const s = series[i];
 
-      // Disables Grafana own series naming
+      // Disables ThingSPIN own series naming
       s.title = s.target;
 
       for (let y = 0; y < s.datapoints.length; y++) {

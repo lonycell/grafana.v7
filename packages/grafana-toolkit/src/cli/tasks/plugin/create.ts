@@ -23,9 +23,9 @@ interface PluginDetails {
 type PluginType = 'panel-plugin' | 'datasource-plugin' | 'backend-datasource-plugin';
 
 const PluginNames: Record<PluginType, string> = {
-  'panel-plugin': 'Grafana Panel Plugin',
-  'datasource-plugin': 'Grafana Data Source Plugin',
-  'backend-datasource-plugin': 'Grafana Backend Datasource Plugin',
+  'panel-plugin': 'ThingSPIN Panel Plugin',
+  'datasource-plugin': 'ThingSPIN Data Source Plugin',
+  'backend-datasource-plugin': 'ThingSPIN Backend Datasource Plugin',
 };
 const RepositoriesPaths: Record<PluginType, string> = {
   'panel-plugin': 'https://github.com/grafana/simple-react-panel.git',
@@ -177,7 +177,7 @@ export const printGrafanaTutorialsDetails = (type: PluginType) => {
     console.log(`${PluginNames[type]} tutorial: ${TutorialPaths[type]}`);
   }
   console.log(
-    'Learn more about Grafana Plugins at https://grafana.com/docs/grafana/latest/plugins/developing/development/'
+    'Learn more about ThingSPIN Plugins at https://grafana.com/docs/grafana/latest/plugins/developing/development/'
   );
   console.log();
   console.groupEnd();

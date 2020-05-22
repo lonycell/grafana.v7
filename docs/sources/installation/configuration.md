@@ -12,29 +12,29 @@ weight = 1
 
 # Configuration
 
-Grafana has a number of configuration options that you can specify in a `.ini` configuration file or specified using environment variables.
+ThingSPIN has a number of configuration options that you can specify in a `.ini` configuration file or specified using environment variables.
 
-> **Note:** You must restart Grafana for any configuration changes to take effect.
+> **Note:** You must restart ThingSPIN for any configuration changes to take effect.
 
 ## Config file locations
 
-*Do not* change `defaults.ini`! Grafana defaults are stored in this file. Depending on your OS, make all configuration changes in either `custom.ini` or `grafana.ini`.
+*Do not* change `defaults.ini`! ThingSPIN defaults are stored in this file. Depending on your OS, make all configuration changes in either `custom.ini` or `grafana.ini`.
 
 - Default configuration from `$WORKING_DIR/conf/defaults.ini`
 - Custom configuration from `$WORKING_DIR/conf/custom.ini`
 - The custom configuration file path can be overridden using the `--config` parameter
 
 ### Linux
-If you installed Grafana using the `deb` or `rpm` packages, then your configuration file is located at `/etc/grafana/grafana.ini` and a separate `custom.ini` is not used. This path is specified in the Grafana init.d script using `--config` file parameter.
+If you installed ThingSPIN using the `deb` or `rpm` packages, then your configuration file is located at `/etc/grafana/grafana.ini` and a separate `custom.ini` is not used. This path is specified in the ThingSPIN init.d script using `--config` file parameter.
 
 ### Docker
-Refer to [Configure a Grafana Docker image]({{< relref "configure-docker.md" >}}) for information about environmental variables, persistent storage, and building custom Docker images.
+Refer to [Configure a ThingSPIN Docker image]({{< relref "configure-docker.md" >}}) for information about environmental variables, persistent storage, and building custom Docker images.
 
 ### Windows
 `sample.ini` is in the same directory as `defaults.ini` and contains all the settings commented out. Copy `sample.ini` and name it `custom.ini`.
 
 ### MacOS
-By default, the configuration file is located at `/usr/local/etc/grafana/grafana.ini`. To configure Grafana, add a configuration file named `custom.ini` to the `conf` folder to override any of the settings defined in `conf/defaults.ini`.
+By default, the configuration file is located at `/usr/local/etc/grafana/grafana.ini`. To configure ThingSPIN, add a configuration file named `custom.ini` to the `conf` folder to override any of the settings defined in `conf/defaults.ini`.
 
 ## Comments in .ini Files
 
@@ -77,19 +77,19 @@ export GF_SECURITY_ADMIN_USER=owner
 export GF_AUTH_GOOGLE_CLIENT_SECRET=newS3cretKey
 ```
 
-> For any changes to `conf/grafana.ini` (or corresponding environment variables) to take effect, you must restart Grafana for the changes to take effect.
+> For any changes to `conf/grafana.ini` (or corresponding environment variables) to take effect, you must restart ThingSPIN for the changes to take effect.
 
 ## instance_name
 
 Set the name of the grafana-server instance. Used in logging, internal metrics, and clustering info. Defaults to: `${HOSTNAME}`, which will be replaced with
-environment variable `HOSTNAME`, if that is empty or does not exist Grafana will try to use
+environment variable `HOSTNAME`, if that is empty or does not exist ThingSPIN will try to use
 system calls to get the machine name.
 
 ## [paths]
 
 ### data
 
-Path to where Grafana stores the sqlite3 database (if used), file based sessions (if used), and other data. This path is usually specified via command line in the init.d script or the systemd service file.
+Path to where ThingSPIN stores the sqlite3 database (if used), file based sessions (if used), and other data. This path is usually specified via command line in the init.d script or the systemd service file.
 
 **macOS:** The default SQLite database is located at `/usr/local/var/lib/grafana`
 
@@ -100,7 +100,7 @@ How long temporary images in `data` directory should be kept. Defaults to: `24h`
 
 ### logs
 
-Path to where Grafana will store logs. This path is usually specified via command line in the init.d script or the systemd service file. You can override it in the configuration file or in the default environment variable file. However, please note that by overriding this the default log path will be used temporarily until Grafana has fully initialized/started.
+Path to where ThingSPIN will store logs. This path is usually specified via command line in the init.d script or the systemd service file. You can override it in the configuration file or in the default environment variable file. However, please note that by overriding this the default log path will be used temporarily until ThingSPIN has fully initialized/started.
 
 Override log path using the command line argument `cfg:default.paths.log`:
 
@@ -112,7 +112,7 @@ Override log path using the command line argument `cfg:default.paths.log`:
 
 ### plugins
 
-Directory where Grafana will automatically scan and look for plugins. Manually or automatically install any plugins here.
+Directory where ThingSPIN will automatically scan and look for plugins. Manually or automatically install any plugins here.
 
 **macOS:** By default, the Mac plugin location is: `/usr/local/var/lib/grafana/plugins`.
 
@@ -128,28 +128,28 @@ The IP address to bind to. If empty will bind to all interfaces
 
 ### http_port
 
-The port to bind to, defaults to `3000`. To use port 80 you need to either give the Grafana binary permission for example:
+The port to bind to, defaults to `3000`. To use port 80 you need to either give the ThingSPIN binary permission for example:
 
 ```bash
 $ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
 ```
 
-Or redirect port 80 to the Grafana port using:
+Or redirect port 80 to the ThingSPIN port using:
 
 ```bash
 $ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
 ```
 
-Another way is put a webserver like Nginx or Apache in front of Grafana and have them proxy requests to Grafana.
+Another way is put a webserver like Nginx or Apache in front of ThingSPIN and have them proxy requests to ThingSPIN.
 
 ### protocol
 
 `http`,`https`,`h2` or `socket`
 
-> **Note:** Grafana versions earlier than 3.0 are vulnerable to [POODLE](https://en.wikipedia.org/wiki/POODLE). So we strongly recommend to upgrade to 3.x or use a reverse proxy for ssl termination.
+> **Note:** ThingSPIN versions earlier than 3.0 are vulnerable to [POODLE](https://en.wikipedia.org/wiki/POODLE). So we strongly recommend to upgrade to 3.x or use a reverse proxy for ssl termination.
 
 ### socket
-Path where the socket should be created when `protocol=socket`. Please make sure that Grafana has appropriate permissions.
+Path where the socket should be created when `protocol=socket`. Please make sure that ThingSPIN has appropriate permissions.
 
 ### domain
 
@@ -161,27 +161,27 @@ Redirect to correct domain if host header does not match domain. Prevents DNS re
 
 ### root_url
 
-This is the full URL used to access Grafana from a web browser. This is
+This is the full URL used to access ThingSPIN from a web browser. This is
 important if you use Google or GitHub OAuth authentication (for the
 callback URL to be correct).
 
 > **Note:** This setting is also important if you have a reverse proxy
-> in front of Grafana that exposes it through a subpath. In that
+> in front of ThingSPIN that exposes it through a subpath. In that
 > case add the subpath to the end of this URL setting.
 
 ### serve_from_sub_path
 > Available in 6.3 and above
 
-Serve Grafana from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
+Serve ThingSPIN from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
 
 By enabling this setting and using a subpath in `root_url` above, e.g.
-`root_url = http://localhost:3000/grafana`, Grafana will be accessible on
+`root_url = http://localhost:3000/grafana`, ThingSPIN will be accessible on
 `http://localhost:3000/grafana`.
 
 ### static_root_path
 
 The path to the directory where the front end files (HTML, JS, and CSS
-files). Defaults to `public` which is why the Grafana binary needs to be
+files). Defaults to `public` which is why the ThingSPIN binary needs to be
 executed with working directory set to the installation path.
 
 ### enable_gzip
@@ -201,16 +201,16 @@ Path to the certificate key file (if `protocol` is set to `https` or `h2`).
 
 ### router_logging
 
-Set to `true` for Grafana to log all HTTP requests (not just errors). These are logged as Info level events
+Set to `true` for ThingSPIN to log all HTTP requests (not just errors). These are logged as Info level events
 to grafana log.
 
 <hr />
 
 ## [database]
 
-Grafana needs a database to store users and dashboards (and other
+ThingSPIN needs a database to store users and dashboards (and other
 things). By default it is configured to use `sqlite3` which is an
-embedded database (included in the main Grafana binary).
+embedded database (included in the main ThingSPIN binary).
 
 ### url
 
@@ -229,12 +229,12 @@ will be stored.
 ### host
 
 Only applicable to MySQL or Postgres. Includes IP or hostname and port or in case of Unix sockets the path to it.
-For example, for MySQL running on the same host as Grafana: `host =
+For example, for MySQL running on the same host as ThingSPIN: `host =
 127.0.0.1:3306` or with Unix sockets: `host = /var/run/mysqld/mysqld.sock`
 
 ### name
 
-The name of the Grafana database. Leave it set to `grafana` or some
+The name of the ThingSPIN database. Leave it set to `grafana` or some
 other name.
 
 ### user
@@ -320,18 +320,18 @@ Example connstr: `127.0.0.1:11211`
 
 ### disable_initial_admin_creation
 
-> Only available in Grafana v6.5+.
+> Only available in ThingSPIN v6.5+.
 
 Disable creation of admin user on first start of grafana.
 
 ### admin_user
 
-The name of the default Grafana admin user (who has full permissions).
+The name of the default ThingSPIN admin user (who has full permissions).
 Defaults to `admin`.
 
 ### admin_password
 
-The password of the default Grafana admin. Set once on first-run.  Defaults to `admin`.
+The password of the default ThingSPIN admin. Set once on first-run.  Defaults to `admin`.
 
 ### login_remember_days
 
@@ -349,11 +349,11 @@ Default is `false`.
 
 ### data_source_proxy_whitelist
 
-Define a whitelist of allowed IP addresses or domains, with ports, to be used in data source URLs with the Grafana data source proxy. Format: `ip_or_domain:port` separated by spaces. PostgreSQL, MySQL, and MSSQL data sources do not use the proxy and are therefore unaffected by this setting.
+Define a whitelist of allowed IP addresses or domains, with ports, to be used in data source URLs with the ThingSPIN data source proxy. Format: `ip_or_domain:port` separated by spaces. PostgreSQL, MySQL, and MSSQL data sources do not use the proxy and are therefore unaffected by this setting.
 
 ### cookie_secure
 
-Set to `true` if you host Grafana behind HTTPS. Default is `false`.
+Set to `true` if you host ThingSPIN behind HTTPS. Default is `false`.
 
 ### disable_brute_force_login_protection
 
@@ -365,8 +365,8 @@ Sets the `SameSite` cookie attribute and prevents the browser from sending this 
 
 ### allow_embedding
 
-When `false`, the HTTP header `X-Frame-Options: deny` will be set in Grafana HTTP responses which will instruct
-browsers to not allow rendering Grafana in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. The main goal is to
+When `false`, the HTTP header `X-Frame-Options: deny` will be set in ThingSPIN HTTP responses which will instruct
+browsers to not allow rendering ThingSPIN in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. The main goal is to
 mitigate the risk of [Clickjacking](https://www.owasp.org/index.php/Clickjacking). Default is `false`.
 
 ### strict_transport_security
@@ -401,7 +401,7 @@ Set to `false` to disable the X-XSS-Protection header, which tells browsers to s
 
 Set to `false` to prohibit users from being able to sign up / create
 user accounts. Defaults to `false`.  The admin user can still create
-users from the [Grafana Admin Pages](/reference/admin)
+users from the [ThingSPIN Admin Pages](/reference/admin)
 
 ### allow_org_create
 
@@ -450,7 +450,7 @@ Text used as placeholder text on login page for password input.
 
 ## [auth]
 
-Grafana provides many ways to authenticate users. The docs for authentication has been split in to many different pages
+ThingSPIN provides many ways to authenticate users. The docs for authentication has been split in to many different pages
 below.
 
 ### oauth_state_cookie_max_age
@@ -479,7 +479,7 @@ How long the data proxy should wait before timing out. Default is `30` (seconds)
 
 ### send_user_header
 
-If enabled and user is not anonymous, data proxy will add X-Grafana-User header with username into the request. Default is `false`.
+If enabled and user is not anonymous, data proxy will add X-ThingSPIN-User header with username into the request. Default is `false`.
 
 <hr />
 
@@ -487,7 +487,7 @@ If enabled and user is not anonymous, data proxy will add X-Grafana-User header 
 
 ### reporting_enabled
 
-When enabled Grafana will send anonymous usage statistics to
+When enabled ThingSPIN will send anonymous usage statistics to
 `stats.grafana.org`. No IP addresses are being tracked, only simple counters to
 track running instances, versions, dashboard and error counts. It is very helpful
 to us, so please leave this enabled. Counters are sent every 24 hours. Default
@@ -495,12 +495,12 @@ value is `true`.
 
 ### google_analytics_ua_id
 
-If you want to track Grafana usage via Google analytics specify *your* Universal
+If you want to track ThingSPIN usage via Google analytics specify *your* Universal
 Analytics ID here. By default this feature is disabled.
 
 ### check_for_updates
 
-Set to false to disable all checks to https://grafana.com for new versions of installed plugins and to the Grafana GitHub repository to check for a newer version of Grafana. The version information is used in some UI views to notify that a new Grafana update or a plugin update exists. This option does not cause any auto updates, nor send any sensitive information. The check is run every 10 minutes.
+Set to false to disable all checks to https://grafana.com for new versions of installed plugins and to the ThingSPIN GitHub repository to check for a newer version of ThingSPIN. The version information is used in some UI views to notify that a new ThingSPIN update or a plugin update exists. This option does not cause any auto updates, nor send any sensitive information. The check is run every 10 minutes.
 
 <hr />
 
@@ -512,7 +512,7 @@ Number dashboard versions to keep (per dashboard). Default: `20`, Minimum: `1`.
 
 ### min_refresh_interval
 
-> Only available in Grafana v6.7+.
+> Only available in ThingSPIN v6.7+.
 
 This will restrict users to set the refresh interval of a dashboard lower than given interval. Per default this is 5 seconds.
 The interval string is a possibly signed sequence of decimal numbers, followed by a unit suffix (ms, s, m, h, d), e.g. `30s` or `1m`.
@@ -555,7 +555,7 @@ Verify SSL for smtp server? defaults to `false`
 Address used when sending out emails, defaults to `admin@grafana.localhost`
 
 ### from_name
-Name to be used when sending out emails, defaults to `Grafana`
+Name to be used when sending out emails, defaults to `ThingSPIN`
 
 ### ehlo_identity
 Name to be used as client identity for EHLO in SMTP dialog, defaults to instance_name.
@@ -650,7 +650,7 @@ Syslog tag. By default, the process's `argv[0]` is used.
 
 ## [metrics]
 
-For detailed instructions, refer to [Internal Grafana metrics]({{< relref "../administration/metrics.md" >}}).
+For detailed instructions, refer to [Internal ThingSPIN metrics]({{< relref "../administration/metrics.md" >}}).
 
 ### enabled
 Enable metrics reporting. defaults true. Available via HTTP API `/metrics`.
@@ -669,7 +669,7 @@ If set to `true`, then total stats generation (`stat_totals_*` metrics) is disab
 Flush/Write interval when sending metrics to external TSDB. Defaults to 10s.
 
 ## [metrics.graphite]
-Include this section if you want to send internal Grafana metrics to Graphite.
+Include this section if you want to send internal ThingSPIN metrics to Graphite.
 
 ### address
 Format `<Hostname or ip>`:port
@@ -683,7 +683,7 @@ Graphite metric prefix. Defaults to `prod.grafana.%(instance_name)s.`
 Set to `false` to disable external snapshot publish endpoint (default `true`)
 
 ### external_snapshot_url
-Set root URL to a Grafana instance where you want to publish external snapshots (defaults to https://snapshots-origin.raintank.io)
+Set root URL to a ThingSPIN instance where you want to publish external snapshots (defaults to https://snapshots-origin.raintank.io)
 
 ### external_snapshot_name
 Set name for external snapshot button. Defaults to `Publish to snapshot.raintank.io`
@@ -695,7 +695,7 @@ Enabled to automatically remove expired snapshots
 These options control how images should be made public so they can be shared on services like slack.
 
 ### provider
-You can choose between (s3, webdav, gcs, azure_blob, local). If left empty Grafana will ignore the upload action.
+You can choose between (s3, webdav, gcs, azure_blob, local). If left empty ThingSPIN will ignore the upload action.
 
 ## [external_image_storage.s3]
 
@@ -735,7 +735,7 @@ Secret key, e.g. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.
 ## [external_image_storage.webdav]
 
 ### url
-URL to where Grafana will send PUT request with images
+URL to where ThingSPIN will send PUT request with images
 
 ### public_url
 Optional parameter. URL to send to users in notifications. If the string contains the sequence ${file}, it will be replaced with the uploaded filename. Otherwise, the file name will be appended to the path part of the URL, leaving any query string unchanged.
@@ -752,7 +752,7 @@ basic auth password
 Path to JSON key file associated with a Google service account to authenticate and authorize.
 Service Account keys can be created and downloaded from https://console.developers.google.com/permissions/serviceaccounts.
 
-Service Account should have "Storage Object Writer" role. The access control model of the bucket needs to be "Set object-level and bucket-level permissions". Grafana itself will make the images public readable.
+Service Account should have "Storage Object Writer" role. The access control model of the bucket needs to be "Set object-level and bucket-level permissions". ThingSPIN itself will make the images public readable.
 
 ### bucket
 Bucket Name on Google Cloud Storage.
@@ -788,7 +788,7 @@ Default setting for new alert rules. Defaults to categorize error and timeouts a
 ### nodata_or_nullvalues
 > Available in 5.3  and above
 
-Default setting for how Grafana handles nodata or null values in alerting. (alerting, no_data, keep_state, ok)
+Default setting for how ThingSPIN handles nodata or null values in alerting. (alerting, no_data, keep_state, ok)
 
 ### concurrent_render_limit
 
@@ -823,11 +823,11 @@ Options to configure a remote HTTP image rendering service, e.g. using https://g
 
 ### server_url
 
-URL to a remote HTTP image renderer service, e.g. http://localhost:8081/render, will enable Grafana to render panels and dashboards to PNG-images using HTTP requests to an external service.
+URL to a remote HTTP image renderer service, e.g. http://localhost:8081/render, will enable ThingSPIN to render panels and dashboards to PNG-images using HTTP requests to an external service.
 
 ### callback_url
 
-If the remote HTTP image renderer service runs on a different server than the Grafana server you may have to configure this to a URL where Grafana is reachable, e.g. http://grafana.domain/.
+If the remote HTTP image renderer service runs on a different server than the ThingSPIN server you may have to configure this to a URL where ThingSPIN is reachable, e.g. http://grafana.domain/.
 
 ### concurrent_render_request_limit
 
@@ -838,8 +838,8 @@ which this setting can help protect against by only allowing a certain amount of
 
 ### disable_sanitize_html
 
-If set to true Grafana will allow script tags in text panels. Not recommended as it enable XSS vulnerabilities. Default
-is false. This settings was introduced in Grafana v6.0.
+If set to true ThingSPIN will allow script tags in text panels. Not recommended as it enable XSS vulnerabilities. Default
+is false. This settings was introduced in ThingSPIN v6.0.
 
 ## [plugins]
 
@@ -858,7 +858,7 @@ Keys of alpha features to enable, separated by space. Available alpha features a
 
 ## [tracing.jaeger]
 
-Configure Grafana's Jaeger client for distributed tracing.
+Configure ThingSPIN's Jaeger client for distributed tracing.
 
 You can also use the standard `JAEGER_*` environment variables to configure
 Jaeger. See the table at the end of https://www.jaegertracing.io/docs/1.16/client-features/
@@ -921,7 +921,7 @@ Setting this to `true` turns off shared RPC spans. Leaving this available is the
 Please note that these options have been removed.
 
 ## [session]
-**Removed starting from Grafana v6.2. Please use [remote_cache](#remote-cache) option instead.**
+**Removed starting from ThingSPIN v6.2. Please use [remote_cache](#remote-cache) option instead.**
 
 ### provider
 
@@ -942,11 +942,11 @@ Postgres valid `sslmode` are `disable`, `require`, `verify-ca`, and `verify-full
 
 ### cookie_name
 
-The name of the Grafana session cookie.
+The name of the ThingSPIN session cookie.
 
 ### cookie_secure
 
-Set to true if you host Grafana behind HTTPS only. Defaults to `false`.
+Set to true if you host ThingSPIN behind HTTPS only. Defaults to `false`.
 
 ### session_life_time
 

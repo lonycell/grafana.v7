@@ -1,5 +1,5 @@
 /**
- * A library containing the different design components of the Grafana ecosystem.
+ * A library containing the different design components of the ThingSPIN ecosystem.
  *
  * @packageDocumentation
  */

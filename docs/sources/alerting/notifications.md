@@ -1,7 +1,7 @@
 +++
 title = "Alerting Notifications"
 description = "Alerting Notifications Guide"
-keywords = ["Grafana", "alerting", "guide", "notifications"]
+keywords = ["ThingSPIN", "alerting", "guide", "notifications"]
 type = "docs"
 [menu.docs]
 name = "Notifications"
@@ -12,7 +12,7 @@ weight = 2
 
 # Alert Notifications
 
-> Alerting is only available in Grafana v4.0 and above.
+> Alerting is only available in ThingSPIN v4.0 and above.
 
 When an alert changes state, it sends out notifications. Each alert rule can have
 multiple notifications. In order to add a notification to an alert rule you first need
@@ -33,7 +33,7 @@ When checked, this option will notify for all alert rules - existing and new.
 
 ### Send reminders
 
-> Only available in Grafana v5.3 and above.
+> Only available in ThingSPIN v5.3 and above.
 
 {{< docs-imagebox max-width="600px" img="/img/docs/v53/alerting_notification_reminders.png" class="docs-image--right" caption="Alerting notification reminders setup" >}}
 
@@ -61,12 +61,12 @@ When checked, this option will disable resolve message [OK] that is sent when al
 
 ## Supported Notification Types
 
-Grafana ships with the following set of notification types:
+ThingSPIN ships with the following set of notification types:
 
 ### Email
 
 To enable email notifications you have to setup [SMTP settings]({{< relref "../installation/configuration/#smtp" >}})
-in the Grafana config. Email notifications will upload an image of the alert graph to an
+in the ThingSPIN config. Email notifications will upload an image of the alert graph to an
 external image destination if available or fallback to attaching the image to the email.
 Be aware that if you use the `local` image storage email servers and clients might not be
 able to access the image.
@@ -83,7 +83,7 @@ Addresses | Email addresses to recipients. You can enter multiple email addresse
 To set up Slack, you need to configure an incoming Slack webhook URL. You can follow
 [Sending messages using Incoming Webhooks](https://api.slack.com/incoming-webhooks) on how to do that. If you want to include screenshots of the
 firing alerts in the Slack messages you have to configure either the [external image destination](#external-image-store)
-in Grafana or a bot integration via Slack Apps. Follow Slack's guide to set up a bot integration and use the token
+in ThingSPIN or a bot integration via Slack Apps. Follow Slack's guide to set up a bot integration and use the token
 provided (https://api.slack.com/bot-users), which starts with "xoxb".
 
 Setting | Description
@@ -93,10 +93,10 @@ Username | Set the username for the bot's message.
 Recipient | Allows you to override the Slack recipient. You must either provide a channel Slack ID, a user Slack ID, a username reference (@&lt;user&gt;, all lowercase, no whitespace), or a channel reference (#&lt;channel&gt;, all lowercase, no whitespace).
 Icon emoji | Provide an emoji to use as the icon for the bot's message. Ex :smile:
 Icon URL | Provide a URL to an image to use as the icon for the bot's message.
-Mention Users | Optionally mention one or more users in the Slack notification sent by Grafana. You have to refer to users, comma-separated, via their corresponding Slack IDs (which you can find by clicking the overflow button on each user's Slack profile).
-Mention Groups | Optionally mention one or more groups in the Slack notification sent by Grafana. You have to refer to groups, comma-separated, via their corresponding Slack IDs (which you can get from each group's Slack profile URL).
+Mention Users | Optionally mention one or more users in the Slack notification sent by ThingSPIN. You have to refer to users, comma-separated, via their corresponding Slack IDs (which you can find by clicking the overflow button on each user's Slack profile).
+Mention Groups | Optionally mention one or more groups in the Slack notification sent by ThingSPIN. You have to refer to groups, comma-separated, via their corresponding Slack IDs (which you can get from each group's Slack profile URL).
 Mention Channel | Optionally mention either all channel members or just active ones.
-Token | If provided, Grafana will upload the generated image via Slack's file.upload API method, not the external image destination.
+Token | If provided, ThingSPIN will upload the generated image via Slack's file.upload API method, not the external image destination.
 
 If you are using the token for a slack bot, then you have to invite the bot to the channel you want to send notifications and add the channel to the recipient field.
 
@@ -115,7 +115,7 @@ Auto resolve incidents | Resolve incidents in PagerDuty once the alert goes back
 ### Webhook
 
 The webhook notification is a simple way to send information about a state change over HTTP to a custom endpoint.
-Using this notification you could integrate Grafana into a system of your choosing.
+Using this notification you could integrate ThingSPIN into a system of your choosing.
 
 Example json body:
 
@@ -168,8 +168,8 @@ Dingtalk supports the following "message type": `text`, `link` and `markdown`. O
 
 ### Kafka
 
-Notifications can be sent to a Kafka topic from Grafana using the [Kafka REST Proxy](https://docs.confluent.io/1.0/kafka-rest/docs/index.html).
-There are a couple of configuration options which need to be set up in Grafana UI under Kafka Settings:
+Notifications can be sent to a Kafka topic from ThingSPIN using the [Kafka REST Proxy](https://docs.confluent.io/1.0/kafka-rest/docs/index.html).
+There are a couple of configuration options which need to be set up in ThingSPIN UI under Kafka Settings:
 
 1. Kafka REST Proxy endpoint.
 
@@ -183,7 +183,7 @@ Notifications can be sent by setting up an incoming webhook in Google Hangouts c
 
 ### Squadcast
 
-Squadcast helps you get alerted via Phone call, SMS, Email and Push notifications and lets you take actions on those alerts. Grafana notifications can be sent to Squadcast via a simple incoming webhook. Refer the official [Squadcast support documentation](https://support.squadcast.com/docs/grafana) for configuring these webhooks.
+Squadcast helps you get alerted via Phone call, SMS, Email and Push notifications and lets you take actions on those alerts. ThingSPIN notifications can be sent to Squadcast via a simple incoming webhook. Refer the official [Squadcast support documentation](https://support.squadcast.com/docs/grafana) for configuring these webhooks.
 
 ### All supported notifiers
 
@@ -210,27 +210,27 @@ Webhook | `webhook` | yes, external only | yes
 
 ## Enable images in notifications {#external-image-store}
 
-Grafana can render the panel associated with the alert rule as a PNG image and include that in the notification. Read more about the requirements and how to configure
+ThingSPIN can render the panel associated with the alert rule as a PNG image and include that in the notification. Read more about the requirements and how to configure
 [image rendering]({{< relref "../administration/image_rendering/" >}}).
 
-Most Notification Channels require that this image be publicly accessible (Slack and PagerDuty for example). In order to include images in alert notifications, Grafana can upload the image to an image store. It currently supports
+Most Notification Channels require that this image be publicly accessible (Slack and PagerDuty for example). In order to include images in alert notifications, ThingSPIN can upload the image to an image store. It currently supports
 Amazon S3, Webdav, Google Cloud Storage and Azure Blob Storage. So to set that up you need to configure the [external image uploader]({{< relref "../installation/configuration/#external-image-storage" >}}) in your grafana-server ini config file.
 
-Be aware that some notifiers require public access to the image to be able to include it in the notification. So make sure to enable public access to the images. If you're using local image uploader, your Grafana instance need to be accessible by the internet.
+Be aware that some notifiers require public access to the image to be able to include it in the notification. So make sure to enable public access to the images. If you're using local image uploader, your ThingSPIN instance need to be accessible by the internet.
 
 Notification services which need public image access are marked as 'external only'.
 
 ## Use alert rule tags in notifications {#alert-rule-tags}
 
-> Only available in Grafana v6.3+.
+> Only available in ThingSPIN v6.3+.
 
-Grafana can include a list of tags (key/value) in the notification.
+ThingSPIN can include a list of tags (key/value) in the notification.
 It's called alert rule tags to contrast with tags parsed from timeseries.
 It currently supports only the Prometheus Alertmanager notifier.
 
  This is an optional feature. You can get notifications without using alert rule tags.
 
-## Configure the link back to Grafana from alert notifications
+## Configure the link back to ThingSPIN from alert notifications
 
-All alert notifications contain a link back to the triggered alert in the Grafana instance.
-This URL is based on the [domain]({{< relref "../installation/configuration/#domain" >}}) setting in Grafana.
+All alert notifications contain a link back to the triggered alert in the ThingSPIN instance.
+This URL is based on the [domain]({{< relref "../installation/configuration/#domain" >}}) setting in ThingSPIN.

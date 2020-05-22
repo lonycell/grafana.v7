@@ -11,7 +11,7 @@ type = "docs"
 
 ### getBackendSrv variable
 
-Used to retrieve the [BackendSrv](./runtime/backendsrv.md) that can be used to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc.
+Used to retrieve the [BackendSrv](./runtime/backendsrv.md) that can be used to communicate via http(s) to a remote backend such as the ThingSPIN backend, a datasource etc.
 
 <b>Signature</b>
 

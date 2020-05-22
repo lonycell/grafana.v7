@@ -10,7 +10,7 @@ weight = 3
 
 # Dashboard Folders
 
-Folders are a way to organize and group dashboards - very useful if you have a lot of dashboards or multiple teams using the same Grafana instance.
+Folders are a way to organize and group dashboards - very useful if you have a lot of dashboards or multiple teams using the same ThingSPIN instance.
 
 ## How To Create A Folder
 

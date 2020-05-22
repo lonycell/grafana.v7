@@ -18,9 +18,9 @@ Upgrading Go or Node.js requires making changes in many different files. See bel
 
 ## Go dependencies
 
-The Grafana project uses [Go modules](https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more) to manage dependencies on external packages. This requires a working Go environment with version 1.11 or greater installed.
+The ThingSPIN project uses [Go modules](https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more) to manage dependencies on external packages. This requires a working Go environment with version 1.11 or greater installed.
 
-_Note:_ Since most developers of Grafana still use the `GOPATH` we need to specify `GO111MODULE=on` to make `go mod` and `got get` work as intended. If you have setup Grafana outside of the `GOPATH` on your machine you can skip `GO111MODULE=on` when running the commands below.
+_Note:_ Since most developers of ThingSPIN still use the `GOPATH` we need to specify `GO111MODULE=on` to make `go mod` and `got get` work as intended. If you have setup ThingSPIN outside of the `GOPATH` on your machine you can skip `GO111MODULE=on` when running the commands below.
 
 To add or update a new dependency, use the `go get` command:
 
@@ -92,7 +92,7 @@ Master and release builds trigger test runs on Appveyors build environment so th
 
 ### Dockerfile
 
-There is a Docker build for Grafana in the root of the project that allows anyone to build Grafana just using Docker.
+There is a Docker build for ThingSPIN in the root of the project that allows anyone to build ThingSPIN just using Docker.
 
 #### Files
 

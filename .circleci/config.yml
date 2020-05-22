@@ -49,10 +49,10 @@ executors:
 
 commands:
   install-grabpl:
-    description: "Install Grafana build pipeline tool"
+    description: "Install ThingSPIN build pipeline tool"
     steps:
       - run:
-          name: "Install Grafana build pipeline tool"
+          name: "Install ThingSPIN build pipeline tool"
           command: |
             VERSION=0.4.6
             curl -fLO https://grafana-downloads.storage.googleapis.com/grafana-build-pipeline/v${VERSION}/grabpl
@@ -61,7 +61,7 @@ commands:
 
 jobs:
   build-backend:
-    description: "Build a certain variant of Grafana back-end binaries"
+    description: "Build a certain variant of ThingSPIN back-end binaries"
     parameters:
       edition:
         type: string
@@ -82,7 +82,7 @@ jobs:
           command: ./scripts/ci-job-started.sh
       - install-grabpl
       - run:
-          name: Build Grafana backend
+          name: Build ThingSPIN backend
           command: |
             if [[ -n $CIRCLE_TAG ]]; then
               # A release build
@@ -114,7 +114,7 @@ jobs:
           when: on_success
 
   build-frontend:
-    description: "Build Grafana front-end artifacts"
+    description: "Build ThingSPIN front-end artifacts"
     parameters:
       edition:
         type: string
@@ -152,7 +152,7 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Build Grafana frontend
+          name: Build ThingSPIN frontend
           command: /tmp/grabpl build-frontend --edition << parameters.edition >>
       - run:
           name: Move artifacts
@@ -171,7 +171,7 @@ jobs:
           when: on_success
 
   build-plugins:
-    description: "Build internal Grafana plug-ins"
+    description: "Build internal ThingSPIN plug-ins"
     parameters:
       edition:
         type: string
@@ -190,7 +190,7 @@ jobs:
           command: ./scripts/ci-job-started.sh
       - install-grabpl
       - run:
-          name: Build internal Grafana plug-ins
+          name: Build internal ThingSPIN plug-ins
           command: |
             if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
               # This is a forked PR, so don't sign as it requires an API secret
@@ -226,7 +226,7 @@ jobs:
           name: CI job started
           command: ./scripts/ci-job-started.sh
       - run:
-          name: Test and build Grafana.com release publisher
+          name: Test and build ThingSPIN.com release publisher
           command: |
             cd scripts/build/release_publisher
             go test .
@@ -391,7 +391,7 @@ jobs:
           name: Copy artifacts from workspace
           command: cp -r /tmp/workspace/oss/* .
       - run:
-          name: Package Grafana
+          name: Package ThingSPIN
           command: |
             if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
               echo Using test GPG key pair since building a forked PR
@@ -457,7 +457,7 @@ jobs:
           name: Copy artifacts from workspace
           command: cp -r /tmp/workspace/enterprise/* .
       - run:
-          name: Package Grafana
+          name: Package ThingSPIN
           command: |
             # Necessary for signing bundled plugins
             export GRAFANA_API_KEY=$GRAFANA_COM_API_KEY
@@ -613,7 +613,7 @@ jobs:
       # XXX: Is this necessary?
       - run: docker run --privileged linuxkit/binfmt:v0.6
       - run:
-          name: Copy Grafana archives
+          name: Copy ThingSPIN archives
           command: |
             cp -r /tmp/workspace/<< parameters.edition >>/dist .
       - run:
@@ -687,7 +687,7 @@ jobs:
           command: ./e2e/start-server
           background: true
       - run:
-          name: "Wait for Grafana to start"
+          name: "Wait for ThingSPIN to start"
           command: './e2e/wait-for-grafana'
       - run:
           name: Run end-to-end tests
@@ -882,7 +882,7 @@ jobs:
             apt-get update
             apt-get install -y docker.io
       - run:
-          name: Build Grafana docs website
+          name: Build ThingSPIN docs website
           command: |
             # Use latest revision here, since we want to catch if it breaks
             IMAGE=grafana/docs-base:latest
@@ -903,7 +903,7 @@ jobs:
           when: on_success
 
   deploy-to-kubernetes:
-    description: "Deploy Grafana master Docker image to Kubernetes"
+    description: "Deploy ThingSPIN master Docker image to Kubernetes"
     executor: base
     steps:
       - install-grabpl

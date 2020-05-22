@@ -4,9 +4,9 @@
   "id": "graph",
 
   "info": {
-    "description": "Graph Panel for Grafana",
+    "description": "Graph Panel for ThingSPIN",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "logos": {

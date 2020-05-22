@@ -266,7 +266,7 @@ func TestDSRouteRule(t *testing.T) {
 			Convey("Can translate request url and path", func() {
 				So(req.URL.Host, ShouldEqual, "graphite:8080")
 				So(req.URL.Path, ShouldEqual, "/render")
-				So(req.Header.Get("User-Agent"), ShouldEqual, "Grafana/5.3.0")
+				So(req.Header.Get("User-Agent"), ShouldEqual, "ThingSPIN/5.3.0")
 			})
 		})
 
@@ -435,7 +435,7 @@ func TestDSRouteRule(t *testing.T) {
 				&setting.Cfg{SendUserHeader: true},
 			)
 			Convey("Should add header with username", func() {
-				So(req.Header.Get("X-Grafana-User"), ShouldEqual, "test_user")
+				So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "test_user")
 			})
 		})
 
@@ -450,7 +450,7 @@ func TestDSRouteRule(t *testing.T) {
 			)
 			Convey("Should not add header with username", func() {
 				// Get will return empty string even if header is not set
-				So(req.Header.Get("X-Grafana-User"), ShouldEqual, "")
+				So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "")
 			})
 		})
 
@@ -463,7 +463,7 @@ func TestDSRouteRule(t *testing.T) {
 			)
 			Convey("Should not add header with username", func() {
 				// Get will return empty string even if header is not set
-				So(req.Header.Get("X-Grafana-User"), ShouldEqual, "")
+				So(req.Header.Get("X-ThingSPIN-User"), ShouldEqual, "")
 			})
 		})
 

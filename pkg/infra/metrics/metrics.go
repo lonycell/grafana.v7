@@ -159,7 +159,7 @@ var (
 	// StatsTotalDataSources is a metric total number of defined datasources, labeled by pluginId
 	StatsTotalDataSources *prometheus.GaugeVec
 
-	// grafanaBuildVersion is a metric with a constant '1' value labeled by version, revision, branch, and goversion from which Grafana was built
+	// grafanaBuildVersion is a metric with a constant '1' value labeled by version, revision, branch, and goversion from which ThingSPIN was built
 	grafanaBuildVersion *prometheus.GaugeVec
 
 	grafanPluginBuildInfoDesc *prometheus.GaugeVec
@@ -474,13 +474,13 @@ func init() {
 
 	grafanaBuildVersion = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Name:      "build_info",
-		Help:      "A metric with a constant '1' value labeled by version, revision, branch, and goversion from which Grafana was built",
+		Help:      "A metric with a constant '1' value labeled by version, revision, branch, and goversion from which ThingSPIN was built",
 		Namespace: ExporterName,
 	}, []string{"version", "revision", "branch", "goversion", "edition"})
 
 	grafanPluginBuildInfoDesc = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Name:      "plugin_build_info",
-		Help:      "A metric with a constant '1' value labeled by pluginId, pluginType and version from which Grafana plugin was built",
+		Help:      "A metric with a constant '1' value labeled by pluginId, pluginType and version from which ThingSPIN plugin was built",
 		Namespace: ExporterName,
 	}, []string{"plugin_id", "plugin_type", "version"})
 }

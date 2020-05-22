@@ -26,8 +26,8 @@ Example with Bar Gauge panel
 
 ## Variables to use in your URL
 
-> These variables changed in 6.4 so if you have an older version of Grafana please use the version picker to select
-docs for an older version of Grafana.
+> These variables changed in 6.4 so if you have an older version of ThingSPIN please use the version picker to select
+docs for an older version of ThingSPIN.
 
 * ``__url_time_range`` - current dashboard's time range (i.e. ``?from=now-6h&to=now``)
 * ``__from`` - current dashboard's time range from value

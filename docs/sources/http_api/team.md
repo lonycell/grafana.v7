@@ -1,6 +1,6 @@
 +++
 title = "Team HTTP API "
-description = "Grafana Team HTTP API"
+description = "ThingSPIN Team HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "team", "teams", "group"]
 aliases = ["/docs/grafana/latest/http_api/team/"]
 type = "docs"

@@ -30,12 +30,12 @@ The panel automatically adjusts the layout depending on available width and heig
 
 Use the following options to refine your visualization:
 
-- **Show -** Choose how Grafana displays your data.
+- **Show -** Choose how ThingSPIN displays your data.
   - **Calculate -** Show a calculated value based on all rows.
   - **All values -** Show a separate stat for every row. If you select this option, then you can also select a **Limit**, or the maximum number of rows to display.
-- **Value -** Select a reducer function that Grafana will use to reduce many fields to a single value. Click the **Value** list to see functions and brief descriptions.
+- **Value -** Select a reducer function that ThingSPIN will use to reduce many fields to a single value. Click the **Value** list to see functions and brief descriptions.
 - **Orientation -** Choose a stacking direction.
-  - **Auto -** Grafana selects what it thinks is the best orientation.
+  - **Auto -** ThingSPIN selects what it thinks is the best orientation.
   - **Horizontal -** Bars stretch horizontally, left to right.
   - **Vertical -** Bars stretch vertically, top to bottom.
 - **Color mode**

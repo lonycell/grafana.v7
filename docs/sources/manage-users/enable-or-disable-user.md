@@ -10,7 +10,7 @@ weight = 10
 
 # Enable or disable a user
 
-This page explains how to enable or disable user accounts in Grafana.
+This page explains how to enable or disable user accounts in ThingSPIN.
 
 ## Enable a user
 

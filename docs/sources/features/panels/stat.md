@@ -20,7 +20,7 @@ background or value color using thresholds.
   * `Calculation` - Show a calculated value like min or max based on all rows.
   * `All values` - Show a separate stat for every row.
 * Calc
-  * Specify calculation / reducer function. Since this panel is designed to only show a single value Grafana needs to
+  * Specify calculation / reducer function. Since this panel is designed to only show a single value ThingSPIN needs to
     know how to reduce a field's many values to a single value.
 * Orientation
   * If your query returns multiple series or you have set **Show** to `All values` then the visualization will repeat for every series or row. This orientation option will control in what direction it will repeat.
@@ -60,7 +60,7 @@ Example of value color mode:
 * (when enabled) to set y-axis min.
 * `Max` - The maximum value, leave blank for auto calculation based on all series & fields. Used by graph/sparkline
 * (when enabled) to set y-axis max.
-* `Decimals` - Number of decimals to render value with. Leave empty for Grafana to automatically figure out the best
+* `Decimals` - Number of decimals to render value with. Leave empty for ThingSPIN to automatically figure out the best
  number of decimals to use.
 
 ### Thresholds

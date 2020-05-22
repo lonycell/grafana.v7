@@ -42,7 +42,7 @@ type CacheStorage interface {
 	Delete(key string) error
 }
 
-// RemoteCache allows Grafana to cache data outside its own process
+// RemoteCache allows ThingSPIN to cache data outside its own process
 type RemoteCache struct {
 	log      log.Logger
 	client   CacheStorage

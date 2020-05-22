@@ -1,6 +1,6 @@
 +++
 title = "Admin HTTP API "
-description = "Grafana Admin HTTP API"
+description = "ThingSPIN Admin HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "admin"]
 aliases = ["/docs/grafana/latest/http_api/admin/"]
 type = "docs"
@@ -12,8 +12,8 @@ parent = "http_api"
 # Admin API
 
 The Admin HTTP API does not currently work with an API Token. API Tokens are currently only linked to an organization and an organization role. They cannot be given
-the permission of server admin, only users can be given that permission. So in order to use these API calls you will have to use Basic Auth and the Grafana user
-must have the Grafana Admin permission. (The default admin user is called `admin` and has permission to use this API.)
+the permission of server admin, only users can be given that permission. So in order to use these API calls you will have to use Basic Auth and the ThingSPIN user
+must have the ThingSPIN Admin permission. (The default admin user is called `admin` and has permission to use this API.)
 
 ## Settings
 
@@ -157,7 +157,7 @@ Content-Type: application/json
     "cert_file":"",
     "enabled":"false",
     "from_address":"admin@grafana.localhost",
-    "from_name":"Grafana",
+    "from_name":"ThingSPIN",
     "ehlo_identity":"dashboard.example.com",
     "host":"localhost:25",
     "key_file":"",
@@ -173,7 +173,7 @@ Content-Type: application/json
   }
 }
 ```
-## Grafana Stats
+## ThingSPIN Stats
 
 `GET /api/admin/stats`
 

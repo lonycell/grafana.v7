@@ -13,7 +13,7 @@ export const getMockPlugins = (amount: number): PluginMeta[] => {
       id: `${i}`,
       info: {
         author: {
-          name: 'Grafana Labs',
+          name: 'ThingSPIN Labs',
           url: 'url/to/GrafanaLabs',
         },
         description: 'pretty decent plugin',
@@ -76,7 +76,7 @@ export function getMockPlugin(overrides?: Partial<PluginMeta>): PluginMeta {
     id: '1',
     info: {
       author: {
-        name: 'Grafana Labs',
+        name: 'ThingSPIN Labs',
         url: 'url/to/GrafanaLabs',
       },
       description: 'pretty decent plugin',

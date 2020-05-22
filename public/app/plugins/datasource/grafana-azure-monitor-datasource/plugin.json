@@ -7,7 +7,7 @@
   "info": {
     "description": "Data source for Microsoft Azure Monitor & Application Insights",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "keywords": ["azure", "monitor", "Application Insights", "Log Analytics", "App Insights"],
@@ -42,7 +42,7 @@
           "resource": "https://management.azure.com/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "govazuremonitor",
@@ -57,7 +57,7 @@
           "resource": "https://management.usgovcloudapi.net/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "germanyazuremonitor",
@@ -72,7 +72,7 @@
           "resource": "https://management.microsoftazure.de/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "chinaazuremonitor",
@@ -87,7 +87,7 @@
           "resource": "https://management.chinacloudapi.cn/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "appinsights",
@@ -95,7 +95,7 @@
       "url": "https://api.applicationinsights.io",
       "headers": [
         { "name": "X-API-Key", "content": "{{.SecureJsonData.appInsightsApiKey}}" },
-        { "name": "x-ms-app", "content": "Grafana" }
+        { "name": "x-ms-app", "content": "ThingSPIN" }
       ]
     },
     {
@@ -104,7 +104,7 @@
       "url": "https://api.applicationinsights.azure.cn",
       "headers": [
         { "name": "X-API-Key", "content": "{{.SecureJsonData.appInsightsApiKey}}" },
-        { "name": "x-ms-app", "content": "Grafana" }
+        { "name": "x-ms-app", "content": "ThingSPIN" }
       ]
     },
     {
@@ -120,7 +120,7 @@
           "resource": "https://management.azure.com/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "chinaworkspacesloganalytics",
@@ -135,7 +135,7 @@
           "resource": "https://management.chinacloudapi.cn/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "govworkspacesloganalytics",
@@ -150,7 +150,7 @@
           "resource": "https://management.usgovcloudapi.net/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "ThingSPIN" }]
     },
     {
       "path": "loganalyticsazure",
@@ -166,7 +166,7 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "ThingSPIN" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     },
@@ -184,7 +184,7 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "ThingSPIN" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     },
@@ -202,7 +202,7 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "ThingSPIN" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     }

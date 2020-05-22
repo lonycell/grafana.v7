@@ -98,8 +98,8 @@ describe('backendSrv', () => {
       ${undefined} | ${'/api/dashboard'}                      | ${undefined} | ${{ retry: 0, url: 'api/dashboard' }}
       ${undefined} | ${'/api/dashboard/'}                     | ${undefined} | ${{ retry: 0, url: 'api/dashboard' }}
       ${1}         | ${'/api/dashboard/'}                     | ${undefined} | ${{ retry: 1, url: 'api/dashboard' }}
-      ${undefined} | ${'/api/dashboard/'}                     | ${1}         | ${{ retry: 0, url: 'api/dashboard', headers: { 'X-Grafana-Org-Id': 1 } }}
-      ${1}         | ${'/api/dashboard/'}                     | ${1}         | ${{ retry: 1, url: 'api/dashboard', headers: { 'X-Grafana-Org-Id': 1 } }}
+      ${undefined} | ${'/api/dashboard/'}                     | ${1}         | ${{ retry: 0, url: 'api/dashboard', headers: { 'X-ThingSPIN-Org-Id': 1 } }}
+      ${1}         | ${'/api/dashboard/'}                     | ${1}         | ${{ retry: 1, url: 'api/dashboard', headers: { 'X-ThingSPIN-Org-Id': 1 } }}
     `(
       "when called with retry: '$retry', url: '$url' and orgId: '$orgId' then result should be '$expected'",
       ({ retry, url, orgId, expected }) => {
@@ -117,12 +117,12 @@ describe('backendSrv', () => {
       ${undefined} | ${'/api/dashboard'}                      | ${undefined}                      | ${undefined} | ${undefined}   | ${{ retry: 0, url: 'api/dashboard' }}
       ${undefined} | ${'/api/dashboard/'}                     | ${undefined}                      | ${undefined} | ${undefined}   | ${{ retry: 0, url: 'api/dashboard/' }}
       ${undefined} | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${undefined} | ${undefined}   | ${{ retry: 0, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth' } }}
-      ${undefined} | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${undefined}   | ${{ retry: 0, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-Grafana-Org-Id': 1 } }}
-      ${undefined} | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ retry: 0, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-Grafana-Org-Id': 1, 'X-Grafana-NoCache': 'true' } }}
+      ${undefined} | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${undefined}   | ${{ retry: 0, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-ThingSPIN-Org-Id': 1 } }}
+      ${undefined} | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ retry: 0, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-ThingSPIN-Org-Id': 1, 'X-ThingSPIN-NoCache': 'true' } }}
       ${1}         | ${'/api/dashboard/'}                     | ${undefined}                      | ${undefined} | ${undefined}   | ${{ retry: 1, url: 'api/dashboard/' }}
       ${1}         | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${undefined} | ${undefined}   | ${{ retry: 1, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth' } }}
-      ${1}         | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${undefined}   | ${{ retry: 1, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-Grafana-Org-Id': 1 } }}
-      ${1}         | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ retry: 1, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-Grafana-Org-Id': 1, 'X-Grafana-NoCache': 'true' } }}
+      ${1}         | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${undefined}   | ${{ retry: 1, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-ThingSPIN-Org-Id': 1 } }}
+      ${1}         | ${'/api/dashboard/'}                     | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ retry: 1, url: 'api/dashboard/', headers: { 'X-DS-Authorization': 'Some Auth', 'X-ThingSPIN-Org-Id': 1, 'X-ThingSPIN-NoCache': 'true' } }}
     `(
       "when called with retry: '$retry', url: '$url', headers: '$headers', orgId: '$orgId' and noBackendCache: '$noBackendCache' then result should be '$expected'",
       ({ retry, url, headers, orgId, noBackendCache, expected }) => {

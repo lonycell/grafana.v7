@@ -1,6 +1,6 @@
 +++
 title = "Alerting HTTP API "
-description = "Grafana Alerts HTTP API"
+description = "ThingSPIN Alerts HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "alerting", "alerts"]
 aliases = ["/docs/grafana/latest/http_api/alerting/"]
 type = "docs"

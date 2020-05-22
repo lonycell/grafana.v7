@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v3.0"
-description = "Feature and improvement highlights for Grafana v3.0"
+title = "What's new in ThingSPIN v3.0"
+description = "Feature and improvement highlights for ThingSPIN v3.0"
 keywords = ["grafana", "new", "documentation", "3.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,27 +10,27 @@ parent = "whatsnew"
 weight = 6
 +++
 
-# What's new in Grafana v3.0
+# What's new in ThingSPIN v3.0
 
 ## Commercial Support
 
-Commercial Support subscriptions for Grafana are now [generally available](https://grafana.com/support/plans/).
+Commercial Support subscriptions for ThingSPIN are now [generally available](https://grafana.com/support/plans/).
 
-Raintank is committed to a 100% open-source strategy for Grafana. We
+Raintank is committed to a 100% open-source strategy for ThingSPIN. We
 do not want to go down the “open core” route. If your organization
-finds Grafana valuable, please consider purchasing a subscription. Get
-direct support, bug fixes, and training from the core Grafana team.
+finds ThingSPIN valuable, please consider purchasing a subscription. Get
+direct support, bug fixes, and training from the core ThingSPIN team.
 
 ## Plugins
 
-With the popularity of Grafana continuing to accelerate, it has been
+With the popularity of ThingSPIN continuing to accelerate, it has been
 challenging to keep up with all the requests for new features, new
 panels, new data sources, and new functionality. Saying “no” so often
 has been frustrating, especially for an open source project with such
 a vibrant community.
 
 The team felt that it was time to dramatically improve extensibility
-through plugin support. Grafana 3.0 comes with a completely revamped
+through plugin support. ThingSPIN 3.0 comes with a completely revamped
 plugin SDK / API.
 
 We’ve refactored our **Data Source** plugin architecture and added
@@ -38,37 +38,37 @@ two new plugin types:
 
 * **Panel** plugins let you add new panel types for your Dashboards.
 * **App** plugins bundle **Panels** plugins, **Data Sources** plugins,
-Dashboards, and Grafana **Pages**. Apps are a great way to provide an
-entire experience right within Grafana.
+Dashboards, and ThingSPIN **Pages**. Apps are a great way to provide an
+entire experience right within ThingSPIN.
 
-## Grafana.com
+## ThingSPIN.com
 
 <img src="/img/docs/v3/grafana_net_tour.png">
 
-[Grafana.com](https://grafana.com) offers a central repository where the community can come together to discover, create and
+[ThingSPIN.com](https://grafana.com) offers a central repository where the community can come together to discover, create and
 share plugins (data sources, panels, apps) and dashboards.
 
-We are also working on a hosted Graphite-compatible data source that will be optimized for use with Grafana.
-It’ll be easy to combine your existing data source(s) with this OpenSaaS option. Finally, Grafana.com can
-also be a hub to manage all your Grafana instances. You’ll be able to monitor their health and availability,
+We are also working on a hosted Graphite-compatible data source that will be optimized for use with ThingSPIN.
+It’ll be easy to combine your existing data source(s) with this OpenSaaS option. Finally, ThingSPIN.com can
+also be a hub to manage all your ThingSPIN instances. You’ll be able to monitor their health and availability,
 perform dashboard backups, and more.
 
 We are also working on a hosted Graphite-compatible Data Source that
-will be optimized for use with Grafana. It’ll be easy to combine your
+will be optimized for use with ThingSPIN. It’ll be easy to combine your
 existing Data Source(s) with this OpenSaaS option.
 
-Finally, Grafana.com will also be a hub to manage all your Grafana
+Finally, ThingSPIN.com will also be a hub to manage all your ThingSPIN
 instances. You’ll be able to monitor their health and availability,
 perform Dashboard backups, and more.
 
-Grafana.net will officially launch along with the stable version of
-Grafana 3.0, but go to <a href=https://grafana.com> and check out the preview
+ThingSPIN.net will officially launch along with the stable version of
+ThingSPIN 3.0, but go to <a href=https://grafana.com> and check out the preview
 and sign up for an account</a> in the meantime.
 
 ## grafana-cli
 
-Grafana 3.0 comes with a new command line tool called grafana-cli. You
-can easily install plugins from Grafana.net with it. For
+ThingSPIN 3.0 comes with a new command line tool called grafana-cli. You
+can easily install plugins from ThingSPIN.net with it. For
 example:
 
 ```
@@ -78,7 +78,7 @@ grafana-cli install grafana-pie-chart-panel
 ## Personalization and Preferences
 
 The home dashboard, timezone and theme can now be customized on Organization
-and user Profile level. Grafana can also track recently viewed dashboards, which
+and user Profile level. ThingSPIN can also track recently viewed dashboards, which
 can then be displayed in the dashboard list panel.
 
 ## Improved Playlists
@@ -86,8 +86,8 @@ can then be displayed in the dashboard list panel.
 You can now save Playlists, and start them by using a Playlist URL. If
 you update a running Playlist, it will update after its next cycle.
 
-This is powerful as it allows you to remote control Grafana. If you
-have a big TV display showing Grafana in your company lobby, create a
+This is powerful as it allows you to remote control ThingSPIN. If you
+have a big TV display showing ThingSPIN in your company lobby, create a
 playlist named Lobby, and start it on the computer connected to the
 Lobby TV.
 
@@ -95,7 +95,7 @@ You can now change the Lobby playlist and have the dashboards shown in
 the Lobby update accordingly, automatically.
 
 The playlist does not even have to contain multiple Dashboards; you
-can use this feature to reload the whole Dashboard (and Grafana)
+can use this feature to reload the whole Dashboard (and ThingSPIN)
 periodically and remotely.
 
 You can also make Playlists dynamic by using Dashboard **tags** to
@@ -109,7 +109,7 @@ We’ve always tried to focus on a good looking, usable, and responsive
 UI. We’ve continued to pay a lot of attention to these areas in this
 release.
 
-Grafana 3.0 has a dramatically updated UI that not only looks better
+ThingSPIN 3.0 has a dramatically updated UI that not only looks better
 but also has a number of usability improvements. The side menu now
 works as a dropdown that you can pin to the side. The Organization /
 Profile / Sign out side menu links have been combined into an on hover
@@ -169,7 +169,7 @@ The Prometheus Data Source now supports annotations.
 You can now select the InfluxDB policy from the query editor.
 <img src="/img/docs/v3/influxdb_policy.png">
 
-Grafana 3.0 also comes with support for InfluxDB 0.11 and InfluxDB 0.12.
+ThingSPIN 3.0 also comes with support for InfluxDB 0.11 and InfluxDB 0.12.
 
 ### OpenTSDB
 
@@ -188,14 +188,14 @@ variable is interpolated.
 data source (or panel) they need to be updated as well.
 
 * InfluxDB 0.8: This data source is no longer included in releases,
-you can still install manually from [Grafana.com](https://grafana.com)
+you can still install manually from [ThingSPIN.com](https://grafana.com)
 
-* KairosDB: This data source has also no longer shipped with Grafana,
-you can install it manually from [Grafana.com](https://grafana.com)
+* KairosDB: This data source has also no longer shipped with ThingSPIN,
+you can install it manually from [ThingSPIN.com](https://grafana.com)
 
 ## Plugin showcase
 
-Discovering and installing plugins is very quick and easy with Grafana 3.0 and [Grafana.com](https://grafana.com). Here
+Discovering and installing plugins is very quick and easy with ThingSPIN 3.0 and [ThingSPIN.com](https://grafana.com). Here
 are a couple that I encourage you try!
 
 #### [Clock Panel](https://grafana.com/plugins/grafana-clock-panel)
@@ -207,8 +207,8 @@ A simple pie chart panel is now available as an external plugin.
 <img src="/img/docs/v3/pie_chart_panel.png">
 
 #### [WorldPing App](https://grafana.com/plugins/raintank-worldping-app)
-This is full blown Grafana App that adds new panels, data sources and pages to give
-feature rich global performance monitoring directly from your on-prem Grafana.
+This is full blown ThingSPIN App that adds new panels, data sources and pages to give
+feature rich global performance monitoring directly from your on-prem ThingSPIN.
 
 <img src="/img/docs/v3/wP-Screenshot-dash-web.png">
 
@@ -218,7 +218,7 @@ created and maintained by [Alexander Zobnin](https://github.com/alexanderzobnin/
 
 <img src="/img/docs/v3/zabbix_app.png">
 
-Check out the full list of plugins on [Grafana.com](https://grafana.com/plugins)
+Check out the full list of plugins on [ThingSPIN.com](https://grafana.com/plugins)
 
 ## CHANGELOG
 

@@ -13,7 +13,7 @@
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch"
   },
-  "author": "Grafana Labs",
+  "author": "ThingSPIN Labs",
   "license": "Apache-2.0",
   "devDependencies": {
     "@grafana/data": "7.1.0-pre.0",

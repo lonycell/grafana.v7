@@ -145,9 +145,9 @@ export class ShareLink extends PureComponent<Props, State> {
                     rel="noopener"
                     className="external-link"
                   >
-                    Grafana Image Renderer plugin
+                    ThingSPIN Image Renderer plugin
                   </a>
-                  . Please contact your Grafana administrator to install the plugin.
+                  . Please contact your ThingSPIN administrator to install the plugin.
                 </p>
               </InfoBox>
             )}

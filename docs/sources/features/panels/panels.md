@@ -10,7 +10,7 @@ weight = 1
 
 # Panel overview
 
-The *panel* is the basic visualization building block in Grafana. Each panel has a Query Editor specific to the data source selected in the panel. The query editor allows you to extract the perfect visualization to display on the panel.
+The *panel* is the basic visualization building block in ThingSPIN. Each panel has a Query Editor specific to the data source selected in the panel. The query editor allows you to extract the perfect visualization to display on the panel.
 
 There are a wide variety of styling and formatting options for each panel. Panels can be dragged and dropped and rearranged on the Dashboard. They can also be resized.
 
@@ -28,7 +28,7 @@ Panels can be [shared]({{< relref "../../reference/share_panel.md" >}}) easily i
 1. To edit the graph you click on the graph title to open the panel menu, then `Edit`.
 1. This should take you to the `Metrics` tab. In this tab you should see the editor for your default data source.
 
-When you click the `Metrics` tab, you are presented with a Query Editor that is specific to the Panel Data Source. Use the Query Editor to build your queries and Grafana will visualize them in real time.
+When you click the `Metrics` tab, you are presented with a Query Editor that is specific to the Panel Data Source. Use the Query Editor to build your queries and ThingSPIN will visualize them in real time.
 
 ## Move panels
 

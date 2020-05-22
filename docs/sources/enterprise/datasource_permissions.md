@@ -1,6 +1,6 @@
 +++
 title = "Data source permissions"
-description = "Grafana Datasource Permissions Guide "
+description = "ThingSPIN Datasource Permissions Guide "
 keywords = ["grafana", "configuration", "documentation", "datasource", "permissions", "users", "teams", "enterprise"]
 type = "docs"
 [menu.docs]
@@ -14,7 +14,7 @@ weight = 200
 
 Data source permissions allow you to restrict access for users to query a data source. For each data source there is a permission page that allows you to enable permissions and restrict query permissions to specific **Users** and **Teams**.
 
-> Only available in Grafana Enterprise.
+> Only available in ThingSPIN Enterprise.
 
 ## Enable data source permissions
 

@@ -1,6 +1,6 @@
 +++
 title = "Google OAuth2 Authentication"
-description = "Grafana OAuthentication Guide "
+description = "ThingSPIN OAuthentication Guide "
 keywords = ["grafana", "configuration", "documentation", "oauth"]
 type = "docs"
 [menu.docs]
@@ -22,16 +22,16 @@ First, you need to create a Google OAuth Client:
 2. Click **Create Credentials**, then click **OAuth Client ID** in the drop-down menu
 3. Enter the following:
    - Application Type: Web Application
-   - Name: Grafana
+   - Name: ThingSPIN
    - Authorized Javascript Origins: https://grafana.mycompany.com
    - Authorized Redirect URLs: https://grafana.mycompany.com/login/google
-   - Replace https://grafana.mycompany.com with the URL of your Grafana instance.
+   - Replace https://grafana.mycompany.com with the URL of your ThingSPIN instance.
 4. Click Create
 5. Copy the Client ID and Client Secret from the 'OAuth Client' modal
 
-## Enable Google OAuth in Grafana
+## Enable Google OAuth in ThingSPIN
 
-Specify the Client ID and Secret in the [Grafana configuration file]({{< relref "../installation/configuration.md#config-file-locations" >}}). For example:
+Specify the Client ID and Secret in the [ThingSPIN configuration file]({{< relref "../installation/configuration.md#config-file-locations" >}}). For example:
 
 ```bash
 [auth.google]
@@ -46,9 +46,9 @@ allow_sign_up = true
 ```
 
 You may have to set the `root_url` option of `[server]` for the callback URL to be 
-correct. For example in case you are serving Grafana behind a proxy.
+correct. For example in case you are serving ThingSPIN behind a proxy.
 
-Restart the Grafana back-end. You should now see a Google login button
+Restart the ThingSPIN back-end. You should now see a Google login button
 on the login page. You can now login or sign up with your Google
 accounts. The `allowed_domains` option is optional, and domains were separated by space.
 

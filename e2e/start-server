@@ -37,7 +37,7 @@ cp devenv/dashboards.yaml $PROV_DIR/dashboards
 
 cp -r devenv $RUNDIR
 
-echo -e "Starting Grafana Server port $PORT"
+echo -e "Starting ThingSPIN Server port $PORT"
 
 $RUNDIR/bin/grafana-server \
   --homepath=$RUNDIR \

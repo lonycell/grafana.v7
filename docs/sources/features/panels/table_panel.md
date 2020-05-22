@@ -17,7 +17,7 @@ weight = 4
 The table panel is very flexible, supporting both multiple modes for time series as well as for
 table, annotation and raw JSON data. It also provides date formatting and value formatting and coloring options.
 
-To view table panels in action and test different configurations with sample data, check out the [Table Panel Showcase in the Grafana Playground](https://play.grafana.org/dashboard/db/table-panel-showcase).
+To view table panels in action and test different configurations with sample data, check out the [Table Panel Showcase in the ThingSPIN Playground](https://play.grafana.org/dashboard/db/table-panel-showcase).
 
 ## Querying Data
 
@@ -27,7 +27,7 @@ You can change the behavior in the section **Data to Table** below.
 
 ### Merge Multiple Queries per Table
 
-> Only available in Grafana v5.0+.
+> Only available in ThingSPIN v5.0+.
 
 Sometimes it is useful to display the results of multiple queries in the same table on corresponding rows, e.g., when comparing capacity and actual usage of resources.
 In this example usage and capacity are metrics that will have corresponding datapoints, while their associated keys and values can be used to match them.
@@ -143,7 +143,7 @@ The column styles allow you control how dates and numbers are formatted.
 ### String
 #### Value/Range to text mapping
 
-> Only available in Grafana v5.1+.
+> Only available in ThingSPIN v5.1+.
 
 {{< docs-imagebox img="/img/docs/v51/table-value-mapping.png" class="docs-image--right docs-image--no-shadow">}}
 

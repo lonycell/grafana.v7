@@ -9,7 +9,7 @@ type = "docs"
 
 ## GrafanaConfig interface
 
-Describes all the different Grafana configuration values available for an instance.
+Describes all the different ThingSPIN configuration values available for an instance.
 
 <b>Signature</b>
 

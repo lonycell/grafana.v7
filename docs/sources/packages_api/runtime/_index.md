@@ -9,13 +9,13 @@ type = "docs"
 
 ## @grafana/runtime package
 
-A library containing services, configurations etc. used to interact with the Grafana engine.
+A library containing services, configurations etc. used to interact with the ThingSPIN engine.
 
 ## Classes
 
 |  Class | Description |
 |  --- | --- |
-|  [DataSourceWithBackend](./datasourcewithbackend/) | Extend this class to implement a data source plugin that is depending on the Grafana backend API. |
+|  [DataSourceWithBackend](./datasourcewithbackend/) | Extend this class to implement a data source plugin that is depending on the ThingSPIN backend API. |
 |  [GrafanaBootConfig](./grafanabootconfig/) |  |
 
 ## Enumerations
@@ -33,8 +33,8 @@ A library containing services, configurations etc. used to interact with the Gra
 |  [getAngularLoader()](./getangularloader/) | Used to retrieve the [AngularLoader](./runtime/angularloader.md) that enables the use of Angular components within a React component.<!-- -->Please see the [AngularComponent](./runtime/angularcomponent.md) for a proper example. |
 |  [getDataSourceSrv()](./getdatasourcesrv/) | Used to retrieve the [DataSourceSrv](./runtime/datasourcesrv.md) that is the entry point for communicating with a datasource that is added as a plugin (both external and internal). |
 |  [getEchoSrv()](./getechosrv/) | Used to retrieve the [EchoSrv](./runtime/echosrv.md) that can be used to report events to registered echo backends. |
-|  [getLocationSrv()](./getlocationsrv/) | Used to retrieve the [LocationSrv](./runtime/locationsrv.md) that can be used to automatically navigate the user to a new place in Grafana. |
-|  [loadPluginCss(options)](./loadplugincss/) | Use this to load css for a Grafana plugin by specifying a [PluginCssOptions](./runtime/plugincssoptions.md) containing styling for the dark and the light theme. |
+|  [getLocationSrv()](./getlocationsrv/) | Used to retrieve the [LocationSrv](./runtime/locationsrv.md) that can be used to automatically navigate the user to a new place in ThingSPIN. |
+|  [loadPluginCss(options)](./loadplugincss/) | Use this to load css for a ThingSPIN plugin by specifying a [PluginCssOptions](./runtime/plugincssoptions.md) containing styling for the dark and the light theme. |
 
 ## Interfaces
 
@@ -42,7 +42,7 @@ A library containing services, configurations etc. used to interact with the Gra
 |  --- | --- |
 |  [AngularComponent](./angularcomponent/) | Used to enable rendering of Angular components within a React component without losing proper typings. |
 |  [AngularLoader](./angularloader/) | Used to load an Angular component from the context of a React component. Please see the [AngularComponent](./runtime/angularcomponent.md) for a proper example. |
-|  [BackendSrv](./backendsrv/) | Used to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc. The BackendSrv is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) under the hood to handle all the communication.<!-- -->The request function can be used to perform a remote call by specifying a [BackendSrvRequest](./runtime/backendsrvrequest.md)<!-- -->. To make the BackendSrv a bit easier to use we have added a couple of shorthand functions that will use default values executing the request. |
+|  [BackendSrv](./backendsrv/) | Used to communicate via http(s) to a remote backend such as the ThingSPIN backend, a datasource etc. The BackendSrv is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) under the hood to handle all the communication.<!-- -->The request function can be used to perform a remote call by specifying a [BackendSrvRequest](./runtime/backendsrvrequest.md)<!-- -->. To make the BackendSrv a bit easier to use we have added a couple of shorthand functions that will use default values executing the request. |
 |  [DashboardInfo](./dashboardinfo/) | Describes the basic dashboard information that can be passed as the meta analytics payload. |
 |  [DashboardViewEventPayload](./dashboardvieweventpayload/) | Describes the payload of a dashboard view event. |
 |  [DataRequestEventPayload](./datarequesteventpayload/) | Describes the payload of a data request event. |
@@ -64,10 +64,10 @@ A library containing services, configurations etc. used to interact with the Gra
 
 |  Variable | Description |
 |  --- | --- |
-|  [config](./config/) | Use this to access the [GrafanaBootConfig](./runtime/grafanabootconfig.md) for the current running Grafana instance. |
-|  [getBackendSrv](./getbackendsrv/) | Used to retrieve the [BackendSrv](./runtime/backendsrv.md) that can be used to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc. |
+|  [config](./config/) | Use this to access the [GrafanaBootConfig](./runtime/grafanabootconfig.md) for the current running ThingSPIN instance. |
+|  [getBackendSrv](./getbackendsrv/) | Used to retrieve the [BackendSrv](./runtime/backendsrv.md) that can be used to communicate via http(s) to a remote backend such as the ThingSPIN backend, a datasource etc. |
 |  [getTemplateSrv](./gettemplatesrv/) | Used to retrieve the [TemplateSrv](./runtime/templatesrv.md) that can be used to fetch available template variables. |
-|  [registerEchoBackend](./registerechobackend/) | Used to register echo backends that will receive Grafana echo events during application runtime. |
+|  [registerEchoBackend](./registerechobackend/) | Used to register echo backends that will receive ThingSPIN echo events during application runtime. |
 |  [reportMetaAnalytics](./reportmetaanalytics/) | Helper function to report meta analytics to the [EchoSrv](./runtime/echosrv.md)<!-- -->. |
 
 ## Type Aliases

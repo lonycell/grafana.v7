@@ -25,7 +25,7 @@ import { DataQueryResponse } from '@grafana/data';
 |  --- | --- | --- |
 |  [data](#data-property) | <code>DataQueryResponseData[]</code> | The response data. When streaming, this may be empty or a partial result set |
 |  [error](#error-property) | <code>DataQueryError</code> | Optionally include error info along with the response data |
-|  [key](#key-property) | <code>string</code> | When returning multiple partial responses or streams Use this key to inform Grafana how to combine the partial responses Multiple responses with same key are replaced (latest used) |
+|  [key](#key-property) | <code>string</code> | When returning multiple partial responses or streams Use this key to inform ThingSPIN how to combine the partial responses Multiple responses with same key are replaced (latest used) |
 |  [state](#state-property) | <code>LoadingState</code> | Use this to control which state the response should have Defaults to LoadingState.Done if state is not defined |
 
 ### data property
@@ -50,7 +50,7 @@ error?: DataQueryError;
 
 ### key property
 
-When returning multiple partial responses or streams Use this key to inform Grafana how to combine the partial responses Multiple responses with same key are replaced (latest used)
+When returning multiple partial responses or streams Use this key to inform ThingSPIN how to combine the partial responses Multiple responses with same key are replaced (latest used)
 
 <b>Signature</b>
 

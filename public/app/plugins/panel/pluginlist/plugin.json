@@ -6,9 +6,9 @@
   "skipDataQuery": true,
 
   "info": {
-    "description": "Plugin List for Grafana",
+    "description": "Plugin List for ThingSPIN",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "logos": {

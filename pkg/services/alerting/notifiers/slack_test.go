@@ -63,7 +63,7 @@ func TestSlackNotifier(t *testing.T) {
                     {
                       "url": "http://google.com",
                       "recipient": "#ds-opentsdb",
-                      "username": "Grafana Alerts",
+                      "username": "ThingSPIN Alerts",
                       "icon_emoji": ":smile:",
                       "icon_url": "https://grafana.com/img/fav32.png",
                       "mentionUsers": "user1, user2",
@@ -88,7 +88,7 @@ func TestSlackNotifier(t *testing.T) {
 				So(slackNotifier.Type, ShouldEqual, "slack")
 				So(slackNotifier.URL, ShouldEqual, "http://google.com")
 				So(slackNotifier.Recipient, ShouldEqual, "#ds-opentsdb")
-				So(slackNotifier.Username, ShouldEqual, "Grafana Alerts")
+				So(slackNotifier.Username, ShouldEqual, "ThingSPIN Alerts")
 				So(slackNotifier.IconEmoji, ShouldEqual, ":smile:")
 				So(slackNotifier.IconURL, ShouldEqual, "https://grafana.com/img/fav32.png")
 				So(slackNotifier.MentionUsers, ShouldResemble, []string{"user1", "user2"})

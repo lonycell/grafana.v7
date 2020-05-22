@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "title": "plugin.json",
-  "description": "The plugin.json file is required for all plugins. When Grafana starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless the folder contains a subfolder named dist. In that case, Grafana mounts the dist folder instead.",
+  "description": "The plugin.json file is required for all plugins. When ThingSPIN starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless the folder contains a subfolder named dist. In that case, ThingSPIN mounts the dist folder instead.",
   "required": ["type", "name", "id", "info", "dependencies"],
   "additionalProperties": false,
   "properties": {
@@ -40,7 +40,7 @@
     },
     "executable": {
       "type": "string",
-      "description": "The first part of the file name of the backend component executable. There can be multiple executables built for different operating system and architecture. Grafana will check for executables named `<executable>_<$GOOS>_<lower case $GOARCH><.exe for Windows>`, e.g. `plugin_linux_amd64`. Combination of $GOOS and $GOARCH can be found here: https://golang.org/doc/install/source#environment."
+      "description": "The first part of the file name of the backend component executable. There can be multiple executables built for different operating system and architecture. ThingSPIN will check for executables named `<executable>_<$GOOS>_<lower case $GOARCH><.exe for Windows>`, e.g. `plugin_linux_amd64`. Combination of $GOOS and $GOARCH can be found here: https://golang.org/doc/install/source#environment."
     },
     "includes": {
       "type": "array",
@@ -95,7 +95,7 @@
     },
     "sort": {
       "type": "number",
-      "description": "Internal property for sorting. Cannot be used as will be overwritten by Grafana."
+      "description": "Internal property for sorting. Cannot be used as will be overwritten by ThingSPIN."
     },
     "staticRoot": {
       "type": "string"
@@ -122,7 +122,7 @@
       "properties": {
         "grafanaVersion": {
           "type": "string",
-          "description": "Required Grafana version for this plugin, e.g. `6.x.x 7.x.x` to denote plugin requires Grafana v6.x.x or v7.x.x.",
+          "description": "Required ThingSPIN version for this plugin, e.g. `6.x.x 7.x.x` to denote plugin requires ThingSPIN v6.x.x or v7.x.x.",
           "pattern": "^([0-9x]+\\.[0-9x]+\\.*[0-9x]*\\s*)+$"
         },
         "plugins": {
@@ -136,7 +136,7 @@
     },
     "info": {
       "type": "object",
-      "description": "Metadata for the plugin. Some fields are used on the plugins page in Grafana and others on grafana.com if the plugin is published.",
+      "description": "Metadata for the plugin. Some fields are used on the plugins page in ThingSPIN and others on grafana.com if the plugin is published.",
       "required": ["logos", "version", "updated"],
       "additionalProperties": false,
       "properties": {
@@ -163,7 +163,7 @@
         },
         "description": {
           "type": "string",
-          "description": "Description of plugin. Used on the plugins page in Grafana and for search on grafana.com."
+          "description": "Description of plugin. Used on the plugins page in ThingSPIN and for search on grafana.com."
         },
         "keywords": {
           "type": "array",

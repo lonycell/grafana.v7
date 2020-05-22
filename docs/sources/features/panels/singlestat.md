@@ -82,7 +82,7 @@ If you want to replace the default "No data" text being displayed when no data i
 
 {{< docs-imagebox img="/img/docs/v45/singelstat-multiple-series-error.png" class="docs-image--right docs-image--no-shadow">}}
 
-Grafana 2.5 introduced stricter checking for multiple-series on singlestat panels. In previous versions, the panel logic did not verify that only a single series was used, and instead, displayed the first series encountered. Depending on your data source, this could have lead to inconsistent data being shown and/or a general confusion about which metric was being displayed.
+ThingSPIN 2.5 introduced stricter checking for multiple-series on singlestat panels. In previous versions, the panel logic did not verify that only a single series was used, and instead, displayed the first series encountered. Depending on your data source, this could have lead to inconsistent data being shown and/or a general confusion about which metric was being displayed.
 
 To fix your singlestat panel:
 

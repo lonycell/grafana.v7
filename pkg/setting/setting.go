@@ -39,7 +39,7 @@ const (
 	DEV      = "development"
 	PROD     = "production"
 	TEST     = "test"
-	APP_NAME = "Grafana"
+	APP_NAME = "ThingSPIN"
 )
 
 var (
@@ -207,7 +207,7 @@ var (
 	// Explore UI
 	ExploreEnabled bool
 
-	// Grafana.NET URL
+	// ThingSPIN.NET URL
 	GrafanaComUrl string
 
 	// S3 temp image store
@@ -510,7 +510,7 @@ func (cfg *Cfg) loadConfiguration(args *CommandLineArgs) (*ini.File, error) {
 
 	// check if config file exists
 	if _, err := os.Stat(defaultConfigFile); os.IsNotExist(err) {
-		fmt.Println("Grafana-server Init Failed: Could not find config defaults, make sure homepath command line parameter is set or working directory is homepath")
+		fmt.Println("ThingSPIN-server Init Failed: Could not find config defaults, make sure homepath command line parameter is set or working directory is homepath")
 		os.Exit(1)
 	}
 

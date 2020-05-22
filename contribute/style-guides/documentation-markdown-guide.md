@@ -1,7 +1,7 @@
 # Markdown style guide
 
 This guide for Markdown style helps keep contributions consistent across all documentation
-created for Grafana products. Refer to the guide and update its sections as needed when a
+created for ThingSPIN products. Refer to the guide and update its sections as needed when a
 Subject Matter Expert answers a question on Markdown style, or a decision is made about
 how to apply Markdown.
 
@@ -129,7 +129,7 @@ using "\*" characters.
 
 Include images in a document using the following syntax:
 
-**Example** \!\[Grafana Logo](/link/to/grafanalogo/logo.png)
+**Example** \!\[ThingSPIN Logo](/link/to/grafanalogo/logo.png)
 
 This follows the format of "!", alt text wrapped in "[]" and the link URL wrapped in "()".
 

@@ -13,27 +13,27 @@ weight = 1
 
 # Permissions Overview
 
-Grafana users have permissions that are determined by their:
+ThingSPIN users have permissions that are determined by their:
 
 - **Organization Role** (Admin, Editor, Viewer)
 - Via **Team** memberships where the **Team** has been assigned specific permissions.
 - Via permissions assigned directly to user (on folders, dashboards, data sources)
-- The Grafana Admin (i.e. Super Admin) user flag.
+- The ThingSPIN Admin (i.e. Super Admin) user flag.
 
 ## Users
 
-Grafana supports a wide variety of internal and external ways for users to authenticate themselves. These include from its own integrated database, from an external SQL server, or from an external LDAP server.
+ThingSPIN supports a wide variety of internal and external ways for users to authenticate themselves. These include from its own integrated database, from an external SQL server, or from an external LDAP server.
 
-## Grafana Admin
+## ThingSPIN Admin
 
 This admin flag makes user a `Super Admin`. This means they can access the `Server Admin` views where all users and organizations can be administrated.
 
 ## Organization Roles
 
 Users can belong to one or more organizations. A user's organization membership is tied to a role that defines what the user is allowed to do
-in that organization. Grafana supports multiple *organizations* in order to support a wide variety of deployment models, including using a single Grafana instance to provide service to multiple potentially untrusted organizations.
+in that organization. ThingSPIN supports multiple *organizations* in order to support a wide variety of deployment models, including using a single ThingSPIN instance to provide service to multiple potentially untrusted organizations.
 
-In most cases, Grafana is deployed with a single organization.
+In most cases, ThingSPIN is deployed with a single organization.
 
 Each organization can have one or more data sources.
 

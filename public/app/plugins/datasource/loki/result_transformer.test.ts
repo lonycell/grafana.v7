@@ -89,7 +89,7 @@ describe('loki result transformer', () => {
             values: [
               [
                 '1581519914265798400',
-                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting ThingSPIN" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
               ],
             ],
           },
@@ -108,7 +108,7 @@ describe('loki result transformer', () => {
         ts: '2020-02-12T15:05:14.265Z',
         tsNs: '1581519914265798400',
         line:
-          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting ThingSPIN" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
         labels: { filename: '/var/log/grafana/grafana.log' },
         id: '19e8e093d70122b3b53cb6e24efd6e2d',
       });

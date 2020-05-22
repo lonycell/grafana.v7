@@ -141,7 +141,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 	}
 
 	if defaultDatasource == "" {
-		defaultDatasource = "-- Grafana --"
+		defaultDatasource = "-- ThingSPIN --"
 	}
 
 	panels := map[string]interface{}{}

@@ -43,7 +43,7 @@ const HttpAccessHelp = () => (
     </p>
     <div className="alert-title">Server access mode (Default):</div>
     <p>
-      All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to
+      All requests will be made from the browser to ThingSPIN backend/server which in turn will forward the requests to
       the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs
       to be accessible from the grafana backend/server if you select this access mode.
     </p>
@@ -151,7 +151,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
             <div className="gf-form">
               <FormLabel
                 width={11}
-                tooltip="Grafana Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
+                tooltip="ThingSPIN Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
               >
                 Whitelisted Cookies
               </FormLabel>

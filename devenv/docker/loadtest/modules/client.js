@@ -79,7 +79,7 @@ export const GrafanaClient = class GrafanaClient {
   onBeforeRequest(params) {
     if (this.orgId && this.orgId > 0) {
       params = params.headers || {};
-      params.headers["X-Grafana-Org-Id"] = this.orgId;
+      params.headers["X-ThingSPIN-Org-Id"] = this.orgId;
     }
   }
 }

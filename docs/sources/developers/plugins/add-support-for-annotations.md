@@ -9,7 +9,7 @@ This guide explains how to add support for [annotations]({{< relref "../../refer
 
 This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "../../../../../tutorials/build-a-data-source-plugin.md" >}}).
 
-Data sources in Grafana can support [Annotations]({{< relref "../../reference/annotations.md" >}}) by handling _annotation queries_.
+Data sources in ThingSPIN can support [Annotations]({{< relref "../../reference/annotations.md" >}}) by handling _annotation queries_.
 
 Handling annotation queries is similar to how you'd handle a metrics query. The difference is that instead of returning [data frames]({{< relref "data-frames.md" >}}), an annotation query returns _annotation events_.
 
@@ -23,7 +23,7 @@ To add logs support to an existing data source, you need to:
 
 ### Enable annotations support
 
-Tell Grafana that your data source plugin can return annotations events by adding `"annotations": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
+Tell ThingSPIN that your data source plugin can return annotations events by adding `"annotations": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
 
 ```json
 {

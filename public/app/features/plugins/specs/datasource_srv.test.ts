@@ -64,7 +64,7 @@ describe('datasource_srv', () => {
         type: 'test-db',
         meta: { metrics: { m: 1 } },
       },
-      '--Grafana--': {
+      '--ThingSPIN--': {
         type: 'grafana',
         meta: { builtIn: true, metrics: { m: 1 }, id: 'grafana' },
       },
@@ -96,7 +96,7 @@ describe('datasource_srv', () => {
       expect(metricSources[2].name).toBe('BBB');
       expect(metricSources[3].name).toBe('mmm');
       expect(metricSources[4].name).toBe('ZZZ');
-      expect(metricSources[5].name).toBe('--Grafana--');
+      expect(metricSources[5].name).toBe('--ThingSPIN--');
       expect(metricSources[6].name).toBe('--Mixed--');
     });
 

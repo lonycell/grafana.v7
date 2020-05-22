@@ -17,7 +17,7 @@
     },
     {
       "type": "dashboard",
-      "name": "Grafana Stats",
+      "name": "ThingSPIN Stats",
       "path": "dashboards/grafana_stats.json"
     }
   ],
@@ -30,7 +30,7 @@
   "info": {
     "description": "Open source time series database & alerting",
     "author": {
-      "name": "Grafana Labs",
+      "name": "ThingSPIN Labs",
       "url": "https://grafana.com"
     },
     "logos": {

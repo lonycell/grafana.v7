@@ -33,7 +33,7 @@ Object {
         "min": null,
         "noValue": "😤",
         "nullValueMode": "null",
-        "title": "Grafana ❤️ (Previous should be heart emoji) 🦥 (Previous should be sloth emoji)",
+        "title": "ThingSPIN ❤️ (Previous should be heart emoji) 🦥 (Previous should be sloth emoji)",
       },
       "labels": Object {
         "aLabelKey": "aLabelValue",
@@ -42,7 +42,7 @@ Object {
       "name": "nullable_string_values",
       "type": "string",
       "values": Array [
-        "Grafana",
+        "ThingSPIN",
         "❤️",
         null,
         "🦥",
@@ -368,7 +368,7 @@ Object {
   "meta": Object {
     "limit": 4242,
     "searchWords": Array [
-      "Grafana",
+      "ThingSPIN",
       "❤️",
       " 🦥 ",
       "test",

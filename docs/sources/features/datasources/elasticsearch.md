@@ -1,6 +1,6 @@
 +++
-title = "Using Elasticsearch in Grafana"
-description = "Guide for using Elasticsearch in Grafana"
+title = "Using Elasticsearch in ThingSPIN"
+description = "Guide for using Elasticsearch in ThingSPIN"
 keywords = ["grafana", "elasticsearch", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/elasticsearch"]
@@ -10,14 +10,14 @@ parent = "datasources"
 weight = 3
 +++
 
-# Using Elasticsearch in Grafana
+# Using Elasticsearch in ThingSPIN
 
-Grafana ships with advanced support for Elasticsearch. You can do many types of simple or complex Elasticsearch queries to
+ThingSPIN ships with advanced support for Elasticsearch. You can do many types of simple or complex Elasticsearch queries to
 visualize logs or metrics stored in Elasticsearch. You can also annotate your graphs with log events stored in Elasticsearch.
 
 ## Adding the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the ThingSPIN icon in the top header.
 2. In the side menu under the `Dashboards` link you should find a link named `Data Sources`.
 3. Click the `+ Add data source` button in the top header.
 4. Select *Elasticsearch* from the *Type* dropdown.
@@ -29,13 +29,13 @@ Name | Description
 *Name* | The data source name. This is how you refer to the data source in panels and queries.
 *Default* | Default data source means that it will be pre-selected for new panels.
 *Url* | The HTTP protocol, IP, and port of your Elasticsearch server.
-*Access* | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.
+*Access* | Server (default) = URL needs to be accessible from the ThingSPIN backend/server, Browser = URL needs to be accessible from the browser.
 
 Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.
 
 ### Server access mode (Default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
+All requests will be made from the browser to ThingSPIN backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
 
 ### Browser (Direct) access
 
@@ -81,7 +81,7 @@ Identifier | Description
 
 ### Logs (BETA)
 
-> Only available in Grafana v6.3+.
+> Only available in ThingSPIN v6.3+.
 
 There are two parameters, `Message field name` and `Level field name`, that can optionally be configured from the data source settings page that determine
 which fields will be used for log messages and log levels when visualizing logs in [Explore]({{< relref "../explore" >}}).
@@ -160,7 +160,7 @@ There are two syntaxes:
 - `[[varname]]` Example: @hostname:[[hostname]]
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the *Multi-value* or *Include all value*
-options are enabled, Grafana converts the labels from plain text to a lucene compatible condition.
+options are enabled, ThingSPIN converts the labels from plain text to a lucene compatible condition.
 
 ![](/img/docs/v43/elastic_templating_query.png)
 
@@ -173,7 +173,7 @@ Example dashboard:
 ## Annotations
 
 [Annotations]({{< relref "../../reference/annotations.md" >}}) allow you to overlay rich event information on top of graphs. You add annotation
-queries via the Dashboard menu / Annotations view. Grafana can query any Elasticsearch index
+queries via the Dashboard menu / Annotations view. ThingSPIN can query any Elasticsearch index
 for annotation events.
 
 Name | Description
@@ -186,7 +186,7 @@ Tags | Optional field name to use for event tags (can be an array or a CSV strin
 
 ## Querying Logs (BETA)
 
-> Only available in Grafana v6.3+.
+> Only available in ThingSPIN v6.3+.
 
 Querying and displaying log data from Elasticsearch is available via [Explore]({{< relref "../explore" >}}).
 
@@ -208,7 +208,7 @@ Optionally enter a lucene query into the query field to filter the log messages.
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

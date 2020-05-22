@@ -1,6 +1,6 @@
 +++
-title = "Using Prometheus in Grafana"
-description = "Guide for using Prometheus in Grafana"
+title = "Using Prometheus in ThingSPIN"
+description = "Guide for using Prometheus in ThingSPIN"
 keywords = ["grafana", "prometheus", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/prometheus"]
@@ -12,7 +12,7 @@ weight = 1
 
 # Prometheus data source
 
-Grafana includes built-in support for Prometheus. This topic explains options, variables, querying, and other options specific to the Prometheus data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana.
+ThingSPIN includes built-in support for Prometheus. This topic explains options, variables, querying, and other options specific to the Prometheus data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to ThingSPIN.
 
 ## Prometheus settings
 
@@ -23,7 +23,7 @@ To access Prometheus settings, click the **Configuration** (gear) icon, then cli
 | _Name_                    | The data source name. This is how you refer to the data source in panels and queries.                                                 |
 | _Default_                 | Default data source means that it will be pre-selected for new panels.                                                                |
 | _Url_                     | The URL of your Prometheus server, e.g. `http://prometheus.example.org:9090`.                                                         |
-| _Access_                  | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser. |
+| _Access_                  | Server (default) = URL needs to be accessible from the ThingSPIN backend/server, Browser = URL needs to be accessible from the browser. |
 | _Basic Auth_              | Enable basic authentication to the Prometheus data source.                                                                            |
 | _User_                    | User name for basic authentication.                                                                                                   |
 | _Password_                | Password for basic authentication.                                                                                                    |
@@ -48,7 +48,7 @@ Open a graph in edit mode by clicking the title > Edit (or by pressing `e` key w
 | _Instant_          | Perform an "instant" query, to return only the latest value that Prometheus has scraped for the requested time series. Instant queries return results much faster than normal range queries. Use them to look up label sets.                                                                                                        |
 | _Min time interval_| This value multiplied by the denominator from the _Resolution_ setting sets a lower limit to both the `$__interval` variable and the [`step` parameter of Prometheus range queries](https://prometheus.io/docs/prometheus/latest/querying/api/#range-queries). Defaults to _Scrape interval_ as set in the data source options.     |
 
-> **Note:** Grafana modifies the request dates for queries to align them with the dynamically calculated step. This ensures consistent display of metrics data, but it can result in a small gap of data at the right edge of a graph.
+> **Note:** ThingSPIN modifies the request dates for queries to align them with the dynamically calculated step. This ensures consistent display of metrics data, but it can result in a small gap of data at the right edge of a graph.
 
 ### Instant queries
 
@@ -59,7 +59,7 @@ Instant query results are made up only of one data point per series but can be s
 To show them in the graph as a latest value point, add a series override and select `Points > true`.
 To show a horizontal line across the whole graph, add a series override and select `Transform > constant`.
 
-> Support for constant series overrides is available from Grafana v6.4
+> Support for constant series overrides is available from ThingSPIN v6.4
 
 ## Templating
 
@@ -87,7 +87,7 @@ For details of what _metric names_, _label names_ and _label values_ are please 
 
 #### Using interval and range variables
 
-> Support for `$__range`, `$__range_s` and `$__range_ms` only available from Grafana v5.3
+> Support for `$__range`, `$__range_s` and `$__range_ms` only available from ThingSPIN v5.3
 
 You can use some global built-in variables in query variables; `$__interval`, `$__interval_ms`, `$__range`, `$__range_s` and `$__range_ms`, see [Global built-in variables]({{< relref "../../variables/global-variables.md" >}}) for more information. These can be convenient to use in conjunction with the `query_result` function when you need to filter variable queries since
 
@@ -119,7 +119,7 @@ There are two syntaxes:
 - `[[varname]]` Example: rate(http_requests_total{job=~"[[job]]"}[5m])
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the _Multi-value_ or _Include all value_
-options are enabled, Grafana converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
+options are enabled, ThingSPIN converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
 
 ## Annotations
 
@@ -133,15 +133,15 @@ Prometheus supports two ways to query annotations.
 
 The step option is useful to limit the number of events returned from your query.
 
-## Get Grafana metrics into Prometheus
+## Get ThingSPIN metrics into Prometheus
 
-Grafana exposes metrics for Prometheus on the `/metrics` endpoint. We also bundle a dashboard within Grafana so you can get started viewing your metrics faster. You can import the bundled dashboard by going to the data source edit page and click the dashboard tab. There you can find a dashboard for Grafana and one for Prometheus. Import and start viewing all the metrics!
+ThingSPIN exposes metrics for Prometheus on the `/metrics` endpoint. We also bundle a dashboard within ThingSPIN so you can get started viewing your metrics faster. You can import the bundled dashboard by going to the data source edit page and click the dashboard tab. There you can find a dashboard for ThingSPIN and one for Prometheus. Import and start viewing all the metrics!
 
-For detailed instructions, refer to [Internal Grafana metrics]({{< relref "../../administration/metrics.md">}}).
+For detailed instructions, refer to [Internal ThingSPIN metrics]({{< relref "../../administration/metrics.md">}}).
 
 ## Provision the Prometheus data source
 
-You can configure data sources using config files with Grafana's provisioning system. Read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+You can configure data sources using config files with ThingSPIN's provisioning system. Read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source:
 

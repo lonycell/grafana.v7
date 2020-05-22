@@ -9,7 +9,7 @@ type = "docs"
 
 ## @grafana/data package
 
-A library containing most of the core functionality and data types used in Grafana.
+A library containing most of the core functionality and data types used in ThingSPIN.
 
 ## Classes
 
@@ -152,7 +152,7 @@ A library containing most of the core functionality and data types used in Grafa
 |  [AppPluginMeta](./apppluginmeta/) |  |
 |  [AppRootProps](./approotprops/) |  |
 |  [ArrowDataFrame](./arrowdataframe/) |  |
-|  [BuildInfo](./buildinfo/) | Describes the build information that will be available via the Grafana configuration. |
+|  [BuildInfo](./buildinfo/) | Describes the build information that will be available via the ThingSPIN configuration. |
 |  [CalculateFieldTransformerOptions](./calculatefieldtransformeroptions/) |  |
 |  [ColorFieldConfigSettings](./colorfieldconfigsettings/) |  |
 |  [Column](./column/) |  |
@@ -196,7 +196,7 @@ A library containing most of the core functionality and data types used in Grafa
 |  [DynamicConfigValue](./dynamicconfigvalue/) |  |
 |  [ExploreQueryFieldProps](./explorequeryfieldprops/) |  |
 |  [ExploreStartPageProps](./explorestartpageprops/) |  |
-|  [FeatureToggles](./featuretoggles/) | Describes available feature toggles in Grafana. These can be configured via the <code>conf/custom.ini</code> to enable features under development or not yet available in stable version. |
+|  [FeatureToggles](./featuretoggles/) | Describes available feature toggles in ThingSPIN. These can be configured via the <code>conf/custom.ini</code> to enable features under development or not yet available in stable version. |
 |  [Field](./field/) |  |
 |  [FieldCalcs](./fieldcalcs/) |  |
 |  [FieldColor](./fieldcolor/) |  |
@@ -218,14 +218,14 @@ A library containing most of the core functionality and data types used in Grafa
 |  [FormattedValue](./formattedvalue/) |  |
 |  [FrameMatcherInfo](./framematcherinfo/) |  |
 |  [GetFieldDisplayValuesOptions](./getfielddisplayvaluesoptions/) |  |
-|  [GrafanaConfig](./grafanaconfig/) | Describes all the different Grafana configuration values available for an instance. |
+|  [GrafanaConfig](./grafanaconfig/) | Describes all the different ThingSPIN configuration values available for an instance. |
 |  [GrafanaTheme](./grafanatheme/) |  |
 |  [GrafanaThemeCommons](./grafanathemecommons/) |  |
 |  [GraphSeriesXY](./graphseriesxy/) | View model projection of a series |
 |  [HistoryItem](./historyitem/) |  |
 |  [IntervalValues](./intervalvalues/) |  |
 |  [Labels](./labels/) |  |
-|  [LicenseInfo](./licenseinfo/) | Describes the license information about the current running instance of Grafana. |
+|  [LicenseInfo](./licenseinfo/) | Describes the license information about the current running instance of ThingSPIN. |
 |  [LinkModel](./linkmodel/) | Processed Link Model. The values are ready to use |
 |  [LinkModelSupplier](./linkmodelsupplier/) | Provides a way to produce links on demand<!-- -->TODO: ScopedVars in in GrafanaUI package! |
 |  [LogLabelStatsModel](./loglabelstatsmodel/) |  |

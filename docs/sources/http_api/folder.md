@@ -1,6 +1,6 @@
 +++
 title = "Folder HTTP API "
-description = "Grafana Folder HTTP API"
+description = "ThingSPIN Folder HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "folder"]
 aliases = ["/docs/grafana/latest/http_api/folder/"]
 type = "docs"
@@ -13,9 +13,9 @@ parent = "http_api"
 
 ## Identifier (id) vs unique identifier (uid)
 
-The identifier (id) of a folder is an auto-incrementing numeric value and is only unique per Grafana install.
+The identifier (id) of a folder is an auto-incrementing numeric value and is only unique per ThingSPIN install.
 
-The unique identifier (uid) of a folder can be used for uniquely identify folders between multiple Grafana installs. It's automatically generated if not provided when creating a folder. The uid allows having consistent URLs for accessing folders and when syncing folders between multiple Grafana installs. This means that changing the title of a folder will not break any bookmarked links to that folder.
+The unique identifier (uid) of a folder can be used for uniquely identify folders between multiple ThingSPIN installs. It's automatically generated if not provided when creating a folder. The uid allows having consistent URLs for accessing folders and when syncing folders between multiple ThingSPIN installs. This means that changing the title of a folder will not break any bookmarked links to that folder.
 
 The uid can have a maximum length of 40 characters.
 

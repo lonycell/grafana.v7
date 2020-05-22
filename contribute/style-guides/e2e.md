@@ -1,6 +1,6 @@
 # End to end test framework
 
-Grafana Labs uses a minimal home grown solution built on top of Cypress for our end to end (e2e) tests.
+ThingSPIN Labs uses a minimal home grown solution built on top of Cypress for our end to end (e2e) tests.
 
 ## Commands
 
@@ -10,7 +10,7 @@ Grafana Labs uses a minimal home grown solution built on top of Cypress for our 
 - `yarn e2e:debug` Same as above but runs the tests in chrome and does not shutdown after completion.
 - `yarn e2e:dev` Same as above but does not run any tests on startup. It lets you pick a test first.
 
-If you already have a Grafana instance running, you can provide a specific URL by setting the `BASE_URL` environment variable:
+If you already have a ThingSPIN instance running, you can provide a specific URL by setting the `BASE_URL` environment variable:
 
 ```
 BASE_URL=http://172.0.10.2:3333 yarn e2e
@@ -51,7 +51,7 @@ In our example app, we have an input that we want to type some text into during 
 
 We could define a selector using `JQuery` [type selectors](https://api.jquery.com/category/selectors/) with a string like `'.gf-form-input.login-form-input'` but that would be brittle as style changes occur frequently. Furthermore there is nothing that signals to future developers that this input is part of an e2e test.
 
-At Grafana, we use `aria-label` as our preferred way of defining selectors instead of `data-*` attributes. This also aids in accessibility.
+At ThingSPIN, we use `aria-label` as our preferred way of defining selectors instead of `data-*` attributes. This also aids in accessibility.
 Let's add a descriptive `aria-label` to our simple example.
 
 ```jsx harmony
@@ -199,7 +199,7 @@ The most common error with PhantomJs image rendering is when a PR introduces an 
 
 ### Debugging
 
-There is no easy or comprehensive way to debug PhantomJS smoke test (image rendering) failures. However, PhantomJS exposes remote debugging interface which can give you a sense of what is going wrong in the smoke test. Before performing the steps described below make sure your local Grafana instance is running:
+There is no easy or comprehensive way to debug PhantomJS smoke test (image rendering) failures. However, PhantomJS exposes remote debugging interface which can give you a sense of what is going wrong in the smoke test. Before performing the steps described below make sure your local ThingSPIN instance is running:
 
 1. Go to `tools/phantomjs` directory
 2. Execute `phantomjs` binary against `render.js` file: `./phantomjs --remote-debugger-port=9009 --remote-debugger-autorun=yes ./render.js url="http://localhost:3000"`

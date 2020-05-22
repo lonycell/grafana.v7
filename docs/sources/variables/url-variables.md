@@ -8,8 +8,8 @@ type = "docs"
 
 You can use variables in data links to link to specific portions of your visualizations. For more information about data links, refer to [Data links]({{< relref "../linking/data-links.md" >}}).
 
-> **Note:** These variables changed in 6.4 so if you have an older version of Grafana please use the version picker to select
-docs for an older version of Grafana.
+> **Note:** These variables changed in 6.4 so if you have an older version of ThingSPIN please use the version picker to select
+docs for an older version of ThingSPIN.
 
 ## Typeahead suggestions
 

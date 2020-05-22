@@ -5,9 +5,9 @@ type = "docs"
 aliases = ["/docs/grafana/latest/project/cla", "docs/contributing/cla.html"]
 +++
 
-# Grafana Labs Contributor License Agreement
+# ThingSPIN Labs Contributor License Agreement
 
-Thank you for your interest in contributing to Grafana Labs ("We" or "Us").
+Thank you for your interest in contributing to ThingSPIN Labs ("We" or "Us").
 
 This contributor agreement ("Agreement") documents the rights granted by contributors to Us.
 To make this document effective, please sign it following the instructions at

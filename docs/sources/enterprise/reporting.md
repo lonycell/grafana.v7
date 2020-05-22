@@ -11,9 +11,9 @@ weight = 400
 
 # Reporting
 
-Reporting allows you to automatically generate PDFs from any of your dashboards and have Grafana email them to interested parties on a schedule.
+Reporting allows you to automatically generate PDFs from any of your dashboards and have ThingSPIN email them to interested parties on a schedule.
 
-> Only available in Grafana Enterprise v6.4+.
+> Only available in ThingSPIN Enterprise v6.4+.
 
 {{< docs-imagebox img="/img/docs/enterprise/reports_list.png" max-width="500px" class="docs-image--no-shadow" >}}
 
@@ -82,13 +82,13 @@ Weekly reports are generated once per week. All fields are required.
 
 #### Never
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in ThingSPIN Enterprise v7.0+.
 
 Reports which are scheduled to never be sent have no parameter and will not be sent to the scheduler. They may be manually generated from the **Send test email** prompt or via the [Reporting API]({{< relref "../http_api/reporting.md" >}}).
 
 ### Send test mail
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in ThingSPIN Enterprise v7.0+.
 
 1. In the report, click **Send test mail**.
 1. In the Email field, enter the email address or addresses that you want to test, separated by semicolon.
@@ -126,9 +126,9 @@ image_scale_factor = 2
 
 Reports use the saved time range of the dashboard. Changing the time range of the report is done by saving a modified time range to the dashboard.
 
-The page header of the report displays the time range for the dashboard's data queries. Dashboards set to use the browser's time zone will use the time zone on the Grafana server.
+The page header of the report displays the time range for the dashboard's data queries. Dashboards set to use the browser's time zone will use the time zone on the ThingSPIN server.
 
-If the time zone is set differently between your Grafana server and its remote image renderer, then the time ranges in the report might be different between the page header and the time axes in the panels. We advise always setting the time zone to UTC for dashboards when using a remote renderer to avoid this. 
+If the time zone is set differently between your ThingSPIN server and its remote image renderer, then the time ranges in the report might be different between the page header and the time axes in the panels. We advise always setting the time zone to UTC for dashboards when using a remote renderer to avoid this. 
 
 ## Troubleshoot reporting
 

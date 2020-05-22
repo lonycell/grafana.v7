@@ -268,7 +268,7 @@ func init() {
 
 	registerScenario(&Scenario{
 		Id:   "grafana_api",
-		Name: "Grafana API",
+		Name: "ThingSPIN API",
 		Handler: func(query *tsdb.Query, context *tsdb.TsdbQuery) *tsdb.QueryResult {
 			// Real work is in javascript client
 			return tsdb.NewQueryResult()

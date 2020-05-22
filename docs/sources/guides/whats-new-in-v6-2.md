@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v6.2"
-description = "Feature and improvement highlights for Grafana v6.2"
+title = "What's new in ThingSPIN v6.2"
+description = "Feature and improvement highlights for ThingSPIN v6.2"
 keywords = ["grafana", "new", "documentation", "6.2", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,7 +10,7 @@ parent = "whatsnew"
 weight = -13
 +++
 
-# What's new in Grafana v6.2
+# What's new in ThingSPIN v6.2
 
 For all details please read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md).
 
@@ -23,7 +23,7 @@ Check out the [demo dashboard](https://play.grafana.org/d/ZvPm55mWk/new-features
 Data sources now store passwords and basic auth passwords in `secureJsonData` encrypted by default. Existing data source with unencrypted passwords will keep working.
 Read the [upgrade notes](/installation/upgrading/#upgrading-to-v6-2) on how to migrate existing data sources to use encrypted storage.
 
-To mitigate the risk of [Clickjacking](https://www.owasp.org/index.php/Clickjacking), embedding Grafana is no longer allowed per default.
+To mitigate the risk of [Clickjacking](https://www.owasp.org/index.php/Clickjacking), embedding ThingSPIN is no longer allowed per default.
 Read the [upgrade notes](/installation/upgrading/#upgrading-to-v6-2) for further details of how this may affect you.
 
 To mitigate the risk of sensitive information being cached in browser after a user has logged out, browser caching is now disabled for full page requests.
@@ -37,11 +37,11 @@ To mitigate the risk of sensitive information being cached in browser after a us
 
 ## Official support for Elasticsearch 7
 
-Grafana v6.2 ships with official support for Elasticsearch v7, see [Using Elasticsearch in Grafana](/features/datasources/elasticsearch/#elasticsearch-version) for more information.
+ThingSPIN v6.2 ships with official support for Elasticsearch v7, see [Using Elasticsearch in ThingSPIN](/features/datasources/elasticsearch/#elasticsearch-version) for more information.
 
 ## Bar Gauge Panel
 
-Grafana v6.2 ships with a new exciting panel! This new panel, named Bar Gauge, is very similar to the current
+ThingSPIN v6.2 ships with a new exciting panel! This new panel, named Bar Gauge, is very similar to the current
 Gauge panel and shares almost all it's options. The main difference is that the Bar Gauge uses both horizontal and
 vertical space much better and can be more efficiently stacked both vertically and horizontally. The Bar Gauge also
 comes with 3 unique display modes, Basic, Gradient, and Retro LED. Read the
@@ -64,13 +64,13 @@ row as its own gauge.
 ## Lazy loading of panels out of view
 
 This has been one of the most requested features for many years and is now finally here! Lazy loading of panels means
-Grafana will not issue any data queries for panels that are not visible. This will greatly reduce the load
+ThingSPIN will not issue any data queries for panels that are not visible. This will greatly reduce the load
 on your data source backends when loading dashboards with many panels.
 
 ## Panels without title
 
 Sometimes your panels do not need a title and having that panel header still take up space makes singlestats and
-other panels look strange and have bad vertical centering. In v6.2 Grafana will allow panel content (visualizations)
+other panels look strange and have bad vertical centering. In v6.2 ThingSPIN will allow panel content (visualizations)
 to use the full panel height in case there is no panel title.
 
 {{< docs-imagebox img="/img/docs/v62/panels_with_no_title.jpg" max-width="800px" caption="Bar Gauge Gradient mode" >}}

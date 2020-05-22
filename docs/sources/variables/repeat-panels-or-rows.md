@@ -10,19 +10,19 @@ weight = 400
 
 # Repeat panels or rows
 
-Grafana lets you create dynamic dashboards using _template variables_. Any variables in your queries expand to the current value of the variable before the query is sent to the database. Variables let you reuse a single dashboard for all your services.
+ThingSPIN lets you create dynamic dashboards using _template variables_. Any variables in your queries expand to the current value of the variable before the query is sent to the database. Variables let you reuse a single dashboard for all your services.
 
 Template variables can be very useful to dynamically change your queries across a whole dashboard. If you want
-Grafana to dynamically create new panels or rows based on what values you have selected, you can use the *Repeat* feature.
+ThingSPIN to dynamically create new panels or rows based on what values you have selected, you can use the *Repeat* feature.
 
 ## Repeating panels
 
-If you have a variable with `Multi-value` or `Include all value` options enabled you can choose one panel and have Grafana repeat that panel
+If you have a variable with `Multi-value` or `Include all value` options enabled you can choose one panel and have ThingSPIN repeat that panel
 for every selected value. You find the *Repeat* feature under the *General tab* in panel edit mode.
 
 The `direction` controls how the panels will be arranged.
 
-By choosing `horizontal` the panels will be arranged side-by-side. Grafana will automatically adjust the width
+By choosing `horizontal` the panels will be arranged side-by-side. ThingSPIN will automatically adjust the width
 of each repeated panel so that the whole row is filled. Currently, you cannot mix other panels on a row with a repeated
 panel.
 

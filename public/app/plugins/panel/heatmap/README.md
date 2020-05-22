@@ -1,6 +1,6 @@
 # Heatmap Panel -  Native Plugin
 
-The Heatmap panel allows you to view histograms over time and is **included** with Grafana.
+The Heatmap panel allows you to view histograms over time and is **included** with ThingSPIN.
 
 Read more about it here:
 

@@ -1,6 +1,6 @@
 +++
-title = "Using Microsoft SQL Server in Grafana"
-description = "Guide for using Microsoft SQL Server in Grafana"
+title = "Using Microsoft SQL Server in ThingSPIN"
+description = "Guide for using Microsoft SQL Server in ThingSPIN"
 keywords = ["grafana", "MSSQL", "Microsoft", "SQL", "guide", "Azure SQL Database"]
 type = "docs"
 [menu.docs]
@@ -9,15 +9,15 @@ parent = "datasources"
 weight = 8
 +++
 
-# Using Microsoft SQL Server in Grafana
+# Using Microsoft SQL Server in ThingSPIN
 
-> Only available in Grafana v5.1+.
+> Only available in ThingSPIN v5.1+.
 
-Grafana ships with a built-in Microsoft SQL Server (MSSQL) data source plugin that allows you to query and visualize data from any Microsoft SQL Server 2005 or newer, including Microsoft Azure SQL Database.
+ThingSPIN ships with a built-in Microsoft SQL Server (MSSQL) data source plugin that allows you to query and visualize data from any Microsoft SQL Server 2005 or newer, including Microsoft Azure SQL Database.
 
 ## Adding the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the ThingSPIN icon in the top header.
 2. In the side menu under the `Configuration` link you should find a link named `Data Sources`.
 3. Click the `+ Add data source` button in the top header.
 4. Select *Microsoft SQL Server* from the *Type* dropdown.
@@ -32,10 +32,10 @@ Name | Description
 *Database* | Name of your MSSQL database.
 *User* | Database user's login/username
 *Password* | Database user's password
-*Encrypt* | This option determines whether or to which extent a secure SSL TCP/IP connection will be negotiated with the server, default `false` (Grafana v5.4+).
-*Max open* | The maximum number of open connections to the database, default `unlimited` (Grafana v5.4+).
-*Max idle* | The maximum number of connections in the idle connection pool, default `2` (Grafana v5.4+).
-*Max lifetime* | The maximum amount of time in seconds a connection may be reused, default `14400`/4 hours (Grafana v5.4+).
+*Encrypt* | This option determines whether or to which extent a secure SSL TCP/IP connection will be negotiated with the server, default `false` (ThingSPIN v5.4+).
+*Max open* | The maximum number of open connections to the database, default `unlimited` (ThingSPIN v5.4+).
+*Max idle* | The maximum number of connections in the idle connection pool, default `2` (ThingSPIN v5.4+).
+*Max lifetime* | The maximum amount of time in seconds a connection may be reused, default `14400`/4 hours (ThingSPIN v5.4+).
 
 ### Min time interval
 
@@ -58,7 +58,7 @@ Identifier | Description
 ### Database User Permissions (Important!)
 
 The database user you specify when you add the data source should only be granted SELECT permissions on
-the specified database and tables you want to query. Grafana does not validate that the query is safe. The query
+the specified database and tables you want to query. ThingSPIN does not validate that the query is safe. The query
 could include any SQL statement. For example, statements like `DELETE FROM user;` and `DROP TABLE user;` would be
 executed. To protect against this we **Highly** recommend you create a specific MSSQL user with restricted permissions.
 
@@ -105,16 +105,16 @@ Macro example | Description
 *`$__timeGroup(dateColumn,'5m'[, fillvalue])`* | Will be replaced by an expression usable in GROUP BY clause. Providing a *fillValue* of *NULL* or *floating value* will automatically fill empty series in timerange with that value. <br/>For example, *CAST(ROUND(DATEDIFF(second, '1970-01-01', time_column)/300.0, 0) as bigint)\*300*.
 *`$__timeGroup(dateColumn,'5m', 0)`* | Same as above but with a fill parameter so missing points in that series will be added by grafana and 0 will be used as value.
 *`$__timeGroup(dateColumn,'5m', NULL)`* | Same as above but NULL will be used as value for missing points.
-*`$__timeGroup(dateColumn,'5m', previous)`* | Same as above but the previous value in that series will be used as fill value if no value has been seen yet NULL will be used (only available in Grafana 5.3+).
-*`$__timeGroupAlias(dateColumn,'5m')`* | Will be replaced identical to $__timeGroup but with an added column alias (only available in Grafana 5.3+).
+*`$__timeGroup(dateColumn,'5m', previous)`* | Same as above but the previous value in that series will be used as fill value if no value has been seen yet NULL will be used (only available in ThingSPIN 5.3+).
+*`$__timeGroupAlias(dateColumn,'5m')`* | Will be replaced identical to $__timeGroup but with an added column alias (only available in ThingSPIN 5.3+).
 *`$__unixEpochFilter(dateColumn)`* | Will be replaced by a time range filter using the specified column name with times represented as Unix timestamp. For example, *dateColumn > 1494410783 AND dateColumn < 1494497183*
 *`$__unixEpochFrom()`* | Will be replaced by the start of the currently active time selection as Unix timestamp. For example, *1494410783*
 *`$__unixEpochTo()`* | Will be replaced by the end of the currently active time selection as Unix timestamp. For example, *1494497183*
 *`$__unixEpochNanoFilter(dateColumn)`* | Will be replaced by a time range filter using the specified column name with times represented as nanosecond timestamp. For example, *dateColumn > 1494410783152415214 AND dateColumn < 1494497183142514872*
 *`$__unixEpochNanoFrom()`* | Will be replaced by the start of the currently active time selection as nanosecond timestamp. For example, *1494410783152415214*
 *`$__unixEpochNanoTo()`* | Will be replaced by the end of the currently active time selection as nanosecond timestamp. For example, *1494497183142514872*
-*`$__unixEpochGroup(dateColumn,'5m', [fillmode])`* | Same as $__timeGroup but for times stored as Unix timestamp (only available in Grafana 5.3+).
-*`$__unixEpochGroupAlias(dateColumn,'5m', [fillmode])`* | Same as above but also adds a column alias (only available in Grafana 5.3+).
+*`$__unixEpochGroup(dateColumn,'5m', [fillmode])`* | Same as $__timeGroup but for times stored as Unix timestamp (only available in ThingSPIN 5.3+).
+*`$__unixEpochGroupAlias(dateColumn,'5m', [fillmode])`* | Same as above but also adds a column alias (only available in ThingSPIN 5.3+).
 
 We plan to add many more macros. If you have suggestions for what macros you would like to see, please [open an issue](https://github.com/grafana/grafana) in our GitHub repo.
 
@@ -179,7 +179,7 @@ The resulting table panel:
 ## Time series queries
 
 If you set `Format as` to `Time series`, for use in Graph panel for example, then the query must have a column named `time` that returns either a SQL datetime or any numeric datatype representing Unix epoch in seconds. You may return a column named `metric` that is used as metric name for the value column. Any column except `time` and `metric` is treated as a value column. If you omit the `metric` column, the name of the value column will be the metric name. You may select multiple value columns, each will have its name as metric.
-If you return multiple value columns and a column named `metric` then this column is used as prefix for the series name (only available in Grafana 5.3+).
+If you return multiple value columns and a column named `metric` then this column is used as prefix for the series name (only available in ThingSPIN 5.3+).
 
 Resultsets of time series queries need to be sorted by time.
 
@@ -313,7 +313,7 @@ For example, you can have a variable that contains all values for the `hostname`
 SELECT hostname FROM host
 ```
 
-A query can return multiple columns and Grafana will automatically create a list from them. For example, the query below will return a list with values from `hostname` and `hostname2`.
+A query can return multiple columns and ThingSPIN will automatically create a list from them. For example, the query below will return a list with values from `hostname` and `hostname2`.
 
 ```sql
 SELECT [host].[hostname], [other_host].[hostname2] FROM host JOIN other_host ON [host].[city] = [other_host].[city]
@@ -334,9 +334,9 @@ SELECT hostname FROM host WHERE region IN ($region)
 
 ### Using Variables in Queries
 
-> From Grafana 4.3.0 to 4.6.0, template variables are always quoted automatically so if it is a string value do not wrap them in quotes in where clauses.
+> From ThingSPIN 4.3.0 to 4.6.0, template variables are always quoted automatically so if it is a string value do not wrap them in quotes in where clauses.
 >
-> From Grafana 5.0.0, template variable values are only quoted when the template variable is a `multi-value`.
+> From ThingSPIN 5.0.0, template variable values are only quoted when the template variable is a `multi-value`.
 
 If the variable is a multi-value variable then use the `IN` comparison operator rather than `=` to match against multiple values.
 
@@ -366,7 +366,7 @@ ORDER BY atimestamp
 
 #### Disabling Quoting for Multi-value Variables
 
-Grafana automatically creates a quoted, comma-separated string for multi-value variables. For example: if `server01` and `server02` are selected then it will be formatted as: `'server01', 'server02'`. Do disable quoting, use the csv formatting option for variables:
+ThingSPIN automatically creates a quoted, comma-separated string for multi-value variables. For example: if `server01` and `server02` are selected then it will be formatted as: `'server01', 'server02'`. Do disable quoting, use the csv formatting option for variables:
 
 `${servers:csv}`
 
@@ -381,7 +381,7 @@ Read more about variable formatting options in the [Variables]({{< relref "../..
 Name | Description
 ------------ | -------------
 time | The name of the date/time field. Could be a column with a native SQL date/time data type or epoch value.
-timeend | Optional name of the end date/time field. Could be a column with a native SQL date/time data type or epoch value. (Grafana v6.6+)
+timeend | Optional name of the end date/time field. Could be a column with a native SQL date/time data type or epoch value. (ThingSPIN v6.6+)
 text | Event description field.
 tags | Optional field name to use for event tags as a comma separated string.
 
@@ -413,7 +413,7 @@ ORDER BY 1
 
 **Example region query using time and timeend columns with epoch values:**
 
-> Only available in Grafana v6.6+.
+> Only available in ThingSPIN v6.6+.
 
 ```sql
 SELECT
@@ -597,7 +597,7 @@ conditions.
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 
@@ -611,9 +611,9 @@ datasources:
     database: grafana
     user: grafana
     jsonData:
-      maxOpenConns: 0         # Grafana v5.4+
-      maxIdleConns: 2         # Grafana v5.4+
-      connMaxLifetime: 14400  # Grafana v5.4+
+      maxOpenConns: 0         # ThingSPIN v5.4+
+      maxIdleConns: 2         # ThingSPIN v5.4+
+      connMaxLifetime: 14400  # ThingSPIN v5.4+
     secureJsonData:
       password: "Password!"
 

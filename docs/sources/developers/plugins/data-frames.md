@@ -5,17 +5,17 @@ type = "docs"
 
 # Data frames
 
-Grafana supports a variety of different data sources, each with its own data model. To make this possible, Grafana consolidates the query results from each of these data sources into one unified data structure called a _data frame_.
+ThingSPIN supports a variety of different data sources, each with its own data model. To make this possible, ThingSPIN consolidates the query results from each of these data sources into one unified data structure called a _data frame_.
 
 The data frame structure is a concept that's borrowed from data analysis tools like the [R programming language](https://www.r-project.org), and [Pandas](https://pandas.pydata.org/).
 
-> Data frames are available in Grafana 7.0+, and replaced the Time series and Table structures with a more generic data structure that can support a wider range of data types.
+> Data frames are available in ThingSPIN 7.0+, and replaced the Time series and Table structures with a more generic data structure that can support a wider range of data types.
 
-This document gives an overview of the data frame structure, and of how data is handled within Grafana.
+This document gives an overview of the data frame structure, and of how data is handled within ThingSPIN.
 
 ## The data frame
 
-A data frame is a columnar-oriented table structure, which means it stores data by column and not by row. To understand what this means, let’s look at the TypeScript definition used by Grafana:
+A data frame is a columnar-oriented table structure, which means it stores data by column and not by row. To understand what this means, let’s look at the TypeScript definition used by ThingSPIN:
 
 ```ts
 interface DataFrame {
@@ -61,11 +61,11 @@ One restriction on data frames is that all fields in the frame must be of the sa
 
 Each field in a data frame contains optional information about the values in the field, such as units, scaling, and so on.
 
-By adding field configurations to a data frame, Grafana can configure visualizations automatically. For example, you could configure Grafana to automatically set the unit provided by the data source.
+By adding field configurations to a data frame, ThingSPIN can configure visualizations automatically. For example, you could configure ThingSPIN to automatically set the unit provided by the data source.
 
 ## Transformations
 
-Along with the type information, field configs enables _data transformations_ within Grafana.
+Along with the type information, field configs enables _data transformations_ within ThingSPIN.
 
 A data transformation is any function that accepts a data frame as input, and returns another data frame as output. By using data frames in your plugin, you get a range of transformations for free.
 
@@ -128,9 +128,9 @@ Some data sources return data in a _long_ format (also called _narrow_ format). 
 
 In long format, string values are represented as separate fields rather than as labels. As a result, a data form in long form may have duplicated time values.
 
-Grafana can detect and convert data frames in long format into wide format.
+ThingSPIN can detect and convert data frames in long format into wide format.
 
-> Note: Long format is currently only supported in the backend: [Grafana Issue #22219](https://github.com/grafana/grafana/issues/22219).
+> Note: Long format is currently only supported in the backend: [ThingSPIN Issue #22219](https://github.com/grafana/grafana/issues/22219).
 
 For example, the following data frame in long format:
 

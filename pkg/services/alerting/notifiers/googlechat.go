@@ -167,7 +167,7 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 		}
 	}
 
-	// add a button widget (link to Grafana)
+	// add a button widget (link to ThingSPIN)
 	widgets = append(widgets, buttonWidget{
 		Buttons: []button{
 			{
@@ -186,7 +186,7 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 	// add text paragraph widget for the build version and timestamp
 	widgets = append(widgets, textParagraphWidget{
 		Text: text{
-			Text: "Grafana v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
+			Text: "ThingSPIN v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
 		},
 	})
 

@@ -1,7 +1,7 @@
 # This will proxy all requests for http://localhost:10081/grafana/ to
-# http://localhost:3000 (Grafana running locally)
+# http://localhost:3000 (ThingSPIN running locally)
 #
-# Please note that you'll need to change the root_url in the Grafana configuration:
+# Please note that you'll need to change the root_url in the ThingSPIN configuration:
 # root_url = %(protocol)s://%(domain)s:10081/grafana/
 
   apacheproxy:

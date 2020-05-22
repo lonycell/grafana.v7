@@ -1,6 +1,6 @@
 +++
 title = "Glossary"
-description = "Grafana glossary"
+description = "ThingSPIN glossary"
 keywords = ["grafana", "intro", "glossary", "dictionary"]
 type = "docs"
 aliases = ["/docs/grafana/latest/guides/glossary"]
@@ -13,7 +13,7 @@ weight = 500
 
 # Glossary
 
-This topic lists words and abbreviations that are commonly used in the Grafana documentation and community.
+This topic lists words and abbreviations that are commonly used in the ThingSPIN documentation and community.
 
 <table>
   <tr>
@@ -22,7 +22,7 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
   </tr>
   <tr>
     <td style = "vertical-align: top;">Data source</td>
-    <td>A file, database, or service providing the data. Grafana supports a several data sources by default, and can be extended to support additional ones through plugins.</td>
+    <td>A file, database, or service providing the data. ThingSPIN supports a several data sources by default, and can be extended to support additional ones through plugins.</td>
   </tr>
     <tr>
     <td style = "vertical-align: top;">Graph</td>
@@ -30,15 +30,15 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
   </tr>
     <tr>
     <td style = "vertical-align: top;">Panel</td>
-    <td>Basic building block in Grafana, composed by a query and a visualization. Can be moved and resized within a dashboard.</td>
+    <td>Basic building block in ThingSPIN, composed by a query and a visualization. Can be moved and resized within a dashboard.</td>
   </tr>
   <tr>
     <td style = "vertical-align: top;">Plugin</td>
-    <td>An extension of Grafana that allows users to provide additional functionality to enhance their experience. The types of plugins currently supported are:
+    <td>An extension of ThingSPIN that allows users to provide additional functionality to enhance their experience. The types of plugins currently supported are:
     <ul>
-      <li><b>App plugin:</b> Extends Grafana with a customized experience. It includes a set of panel and data source plugins, as well as custom pages.</li>
-      <li><b>Data source plugin:</b> Extends Grafana with support for additional data sources.</li>
-      <li><b>Panel plugin:</b> Extends Grafana with additional visualization options.</li>
+      <li><b>App plugin:</b> Extends ThingSPIN with a customized experience. It includes a set of panel and data source plugins, as well as custom pages.</li>
+      <li><b>Data source plugin:</b> Extends ThingSPIN with support for additional data sources.</li>
+      <li><b>Panel plugin:</b> Extends ThingSPIN with additional visualization options.</li>
     </ul>
     </td>
   </tr>

@@ -20,7 +20,7 @@ func TestNotifications(t *testing.T) {
 		ns.Cfg.Smtp.Enabled = true
 		ns.Cfg.Smtp.TemplatesPattern = "emails/*.html"
 		ns.Cfg.Smtp.FromAddress = "from@address.com"
-		ns.Cfg.Smtp.FromName = "Grafana Admin"
+		ns.Cfg.Smtp.FromName = "ThingSPIN Admin"
 
 		err := ns.Init()
 		So(err, ShouldBeNil)
@@ -31,7 +31,7 @@ func TestNotifications(t *testing.T) {
 
 			sentMsg := <-ns.mailQueue
 			So(sentMsg.Body, ShouldContainSubstring, "body")
-			So(sentMsg.Subject, ShouldEqual, "Reset your Grafana password - asd@asd.com")
+			So(sentMsg.Subject, ShouldEqual, "Reset your ThingSPIN password - asd@asd.com")
 			So(sentMsg.Body, ShouldNotContainSubstring, "Subject")
 		})
 	})

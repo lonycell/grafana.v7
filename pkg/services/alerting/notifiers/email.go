@@ -16,7 +16,7 @@ func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "email",
 		Name:        "Email",
-		Description: "Sends notifications using Grafana server configured SMTP settings",
+		Description: "Sends notifications using ThingSPIN server configured SMTP settings",
 		Factory:     NewEmailNotifier,
 		OptionsTemplate: `
 			<h3 class="page-heading">Email settings</h3>

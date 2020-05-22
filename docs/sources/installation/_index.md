@@ -1,6 +1,6 @@
 +++
 title = "Installation"
-description = "Installation guide for Grafana"
+description = "Installation guide for ThingSPIN"
 keywords = ["grafana", "installation", "documentation"]
 type = "docs"
 aliases = ["/docs/grafana/latest/installation/installation/", "/docs/grafana/v2.1/installation/install/", "/docs/grafana/latest/install"]
@@ -10,7 +10,7 @@ identifier = "installation"
 weight = 200
 +++
 
-## Install Grafana
+## Install ThingSPIN
 
 - [Requirements]({{< relref "requirements" >}})
 - [Install on Debian or Ubuntu]({{< relref "debian" >}})

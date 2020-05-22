@@ -1,20 +1,20 @@
-# Grafana High Availability (HA) test setup
+# ThingSPIN High Availability (HA) test setup
 
-A set of docker compose services which together creates a Grafana HA test setup with capability of easily
-scaling up/down number of Grafana instances.
+A set of docker compose services which together creates a ThingSPIN HA test setup with capability of easily
+scaling up/down number of ThingSPIN instances.
 
 Included services
 
-* Grafana
-* Mysql - Grafana configuration database and session storage
-* Prometheus - Monitoring of Grafana and used as data source of provisioned alert rules
-* Nginx - Reverse proxy for Grafana and Prometheus. Enables browsing Grafana/Prometheus UI using a hostname
+* ThingSPIN
+* Mysql - ThingSPIN configuration database and session storage
+* Prometheus - Monitoring of ThingSPIN and used as data source of provisioned alert rules
+* Nginx - Reverse proxy for ThingSPIN and Prometheus. Enables browsing ThingSPIN/Prometheus UI using a hostname
 
 ## Prerequisites
 
 ### Build grafana docker container
 
-Build a Grafana docker container from current branch and commit and tag it as grafana/grafana:dev.
+Build a ThingSPIN docker container from current branch and commit and tag it as grafana/grafana:dev.
 
 ```bash
 $ cd <grafana repo>
@@ -38,7 +38,7 @@ PING whatever.loc (127.0.0.1) 56(84) bytes of data.
 
 #### Alternative 2 - Manually update /etc/hosts
 
-Update your `/etc/hosts` to be able to access Grafana and/or Prometheus UI using a hostname.
+Update your `/etc/hosts` to be able to access ThingSPIN and/or Prometheus UI using a hostname.
 
 ```bash
 $ cat /etc/hosts
@@ -62,9 +62,9 @@ Check for any errors
 $ docker-compose logs | grep error
 ```
 
-### Scale Grafana instances up/down
+### Scale ThingSPIN instances up/down
 
-Scale number of Grafana instances to `<instances>`
+Scale number of ThingSPIN instances to `<instances>`
 
 ```bash
 $ docker-compose up --scale grafana=<instances> -d

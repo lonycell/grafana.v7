@@ -133,7 +133,7 @@ var Commands = []*cli.Command{
 	},
 	{
 		Name:        "admin",
-		Usage:       "Grafana admin commands",
+		Usage:       "ThingSPIN admin commands",
 		Subcommands: adminCommands,
 	},
 }

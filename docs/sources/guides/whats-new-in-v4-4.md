@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.4"
-description = "Feature and improvement highlights for Grafana v4.4"
+title = "What's new in ThingSPIN v4.4"
+description = "Feature and improvement highlights for ThingSPIN v4.4"
 keywords = ["grafana", "new", "documentation", "4.4.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,9 +10,9 @@ parent = "whatsnew"
 weight = -3
 +++
 
-## What's new in Grafana v4.4
+## What's new in ThingSPIN v4.4
 
-Grafana v4.4 is now [available for download](https://grafana.com/grafana/download/4.4.0).
+ThingSPIN v4.4 is now [available for download](https://grafana.com/grafana/download/4.4.0).
 
 **Highlights**:
 
@@ -46,4 +46,4 @@ Head to the [v4.4 download page](https://grafana.com/grafana/download) for downl
 
 ## Thanks
 
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!
+A big thanks to all the ThingSPIN users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!

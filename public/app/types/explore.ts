@@ -72,7 +72,7 @@ export interface ExploreItemState {
    */
   datasourceMissing: boolean;
   /**
-   * Emitter to send events to the rest of Grafana.
+   * Emitter to send events to the rest of ThingSPIN.
    */
   eventBridge?: Emitter;
   /**

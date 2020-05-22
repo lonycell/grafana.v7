@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v4.2"
-description = "Feature and improvement highlights for Grafana v4.2"
+title = "What's new in ThingSPIN v4.2"
+description = "Feature and improvement highlights for ThingSPIN v4.2"
 keywords = ["grafana", "new", "documentation", "4.2.0", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,9 +10,9 @@ parent = "whatsnew"
 weight = -1
 +++
 
-## What's new in Grafana v4.2
+## What's new in ThingSPIN v4.2
 
-Grafana v4.2 Beta is now [available for download](https://grafana.com/grafana/download/4.2.0).
+ThingSPIN v4.2 Beta is now [available for download](https://grafana.com/grafana/download/4.2.0).
 Just like the last release this one contains lots bug fixes and minor improvements.
 We are very happy to say that 27 of 40 issues was closed by pull requests from the community.
 Big thumbs up!
@@ -25,7 +25,7 @@ Big thumbs up!
 - **Templating**: Make $__interval and $__interval_ms global built in variables that can be used in by any data source (in panel queries), closes [#7190](https://github.com/grafana/grafana/issues/7190), closes [#6582](https://github.com/grafana/grafana/issues/6582)
 - **Alerting**: Adds deduping of alert notifications [#7632](https://github.com/grafana/grafana/pull/7632)
 - **Alerting**: Better information about why an alert triggered [#7035](https://github.com/grafana/grafana/issues/7035)
-- **Orgs**: Sharing dashboards using Grafana share feature will now redirect to correct org. [#6948](https://github.com/grafana/grafana/issues/6948)
+- **Orgs**: Sharing dashboards using ThingSPIN share feature will now redirect to correct org. [#6948](https://github.com/grafana/grafana/issues/6948)
 - [Full changelog](https://github.com/grafana/grafana/blob/master/CHANGELOG.md)
 
 ### New alert notification channels
@@ -51,7 +51,7 @@ This makes it possible to run alerting on multiple servers and only get one noti
 We currently solve this with sql transactions which puts some limitations for how many servers you can use to execute the same rules.
 3-5 servers should not be a problem but as always, it depends on how many alerts you have and how frequently they execute.
 
-Next up for a better HA situation is to add support for workload balancing between Grafana servers.
+Next up for a better HA situation is to add support for workload balancing between ThingSPIN servers.
 
 ### Alerting more info
 
@@ -85,4 +85,4 @@ Head to [v4.2-beta download page](/download/4_2_0/) for download links and instr
 
 ## Thanks
 
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports and feedback!
+A big thanks to all the ThingSPIN users who contribute by submitting PRs, bug reports and feedback!

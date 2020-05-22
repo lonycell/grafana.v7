@@ -1,6 +1,6 @@
 +++
 title = "Authentication HTTP API "
-description = "Grafana Authentication HTTP API"
+description = "ThingSPIN Authentication HTTP API"
 keywords = ["grafana", "http", "documentation", "api", "authentication"]
 aliases = ["/docs/grafana/latest/http_api/authentication/"]
 type = "docs"
@@ -114,7 +114,7 @@ Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 JSON Body schema:
 
 - **name** – The key name
-- **role** – Sets the access level/Grafana Role for the key. Can be one of the following values: `Viewer`, `Editor` or `Admin`.
+- **role** – Sets the access level/ThingSPIN Role for the key. Can be one of the following values: `Viewer`, `Editor` or `Admin`.
 - **secondsToLive** – Sets the key expiration in seconds. It is optional. If it is a positive number an expiration date for the key is set. If it is null, zero or is omitted completely (unless `api_key_max_seconds_to_live` configuration option is set) the key will never expire.
 
 Error statuses:

@@ -214,7 +214,7 @@ func (rs *RenderingService) getURL(path string) string {
 	if rs.Cfg.RendererUrl != "" {
 		// The backend rendering service can potentially be remote.
 		// So we need to use the root_url to ensure the rendering service
-		// can reach this Grafana instance.
+		// can reach this ThingSPIN instance.
 
 		// &render=1 signals to the legacy redirect layer to
 		return fmt.Sprintf("%s%s&render=1", rs.Cfg.RendererCallbackUrl, path)

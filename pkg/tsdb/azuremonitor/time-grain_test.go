@@ -37,7 +37,7 @@ func TestTimeGrain(t *testing.T) {
 			})
 		})
 
-		Convey("create ISO 8601 Duration from Grafana interval in milliseconds", func() {
+		Convey("create ISO 8601 Duration from ThingSPIN interval in milliseconds", func() {
 			Convey("and interval is less than a minute", func() {
 				durationMS, err := tgc.createISO8601DurationFromIntervalMS(100)
 				So(err, ShouldBeNil)

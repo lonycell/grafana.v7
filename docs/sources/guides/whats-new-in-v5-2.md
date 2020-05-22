@@ -1,6 +1,6 @@
 +++
-title = "What's new in Grafana v5.2"
-description = "Feature and improvement highlights for Grafana v5.2"
+title = "What's new in ThingSPIN v5.2"
+description = "Feature and improvement highlights for ThingSPIN v5.2"
 keywords = ["grafana", "new", "documentation", "5.2", "release notes"]
 type = "docs"
 [menu.docs]
@@ -10,14 +10,14 @@ parent = "whatsnew"
 weight = -8
 +++
 
-# What's new in Grafana v5.2
+# What's new in ThingSPIN v5.2
 
-Grafana v5.2 brings new features, many enhancements and bug fixes. This article will detail the major new features and enhancements.
+ThingSPIN v5.2 brings new features, many enhancements and bug fixes. This article will detail the major new features and enhancements.
 
 - [Elasticsearch alerting]({{< relref "#elasticsearch-alerting" >}}) it's finally here!
-- [Native builds for ARM]({{< relref "#native-builds-for-arm" >}}) native builds of Grafana for many more platforms!
+- [Native builds for ARM]({{< relref "#native-builds-for-arm" >}}) native builds of ThingSPIN for many more platforms!
 - [Improved Docker image]({{< relref "#improved-docker-image" >}}) with support for docker secrets
-- [Security]({{< relref "#security" >}}) make your Grafana instance more secure
+- [Security]({{< relref "#security" >}}) make your ThingSPIN instance more secure
 - [Prometheus]({{< relref "#prometheus" >}}) with alignment enhancements
 - [InfluxDB]({{< relref "#influxdb" >}}) now supports the `mode` function
 - [Alerting]({{< relref "#alerting" >}}) with alert notification channel type for Discord
@@ -27,14 +27,14 @@ Grafana v5.2 brings new features, many enhancements and bug fixes. This article 
 
 {{< docs-imagebox img="/img/docs/v52/elasticsearch_alerting.png" max-width="800px" class="docs-image--right" >}}
 
-Grafana v5.2 ships with an updated Elasticsearch data source with support for alerting. Alerting support for Elasticsearch has been one of
+ThingSPIN v5.2 ships with an updated Elasticsearch data source with support for alerting. Alerting support for Elasticsearch has been one of
 the most requested features by our community and now it's finally here. Please try it out and let us know what you think.
 
 <div class="clearfix"></div>
 
 ## Native builds for ARM
 
-Grafana v5.2 brings an improved build pipeline with cross-platform support. This enables native builds of Grafana for ARMv7 (x32) and ARM64 (x64).
+ThingSPIN v5.2 brings an improved build pipeline with cross-platform support. This enables native builds of ThingSPIN for ARMv7 (x32) and ARM64 (x64).
 We've been longing for native ARM build support for ages. With the help from our amazing community this is now finally available.
 Please try it out and let us know what you think.
 
@@ -43,15 +43,15 @@ published for both stable and nightly builds.
 
 ## Improved Docker image
 
-The Grafana docker image adds support for Docker secrets which enables you to supply Grafana with configuration through files. More
+The ThingSPIN docker image adds support for Docker secrets which enables you to supply ThingSPIN with configuration through files. More
 information in the [Installing using Docker documentation](/installation/docker/#reading-secrets-from-files-support-for-docker-secrets).
 
 ## Security
 
 {{< docs-imagebox img="/img/docs/v52/login_change_password.png" max-width="800px" class="docs-image--right" >}}
 
-Starting from Grafana v5.2, when you login with the administrator account using the default password you'll be presented with a form to change the password.
-We hope this encourages users to follow Grafana's best practices and change the default administrator password.
+Starting from ThingSPIN v5.2, when you login with the administrator account using the default password you'll be presented with a form to change the password.
+We hope this encourages users to follow ThingSPIN's best practices and change the default administrator password.
 
 <div class="clearfix"></div>
 
@@ -66,7 +66,7 @@ The InfluxDB data source now includes support for the *mode* function which retu
 
 ## Alerting
 
-By popular demand Grafana now includes support for an alert notification channel type for [Discord](https://discordapp.com/).
+By popular demand ThingSPIN now includes support for an alert notification channel type for [Discord](https://discordapp.com/).
 
 ## Dashboards and Panels
 
@@ -74,7 +74,7 @@ By popular demand Grafana now includes support for an alert notification channel
 
 {{< docs-imagebox img="/img/docs/v52/dashboard_save_modal.png" max-width="800px" class="docs-image--right" >}}
 
-Starting from Grafana v5.2, a modified time range or variable are no longer saved by default. To save a modified
+Starting from ThingSPIN v5.2, a modified time range or variable are no longer saved by default. To save a modified
 time range or variable, you'll need to actively select that when saving a dashboard, see screenshot.
 This should hopefully make it easier to have same defaults for time and variables in dashboards and make it more explicit
 when you actually want to overwrite those settings.
@@ -85,8 +85,8 @@ when you actually want to overwrite those settings.
 
 {{< docs-imagebox img="/img/docs/v52/dashboard_import.png" max-width="800px" class="docs-image--right" >}}
 
-Grafana v5.2 adds support for specifying an existing folder or creating a new one when importing a dashboard - a long-awaited feature since
-Grafana v5.0 introduced support for dashboard folders and permissions. The import dashboard page has also got some general improvements
+ThingSPIN v5.2 adds support for specifying an existing folder or creating a new one when importing a dashboard - a long-awaited feature since
+ThingSPIN v5.0 introduced support for dashboard folders and permissions. The import dashboard page has also got some general improvements
 and should now make it more clear if a possible import will overwrite an existing dashboard, or not.
 
 This release also adds some improvements for those users only having editor or admin permissions in certain folders. The links to

@@ -361,7 +361,7 @@ export interface DataQueryResponse {
 
   /**
    * When returning multiple partial responses or streams
-   * Use this key to inform Grafana how to combine the partial responses
+   * Use this key to inform ThingSPIN how to combine the partial responses
    * Multiple responses with same key are replaced (latest used)
    */
   key?: string;

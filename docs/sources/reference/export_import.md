@@ -9,11 +9,11 @@ weight = 8
 
 # Export and Import
 
-Grafana Dashboards can easily be exported and imported, either from the UI or from the [HTTP API]({{< relref "../http_api/dashboard.md#create-update-dashboard" >}}).
+ThingSPIN Dashboards can easily be exported and imported, either from the UI or from the [HTTP API]({{< relref "../http_api/dashboard.md#create-update-dashboard" >}}).
 
 ## Exporting a dashboard
 
-Dashboards are exported in Grafana JSON format, and contain everything you need (layout, variables, styles, data sources, queries, etc)to import the dashboard at a later time.
+Dashboards are exported in ThingSPIN JSON format, and contain everything you need (layout, variables, styles, data sources, queries, etc)to import the dashboard at a later time.
 
 The export feature is accessed in the share window which you open by clicking the share button in the dashboard menu.
 
@@ -33,28 +33,28 @@ To import a dashboard click the + icon in the side menu, and then click **Import
 
 {{< docs-imagebox img="/img/docs/v70/import_step1.png" max-width="700px" >}}
 
-From here you can upload a dashboard JSON file, paste a [Grafana.com](https://grafana.com) dashboard
+From here you can upload a dashboard JSON file, paste a [ThingSPIN.com](https://grafana.com) dashboard
 URL or paste dashboard JSON text directly into the text area.
 
 {{< docs-imagebox img="/img/docs/v70/import_step2_grafana.com.png"  max-width="700px" >}}
 
-In step 2 of the import process Grafana will let you change the name of the dashboard, pick what
+In step 2 of the import process ThingSPIN will let you change the name of the dashboard, pick what
 data source you want the dashboard to use and specify any metric prefixes (if the dashboard use any).
 
-## Discover dashboards on Grafana.com
+## Discover dashboards on ThingSPIN.com
 
-Find dashboards for common server applications at [Grafana.com/dashboards](https://grafana.com/dashboards).
+Find dashboards for common server applications at [ThingSPIN.com/dashboards](https://grafana.com/dashboards).
 
 {{< docs-imagebox img="/img/docs/v50/gcom_dashboard_list.png" max-width="700px" >}}
 
-## Import and Sharing with Grafana 2.x or 3.0
+## Import and Sharing with ThingSPIN 2.x or 3.0
 
-Dashboards on Grafana.com use a new feature in Grafana 3.1 that allows the import process
+Dashboards on ThingSPIN.com use a new feature in ThingSPIN 3.1 that allows the import process
 to update each panel so that they are using a data source of your choice. If you are running a
-Grafana version older than 3.1 then you might need to do some manual steps either
+ThingSPIN version older than 3.1 then you might need to do some manual steps either
 before or after import in order for the dashboard to work properly.
 
-Dashboards exported from Grafana 3.1+ have a new json section `__inputs`
+Dashboards exported from ThingSPIN 3.1+ have a new json section `__inputs`
 that define what data sources and metric prefixes the dashboard uses.
 
 Example:
@@ -98,14 +98,14 @@ These are then referenced in the dashboard panels like this:
 }
 ```
 
-These inputs and their usage in data source properties are automatically added during export in Grafana 3.1.
-If you run an older version of Grafana and want to share a dashboard on Grafana.com you need to manually
+These inputs and their usage in data source properties are automatically added during export in ThingSPIN 3.1.
+If you run an older version of ThingSPIN and want to share a dashboard on ThingSPIN.com you need to manually
 add the inputs and templatize the data source properties like above.
 
-If you want to import a dashboard from Grafana.com into an older version of Grafana then you can either import
+If you want to import a dashboard from ThingSPIN.com into an older version of ThingSPIN then you can either import
 it as usual and then update the data source option in the metrics tab so that the panel is using the correct
 data source. Another alternative is to open the json file in a text editor and update the data source properties
 to value that matches a name of your data source.
 
 ## Note
-In Grafana v5.3.4+ the export modal has new checkbox for sharing for external use (other instances). If the checkbox is not checked then the `__inputs` section will not be included in the exported JSON file.
+In ThingSPIN v5.3.4+ the export modal has new checkbox for sharing for external use (other instances). If the checkbox is not checked then the `__inputs` section will not be included in the exported JSON file.

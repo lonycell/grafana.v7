@@ -23,7 +23,7 @@ func TestDashboardModel(t *testing.T) {
 	})
 
 	Convey("When generating slug", t, func() {
-		dashboard := NewDashboard("Grafana Play Home")
+		dashboard := NewDashboard("ThingSPIN Play Home")
 		dashboard.UpdateSlug()
 
 		So(dashboard.Slug, ShouldEqual, "grafana-play-home")
@@ -31,11 +31,11 @@ func TestDashboardModel(t *testing.T) {
 
 	Convey("Can slugify titles", t, func() {
 		tests := map[string]string{
-			"Grafana Play Home": "grafana-play-home",
-			"snöräv-över-ån":    "snorav-over-an",
-			"漢字":                "han-zi",      // Hanzi for hanzi
-			"🇦🇶":                "8J-HpvCfh7Y", // flag of Antarctica-emoji, using fallback
-			"𒆠":                 "8JKGoA",      // cuneiform Ki, using fallback
+			"ThingSPIN Play Home": "grafana-play-home",
+			"snöräv-över-ån":      "snorav-over-an",
+			"漢字":                  "han-zi",      // Hanzi for hanzi
+			"🇦🇶":                  "8J-HpvCfh7Y", // flag of Antarctica-emoji, using fallback
+			"𒆠":                   "8JKGoA",      // cuneiform Ki, using fallback
 		}
 
 		for input, expected := range tests {

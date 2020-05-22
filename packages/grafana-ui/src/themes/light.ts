@@ -90,7 +90,7 @@ const lightTheme: GrafanaTheme = {
   type: GrafanaThemeType.Light,
   isDark: false,
   isLight: true,
-  name: 'Grafana Light',
+  name: 'ThingSPIN Light',
   palette: {
     ...basicColors,
     brandPrimary: basicColors.orange,

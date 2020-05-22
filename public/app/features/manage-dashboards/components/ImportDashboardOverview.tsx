@@ -61,7 +61,7 @@ class ImportDashboardOverviewUnConnected extends PureComponent<Props, State> {
                   className="external-link"
                   target="_blank"
                 >
-                  Grafana.com
+                  ThingSPIN.com
                 </a>
               </Legend>
             </div>

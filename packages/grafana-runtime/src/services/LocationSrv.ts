@@ -52,7 +52,7 @@ export interface LocationSrv {
 let singletonInstance: LocationSrv;
 
 /**
- * Used during startup by Grafana to set the LocationSrv so it is available
+ * Used during startup by ThingSPIN to set the LocationSrv so it is available
  * via the the {@link getLocationSrv} to the rest of the application.
  *
  * @internal
@@ -63,7 +63,7 @@ export function setLocationSrv(instance: LocationSrv) {
 
 /**
  * Used to retrieve the {@link LocationSrv} that can be used to automatically navigate
- * the user to a new place in Grafana.
+ * the user to a new place in ThingSPIN.
  *
  * @public
  */

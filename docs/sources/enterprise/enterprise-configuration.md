@@ -10,9 +10,9 @@ parent = "enterprise"
 weight = 300
 +++
 
-# Grafana Enterprise configuration
+# ThingSPIN Enterprise configuration
 
-This page describes Grafana Enterprise-specific configuration options that you can specify in a `.ini` configuration file or using environment variables. Refer to [Configuration]({{< relref "../installation/configuration.md" >}}) for more information about available configuration options.
+This page describes ThingSPIN Enterprise-specific configuration options that you can specify in a `.ini` configuration file or using environment variables. Refer to [Configuration]({{< relref "../installation/configuration.md" >}}) for more information about available configuration options.
 
 ## [white_labeling]
 
@@ -47,7 +47,7 @@ Set to complete URL to override Apple/iOS icon.
 
 ### footer_links
 
-List the link IDs to use here. Grafana will look for matching link configurations, the link IDs should be space-separated and contain no whitespace.
+List the link IDs to use here. ThingSPIN will look for matching link configurations, the link IDs should be space-separated and contain no whitespace.
 
 ## [meta_analytics]
 
@@ -185,4 +185,4 @@ List of comma- or space-separated roles that will be mapped to the Admin role.
 
 ### role_values_grafana_admin
 
-List of comma- or space-separated roles that will be mapped to the Grafana Admin (Super Admin) role.
+List of comma- or space-separated roles that will be mapped to the ThingSPIN Admin (Super Admin) role.

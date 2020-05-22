@@ -1,6 +1,6 @@
 +++
 title = "Azure AD OAuth2 authentication"
-description = "Grafana Azure AD OAuth Guide "
+description = "ThingSPIN Azure AD OAuth Guide "
 keywords = ["grafana", "configuration", "documentation", "oauth"]
 type = "docs"
 [menu.docs]
@@ -12,9 +12,9 @@ weight = 3
 
 # Azure AD OAuth2 authentication
 
-> Only available in Grafana v6.7+
+> Only available in ThingSPIN v6.7+
 
-The Azure AD authentication provides the possibility to use an Azure Active Directory tenant as an identity provider for Grafana. By using Azure AD Application Roles it is also possible to assign Users and Groups to Grafana roles from the Azure Portal.
+The Azure AD authentication provides the possibility to use an Azure Active Directory tenant as an identity provider for ThingSPIN. By using Azure AD Application Roles it is also possible to assign Users and Groups to ThingSPIN roles from the Azure Portal.
 
 ## Create the Azure AD application
 
@@ -23,7 +23,7 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
 1. Log in to [Azure Portal](https://portal.azure.com) and click **Azure Active Directory** in the side menu.
 
 1. Click **App Registrations** and add a new application registration:
-   - Name: Grafana
+   - Name: ThingSPIN
    - Application type: Web app / API
    - Sign-on URL: `https://<grafana domain>/login/azuread`
 
@@ -38,13 +38,13 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
 1. Note down the "Application ID", this will be the OAuth client id.
 
 1. Click **Certificates & secrets** and add a new entry under Client secrets.
-    - Description: Grafana OAuth
+    - Description: ThingSPIN OAuth
     - Expires: Never
 
 1. Click **Add** then copy the key value, this will be the OAuth client secret.
 
 1. Click **Manifest**.
-   - Add definitions for the required Application Roles for Grafana (Viewer, Editor, Admin). Without this configuration all users will be assigned to the Viewer role.
+   - Add definitions for the required Application Roles for ThingSPIN (Viewer, Editor, Admin). Without this configuration all users will be assigned to the Viewer role.
    - Every role has to have a unique id. On Linux this can be created with `uuidgen` for instance.
 
         ```json
@@ -53,8 +53,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana admin Users",
-        			"displayName": "Grafana Admin",
+        			"description": "ThingSPIN admin Users",
+        			"displayName": "ThingSPIN Admin",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -65,8 +65,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana read only Users",
-        			"displayName": "Grafana Viewer",
+        			"description": "ThingSPIN read only Users",
+        			"displayName": "ThingSPIN Viewer",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -77,8 +77,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana Editor Users",
-        			"displayName": "Grafana Editor",
+        			"description": "ThingSPIN Editor Users",
+        			"displayName": "ThingSPIN Editor",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -90,11 +90,11 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
 
 1. Click Overview and then on **Managed application in local directory** to show the Enterprise Application details.
 
-1. Click on **Users and groups** and add Users/Groups to the Grafana roles by using **Add User**.
+1. Click on **Users and groups** and add Users/Groups to the ThingSPIN roles by using **Add User**.
 
-## Enable Azure AD OAuth in Grafana
+## Enable Azure AD OAuth in ThingSPIN
 
-1. Add the following to the [Grafana configuration file]({{< relref "../installation/configuration.md#config-file-locations" >}}):
+1. Add the following to the [ThingSPIN configuration file]({{< relref "../installation/configuration.md#config-file-locations" >}}):
 
 ```ini
 [auth.azuread]
@@ -110,7 +110,7 @@ allowed_domains =
 allowed_groups =
 ```
 
-> Note: Ensure that the [root_url]({{< relref "../installation/configuration/#root-url" >}}) in Grafana is set in your Azure Application Reply URLs (App -> Settings -> Reply URLs)
+> Note: Ensure that the [root_url]({{< relref "../installation/configuration/#root-url" >}}) in ThingSPIN is set in your Azure Application Reply URLs (App -> Settings -> Reply URLs)
 
 ### Configure allowed groups and domains
 
@@ -136,9 +136,9 @@ allowed_domains = mycompany.com mycompany.org
 
 ### Team Sync (Enterprise only)
 
->  Only available in Grafana Enterprise v6.7+
+>  Only available in ThingSPIN Enterprise v6.7+
 
-With Team Sync you can map your Azure AD groups to teams in Grafana so that your users will automatically be added to
+With Team Sync you can map your Azure AD groups to teams in ThingSPIN so that your users will automatically be added to
 the correct teams.
 
 Azure AD groups can be referenced by group Object Id, like `8bab1c86-8fba-33e5-2089-1d1c80ec267d`.

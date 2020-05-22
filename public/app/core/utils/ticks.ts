@@ -79,7 +79,7 @@ export function getFlotRange(panelMin: any, panelMax: any, datamin: number, data
   const delta = max - min;
 
   if (delta === 0.0) {
-    // Grafana fix: wide Y min and max using increased wideFactor
+    // ThingSPIN fix: wide Y min and max using increased wideFactor
     // when all series values are the same
     const wideFactor = 0.25;
     const widen = Math.abs(max === 0 ? 1 : max * wideFactor);
@@ -152,7 +152,7 @@ export function getFlotTickDecimals(datamin: number, datamax: number, axis: { mi
 }
 
 /**
- * Format timestamp similar to Grafana graph panel.
+ * Format timestamp similar to ThingSPIN graph panel.
  * @param ticks Number of ticks
  * @param min Time from (in milliseconds)
  * @param max Time to (in milliseconds)

@@ -1,5 +1,5 @@
 [Unit]
-Description=Grafana instance
+Description=ThingSPIN instance
 Documentation=http://docs.grafana.org
 Wants=network-online.target
 After=network-online.target

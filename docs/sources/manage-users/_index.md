@@ -15,7 +15,7 @@ Only Administrators can manage users and teams.
 
 ## Users
 
-Users are named accounts in Grafana that can be granted permissions to access resources throughout Grafana.
+Users are named accounts in ThingSPIN that can be granted permissions to access resources throughout ThingSPIN.
 
 - [Add or remove a user]({{< relref "./add-or-remove-user.md" >}})
 - [Enable or disable a user]({{< relref "./enable-or-disable-user.md" >}})

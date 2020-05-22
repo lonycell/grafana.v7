@@ -13,7 +13,7 @@ weight = 4
 
 ![](/img/docs/v43/heatmap_panel_cover.jpg)
 
-> New panel only available in Grafana v4.3+
+> New panel only available in ThingSPIN v4.3+
 
 The Heatmap panel allows you to view histograms over time. To fully understand and use this panel you need to 
 understand what Histograms are and how they are created. Read on below to for a quick introduction to the
@@ -55,8 +55,8 @@ Data and bucket options can be found in the `Axes` tab.
 
 Data format | Description
 ------------ | -------------
-*Time series* | Grafana does the bucketing by going through all time series values. The bucket sizes and intervals will be determined using the Buckets options.
-*Time series buckets* | Each time series already represents a Y-Axis bucket. The time series name (alias) needs to be a numeric value representing the upper or lower interval for the bucket. Grafana does no bucketing so the bucket size options are hidden.
+*Time series* | ThingSPIN does the bucketing by going through all time series values. The bucket sizes and intervals will be determined using the Buckets options.
+*Time series buckets* | Each time series already represents a Y-Axis bucket. The time series name (alias) needs to be a numeric value representing the upper or lower interval for the bucket. ThingSPIN does no bucketing so the bucket size options are hidden.
 
 ### Bucket bound
 
@@ -66,7 +66,7 @@ option will be chosen based on panels' data source type.
 
 ### Bucket Size
 
-The Bucket count and size options are used by Grafana to calculate how big each cell in the heatmap is. You can
+The Bucket count and size options are used by ThingSPIN to calculate how big each cell in the heatmap is. You can
 define the bucket size either by count (the first input box) or by specifying a size interval. For the Y-Axis
 the size interval is just a value but for the X-bucket you can specify a time range in the *Size* input, for example,
 the time range `1h`. This will make the cells 1h wide on the X-axis.
@@ -112,7 +112,7 @@ is often already aggregated by your time series backend. Most time series querie
 but include a group by time interval or maxDataPoints limit coupled with an aggregation function (usually average).
 
 This all depends on the time range of your query of course. But the important point is to know that the Histogram bucketing
-that Grafana performs may be done on already aggregated and averaged data. To get more accurate heatmaps it is better
+that ThingSPIN performs may be done on already aggregated and averaged data. To get more accurate heatmaps it is better
 to do the bucketing during metric collection or store the data in Elasticsearch, or in the other data source which
 supports doing Histogram bucketing on the raw data.
 

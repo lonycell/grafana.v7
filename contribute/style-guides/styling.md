@@ -1,4 +1,4 @@
-# Styling Grafana
+# Styling ThingSPIN
 
 [Emotion](https://emotion.sh/docs/introduction) is our default-to-be approach to styling React components. It provides a way for styles to be a consequence of properties and state of a component.
 
@@ -64,7 +64,7 @@ const ComponentA = () => {
 };
 ```
 
-For more information about themes at Grafana please see the [themes guide](./themes.md).
+For more information about themes at ThingSPIN please see the [themes guide](./themes.md).
 
 ### Composing class names
 

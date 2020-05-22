@@ -39,7 +39,7 @@ export type BackendSrvRequest = {
 };
 
 /**
- * Used to communicate via http(s) to a remote backend such as the Grafana backend,
+ * Used to communicate via http(s) to a remote backend such as the ThingSPIN backend,
  * a datasource etc. The BackendSrv is using the {@link https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API | Fetch API}
  * under the hood to handle all the communication.
  *
@@ -48,7 +48,7 @@ export type BackendSrvRequest = {
  * use default values executing the request.
  *
  * @remarks
- * By default Grafana will display an error message alert if the remote call fails. If you want
+ * By default ThingSPIN will display an error message alert if the remote call fails. If you want
  * to prevent this from happending you need to catch the error thrown by the BackendSrv and
  * set the `isHandled = true` on the incoming error.
  *
@@ -64,7 +64,7 @@ export interface BackendSrv {
 
   /**
    * Special function used to communicate with datasources that will emit core
-   * events that the Grafana QueryInspector and QueryEditor is listening for to be able
+   * events that the ThingSPIN QueryInspector and QueryEditor is listening for to be able
    * to display datasource query information. Can be skipped by adding `option.silent`
    * when initializing the request.
    */
@@ -74,7 +74,7 @@ export interface BackendSrv {
 let singletonInstance: BackendSrv;
 
 /**
- * Used during startup by Grafana to set the BackendSrv so it is available
+ * Used during startup by ThingSPIN to set the BackendSrv so it is available
  * via the the {@link getBackendSrv} to the rest of the application.
  *
  * @internal
@@ -85,7 +85,7 @@ export const setBackendSrv = (instance: BackendSrv) => {
 
 /**
  * Used to retrieve the {@link BackendSrv} that can be used to communicate
- * via http(s) to a remote backend such as the Grafana backend, a datasource etc.
+ * via http(s) to a remote backend such as the ThingSPIN backend, a datasource etc.
  *
  * @public
  */

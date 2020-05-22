@@ -1,6 +1,6 @@
 +++
-title = "Using Graphite in Grafana"
-description = "Guide for using graphite in Grafana"
+title = "Using Graphite in ThingSPIN"
+description = "Guide for using graphite in ThingSPIN"
 keywords = ["grafana", "graphite", "guide"]
 type = "docs"
 aliases = ["/docs/grafana/latest/datasources/graphite"]
@@ -11,15 +11,15 @@ parent = "datasources"
 weight = 1
 +++
 
-# Using Graphite in Grafana
+# Using Graphite in ThingSPIN
 
-Grafana has an advanced Graphite query editor that lets you quickly navigate the metric space, add functions,
+ThingSPIN has an advanced Graphite query editor that lets you quickly navigate the metric space, add functions,
 change function parameters and much more. The editor can handle all types of graphite queries. It can even handle complex nested
 queries through the use of query references.
 
 ## Adding the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the ThingSPIN icon in the top header.
 2. In the side menu under the `Configuration` link you should find a link named `Data Sources`.
 3. Click the `+ Add data source` button in the top header.
 4. Select `Graphite` from the *Type* dropdown.
@@ -31,13 +31,13 @@ Name | Description
 *Name* | The data source name. This is how you refer to the data source in panels and queries.
 *Default* | Default data source means that it will be pre-selected for new panels.
 *Url* | The HTTP protocol, IP, and port of your graphite-web or graphite-api install.
-*Access* | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.
+*Access* | Server (default) = URL needs to be accessible from the ThingSPIN backend/server, Browser = URL needs to be accessible from the browser.
 
 Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.
 
 ### Server access mode (Default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
+All requests will be made from the browser to ThingSPIN backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
 
 ### Browser access mode
 
@@ -83,7 +83,7 @@ All Graphite metrics are consolidated so that Graphite doesn't return more data 
 this consolidation is done using `avg` function. You can control how Graphite consolidates metrics by adding the Graphite consolidateBy function.
 
 > *Notice* This means that legend summary values (max, min, total) cannot be all correct at the same time. They are calculated
-> client side by Grafana. And depending on your consolidation function only one or two can be correct at the same time.
+> client side by ThingSPIN. And depending on your consolidation function only one or two can be correct at the same time.
 
 ## Templating
 
@@ -94,7 +94,7 @@ being displayed in your dashboard.
 Check out the [Templating]({{< relref "../../variables/templates-and-variables.md" >}}) documentation for an introduction to the templating feature and the different
 types of template variables.
 
-Graphite 1.1 introduced tags and Grafana added support for Graphite queries with tags in version 5.0. To create a variable using tag values, then you need to use the Grafana functions `tags` and `tag_values`.
+Graphite 1.1 introduced tags and ThingSPIN added support for Graphite queries with tags in version 5.0. To create a variable using tag values, then you need to use the ThingSPIN functions `tags` and `tag_values`.
 
 Query | Description
 ------------ | -------------
@@ -115,7 +115,7 @@ You can also create nested variables that use other variables in their definitio
 `apps.$app.servers.*` uses the variable `$app` in its query definition.
 
 #### Using `__searchFilter` to filter results in Query Variable
-> Available from Grafana 6.5 and above
+> Available from ThingSPIN 6.5 and above
 
 Using `__searchFilter` in the query field will filter the query result based on what the user types in the dropdown select box.
 When nothing has been entered by the user the default value for `__searchFilter` is `*` and `` when used as part of a regular expression.
@@ -150,7 +150,7 @@ Example:
 
 ### Variable Usage in Tag Queries
 
-Multi-value variables in tag queries use the advanced formatting syntax introduced in Grafana 5.0 for variables: `{var:regex}`. Non-tag queries will use the default glob formatting for multi-value variables.
+Multi-value variables in tag queries use the advanced formatting syntax introduced in ThingSPIN 5.0 for variables: `{var:regex}`. Non-tag queries will use the default glob formatting for multi-value variables.
 
 Example of a tag expression with regex formatting and using the Equal Tilde operator, `=~`:
 
@@ -168,13 +168,13 @@ queries via the Dashboard menu / Annotations view.
 Graphite supports two ways to query annotations. A regular metric query, for this you use the `Graphite query` textbox. A Graphite events query, use the `Graphite event tags` textbox,
 specify a tag or wildcard (leave empty should also work)
 
-## Getting Grafana metrics into Graphite
+## Getting ThingSPIN metrics into Graphite
 
-Grafana exposes metrics for Graphite on the `/metrics` endpoint. For detailed instructions, refer to [Internal Grafana metrics]({{< relref "../../administration/metrics.md">}}).
+ThingSPIN exposes metrics for Graphite on the `/metrics` endpoint. For detailed instructions, refer to [Internal ThingSPIN metrics]({{< relref "../../administration/metrics.md">}}).
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with ThingSPIN's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

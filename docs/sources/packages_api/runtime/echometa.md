@@ -32,8 +32,8 @@ import { EchoMeta } from '@grafana/runtime';
 |  [url](#url-property) | <code>string</code> |  |
 |  [userAgent](#useragent-property) | <code>string</code> |  |
 |  [userId](#userid-property) | <code>number</code> | The current users unique identifier. |
-|  [userLogin](#userlogin-property) | <code>string</code> | The current users username used to login into Grafana e.g. email. |
-|  [userSignedIn](#usersignedin-property) | <code>boolean</code> | True when user is logged in into Grafana. |
+|  [userLogin](#userlogin-property) | <code>string</code> | The current users username used to login into ThingSPIN e.g. email. |
+|  [userSignedIn](#usersignedin-property) | <code>boolean</code> | True when user is logged in into ThingSPIN. |
 |  [windowSize](#windowsize-property) | <code>SizeMeta</code> |  |
 
 ### screenSize property
@@ -102,7 +102,7 @@ userId: number;
 
 ### userLogin property
 
-The current users username used to login into Grafana e.g. email.
+The current users username used to login into ThingSPIN e.g. email.
 
 <b>Signature</b>
 
@@ -112,7 +112,7 @@ userLogin: string;
 
 ### userSignedIn property
 
-True when user is logged in into Grafana.
+True when user is logged in into ThingSPIN.
 
 <b>Signature</b>
 

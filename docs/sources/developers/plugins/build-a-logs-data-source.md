@@ -7,7 +7,7 @@ type = "docs"
 
 This guide explains how to build a logs data source plugin.
 
-Data sources in Grafana supports both metrics and log data. The steps to build a logs data source are largely the same as for a metrics data source. This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "../../../../../tutorials/build-a-data-source-plugin.md" >}}) for metrics.
+Data sources in ThingSPIN supports both metrics and log data. The steps to build a logs data source are largely the same as for a metrics data source. This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "../../../../../tutorials/build-a-data-source-plugin.md" >}}) for metrics.
 
 ## Add logs support to your data source
 
@@ -18,7 +18,7 @@ To add logs support to an existing data source, you need to:
 
 ### Enable logs support
 
-Tell Grafana that your data source plugin can return log data, by adding `"logs": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
+Tell ThingSPIN that your data source plugin can return log data, by adding `"logs": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
 
 ```json
 {
@@ -28,7 +28,7 @@ Tell Grafana that your data source plugin can return log data, by adding `"logs"
 
 ### Construct the log data
 
-Just like for metrics data, Grafana expects your plugin to return log data as a [data frame]({{< relref "data-frames.md" >}}).
+Just like for metrics data, ThingSPIN expects your plugin to return log data as a [data frame]({{< relref "data-frames.md" >}}).
 
 To return log data, return a data frame with at least one time field and one text field from the data source's `query` method.
 
@@ -76,9 +76,9 @@ frame.add({ time: 1589189406480, content: 'user logged in' });
 
 You can add additional information about each log line by adding more data frame fields.
 
-If a data frame has more than one text field, then Grafana assumes the first field in the data frame to be the actual log line. Any subsequent text fields are treated as [parsed fields]({{< relref "../../features/explore/index.md#labels-and-parsed-fields" >}}).
+If a data frame has more than one text field, then ThingSPIN assumes the first field in the data frame to be the actual log line. Any subsequent text fields are treated as [parsed fields]({{< relref "../../features/explore/index.md#labels-and-parsed-fields" >}}).
 
-While you can add any number of custom fields to your data frame, Grafana comes with a couple of dedicated fields: `levels` and `id`. Let's have a closer look at each one.
+While you can add any number of custom fields to your data frame, ThingSPIN comes with a couple of dedicated fields: `levels` and `id`. Let's have a closer look at each one.
 
 ### Levels
 
@@ -102,7 +102,7 @@ frame.add({ time: 1589189406480, content: 'unknown error', level: 'error' });
 
 ### Unique log lines
 
-By default, Grafana offers basic support for deduplicating log lines. You can improve the support by adding an `id` field to explicitly assign identifiers to each log line.
+By default, ThingSPIN offers basic support for deduplicating log lines. You can improve the support by adding an `id` field to explicitly assign identifiers to each log line.
 
 **Example:**
 

@@ -1,6 +1,6 @@
 # Documentation style guide
 
-This style guide applies to all documentation created for Grafana products.
+This style guide applies to all documentation created for ThingSPIN products.
 
 For information about how to write technical documentation, we suggest reviewing the content of the [Google Technical Writing courses](https://developers.google.com/tech-writing).
 
@@ -18,21 +18,21 @@ For all items not covered in this guide, refer to the [Microsoft Style Guide](ht
 
 The [codespell](https://github.com/codespell-project/codespell) tool is run for every change to catch common misspellings.
 
-## Grafana-specific style
+## ThingSPIN-specific style
 
-The following sections provide general guidelines on topics specific to Grafana documentation. Note that for the most part, these are *guidelines*, not rigid rules. If you have questions, ask in the #docs channel of Grafana Slack.
+The following sections provide general guidelines on topics specific to ThingSPIN documentation. Note that for the most part, these are *guidelines*, not rigid rules. If you have questions, ask in the #docs channel of ThingSPIN Slack.
 
 ### General
 
 * Use active voice. Avoid passive voice.
   - Passive: The heatmap visualization is displayed.
-  - Active: Grafana displays the heatmap visualization.
+  - Active: ThingSPIN displays the heatmap visualization.
 * Write in the imperative second person. Examples: You can write a query. Click the panel. Close the window.
 * Write in present tense.
   - Not: The panel will open.
-  - Use: The panel opens. Grafana opens the panel.
+  - Use: The panel opens. ThingSPIN opens the panel.
 * Do not use an ampersand (&) as an abbreviation for "and." 
-  - **Exceptions:** If an ampersand is used in the Grafana UI, then match the UI.
+  - **Exceptions:** If an ampersand is used in the ThingSPIN UI, then match the UI.
 * Avoid using internal slang and jargon in technical documentation.
 
 ### File naming conventions
@@ -65,7 +65,7 @@ The following sections provide general guidelines on topics specific to Grafana 
 
 ### Capitalization
 
-* Grafana, Loki, and Prometheus are always capitalized unless part of a code block.
+* ThingSPIN, Loki, and Prometheus are always capitalized unless part of a code block.
 * API names are always Title Case, followed by "API"—for example, "Dashboard Permissions API"
 * Git is always capitalized, unless part of a code block.
 * Abbreviations are always capitalized (such as API, HTTP, ID, JSON, SQL, or URL) unless they are part of a code block.
@@ -75,7 +75,7 @@ The following sections provide general guidelines on topics specific to Grafana 
 * Generic and plural versions are always lowercase.
   - Lowercase "dashboard" when referring to a dashboard generally.
   - Lowercase "dashboards" when referring to multiple dashboards.
-* **Exceptions:** If a term is lowercased in the Grafana UI, then match the UI.
+* **Exceptions:** If a term is lowercased in the ThingSPIN UI, then match the UI.
 
 ### Links and references
 
@@ -99,7 +99,7 @@ Refer to the [Documentation style guide](documentation-style-guide.md) for infor
 
 * Include `sudo` before commands that require `sudo` to work.
 
-For terminal examples and Grafana configuration, use a `bash` code block:
+For terminal examples and ThingSPIN configuration, use a `bash` code block:
 ```bash
 sudo yum install grafana
 ```
@@ -113,7 +113,7 @@ Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 
 ### Word usage
 
-Grafana products has some words, abbreviations, and terms particular to the Grafana discourse community.
+ThingSPIN products has some words, abbreviations, and terms particular to the ThingSPIN discourse community.
 
 #### checkout, check out
 
@@ -138,7 +138,7 @@ Two words, not one
 #### display (verb)
 
 *Display* is a transitive verb, which means it always needs a direct object.
-* Correct, active voice: Grafana displays your list of active alarms.
+* Correct, active voice: ThingSPIN displays your list of active alarms.
 * Correct, but passive voice: Your list of active alarms is displayed.
 * Incorrect: The list of active alarms displays.
 

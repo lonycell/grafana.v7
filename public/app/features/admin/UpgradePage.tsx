@@ -18,7 +18,7 @@ export const UpgradePage: React.FC<Props> = ({ navModel }) => {
     <Page navModel={navModel}>
       <Page.Contents>
         <UpgradeInfo
-          editionNotice="You are running the open-source version of Grafana.
+          editionNotice="You are running the open-source version of ThingSPIN.
         You have to install the Enterprise edition in order enable Enterprise features."
         />
       </Page.Contents>
@@ -45,25 +45,12 @@ export const UpgradeInfo: React.FC<UpgradeInfoProps> = ({ editionNotice }) => {
   `;
 
   return (
-    <LicenseChrome header="Grafana Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
+    <LicenseChrome header="ThingSPIN Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
       <div className={columnStyles}>
         <FeatureInfo />
         <ServiceInfo />
       </div>
     </LicenseChrome>
-  );
-};
-
-const GetEnterprise: React.FC = () => {
-  return (
-    <div style={{ marginTop: '40px', marginBottom: '30px' }}>
-      <h2 style={titleStyles}>Get Grafana Enterprise</h2>
-      <CallToAction />
-      <p style={{ paddingTop: '12px' }}>
-        You can use the trial version for free for <strong>30 days</strong>. We will remind you about it{' '}
-        <strong>5 days before the trial period ends</strong>.
-      </p>
-    </div>
   );
 };
 
@@ -83,30 +70,6 @@ const ServiceInfo: React.FC = () => {
   return (
     <div>
       <h4>At your service</h4>
-
-      <List>
-        <Item title="Enterprise Plugins" image="public/img/licensing/plugin_enterprise.svg" />
-        <Item title="Critical SLA: 2 hours" image="public/img/licensing/sla.svg" />
-        <Item title="Unlimited Expert Support" image="public/img/licensing/customer_support.svg">
-          24x7x365 support via
-          <List nested={true}>
-            <Item title="Email" />
-            <Item title="Private slack channel" />
-            <Item title="Phone" />
-          </List>
-        </Item>
-        <Item title="Hand-in-hand support" image="public/img/licensing/handinhand_support.svg">
-          in the upgrade process
-        </Item>
-      </List>
-
-      <div style={{ marginTop: '20px' }}>
-        <strong>Also included:</strong>
-        <br />
-        Indemnification, working with Grafana Labs on future prioritization, and training from the core Grafana team.
-      </div>
-
-      <GetEnterprise />
     </div>
   );
 };
@@ -129,7 +92,7 @@ const FeatureListing: React.FC = () => {
       <Item title="Enhanced LDAP Integration" />
       <Item title="Team Sync">LDAP, GitHub OAuth, Auth Proxy, Okta</Item>
       <Item title="White labeling" />
-      <Item title="Grafana usage insights">
+      <Item title="ThingSPIN usage insights">
         <List nested={true}>
           <Item title="Sort dashboards by popularity in search" />
           <Item title="Find unused dashboards" />

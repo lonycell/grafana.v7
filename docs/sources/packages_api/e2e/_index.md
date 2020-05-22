@@ -9,7 +9,7 @@ type = "docs"
 
 ## @grafana/e2e package
 
-A library for writing end-to-end tests for Grafana and its ecosystem.
+A library for writing end-to-end tests for ThingSPIN and its ecosystem.
 
 ## Variables
 

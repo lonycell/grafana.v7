@@ -42,7 +42,7 @@ func main() {
 		configFile = flag.String("config", "", "path to config file")
 		homePath   = flag.String("homepath", "", "path to grafana install/home path, defaults to working directory")
 		pidFile    = flag.String("pidfile", "", "path to pid file")
-		packaging  = flag.String("packaging", "unknown", "describes the way Grafana was installed")
+		packaging  = flag.String("packaging", "unknown", "describes the way ThingSPIN was installed")
 
 		v           = flag.Bool("v", false, "prints current version and exits")
 		profile     = flag.Bool("profile", false, "Turn on pprof profiling")

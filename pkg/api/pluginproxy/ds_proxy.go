@@ -188,7 +188,7 @@ func (proxy *DataSourceProxy) getDirector() func(req *http.Request) {
 		}
 
 		if proxy.cfg.SendUserHeader && !proxy.ctx.SignedInUser.IsAnonymous {
-			req.Header.Add("X-Grafana-User", proxy.ctx.SignedInUser.Login)
+			req.Header.Add("X-ThingSPIN-User", proxy.ctx.SignedInUser.Login)
 		}
 
 		keepCookieNames := []string{}
@@ -201,7 +201,7 @@ func (proxy *DataSourceProxy) getDirector() func(req *http.Request) {
 		proxyutil.ClearCookieHeader(req, keepCookieNames)
 		proxyutil.PrepareProxyRequest(req)
 
-		req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		req.Header.Set("User-Agent", fmt.Sprintf("ThingSPIN/%s", setting.BuildVersion))
 
 		// Clear Origin and Referer to avoir CORS issues
 		req.Header.Del("Origin")

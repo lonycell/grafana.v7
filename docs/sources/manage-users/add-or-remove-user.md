@@ -10,7 +10,7 @@ weight = 10
 
 # Add or remove a user
 
-This page explains how to add or remove user accounts in Grafana.
+This page explains how to add or remove user accounts in ThingSPIN.
 
 For more information, refer to [Users]({{< relref "./_index.md#users" >}}).
 

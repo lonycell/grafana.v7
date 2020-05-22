@@ -13,7 +13,7 @@ weight = 4
 
 <img class="screenshot" src="/img/docs/v64/logs-panel.png">
 
-> Logs panel is only available in Grafana v6.4+
+> Logs panel is only available in ThingSPIN v6.4+
 
 The logs panel shows log lines from datasources that support logs, e.g., Elastic, Influx, and Loki.
 Typically you would use this panel next to a graph panel to display the log output of a related process.
